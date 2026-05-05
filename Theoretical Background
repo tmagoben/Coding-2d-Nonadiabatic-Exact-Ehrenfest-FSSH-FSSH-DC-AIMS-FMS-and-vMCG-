@@ -1,9 +1,8 @@
-	\chapter{Theoretical Background}
+# Background 
 	
-	\section{Adiabatic Representation}
+##Adiabatic Representation
 A molecular Hamiltonian in the absence of an external field is constructed as the sum of electronic and nuclear Hamiltonians with the addition of an electron-nuclear Coulomb potential
-	
-	\begin{equation}\label{eq:2.1}
+	$
 		\begin{matrix}
 			H(r,R) = \overbrace{H_e(r)}^{T_e(r) + V_e(r)} +\overbrace{H_N(R)}^{T_N(R)+V_N(R)} +& V_{eN}(r,R),
 			\\
@@ -22,7 +21,7 @@ A molecular Hamiltonian in the absence of an external field is constructed as th
 			\\
 			V_{en}(r,R) = -\sum_{i}^{n_N}\sum_{j}^{n_e}\frac{Z_i}{|r_j-R_i|}.
 		\end{matrix}
-	\end{equation}
+$
 	$T_e(r), V_e(r), T_N(R), V_N(R)$ and $V_{en}(r,R)$ are the electronic kinetic and potential operators, nuclear kinetic and potential operators, and electronic and nuclear interaction potential operator respectively.  
 	$r$ and $R$ denote the electronic and nuclear degrees of freedom, while $n_e$ and $n_N$ are the number of electrons and nuclei in the system, and $M_i$, and $Z_i$ are the nuclear mass and charges.
 	
