@@ -2,7 +2,7 @@
 
 ## Adiabatic Representation
 
-A molecular Hamiltonian in the absence of an external field is constructed as the sum of electronic and nuclear Hamiltonians with the addition of an electron-nuclear Coulomb potential
+A molecular Hamiltonian in the absence of an external field is constructed as the sum of electronic and nuclear Hamiltonians, with the addition of an electron-nuclear Coulomb potential
 
 $$
 \begin{aligned}
@@ -23,7 +23,7 @@ V_{eN}(r,R)
 \end{aligned}
 $$
 
-$T_e(r)$, $V_e(r)$, $T_N(R)$, $V_N(R)$, and $V_{eN}(r,R)$ are the electronic kinetic and potential operators, nuclear kinetic and potential operators, and electronic and nuclear interaction potential operator, respectively. The variables $r$ and $R$ denote the electronic and nuclear degrees of freedom, while $n_e$ and $n_N$ are the number of electrons and nuclei in the system. The quantities $M_i$ and $Z_i$ are the nuclear masses and charges.
+$T_e(r)$, $V_e(r)$, $T_N(R)$, $V_N(R)$, and $V_{eN}(r, R)$ are the electronic kinetic and potential operators, nuclear kinetic and potential operators, and electronic and nuclear interaction potential operator, respectively. The variables $r$ and $R$ denote the electronic and nuclear degrees of freedom, while $n_e$ and $n_N$ are the number of electrons and nuclei in the system. The quantities $M_i$ and $Z_i$ are the nuclear masses and charges.
 
 This molecular Hamiltonian satisfies the time-independent Schr\"odinger equation (TISE),
 
