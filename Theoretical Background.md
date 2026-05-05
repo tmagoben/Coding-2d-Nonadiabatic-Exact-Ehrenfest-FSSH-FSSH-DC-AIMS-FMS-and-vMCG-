@@ -66,10 +66,11 @@ $$
 To obtain the non-adiabatic coupling terms, project the nuclear kinetic operator onto the electronic adiabatic basis. Since $T_N$ differentiates with respect to nuclear coordinates, it acts on both the nuclear coefficient $\chi_{lk}(R)$ and the nuclear-parametric electronic basis function $\phi_l(r;R)$:
 
 $$
-T_N\left[\chi_{lk}(R)\phi_l(r;R)\right]
+T_N\!\left[\chi_{lk}(R)\phi_l(r;R)\right]
 =
--\sum_i\frac{1}{2M_i}\nabla_{N,i}^2
-\left[\chi_{lk}(R)\phi_l(r;R)\right].
+-\sum_i \frac{1}{2M_i}
+\nabla_{N,i}^{2}
+\!\left[\chi_{lk}(R)\phi_l(r;R)\right].
 $$
 
 Using the product rule,
