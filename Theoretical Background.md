@@ -5,27 +5,27 @@
 A molecular Hamiltonian in the absence of an external field is constructed as the sum of electronic and nuclear Hamiltonians, with the addition of the electron--nuclear Coulomb potential:
 
 $$
-\begin{aligned}
+\begin{array}{rl}
 H(r,R) &= H_e(r)+H_N(R)+V_{eN}(r,R), \\
 H_e(r) &= T_e(r)+V_e(r), \\
 H_N(R) &= T_N(R)+V_N(R), \\
-T_e(r) &= -\sum_{i=1}^{n_e}\frac{\nabla_{e,i}^2}{2}, \\
-V_e(r) &= \sum_{i=1}^{n_e}\sum_{j>i}^{n_e}\frac{1}{\lvert r_j-r_i\rvert}, \\
-T_N(R) &= -\sum_{i=1}^{n_N}\frac{\nabla_{N,i}^2}{2M_i}, \\
-V_N(R) &= \sum_{i=1}^{n_N}\sum_{j>i}^{n_N}\frac{Z_jZ_i}{\lvert R_j-R_i\rvert}, \\
-V_{eN}(r,R) &= -\sum_{i=1}^{n_N}\sum_{j=1}^{n_e}\frac{Z_i}{\lvert r_j-R_i\rvert}.
-\end{aligned}
+T_e(r) &= -\sum_{i=1}^{n_e}\frac{\nabla_{e,i}^{2}}{2}, \\
+V_e(r) &= \sum_{i=1}^{n_e}\sum_{j>i}^{n_e}\frac{1}{|r_j-r_i|}, \\
+T_N(R) &= -\sum_{i=1}^{n_N}\frac{\nabla_{N,i}^{2}}{2M_i}, \\
+V_N(R) &= \sum_{i=1}^{n_N}\sum_{j>i}^{n_N}\frac{Z_jZ_i}{|R_j-R_i|}, \\
+V_{eN}(r,R) &= -\sum_{i=1}^{n_N}\sum_{j=1}^{n_e}\frac{Z_i}{|r_j-R_i|}.
+\end{array}
 $$
 
 Here, $T_e(r)$, $V_e(r)$, $T_N(R)$, $V_N(R)$, and $V_{eN}(r,R)$ are the electronic kinetic operator, electronic potential operator, nuclear kinetic operator, nuclear potential operator, and electron--nuclear interaction potential operator, respectively. The variables $r$ and $R$ denote the electronic and nuclear degrees of freedom, while $n_e$ and $n_N$ are the numbers of electrons and nuclei. The quantities $M_i$ and $Z_i$ are the mass and charge of nucleus $i$.
 
-This molecular Hamiltonian satisfies the time-independent Schrödinger equation:
+This molecular Hamiltonian satisfies the time-independent Schrodinger equation:
 
 $$
 H(r,R)\Psi_k(r,R)=E_k\Psi_k(r,R).
 $$
 
-In the equation above, $\Psi_k(r,R)$ are the eigenfunctions of $H(r,R)$. When $H(r,R)$ is substituted into the time-independent Schrödinger equation, one obtains coupled electronic--nuclear second-order differential equations. In general, it is not feasible to decouple the nuclear and electronic Hilbert spaces by separation of variables. Thus, approximate techniques are required.
+In the equation above, $\Psi_k(r,R)$ are the eigenfunctions of $H(r,R)$. When $H(r,R)$ is substituted into the time-independent Schrodinger equation, one obtains coupled electronic--nuclear second-order differential equations. In general, it is not feasible to decouple the nuclear and electronic Hilbert spaces by separation of variables. Thus, approximate techniques are required.
 
 One technique is to invoke the adiabatic theorem, where the nuclear time scale is considered slow relative to the electronic time scale. In the Born--Oppenheimer representation, the nuclear degrees of freedom enter the electronic Hamiltonian as parameters:
 
@@ -51,61 +51,42 @@ $$
 \Psi_k(r,R)=\sum_l \chi_{lk}(R)\phi_l(r;R),
 $$
 
-where $\chi_{lk}(R)$ are nuclear expansion coefficients. Substituting this ansatz into the molecular Schrödinger equation gives
+where $\chi_{lk}(R)$ are nuclear expansion coefficients. Substituting this ansatz into the molecular Schrodinger equation gives
 
 $$
-\begin{aligned}
+\begin{array}{rl}
 H(r,R)\Psi_k(r,R)
-&=\sum_l T_N\big[\chi_{lk}(R)\phi_l(r;R)\big]
+=& \sum_l T_N[\chi_{lk}(R)\phi_l(r;R)]
 +\sum_l H_e(r;R)\chi_{lk}(R)\phi_l(r;R) \\
-&=\sum_l T_N\big[\chi_{lk}(R)\phi_l(r;R)\big]
+=& \sum_l T_N[\chi_{lk}(R)\phi_l(r;R)]
 +\sum_l \epsilon_l(R)\chi_{lk}(R)\phi_l(r;R).
-\end{aligned}
+\end{array}
 $$
 
 To obtain the non-adiabatic coupling terms, project the nuclear kinetic operator onto the electronic adiabatic basis. Since $T_N$ differentiates with respect to nuclear coordinates, it acts on both the nuclear coefficient $\chi_{lk}(R)$ and the nuclear-parametric electronic basis function $\phi_l(r;R)$:
 
 $$
-T_N\left[\chi_{lk}(R)\phi_l(r;R)\right]
+T_N[\chi_{lk}(R)\phi_l(r;R)]
 =
 -\sum_i \frac{1}{2M_i}
 \nabla_{N,i}^{2}
-\left[\chi_{lk}(R)\phi_l(r;R)\right].
+[\chi_{lk}(R)\phi_l(r;R)].
 $$
 
 Using the product rule,
 
 $$
 \begin{array}{rl}
-\displaystyle
-\nabla_{N,i}^{2}\left[\chi_{lk}(R)\phi_l(r;R)\right]
+\nabla_{N,i}^{2}[\chi_{lk}(R)\phi_l(r;R)]
 =&
-\displaystyle
-\left(\nabla_{N,i}^{2}\chi_{lk}(R)\right)\phi_l(r;R)
+(\nabla_{N,i}^{2}\chi_{lk}(R))\phi_l(r;R)
 \\[6pt]
 &
-\displaystyle
-+2\left(\nabla_{N,i}\chi_{lk}(R)\right)\cdot
-\left(\nabla_{N,i}\phi_l(r;R)\right)
++2(\nabla_{N,i}\chi_{lk}(R))\cdot(\nabla_{N,i}\phi_l(r;R))
 \\[6pt]
 &
-\displaystyle
 +\chi_{lk}(R)\nabla_{N,i}^{2}\phi_l(r;R).
 \end{array}
-$$
-Projecting onto $\phi_m(r;R)$ gives the nuclear kinetic energy matrix element:
-
-$$
-\begin{aligned}
-\left\langle \phi_m(R) \right\rvert T_N \left\lvert \phi_l(R) \right\rangle_r\chi_{lk}(R)
-= -\sum_i\frac{1}{2M_i}
-\bigg[
-&\delta_{ml}\nabla_{N,i}^2
-+2\tau^{(i)}_{ml}(R)\cdot\nabla_{N,i} \\
-&+\nabla_{N,i}\cdot\tau^{(i)}_{ml}(R)
-+\sum_n \tau^{(i)}_{mn}(R)\cdot\tau^{(i)}_{nl}(R)
-\bigg]\chi_{lk}(R).
-\end{aligned}
 $$
 
 The first-order non-adiabatic coupling vector is
@@ -113,7 +94,25 @@ The first-order non-adiabatic coupling vector is
 $$
 \tau^{(i)}_{ml}(R)
 =
-\left\langle \phi_m(R) \middle\vert \nabla_{N,i}\phi_l(R) \right\rangle_r.
+\langle \phi_m(R) | \nabla_{N,i}\phi_l(R) \rangle_r.
+$$
+
+Projecting the nuclear kinetic operator onto the electronic state $\phi_m$ gives
+
+$$
+\begin{array}{rl}
+\langle \phi_m(R) | T_N | \phi_l(R) \rangle_r\chi_{lk}(R)
+=&
+-\sum_i\frac{1}{2M_i}
+\bigg[
+\delta_{ml}\nabla_{N,i}^{2}
++2\tau^{(i)}_{ml}(R)\cdot\nabla_{N,i}
+\\[6pt]
+&
++\nabla_{N,i}\cdot\tau^{(i)}_{ml}(R)
++\sum_n\tau^{(i)}_{mn}(R)\cdot\tau^{(i)}_{nl}(R)
+\bigg]\chi_{lk}(R).
+\end{array}
 $$
 
 The product term
@@ -124,36 +123,37 @@ $$
 
 arises from inserting a resolution of identity over the electronic adiabatic states into the second derivative coupling. For $m=l$, the corresponding diagonal contribution is associated with the diagonal Born--Oppenheimer correction.
 
-A useful transformation of $\tau^{(i)}_{ml}$ follows from the Hellmann--Feynman relation. For $m\neq l$,
+A useful transformation of $\tau^{(i)}_{ml}$ follows from the Hellmann--Feynman relation. For $m\ne l$,
 
 $$
-\nabla_R\left\langle\phi_m(R)\right\rvert H_e(R)\left\lvert\phi_l(R)\right\rangle_r=0.
+\nabla_R\langle\phi_m(R)|H_e(R)|\phi_l(R)\rangle_r=0.
 $$
 
 Expanding this derivative gives
 
 $$
-\begin{aligned}
-&\left\langle\nabla_R\phi_m(R)\right\rvert H_e(R)\left\lvert\phi_l(R)\right\rangle_r
-+\left\langle\phi_m(R)\right\rvert\nabla_R H_e(R)\left\lvert\phi_l(R)\right\rangle_r \\
-&\quad +\left\langle\phi_m(R)\right\rvert H_e(R)\left\lvert\nabla_R\phi_l(R)\right\rangle_r=0.
-\end{aligned}
+\begin{array}{l}
+\langle\nabla_R\phi_m(R)|H_e(R)|\phi_l(R)\rangle_r
++\langle\phi_m(R)|\nabla_R H_e(R)|\phi_l(R)\rangle_r \\
+\qquad
++\langle\phi_m(R)|H_e(R)|\nabla_R\phi_l(R)\rangle_r=0.
+\end{array}
 $$
 
 Using the electronic eigenvalue equation,
 
 $$
-\epsilon_l(R)\left\langle\nabla_R\phi_m(R)\middle\vert\phi_l(R)\right\rangle_r
-+\left\langle\phi_m(R)\right\rvert\nabla_R H_e(R)\left\lvert\phi_l(R)\right\rangle_r
-+\epsilon_m(R)\left\langle\phi_m(R)\middle\vert\nabla_R\phi_l(R)\right\rangle_r=0.
+\epsilon_l(R)\langle\nabla_R\phi_m(R)|\phi_l(R)\rangle_r
++\langle\phi_m(R)|\nabla_R H_e(R)|\phi_l(R)\rangle_r
++\epsilon_m(R)\langle\phi_m(R)|\nabla_R\phi_l(R)\rangle_r=0.
 $$
 
-For $m\neq l$, orthonormality implies
+For $m\ne l$, orthonormality implies
 
 $$
-\left\langle\nabla_R\phi_m(R)\middle\vert\phi_l(R)\right\rangle_r
+\langle\nabla_R\phi_m(R)|\phi_l(R)\rangle_r
 =
--\left\langle\phi_m(R)\middle\vert\nabla_R\phi_l(R)\right\rangle_r.
+-\langle\phi_m(R)|\nabla_R\phi_l(R)\rangle_r.
 $$
 
 Therefore,
@@ -161,10 +161,10 @@ Therefore,
 $$
 \tau^{(i)}_{ml}(R)
 =
-\left\langle\phi_m(R)\middle\vert\nabla_{N,i}\phi_l(R)\right\rangle_r
+\langle\phi_m(R)|\nabla_{N,i}\phi_l(R)\rangle_r
 =
 \frac{
-\left\langle\phi_m(R)\right\rvert\nabla_{N,i}H_e(R)\left\lvert\phi_l(R)\right\rangle_r
+\langle\phi_m(R)|\nabla_{N,i}H_e(R)|\phi_l(R)\rangle_r
 }{
 \epsilon_l(R)-\epsilon_m(R)
 }.
@@ -176,11 +176,7 @@ Using this formalism, the molecular Hamiltonian takes the form
 
 $$
 \sum_l
-\left[
-T_N\delta_{ml}
-+\epsilon_m(R)\delta_{ml}
-+\Lambda_{ml}(R)
-\right]
+[ T_N\delta_{ml}+\epsilon_m(R)\delta_{ml}+\Lambda_{ml}(R) ]
 \chi_{lk}(R)
 =
 E_k\chi_{mk}(R),
@@ -203,9 +199,7 @@ If all $\tau^{(i)}_{mn}(R)$ are negligible, meaning that electronic potential en
 
 $$
 \sum_l
-\left[
-T_N\delta_{ml}+\epsilon_l(R)\delta_{ml}
-\right]
+[ T_N\delta_{ml}+\epsilon_l(R)\delta_{ml} ]
 \chi_{lk}(R)
 =
 E_k\chi_{mk}(R).
@@ -229,17 +223,17 @@ $$
 
 where $R_0$ is a fixed reference nuclear geometry. Often, $R_0$ is chosen near the minimum of the conical intersection seam. For this ansatz, the nuclear kinetic operator $T_N$ no longer acts on the electronic basis functions $\phi_l(r;R_0)$.
 
-Substituting $\Psi_k^{\mathrm{cr}}(r,R)$ into the molecular Schrödinger equation gives
+Substituting $\Psi_k^{\mathrm{cr}}(r,R)$ into the molecular Schrodinger equation gives
 
 $$
-\begin{aligned}
+\begin{array}{rl}
 H(r,R)\Psi_k^{\mathrm{cr}}(r,R)
-&=
+=&
 \sum_l\phi_l(r;R_0)T_N\chi_{lk}(R)
-+
-\sum_l\chi_{lk}(R)H_e(r;R)\phi_l(r;R_0) \\
-&=E_k\sum_l\chi_{lk}(R)\phi_l(r;R_0).
-\end{aligned}
++\sum_l\chi_{lk}(R)H_e(r;R)\phi_l(r;R_0) \\
+=&
+E_k\sum_l\chi_{lk}(R)\phi_l(r;R_0).
+\end{array}
 $$
 
 Projecting both sides onto $\phi_m(r;R_0)$ gives
@@ -249,7 +243,7 @@ $$
 \left[
 T_N\delta_{ml}
 +
-\left\langle\phi_m(R_0)\right\rvert H_e(R)\left\lvert\phi_l(R_0)\right\rangle_r
+\langle\phi_m(R_0)|H_e(R)|\phi_l(R_0)\rangle_r
 \right]
 \chi_{lk}(R)
 =
@@ -259,7 +253,7 @@ $$
 Here,
 
 $$
-\left\langle\phi_m(R_0)\right\rvert H_e(R)\left\lvert\phi_l(R_0)\right\rangle_r
+\langle\phi_m(R_0)|H_e(R)|\phi_l(R_0)\rangle_r
 $$
 
 are matrix elements of the electronic Hamiltonian in a fixed electronic basis. Defining
@@ -283,18 +277,15 @@ $$
 Evaluating the electronic Hamiltonian matrix elements in the crude adiabatic basis gives
 
 $$
-\begin{aligned}
-\left\langle\phi_m(R_0)\right\rvert H_e(R)\left\lvert\phi_l(R_0)\right\rangle_r
-&=
-\left\langle\phi_m(R_0)\right\rvert
-H_e(R_0)-V(R_0)+V(R)
-\left\lvert\phi_l(R_0)\right\rangle_r \\
-&=\epsilon_l(R_0)\delta_{ml}
+\begin{array}{rl}
+\langle\phi_m(R_0)|H_e(R)|\phi_l(R_0)\rangle_r
+=&
+\langle\phi_m(R_0)|H_e(R_0)-V(R_0)+V(R)|\phi_l(R_0)\rangle_r \\
+=&
+\epsilon_l(R_0)\delta_{ml}
 +
-\left\langle\phi_m(R_0)\right\rvert
-V(R)-V(R_0)
-\left\lvert\phi_l(R_0)\right\rangle_r.
-\end{aligned}
+\langle\phi_m(R_0)|V(R)-V(R_0)|\phi_l(R_0)\rangle_r.
+\end{array}
 $$
 
 The residual contribution defines the diabatic potential matrix:
@@ -302,9 +293,7 @@ The residual contribution defines the diabatic potential matrix:
 $$
 U_{ml}(R)
 =
-\left\langle\phi_m(R_0)\right\rvert
-V(R)-V(R_0)
-\left\lvert\phi_l(R_0)\right\rangle_r.
+\langle\phi_m(R_0)|V(R)-V(R_0)|\phi_l(R_0)\rangle_r.
 $$
 
 Substituting this definition into the crude-adiabatic projected equation gives the diabatic Hamiltonian:
