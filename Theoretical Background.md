@@ -66,24 +66,33 @@ $$
 To obtain the non-adiabatic coupling terms, project the nuclear kinetic operator onto the electronic adiabatic basis. Since $T_N$ differentiates with respect to nuclear coordinates, it acts on both the nuclear coefficient $\chi_{lk}(R)$ and the nuclear-parametric electronic basis function $\phi_l(r;R)$:
 
 $$
-T_N\!\left[\chi_{lk}(R)\phi_l(r;R)\right]
+T_N\left[\chi_{lk}(R)\phi_l(r;R)\right]
 =
 -\sum_i \frac{1}{2M_i}
 \nabla_{N,i}^{2}
-\!\left[\chi_{lk}(R)\phi_l(r;R)\right].
+\left[\chi_{lk}(R)\phi_l(r;R)\right].
 $$
 
 Using the product rule,
 
 $$
-\begin{aligned}
-\nabla_{N,i}^2\left[\chi_{lk}(R)\phi_l(r;R)\right]
-&=\left(\nabla_{N,i}^2\chi_{lk}(R)\right)\phi_l(r;R) \\
-&\quad +2\left(\nabla_{N,i}\chi_{lk}(R)\right)\cdot\left(\nabla_{N,i}\phi_l(r;R)\right) \\
-&\quad +\chi_{lk}(R)\nabla_{N,i}^2\phi_l(r;R).
-\end{aligned}
+\begin{array}{rl}
+\displaystyle
+\nabla_{N,i}^{2}\left[\chi_{lk}(R)\phi_l(r;R)\right]
+=&
+\displaystyle
+\left(\nabla_{N,i}^{2}\chi_{lk}(R)\right)\phi_l(r;R)
+\\[6pt]
+&
+\displaystyle
++2\left(\nabla_{N,i}\chi_{lk}(R)\right)\cdot
+\left(\nabla_{N,i}\phi_l(r;R)\right)
+\\[6pt]
+&
+\displaystyle
++\chi_{lk}(R)\nabla_{N,i}^{2}\phi_l(r;R).
+\end{array}
 $$
-
 Projecting onto $\phi_m(r;R)$ gives the nuclear kinetic energy matrix element:
 
 $$
