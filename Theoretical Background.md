@@ -6,7 +6,7 @@ A molecular Hamiltonian in the absence of an external field is constructed as th
 
 **Equation (2.1)**
 
-$$
+$
 \begin{aligned}
 H(r,R) &= \overbrace{H_e(r)}^{T_e(r)+V_e(r)} + \overbrace{H_N(R)}^{T_N(R)+V_N(R)} + V_{eN}(r,R), \\
 T_e(r) &= -\sum_i^{n_e}\frac{\nabla_{e,i}^2}{2}, \\
@@ -15,7 +15,7 @@ T_N(R) &= -\sum_i^{n_N}\frac{\nabla_{N,i}^2}{2M_i}, \\
 V_N(R) &= \sum_i^{n_N}\sum_{j>i}^{n_N}\frac{Z_jZ_i}{|R_j-R_i|}, \\
 V_{eN}(r,R) &= -\sum_i^{n_N}\sum_j^{n_e}\frac{Z_i}{|r_j-R_i|}.
 \end{aligned}
-$$
+$
 
 $T_e(r)$, $V_e(r)$, $T_N(R)$, $V_N(R)$, and $V_{eN}(r,R)$ are the electronic kinetic and potential operators, nuclear kinetic and potential operators, and electronic-nuclear interaction potential operator, respectively. $r$ and $R$ denote the electronic and nuclear degrees of freedom, while $n_e$ and $n_N$ are the number of electrons and nuclei in the system, and $M_i$ and $Z_i$ are the nuclear masses and charges.
 
@@ -29,7 +29,7 @@ $$
 
 In the equation above, $\Psi_k(r,R)$ are the eigenfunctions of $H(r,R)$. When $H(r,R)$ is substituted into the time-independent Schrödinger equation, Equation (2.2) consists of coupled electronic-nuclear second-order differential equations. At the moment, it is unfeasible to decouple the nuclear and electronic Hilbert spaces by separation of variables. Thus, to decouple the electronic from nuclear degrees of freedom, approximate techniques are required. *(cite: `levine2013quantum`)*
 
-One technique is to invoke the adiabatic theorem, where the nuclear time scale is considered static relative to the electronic counterpart. Here, the Born-Oppenheimer representation is employed, where one introduces a parameter for nuclear degrees of freedom in the electronic Hamiltonian such that *(cite: `Zur_Quantentheorie_der_Molekeln`)*
+One technique is to invoke the adiabatic theorem, where the nuclear time scale is considered static relative to the electronic counterpart. Here, the Born-Oppenheimer representation is employed, where one introduces a parameter for nuclear degrees of freedom in the electronic Hamiltonian such that 
 
 $$
 H_e(r\mid R) = T_e(r) + V_e(r) + V_N(R) + V_{eN}(r\mid R).
