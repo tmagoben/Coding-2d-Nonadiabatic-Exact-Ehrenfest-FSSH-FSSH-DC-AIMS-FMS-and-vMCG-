@@ -1,309 +1,429 @@
 # Theoretical Background
 
+This section briefly surveys the adiabatic and diabatic representations, emphasizing their role in simulations of nonadiabatic molecular dynamics. A general background in quantum mechanics is assumed. Unless otherwise stated, atomic units are used, so that \(\hbar=m_e=e=1\).
+
 ## Adiabatic Representation
 
-A molecular Hamiltonian in the absence of an external field is constructed as the sum of electronic and nuclear Hamiltonians, with the addition of the electron--nuclear Coulomb potential:
+For a molecule in the absence of an external field, the molecular Hamiltonian can be written as the sum of electronic kinetic energy, nuclear kinetic energy, electron-electron repulsion, nucleus-nucleus repulsion, and electron-nucleus attraction terms:
 
 $$
 \begin{array}{rl}
-H(r,R) &= H_e(r)+H_N(R)+V_{eN}(r,R), \\
-H_e(r) &= T_e(r)+V_e(r), \\
-H_N(R) &= T_N(R)+V_N(R), \\
-T_e(r) &= -\sum_{i=1}^{n_e}\frac{\nabla_{e,i}^{2}}{2}, \\
-V_e(r) &= \sum_{i=1}^{n_e}\sum_{j>i}^{n_e}\frac{1}{|r_j-r_i|}, \\
-T_N(R) &= -\sum_{i=1}^{n_N}\frac{\nabla_{N,i}^{2}}{2M_i}, \\
-V_N(R) &= \sum_{i=1}^{n_N}\sum_{j>i}^{n_N}\frac{Z_jZ_i}{|R_j-R_i|}, \\
-V_{eN}(r,R) &= -\sum_{i=1}^{n_N}\sum_{j=1}^{n_e}\frac{Z_i}{|r_j-R_i|}.
+H(r,R) &= T_e(r)+T_N(R)+V_{ee}(r)+V_{NN}(R)+V_{eN}(r,R), \\[4pt]
+T_e(r) &= -\sum_{i=1}^{n_e}\frac{1}{2}\nabla_{e,i}^{2}, \\[4pt]
+T_N(R) &= -\sum_{A=1}^{n_N}\frac{1}{2M_A}\nabla_{N,A}^{2}, \\[4pt]
+V_{ee}(r) &= \sum_{i=1}^{n_e}\sum_{j>i}^{n_e}\frac{1}{|r_j-r_i|}, \\[4pt]
+V_{NN}(R) &= \sum_{A=1}^{n_N}\sum_{B>A}^{n_N}\frac{Z_AZ_B}{|R_B-R_A|}, \\[4pt]
+V_{eN}(r,R) &= -\sum_{A=1}^{n_N}\sum_{i=1}^{n_e}\frac{Z_A}{|r_i-R_A|}.
 \end{array}
 $$
 
-Here, $T_e(r)$, $V_e(r)$, $T_N(R)$, $V_N(R)$, and $V_{eN}(r,R)$ are the electronic kinetic operator, electronic potential operator, nuclear kinetic operator, nuclear potential operator, and electron--nuclear interaction potential operator, respectively. The variables $r$ and $R$ denote the electronic and nuclear degrees of freedom, while $n_e$ and $n_N$ are the numbers of electrons and nuclei. The quantities $M_i$ and $Z_i$ are the mass and charge of nucleus $i$.
-
-This molecular Hamiltonian satisfies the time-independent Schrodinger equation:
+Here, \(r\) denotes all electronic coordinates and \(R\) denotes all nuclear coordinates. The quantities \(n_e\) and \(n_N\) are the numbers of electrons and nuclei, while \(M_A\) and \(Z_A\) are the mass and charge of nucleus \(A\). The full molecular eigenvalue problem is
 
 $$
 H(r,R)\Psi_k(r,R)=E_k\Psi_k(r,R).
 $$
 
-In the equation above, $\Psi_k(r,R)$ are the eigenfunctions of $H(r,R)$. When $H(r,R)$ is substituted into the time-independent Schrodinger equation, one obtains coupled electronic--nuclear second-order differential equations. In general, it is not feasible to decouple the nuclear and electronic Hilbert spaces by separation of variables. Thus, approximate techniques are required.
+Direct solution of this equation is generally difficult because the electronic and nuclear coordinates are coupled. The Born-Oppenheimer approximation exploits the separation between fast electronic motion and slower nuclear motion by treating the nuclear coordinates as fixed parameters in the electronic eigenvalue problem.
 
-One technique is to invoke the adiabatic theorem, where the nuclear time scale is considered slow relative to the electronic time scale. In the Born--Oppenheimer representation, the nuclear degrees of freedom enter the electronic Hamiltonian as parameters:
-
-$$
-H_e(r;R)=T_e(r)+V_e(r)+V_N(R)+V_{eN}(r;R).
-$$
-
-The semicolon in $H_e(r;R)$ denotes the parametric dependence of the electronic Hamiltonian on the nuclear coordinates. Because of this parametric dependence, one obtains eigenstates and eigenvalues of the electronic Hamiltonian:
+For fixed \(R\), define the electronic Hamiltonian
 
 $$
-H_e(r;R)\phi_l(r;R)=\epsilon_l(R)\phi_l(r;R).
+H_{\mathrm{el}}(r;R)=T_e(r)+V_{ee}(r)+V_{eN}(r,R).
 $$
 
-Here, $\phi_l(r;R)$ are the adiabatic electronic states and $\epsilon_l(R)$ are the electronic potential energy surfaces. The molecular Hamiltonian may then be written as
+The clamped-nuclei electronic eigenvalue equation is
 
 $$
-H(r,R)=T_N(R)+H_e(r;R).
+H_{\mathrm{el}}(r;R)\phi_l(r;R)=E_l^{\mathrm{el}}(R)\phi_l(r;R).
 $$
 
-The eigenfunctions of the parametrized molecular Hamiltonian are written using the Born--Huang expansion:
+It is often convenient to absorb the nuclear repulsion into the electronic energy surface:
+
+$$
+\epsilon_l(R)=E_l^{\mathrm{el}}(R)+V_{NN}(R).
+$$
+
+With this convention, the molecular Hamiltonian can be written as
+
+$$
+H(r,R)=T_N(R)+H_e(r;R),
+$$
+
+where
+
+$$
+H_e(r;R)=H_{\mathrm{el}}(r;R)+V_{NN}(R).
+$$
+
+The adiabatic electronic states \(\phi_l(r;R)\) form a nuclear-coordinate-dependent electronic basis. The molecular wavefunction may therefore be expanded in the Born-Huang form
 
 $$
 \Psi_k(r,R)=\sum_l \chi_{lk}(R)\phi_l(r;R),
 $$
 
-where $\chi_{lk}(R)$ are nuclear expansion coefficients. Substituting this ansatz into the molecular Schrodinger equation gives
+where \(\chi_{lk}(R)\) is the nuclear wavefunction amplitude on electronic state \(l\) for molecular eigenstate \(k\).
+
+Substituting the Born-Huang expansion into the molecular Schrödinger equation gives
 
 $$
 \begin{array}{rl}
 H(r,R)\Psi_k(r,R)
-=& \sum_l T_N[\chi_{lk}(R)\phi_l(r;R)]
-+\sum_l H_e(r;R)\chi_{lk}(R)\phi_l(r;R) \\
-=& \sum_l T_N[\chi_{lk}(R)\phi_l(r;R)]
-+\sum_l \epsilon_l(R)\chi_{lk}(R)\phi_l(r;R)
+=&
+\displaystyle\sum_l T_N[\chi_{lk}(R)\phi_l(r;R)]
++
+\sum_l H_e(r;R)\chi_{lk}(R)\phi_l(r;R)
+\\[6pt]
+=&
+\displaystyle\sum_l T_N[\chi_{lk}(R)\phi_l(r;R)]
++
+\sum_l \epsilon_l(R)\chi_{lk}(R)\phi_l(r;R).
 \end{array}
-$$.
+$$
 
-To obtain the non-adiabatic coupling terms, project the nuclear kinetic operator onto the electronic adiabatic basis. Since $T_N$ differentiates with respect to nuclear coordinates, it acts on both the nuclear coefficient $\chi_{lk}(R)$ and the nuclear-parametric electronic basis function $\phi_l(r;R)$:
+The nonadiabatic coupling terms arise because \(T_N\) differentiates with respect to nuclear coordinates. Therefore, it acts not only on the nuclear coefficient \(\chi_{lk}(R)\), but also on the nuclear-parametric electronic basis function \(\phi_l(r;R)\):
 
 $$
 T_N[\chi_{lk}(R)\phi_l(r;R)]
 =
--\sum_i \frac{1}{2M_i}
-\nabla_{N,i}^{2}
-[\chi_{lk}(R)\phi_l(r;R)].
+-\sum_A \frac{1}{2M_A}
+\nabla_{N,A}^{2}[\chi_{lk}(R)\phi_l(r;R)].
 $$
 
 Using the product rule,
 
 $$
 \begin{array}{rl}
-\nabla_{N,i}^{2}[\chi_{lk}(R)\phi_l(r;R)]
+\nabla_{N,A}^{2}[\chi_{lk}(R)\phi_l(r;R)]
 =&
-(\nabla_{N,i}^{2}\chi_{lk}(R))\phi_l(r;R)
+(\nabla_{N,A}^{2}\chi_{lk}(R))\phi_l(r;R)
 \\[6pt]
 &
-+2(\nabla_{N,i}\chi_{lk}(R))\cdot(\nabla_{N,i}\phi_l(r;R))
++2(\nabla_{N,A}\chi_{lk}(R))\cdot(\nabla_{N,A}\phi_l(r;R))
 \\[6pt]
 &
-+\chi_{lk}(R)\nabla_{N,i}^{2}\phi_l(r;R).
++\chi_{lk}(R)\nabla_{N,A}^{2}\phi_l(r;R).
 \end{array}
 $$
 
-The first-order non-adiabatic coupling vector is
+Define the first-order derivative coupling vector
 
 $$
-\tau^{(i)}_{ml}(R)
+\tau^{(A)}_{ml}(R)
 =
-\langle \phi_m(R) | \nabla_{N,i}\phi_l(R) \rangle_r.
+\langle \phi_m(r;R)|\nabla_{N,A}\phi_l(r;R)\rangle_r,
 $$
 
-Projecting the nuclear kinetic operator onto the electronic state $\phi_m$ gives
+where \(\langle\cdots\rangle_r\) denotes integration over electronic coordinates only. Also define the second-derivative coupling
+
+$$
+d^{(A)}_{ml}(R)
+=
+\langle \phi_m(r;R)|\nabla_{N,A}^{2}\phi_l(r;R)\rangle_r.
+$$
+
+Projecting the nuclear kinetic operator onto electronic state \(\phi_m\) gives
 
 $$
 \begin{array}{rl}
-\langle \phi_m(R) | T_N | \phi_l(R) \rangle_r\chi_{lk}(R)
+\langle \phi_m|T_N|\phi_l\rangle_r\chi_{lk}(R)
 =&
--\sum_i\frac{1}{2M_i}
-\bigg[
-\delta_{ml}\nabla_{N,i}^{2}
-+2\tau^{(i)}_{ml}(R)\cdot\nabla_{N,i}
-\\[6pt]
-&
-+\nabla_{N,i}\cdot\tau^{(i)}_{ml}(R)
-+\sum_n\tau^{(i)}_{mn}(R)\cdot\tau^{(i)}_{nl}(R)
-\bigg]\chi_{lk}(R).
+\displaystyle
+-\sum_A\frac{1}{2M_A}
+\left[
+\delta_{ml}\nabla_{N,A}^{2}
++
+2\tau^{(A)}_{ml}(R)\cdot\nabla_{N,A}
++
+d^{(A)}_{ml}(R)
+\right]\chi_{lk}(R).
 \end{array}
 $$
 
-The product term
+The second-derivative coupling can be rewritten by inserting a resolution of identity over the adiabatic electronic states:
 
 $$
-\sum_n \tau^{(i)}_{mn}(R)\cdot\tau^{(i)}_{nl}(R)
-$$
-
-arises from inserting a resolution of identity over the electronic adiabatic states into the second derivative coupling. For $m=l$, the corresponding diagonal contribution is associated with the diagonal Born--Oppenheimer correction.
-
-A useful transformation of $\tau^{(i)}_{ml}$ follows from the Hellmann--Feynman relation. For $m\ne l$,
-
-$$
-\nabla_R\langle\phi_m(R)|H_e(R)|\phi_l(R)\rangle_r=0.
-$$
-
-Expanding this derivative gives
-
-$$
-\begin{array}{l}
-\langle\nabla_R\phi_m(R)|H_e(R)|\phi_l(R)\rangle_r
-+\langle\phi_m(R)|\nabla_R H_e(R)|\phi_l(R)\rangle_r \\
-\qquad
-+\langle\phi_m(R)|H_e(R)|\nabla_R\phi_l(R)\rangle_r=0.
-\end{array}
-$$
-
-Using the electronic eigenvalue equation,
-
-$$
-\epsilon_l(R)\langle\nabla_R\phi_m(R)|\phi_l(R)\rangle_r
-+\langle\phi_m(R)|\nabla_R H_e(R)|\phi_l(R)\rangle_r
-+\epsilon_m(R)\langle\phi_m(R)|\nabla_R\phi_l(R)\rangle_r=0.
-$$
-
-For $m\ne l$, orthonormality implies
-
-$$
-\langle\nabla_R\phi_m(R)|\phi_l(R)\rangle_r
+d^{(A)}_{ml}(R)
 =
--\langle\phi_m(R)|\nabla_R\phi_l(R)\rangle_r.
+\nabla_{N,A}\cdot\tau^{(A)}_{ml}(R)
++
+\sum_n
+\tau^{(A)}_{mn}(R)\cdot\tau^{(A)}_{nl}(R).
 $$
 
 Therefore,
 
 $$
-\tau^{(i)}_{ml}(R)
-=
-\langle\phi_m(R)|\nabla_{N,i}\phi_l(R)\rangle_r
-=
-\frac{
-\langle\phi_m(R)|\nabla_{N,i}H_e(R)|\phi_l(R)\rangle_r
-}{
-\epsilon_l(R)-\epsilon_m(R)
-}.
+\begin{array}{rl}
+\langle \phi_m|T_N|\phi_l\rangle_r\chi_{lk}(R)
+=&
+\displaystyle
+-\sum_A\frac{1}{2M_A}
+\left[
+\delta_{ml}\nabla_{N,A}^{2}
++
+2\tau^{(A)}_{ml}(R)\cdot\nabla_{N,A}
+\right.
+\\[6pt]
+&
+\displaystyle
+\left.
++
+\nabla_{N,A}\cdot\tau^{(A)}_{ml}(R)
++
+\sum_n
+\tau^{(A)}_{mn}(R)\cdot\tau^{(A)}_{nl}(R)
+\right]\chi_{lk}(R).
+\end{array}
 $$
 
-The adiabatic representation accurately describes quantum molecular dynamics in regions away from potential energy surface intersections. This is because the non-adiabatic coupling vectors $\tau^{(i)}_{mn}(R)$ become large near degeneracies through their inverse dependence on the electronic energy gap $\epsilon_n(R)-\epsilon_m(R)$.
+For \(m=l\), the diagonal part of the second-derivative coupling contributes to the diagonal Born-Oppenheimer correction. In a real adiabatic gauge with \(\tau^{(A)}_{mm}=0\), this correction is commonly written as
 
-Using this formalism, the molecular Hamiltonian takes the form
+$$
+E_{\mathrm{DBOC},m}(R)
+=
+\sum_A\frac{1}{2M_A}
+\sum_{n\ne m}
+|\tau^{(A)}_{mn}(R)|^2.
+$$
+
+A useful relation for the off-diagonal derivative coupling follows from differentiating the electronic eigenvalue equation. For \(m\ne l\),
+
+$$
+\langle \phi_m(R)|H_e(R)|\phi_l(R)\rangle_r=0.
+$$
+
+Differentiating with respect to a nuclear coordinate gives
+
+$$
+\begin{array}{l}
+\langle \nabla_{N,A}\phi_m(R)|H_e(R)|\phi_l(R)\rangle_r
++
+\langle \phi_m(R)|\nabla_{N,A}H_e(R)|\phi_l(R)\rangle_r
+\\[6pt]
+\qquad
++
+\langle \phi_m(R)|H_e(R)|\nabla_{N,A}\phi_l(R)\rangle_r
+=
+0.
+\end{array}
+$$
+
+Using the electronic eigenvalue equation and the orthonormality relation
+
+$$
+\langle \nabla_{N,A}\phi_m(R)|\phi_l(R)\rangle_r
+=
+-\langle \phi_m(R)|\nabla_{N,A}\phi_l(R)\rangle_r,
+\qquad m\ne l,
+$$
+
+one obtains
+
+$$
+\tau^{(A)}_{ml}(R)
+=
+\langle \phi_m(R)|\nabla_{N,A}\phi_l(R)\rangle_r
+=
+\frac{
+\langle \phi_m(R)|\nabla_{N,A}H_e(R)|\phi_l(R)\rangle_r
+}{
+\epsilon_l(R)-\epsilon_m(R)
+},
+\qquad m\ne l.
+$$
+
+This expression is valid away from exact degeneracies and assumes a differentiable choice of adiabatic electronic phases. As \(\epsilon_l(R)-\epsilon_m(R)\) becomes small, the expression becomes ill-conditioned and derivative couplings may become large. Thus, near avoided crossings, conical intersections, or other near-degeneracies, nonadiabatic couplings generally cannot be neglected.
+
+The coupled nuclear equations in the adiabatic representation can be written as
 
 $$
 \sum_l
-[ T_N\delta_{ml}+\epsilon_m(R)\delta_{ml}+\Lambda_{ml}(R) ]
+\left[
+T_N\delta_{ml}
++
+\epsilon_l(R)\delta_{ml}
++
+\Lambda_{ml}(R)
+\right]
 \chi_{lk}(R)
 =
 E_k\chi_{mk}(R),
 $$
 
-where all non-adiabatic effects are contained in the operator
+where all nonadiabatic derivative-coupling effects are collected in
 
 $$
 \Lambda_{ml}(R)
 =
--\sum_i\frac{1}{2M_i}
+-\sum_A\frac{1}{2M_A}
 \left[
-2\tau^{(i)}_{ml}(R)\cdot\nabla_{N,i}
-+\nabla_{N,i}\cdot\tau^{(i)}_{ml}(R)
-+\sum_n\tau^{(i)}_{mn}(R)\cdot\tau^{(i)}_{nl}(R)
+2\tau^{(A)}_{ml}(R)\cdot\nabla_{N,A}
++
+\nabla_{N,A}\cdot\tau^{(A)}_{ml}(R)
++
+\sum_n
+\tau^{(A)}_{mn}(R)\cdot\tau^{(A)}_{nl}(R)
 \right].
 $$
 
-If all $\tau^{(i)}_{mn}(R)$ are negligible, meaning that electronic potential energy differences are sufficiently large, one may ignore $\Lambda_{ml}(R)$. By doing so, the Born--Oppenheimer equation is recovered:
+If the derivative couplings \(\tau^{(A)}_{mn}(R)\) are negligible over the dynamically relevant region of nuclear configuration space, then \(\Lambda_{ml}(R)\) may be neglected. The uncoupled Born-Oppenheimer nuclear equation is then recovered:
 
 $$
-\sum_l
-[ T_N\delta_{ml}+\epsilon_l(R)\delta_{ml} ]
-\chi_{lk}(R)
+\left[
+T_N+
+\epsilon_m(R)
+\right]
+\chi_{mk}(R)
 =
 E_k\chi_{mk}(R).
 $$
 
+Equivalently,
+
+$$
+\sum_l
+\left[
+T_N\delta_{ml}
++
+\epsilon_l(R)\delta_{ml}
+\right]\chi_{lk}(R)
+=
+E_k\chi_{mk}(R).
+$$
+
+This Born-Oppenheimer form underlies much of practical molecular electronic-structure theory. At fixed nuclear geometries, electronic-structure calculations provide potential energy surfaces, nuclear gradients, spin-orbit coupling matrix elements, and, when required, nonadiabatic derivative couplings.
+
 ## Diabatic Representation
 
-As the $\tau_{ml}$ elements are divergent in regions of quasi-degeneracy or exact degeneracy, the question arises whether one can rotate the Hamiltonian to a basis where the derivative couplings satisfy
+The adiabatic representation is natural for electronic-structure calculations because it diagonalizes the electronic Hamiltonian at each nuclear geometry. However, it can become inconvenient near degeneracies because derivative couplings may become large or singular. This motivates the search for representations in which nonadiabatic effects are shifted from derivative couplings into off-diagonal potential couplings.
+
+A diabatic representation is a basis in which the first-order derivative couplings vanish or are made small:
 
 $$
-\tau^{(i)}_{mn}=0.
+\tau^{(A)}_{mn}(R)
+=
+\langle \varphi_m(r;R)|\nabla_{N,A}\varphi_n(r;R)\rangle_r
+\approx 0.
 $$
 
-If this were possible, all non-adiabatic effects would be encapsulated in the potential matrix. In general, a strictly diabatic basis does not exist globally, but quasi-diabatic states can be constructed by minimizing the derivative couplings.
+If the derivative couplings were exactly zero, the nuclear kinetic operator would remain diagonal in the electronic basis, and nonadiabatic effects would appear through the off-diagonal elements of the electronic potential matrix. In general, a globally valid strictly diabatic basis cannot be constructed for arbitrary molecular systems because derivative couplings cannot usually be transformed away everywhere in nuclear-coordinate space. Nevertheless, local diabatic, quasi-diabatic, or model diabatic bases are often useful.
 
-The most direct way to construct a diabatic representation from an adiabatic one is to introduce the crude adiabatic basis:
+A simple illustrative route toward a diabatic-like representation is the crude adiabatic basis. In this construction, the electronic basis functions are fixed at a reference geometry \(R_0\):
 
 $$
-\Psi_k^{\mathrm{cr}}(r,R)=\sum_l\chi_{lk}(R)\phi_l(r;R_0),
+\Psi_k^{\mathrm{cr}}(r,R)
+=
+\sum_l
+\chi_{lk}(R)\phi_l(r;R_0).
 $$
 
-where $R_0$ is a fixed reference nuclear geometry. Often, $R_0$ is chosen near the minimum of the conical intersection seam. For this ansatz, the nuclear kinetic operator $T_N$ no longer acts on the electronic basis functions $\phi_l(r;R_0)$.
+Because \(\phi_l(r;R_0)\) does not depend on the current nuclear coordinate \(R\), the nuclear kinetic operator acts only on the nuclear coefficients:
 
-Substituting $\Psi_k^{\mathrm{cr}}(r,R)$ into the molecular Schrodinger equation gives
+$$
+T_N[\chi_{lk}(R)\phi_l(r;R_0)]
+=
+\phi_l(r;R_0)T_N\chi_{lk}(R).
+$$
+
+Substituting the crude adiabatic expansion into the molecular Schrödinger equation gives
 
 $$
 \begin{array}{rl}
 H(r,R)\Psi_k^{\mathrm{cr}}(r,R)
 =&
-\sum_l\phi_l(r;R_0)T_N\chi_{lk}(R)
-+\sum_l\chi_{lk}(R)H_e(r;R)\phi_l(r;R_0) \\
+\displaystyle
+\sum_l
+\phi_l(r;R_0)T_N\chi_{lk}(R)
++
+\sum_l
+\chi_{lk}(R)H_e(r;R)\phi_l(r;R_0)
+\\[6pt]
 =&
-E_k\sum_l\chi_{lk}(R)\phi_l(r;R_0).
+\displaystyle
+E_k\sum_l
+\chi_{lk}(R)\phi_l(r;R_0).
 \end{array}
 $$
 
-Projecting both sides onto $\phi_m(r;R_0)$ gives
+Projecting onto \(\phi_m(r;R_0)\) gives
 
 $$
 \sum_l
 \left[
 T_N\delta_{ml}
 +
-\langle\phi_m(R_0)|H_e(R)|\phi_l(R_0)\rangle_r
+V^{\mathrm{cr}}_{ml}(R)
 \right]
 \chi_{lk}(R)
 =
-E_k\chi_{mk}(R).
+E_k\chi_{mk}(R),
 $$
 
-Here,
+where
 
 $$
-\langle\phi_m(R_0)|H_e(R)|\phi_l(R_0)\rangle_r
+V^{\mathrm{cr}}_{ml}(R)
+=
+\langle \phi_m(r;R_0)|H_e(r;R)|\phi_l(r;R_0)\rangle_r.
 $$
 
-are matrix elements of the electronic Hamiltonian in a fixed electronic basis. Defining
+Define
 
 $$
-V(r;R)=V_e(r)+V_{eN}(r;R)+V_N(R),
+V(r;R)=V_{ee}(r)+V_{eN}(r,R)+V_{NN}(R).
 $$
 
-the electronic Hamiltonian may be written as
+Then
 
 $$
-H_e(r;R)=T_e(r)+V(r;R)=H_e(r;R_0)-V(r;R_0)+V(r;R).
+H_e(r;R)=T_e(r)+V(r;R),
 $$
 
-Therefore,
+and
 
 $$
-T_e(r)=H_e(r;R_0)-V(r;R_0).
+H_e(r;R)
+=
+H_e(r;R_0)-V(r;R_0)+V(r;R).
 $$
 
-Evaluating the electronic Hamiltonian matrix elements in the crude adiabatic basis gives
+Therefore, the crude-basis potential matrix becomes
 
 $$
 \begin{array}{rl}
-\langle\phi_m(R_0)|H_e(R)|\phi_l(R_0)\rangle_r
+V^{\mathrm{cr}}_{ml}(R)
 =&
-\langle\phi_m(R_0)|H_e(R_0)-V(R_0)+V(R)|\phi_l(R_0)\rangle_r \\
+\langle \phi_m(r;R_0)|
+H_e(r;R_0)-V(r;R_0)+V(r;R)
+|\phi_l(r;R_0)\rangle_r
+\\[6pt]
 =&
 \epsilon_l(R_0)\delta_{ml}
 +
-\langle\phi_m(R_0)|V(R)-V(R_0)|\phi_l(R_0)\rangle_r.
+\langle \phi_m(r;R_0)|
+V(r;R)-V(r;R_0)
+|\phi_l(r;R_0)\rangle_r.
 \end{array}
 $$
 
-The residual contribution defines the diabatic potential matrix:
+The residual contribution defines the diabatic potential matrix
 
 $$
 U_{ml}(R)
 =
-\langle\phi_m(R_0)|V(R)-V(R_0)|\phi_l(R_0)\rangle_r.
+\langle \phi_m(r;R_0)|
+V(r;R)-V(r;R_0)
+|\phi_l(r;R_0)\rangle_r.
 $$
 
-Substituting this definition into the crude-adiabatic projected equation gives the diabatic Hamiltonian:
+The crude-diabatic nuclear equation is therefore
 
 $$
 \sum_l
 \left[
 T_N\delta_{ml}
 +
-\epsilon_m(R_0)\delta_{ml}
+\epsilon_l(R_0)\delta_{ml}
 +
 U_{ml}(R)
 \right]
@@ -312,8 +432,37 @@ U_{ml}(R)
 E_k\chi_{mk}(R).
 $$
 
-By redefining the ansatz using the crude adiabatic basis, the non-adiabatic coupling effects are moved into the off-diagonal diabatic potential matrix elements. Because the nuclear kinetic operator no longer acts on the electronic basis functions, the singular derivative coupling term present in the adiabatic representation is absent.
+This construction illustrates how derivative-coupling effects can be shifted from the nuclear kinetic operator into a potential-energy matrix. In this representation, off-diagonal elements of \(U_{ml}(R)\) couple the nuclear amplitudes associated with different electronic basis functions.
 
-An additional feature of the diabatic representation is the reduction in the criterion needed for electronic potential energy surface degeneracy. In the adiabatic representation, degeneracies require equality of electronic energies and appropriate coupling conditions. In the diabatic representation, degeneracy is expressed directly through the diabatic potential matrix.
+It is important not to confuse diabatic crossings with adiabatic degeneracies. For a two-state diabatic potential matrix
 
-The major drawback of using the crude adiabatic representation is its reliance on the fixed reference geometry $R_0$. Because the electronic basis functions are fixed at a single nuclear geometry, many reference calculations would be required to map the dynamics of a general molecular problem, which is usually impractical.
+$$
+V_{\mathrm{dia}}(R)
+=
+\begin{pmatrix}
+V_{11}(R) & V_{12}(R) \\
+V_{21}(R) & V_{22}(R)
+\end{pmatrix},
+$$
+
+the adiabatic energies are the eigenvalues of this matrix. For a real symmetric two-state model,
+
+$$
+E_{\pm}(R)
+=
+\frac{V_{11}(R)+V_{22}(R)}{2}
+\pm
+\sqrt{
+\left[
+\frac{V_{11}(R)-V_{22}(R)}{2}
+\right]^2
++
+V_{12}(R)^2
+}.
+$$
+
+Thus, equality of the diagonal diabatic potentials, \(V_{11}(R)=V_{22}(R)\), does not by itself imply an adiabatic degeneracy if the off-diagonal coupling \(V_{12}(R)\) is nonzero. Instead, the off-diagonal diabatic coupling controls the size of the avoided crossing after diagonalization.
+
+The crude adiabatic construction is useful pedagogically, but its accuracy depends strongly on the chosen reference geometry \(R_0\). Far from this geometry, the fixed electronic basis may no longer represent the relevant electronic character efficiently. More sophisticated quasi-diabatic or diabatization procedures are therefore often needed for broad regions of nuclear configuration space.
+
+For the simulations developed in this project, the adiabatic representation is the most natural starting point because standard electronic-structure methods directly provide adiabatic potential energy surfaces, gradients, spin-orbit couplings, and nonadiabatic derivative couplings at fixed nuclear geometries. The diabatic representation remains conceptually important because it clarifies how nonadiabatic effects can alternatively be represented as potential couplings rather than derivative couplings.
