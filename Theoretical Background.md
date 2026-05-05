@@ -59,9 +59,9 @@ H(r,R)\Psi_k(r,R)
 =& \sum_l T_N[\chi_{lk}(R)\phi_l(r;R)]
 +\sum_l H_e(r;R)\chi_{lk}(R)\phi_l(r;R) \\
 =& \sum_l T_N[\chi_{lk}(R)\phi_l(r;R)]
-+\sum_l \epsilon_l(R)\chi_{lk}(R)\phi_l(r;R).
++\sum_l \epsilon_l(R)\chi_{lk}(R)\phi_l(r;R)
 \end{array}
-$$
+$$.
 
 To obtain the non-adiabatic coupling terms, project the nuclear kinetic operator onto the electronic adiabatic basis. Since $T_N$ differentiates with respect to nuclear coordinates, it acts on both the nuclear coefficient $\chi_{lk}(R)$ and the nuclear-parametric electronic basis function $\phi_l(r;R)$:
 
