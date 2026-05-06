@@ -1,6 +1,6 @@
 # Theoretical Background
 
-This section briefly surveys the adiabatic and diabatic representations, emphasizing their role in simulations of nonadiabatic molecular dynamics. A general background in quantum mechanics is assumed. Unless otherwise stated, atomic units are used, so that \(\hbar=m_e=e=1\).
+This section briefly surveys the adiabatic and diabatic representations, emphasizing their role in simulations of nonadiabatic molecular dynamics. A general background in quantum mechanics is assumed. Unless otherwise stated, atomic units are used, so that $$\(\hbar=m_e=e=1\)$$.
 
 ## Adiabatic Representation
 
