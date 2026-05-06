@@ -8,11 +8,11 @@ For a molecule in the absence of an external field, the molecular Hamiltonian ca
 
 $$
 \begin{array}{rl}
-H(r,R) &= T_e(r)+T_N(R)+V_{ee}(r)+V_{NN}(R)+V_{eN}(r,R), \
-T_e(r) &= -\sum_{i=1}^{n_e}\frac{1}{2}\nabla_{e,i}^{2}, \
-T_N(R) &= -\sum_{A=1}^{n_N}\frac{1}{2M_A}\nabla_{N,A}^{2}, \
-V_{ee}(r) &= \sum_{i=1}^{n_e}\sum_{j>i}^{n_e}\frac{1}{|r_j-r_i|}, \
-V_{NN}(R) &= \sum_{A=1}^{n_N}\sum_{B>A}^{n_N}\frac{Z_AZ_B}{|R_B-R_A|}, \
+H(r,R) &= T_e(r)+T_N(R)+V_{ee}(r)+V_{NN}(R)+V_{eN}(r,R), \\
+T_e(r) &= -\sum_{i=1}^{n_e}\frac{1}{2}\nabla_{e,i}^{2}, \\
+T_N(R) &= -\sum_{A=1}^{n_N}\frac{1}{2M_A}\nabla_{N,A}^{2}, \\
+V_{ee}(r) &= \sum_{i=1}^{n_e}\sum_{j>i}^{n_e}\frac{1}{|r_j-r_i|}, \\
+V_{NN}(R) &= \sum_{A=1}^{n_N}\sum_{B>A}^{n_N}\frac{Z_AZ_B}{|R_B-R_A|}, \\
 V_{eN}(r,R) &= -\sum_{A=1}^{n_N}\sum_{i=1}^{n_e}\frac{Z_A}{|r_i-R_A|}.
 \end{array}
 $$
