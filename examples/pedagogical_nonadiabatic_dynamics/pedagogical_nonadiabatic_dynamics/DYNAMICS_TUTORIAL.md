@@ -122,7 +122,7 @@ $$
 The potential matrices satisfy
 
 $$
-U^\mathsf{T}(R)V_{\mathrm d}(R)U(R) =
+U^\mathsf{T}(R)V_{\mathrm{d}}(R)U(R) =
 E_{\mathrm{ad}}(R).
 $$
 
@@ -130,12 +130,12 @@ If the diabatic basis is independent of nuclear coordinates, its first-order
 derivative coupling is zero. The nuclear equation becomes
 
 $$
-i\frac{\partial\boldsymbol\psi_{\mathrm d}}{\partial t}
+i\frac{\partial\boldsymbol\psi_{\mathrm{d}}}{\partial t}
 \left[
 -\frac{1}{2M}\frac{\partial^2}{\partial R^2}I
 +
-V_{\mathrm d}(R)
-\right]\boldsymbol\psi_{\mathrm d}.
+V_{\mathrm{d}}(R)
+\right]\boldsymbol\psi_{\mathrm{d}}.
 $$
 
 This is the equation propagated in the examples.
@@ -143,7 +143,7 @@ This is the equation propagated in the examples.
 The relation between nuclear amplitudes is
 
 $$
-\boldsymbol\psi_{\mathrm d}(R,t)=
+\boldsymbol\psi_{\mathrm{d}}(R,t)=
 U(R)\boldsymbol\chi_{\mathrm{ad}}(R,t),
 $$
 
@@ -151,7 +151,7 @@ and therefore
 
 $$
 \boldsymbol\chi_{\mathrm{ad}}(R,t)=
-U^\mathsf{T}(R)\boldsymbol\psi_{\mathrm d}(R,t)
+U^\mathsf{T}(R)\boldsymbol\psi_{\mathrm{d}}(R,t)
 $$
 
 for a real orthogonal two-state transformation.
@@ -170,7 +170,7 @@ The first model is a fully smooth version of the standard single
 avoided-crossing topology:
 
 $$
-V_{\mathrm d}(x)=\begin{pmatrix}V_{11}(x)&V_{12}(x)\\V_{12}(x)&-V_{11}(x)\end{pmatrix}$$,
+V_{\mathrm{d}}(x)=\begin{pmatrix}V_{11}(x)&V_{12}(x)\\V_{12}(x)&-V_{11}(x)\end{pmatrix}$$,
 
 where
 
@@ -210,7 +210,7 @@ crossing.
 At every grid point $\(x_n\)$, we solve
 
 $$
-V_{\mathrm d}(x_n)U(x_n)=
+V_{\mathrm{d}}(x_n)U(x_n)=
 U(x_n)E_{\mathrm{ad}}(x_n)
 $$.
 
@@ -298,7 +298,7 @@ Because $\(\tau\)$ is antisymmetric itself, every exponential is orthogonal. The
 recovered diabatic matrix is
 
 $$
-V_{\mathrm d}^{\mathrm{rec}}(x)=
+V_{\mathrm{d}}^{\mathrm{rec}}(x)=
 A^\mathsf{T}(x)
 E_{\mathrm{ad}}(x)
 A(x).
@@ -557,17 +557,17 @@ chosen adiabatic state is smooth.
 
 The diabatic state populations are
 
-$$P_a^{\mathrm d}(t)=\int|\psi_a(x,t)|^2dx$$.
+$$P_a^{\mathrm{d}}(t)=\int|\psi_a(x,t)|^2dx$$.
 
 On the grid,
 $$
-P_a^{\mathrm d}(t)\approx\Delta x\sum_n|\psi_a(x_n,t)|^2$$.
+P_a^{\mathrm{d}}(t)\approx\Delta x\sum_n|\psi_a(x_n,t)|^2$$.
 
 ## 14. Adiabatic populations
 
 At every coordinate,
 
-$$\boldsymbol\chi_{\mathrm{ad}}(x,t)=U^\mathsf{T}(x)\boldsymbol\psi_{\mathrm d}(x,t)$$.
+$$\boldsymbol\chi_{\mathrm{ad}}(x,t)=U^\mathsf{T}(x)\boldsymbol\psi_{\mathrm{d}}(x,t)$$.
 
 The adiabatic population is
 
@@ -688,7 +688,7 @@ python examples/02_dynamics_1d_fft_vs_diagonalization.py
 The two-dimensional diabatic potential is
 
 $$
-V_{\mathrm d}(x,y)=
+V_{\mathrm{d}}(x,y)=
 \frac{k(x^2+y^2)}{2}I+
 \begin{pmatrix}
 \kappa x&\lambda y\\
@@ -943,7 +943,7 @@ For a one-dimensional path:
    $$
 6. form
    $$
-   V_{\mathrm d}=A^\mathsf{T}E_{\mathrm{ad}}A;
+   V_{\mathrm{d}}=A^\mathsf{T}E_{\mathrm{ad}}A;
    $$
 7. interpolate the smooth matrix elements;
 8. propagate the nuclear wavepacket with the same FFT code.
