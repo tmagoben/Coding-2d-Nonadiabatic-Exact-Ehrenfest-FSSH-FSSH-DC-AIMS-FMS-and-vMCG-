@@ -65,47 +65,43 @@ $
 
 where
 
-\[
-\tau_{ij}(R)
-=
+$$\tau_{ij}(R)=
 \left\langle
 \phi_i(R)
 \middle|
 \frac{\partial}{\partial R}
 \phi_j(R)
 \right\rangle
-\]
+$$
 
 and
 
-\[
-D_{ij}(R)
-=
+$$
+D_{ij}(R)=
 \left\langle
 \phi_i(R)
 \middle|
 \frac{\partial^2}{\partial R^2}
 \phi_j(R)
 \right\rangle.
-\]
+$$
 
 For a complete electronic basis,
 
-\[
+$$
 D=\frac{\partial\tau}{\partial R}+\tau^2.
-\]
+$$
 
 Consequently, the adiabatic nuclear kinetic operator can be written in a
 gauge-covariant form:
 
-\[
-\hat T_{\mathrm{ad}}
-=
+$$
+\hat T_{\mathrm{ad}}=
 -\frac{1}{2M}
 \left(
 I\frac{\partial}{\partial R}+\tau
 \right)^2.
-\]
+$$
 
 This form is exact but numerically delicate because the derivative couplings
 can become sharply peaked near avoided crossings and singular at exact
@@ -117,43 +113,39 @@ degeneracies.
 
 ## 2. Basis transformation
 
-Let the columns of \(U(R)\) be adiabatic eigenvectors expressed in a fixed
+Let the columns of $\(U(R)\)$ be adiabatic eigenvectors expressed in a fixed
 diabatic electronic basis:
 
-\[
-|\phi_i(R)\rangle
-=
+$$
+|\phi_i(R)\rangle =
 \sum_a |\chi_a\rangle U_{ai}(R).
-\]
+$$
 
 The potential matrices satisfy
 
-\[
-U^\mathsf{T}(R)V_{\mathrm d}(R)U(R)
-=
+$$
+U^\mathsf{T}(R)V_{\mathrm d}(R)U(R) =
 E_{\mathrm{ad}}(R).
-\]
+$$
 
 If the diabatic basis is independent of nuclear coordinate, its first-order
 derivative coupling is zero. The nuclear equation becomes
 
-\[
+$$
 i\frac{\partial\boldsymbol\psi_{\mathrm d}}{\partial t}
-=
 \left[
 -\frac{1}{2M}\frac{\partial^2}{\partial R^2}I
 +
 V_{\mathrm d}(R)
 \right]\boldsymbol\psi_{\mathrm d}.
-\]
+$$
 
 This is the equation propagated in the examples.
 
 The relation between nuclear amplitudes is
 
 \[
-\boldsymbol\psi_{\mathrm d}(R,t)
-=
+\boldsymbol\psi_{\mathrm d}(R,t)=
 U(R)\boldsymbol\chi_{\mathrm{ad}}(R,t),
 \]
 
