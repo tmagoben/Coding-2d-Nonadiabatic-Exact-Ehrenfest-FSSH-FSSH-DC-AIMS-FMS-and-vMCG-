@@ -65,18 +65,18 @@ $
 
 where
 
-$$\tau_{ij}(R)=
+$\tau_{ij}(R)=
 \left\langle
 \phi_i(R)
 \middle|
 \frac{\partial}{\partial R}
 \phi_j(R)
 \right\rangle
-$$
+$
 
 and
 
-$$
+$
 D_{ij}(R)=
 \left\langle
 \phi_i(R)
@@ -84,13 +84,13 @@ D_{ij}(R)=
 \frac{\partial^2}{\partial R^2}
 \phi_j(R)
 \right\rangle.
-$$
+$
 
 For a complete electronic basis,
 
 $$
-D=\frac{\partial\tau}{\partial R}+\tau^2.
-$$
+D=\frac{\partial\tau}{\partial R}+\tau^2
+$$.
 
 Consequently, the adiabatic nuclear kinetic operator can be written in a
 gauge-covariant form:
@@ -144,18 +144,17 @@ This is the equation propagated in the examples.
 
 The relation between nuclear amplitudes is
 
-\[
+$$
 \boldsymbol\psi_{\mathrm d}(R,t)=
 U(R)\boldsymbol\chi_{\mathrm{ad}}(R,t),
-\]
+$$
 
 and therefore
 
-\[
-\boldsymbol\chi_{\mathrm{ad}}(R,t)
-=
+$
+\boldsymbol\chi_{\mathrm{ad}}(R,t)=
 U^\mathsf{T}(R)\boldsymbol\psi_{\mathrm d}(R,t)
-\]
+$
 
 for a real orthogonal two-state transformation.
 
@@ -172,26 +171,24 @@ a simple diagonal kinetic operator and a local matrix-valued potential.
 The first model is a fully smooth version of the standard single
 avoided-crossing topology:
 
-\[
-V_{\mathrm d}(x)
-=
+$$
+V_{\mathrm d}(x)=
 \begin{pmatrix}
 V_{11}(x)&V_{12}(x)\\
 V_{12}(x)&-V_{11}(x)
-\end{pmatrix},
-\]
+\end{pmatrix}$$,
 
 where
 
-\[
+$
 V_{11}(x)=A\tanh(Bx)
-\]
+$
 
 and
 
-\[
+$
 V_{12}(x)=Ce^{-Dx^2}.
-\]
+$
 
 The hyperbolic tangent gives the same asymptotic scattering structure as the
 usual piecewise Tully model but avoids a higher-derivative discontinuity at
@@ -200,19 +197,18 @@ cleaner without changing the physical lesson.
 
 The adiabatic energies are
 
-\[
-E_\pm(x)
-=
+$$
+E_\pm(x)=
 \pm\sqrt{V_{11}^2(x)+V_{12}^2(x)}.
-\]
+$$
 
-At \(x=0\),
+At $\(x=0\)$,
 
-\[
+$
 E_+(0)-E_-(0)=2|C|.
-\]
+$
 
-Thus \(C\neq0\) converts the diabatic crossing into an adiabatic avoided
+Thus $\(C\neq0\)$ converts the diabatic crossing into an adiabatic avoided
 crossing.
 
 ## 4. Numerical diagonalization and state tracking
