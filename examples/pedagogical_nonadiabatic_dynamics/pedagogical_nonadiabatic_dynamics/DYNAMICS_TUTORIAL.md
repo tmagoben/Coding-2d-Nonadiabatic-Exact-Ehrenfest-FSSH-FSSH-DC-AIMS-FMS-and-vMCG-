@@ -88,9 +88,7 @@ $$
 
 For a complete electronic basis,
 
-$$
-D=\frac{\partial\tau}{\partial R}+\tau^2
-$$.
+$$D=\frac{\partial\tau}{\partial R}+\tau^2$$.
 
 Consequently, the adiabatic nuclear kinetic operator can be written in a
 gauge-covariant form:
