@@ -223,13 +223,10 @@ The implementation therefore performs:
 
 For nondegenerate states,
 
-$$\tau_{ij}(x)=\frac{\langle\phi_i|\partial_xV|\phi_j\rangle}{E_j-E_i},\qquad i\ne j.$$
-The code independently evaluates
+$\tau_{ij}(x)=\frac{\langle\phi_i|\partial_xV|\phi_j\rangle}{E_j-E_i},\qquad i\ne j$.The code independently evaluates
 
-$$\tau(x)=U^\mathsf{T}(x)\frac{dU(x)}{dx}$$
-
-with finite differences. Agreement tests both the derivative of the
-Hamiltonian and phase tracking.
+$\tau(x)=U^\mathsf{T}(x)\frac{dU(x)}{dx}$
+with finite differences. Agreement tests both the derivative of theHamiltonian and phase tracking.
 
 For a real orthonormal basis,
 
