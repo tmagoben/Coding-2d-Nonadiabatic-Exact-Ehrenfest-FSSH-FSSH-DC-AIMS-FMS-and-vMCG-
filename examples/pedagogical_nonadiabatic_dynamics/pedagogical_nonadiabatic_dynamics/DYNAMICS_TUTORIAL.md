@@ -198,72 +198,70 @@ $$
 
 At $\(x=0\)$,
 
-$
+$$
 E_+(0)-E_-(0)=2|C|.
-$
+$$
 
 Thus $\(C\neq0\)$ converts the diabatic crossing into an adiabatic avoided
 crossing.
 
 ## 4. Numerical diagonalization and state tracking
 
-At every grid point \(x_n\), solve
+At every grid point $\(x_n\)$, we solve
 
-\[
-V_{\mathrm d}(x_n)U(x_n)
-=
-U(x_n)E_{\mathrm{ad}}(x_n).
-\]
+$$
+V_{\mathrm d}(x_n)U(x_n)=
+U(x_n)E_{\mathrm{ad}}(x_n)
+$$.
 
-An eigensolver is free to return either \(\phi_i\) or \(-\phi_i\). If the signs
-are chosen independently at neighboring points, the finite-difference
+An eigensolver is free to return either $\(\phi_i\)$ or $\(-\phi_i\)$. If the signs
+are chosen independently at neighbouring points, the finite-difference
 derivative
 
-\[
+$$
 \frac{\phi_i(x_{n+1})-\phi_i(x_{n-1})}{2\Delta x}
-\]
+$$
 
-contains artificial sign discontinuities of order \(1/\Delta x\).
+contains artificial sign discontinuities of order $\(1/\Delta x\)$.
 
 The implementation therefore performs:
 
 1. overlap calculation,
-   \[
+   $$
    O_{ij}=
-   \left\langle\phi_i(x_{n-1})|\phi_j(x_n)\right\rangle;
-   \]
-2. state assignment maximizing \(|O_{ij}|\);
+   \left\langle\phi_i(x_{n-1})|\phi_j(x_n)\right\rangle
+   $$
+2. state assignment maximizing $\(|O_{ij}|\)$
 3. sign correction enforcing positive diagonal overlap.
 
 ## 5. Derivative couplings
 
 For nondegenerate states,
 
-\[
-\tau_{ij}(x)
-=
+$$
+\tau_{ij}(x)=
 \frac{
 \langle\phi_i|\partial_xV|\phi_j\rangle
 }{
 E_j-E_i
 },
 \qquad i\ne j.
-\]
+$$
 
 The code independently evaluates
 
-\[
+$$
 \tau(x)=U^\mathsf{T}(x)\frac{dU(x)}{dx}
-\]
+$$
 
 with finite differences. Agreement tests both the derivative of the
 Hamiltonian and phase tracking.
 
 For a real orthonormal basis,
 
-\[
+$$
 \tau^\mathsf{T}=-\tau.
-\]
+$$
 
 The diagonal elements are gauge dependent and are set to zero in the chosen
 real parallel-transport gauge.
@@ -272,52 +270,41 @@ real parallel-transport gauge.
 
 Define
 
-\[
-|\chi_a(x)\rangle
-=
+$$
+|\chi_a(x)\rangle=
 \sum_i|\phi_i(x)\rangle A_{ia}(x).
-\]
+$$
 
 Demanding vanishing derivative coupling in the transformed basis gives
 
-\[
+$$
 \frac{dA}{dx}=-\tau(x)A(x).
-\]
+$$
 
 The exact formal solution is a path-ordered exponential:
 
-\[
-A(x)
-=
-\mathcal P
-\exp\left[
--\int_{x_0}^x\tau(x')\,dx'
-\right]A(x_0).
-\]
+$$
+A(x)=\mathcal P\exp\left[-\int_{x_0}^x\tau(x')\,dx'\right]A(x_0).
+$$
 
 Numerically, the interval is divided into steps and the midpoint approximation
 is used:
 
-\[
-A_{n+1}
-=
-\exp\left[
--\frac{\tau_n+\tau_{n+1}}{2}\Delta x
-\right]A_n.
-\]
+$$
+A_{n+1}=
+\exp\left[-\frac{\tau_n+\tau_{n+1}}{2}\Delta x\right]A_n$$.
 
-Because \(\tau\) is antisymmetric, every exponential is orthogonal. The
+Because $\(\tau\)$ is antisymmetric itself, every exponential is orthogonal. The
 recovered diabatic matrix is
 
-\[
-V_{\mathrm d}^{\mathrm{rec}}(x)
-=
+$$
+V_{\mathrm d}^{\mathrm{rec}}(x)=
 A^\mathsf{T}(x)
 E_{\mathrm{ad}}(x)
 A(x).
-\]
+$$
 
-The initial condition \(A(x_0)\) fixes a constant diabatic gauge. In a real
+The initial condition $\(A(x_0)\)$ fixes a constant diabatic gauge. In a real
 ab initio calculation, different valid initial choices produce matrices
 related by a constant orthogonal rotation.
 
@@ -333,29 +320,28 @@ python examples/01_static_1d_derivative_coupling_and_adt.py
 
 ## 7. Uniform periodic grid
 
-Choose \(N\) coordinate points over a box of length \(L=x_{\max}-x_{\min}\):
+Choose \(N\) coordinate points over a box of length $\(L=x_{\max}-x_{\min}\)$:
 
-\[
+$$
 x_n=x_{\min}+n\Delta x,
 \qquad
 \Delta x=\frac{L}{N},
 \qquad
 n=0,\ldots,N-1.
-\]
+$$
 
 The periodic Fourier momenta returned by the discrete FFT are
 
-\[
-k_m
-=
+$$
+k_m=
 2\pi\,\mathrm{fftfreq}(N,\Delta x).
-\]
+$$
 
 The largest representable momentum is approximately the Nyquist value
 
-\[
+$$
 |k|_{\max}\approx\frac{\pi}{\Delta x}.
-\]
+$$
 
 A wavepacket whose momentum distribution reaches the Nyquist boundary is
 aliased and is not numerically resolved.
@@ -370,37 +356,35 @@ the absorber independently.
 
 The one-dimensional nuclear kinetic energy is
 
-\[
+$$
 \hat T=-\frac{1}{2M}\frac{\partial^2}{\partial x^2}.
-\]
+$$
 
 For a plane wave,
 
-\[
-\hat T e^{ikx}
-=
+$$
+\hat T e^{ikx}=
 \frac{k^2}{2M}e^{ikx}.
-\]
+$$
 
 Therefore the kinetic propagator is diagonal in momentum space:
 
-\[
-e^{-i\hat T\Delta t}\tilde\psi(k)
-=
+$$
+e^{-i\hat T\Delta t}\tilde\psi(k)=
 e^{-ik^2\Delta t/(2M)}\tilde\psi(k).
-\]
+$$
 
 The algorithm is:
 
-1. Fourier transform \(\psi(x)\rightarrow\tilde\psi(k)\);
-2. multiply by \(e^{-ik^2\Delta t/(2M)}\);
+1. Fourier transform $\(\psi(x)\rightarrow\tilde\psi(k)\)$
+2. multiply by $\(e^{-ik^2\Delta t/(2M)}\)$
 3. inverse Fourier transform.
 
 The cost is
 
-\[
+$
 O(N\log N)
-\]
+$
 
 per electronic state and time step.
 
