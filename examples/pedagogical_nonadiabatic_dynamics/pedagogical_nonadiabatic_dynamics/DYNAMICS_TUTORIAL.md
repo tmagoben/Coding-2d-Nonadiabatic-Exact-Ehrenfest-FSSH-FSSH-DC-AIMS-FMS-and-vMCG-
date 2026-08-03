@@ -40,9 +40,7 @@ $\langle\phi_i(R)|\phi_j(R)\rangle_r=\delta_{ij}$
 
 The complete molecular wavefunction is expanded as
 
-$$\Psi(r,R,t)=
-\sum_i \chi_i(R,t)\phi_i(r;R).
-$$
+$$\Psi(r,R,t)=\sum_i \chi_i(R,t)\phi_i(r;R).$$
 
 Substitution into the time-dependent molecular Schrödinger equation produces
 coupled nuclear equations. In one nuclear coordinate $\(R\)$, with nuclear mass
