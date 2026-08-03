@@ -126,7 +126,7 @@ U^\mathsf{T}(R)V_{\mathrm d}(R)U(R) =
 E_{\mathrm{ad}}(R).
 $$
 
-If the diabatic basis is independent of nuclear coordinate, its first-order
+If the diabatic basis is independent of nuclear coordinates, its first-order
 derivative coupling is zero. The nuclear equation becomes
 
 $$
@@ -149,10 +149,10 @@ $$
 
 and therefore
 
-$
+$$
 \boldsymbol\chi_{\mathrm{ad}}(R,t)=
 U^\mathsf{T}(R)\boldsymbol\psi_{\mathrm d}(R,t)
-$
+$$
 
 for a real orthogonal two-state transformation.
 
