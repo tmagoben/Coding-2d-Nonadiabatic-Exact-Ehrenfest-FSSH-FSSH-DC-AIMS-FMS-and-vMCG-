@@ -40,9 +40,7 @@ $\langle\phi_i(R)|\phi_j(R)\rangle_r=\delta_{ij}$
 
 The complete molecular wavefunction is expanded as
 
-$$
-\Psi(r,R,t)
-=
+$$\Psi(r,R,t)=
 \sum_i \chi_i(R,t)\phi_i(r;R).
 $$
 
