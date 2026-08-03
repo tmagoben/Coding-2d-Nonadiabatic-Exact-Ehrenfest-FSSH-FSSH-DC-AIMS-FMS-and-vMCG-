@@ -168,7 +168,8 @@ The first model is a fully smooth version of the standard single
 avoided-crossing topology:
 
 $$V_{\mathrm{d}}(x)=\begin{pmatrix}V_{11}(x)&V_{12}(x) \\
-V_{12}(x)&-V_{11}(x)\end{pmatrix}$$
+V_{12}(x)&-V_{11}(x)\\
+\end{pmatrix}$$
 
 where
 
