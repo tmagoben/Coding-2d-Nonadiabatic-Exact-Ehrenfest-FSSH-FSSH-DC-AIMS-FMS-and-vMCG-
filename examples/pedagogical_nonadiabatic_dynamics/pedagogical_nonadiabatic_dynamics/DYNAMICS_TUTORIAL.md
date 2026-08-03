@@ -342,11 +342,7 @@ The algorithm is:
 
 The cost is
 
-$
-O(N\log N)
-$
-
-per electronic state and time step.
+$O(N\log N)$ per electronic state and time step.
 
 ---
 
@@ -354,55 +350,30 @@ per electronic state and time step.
 
 ## 9. Matrix exponential at every coordinate
 
-The diabatic potential is a \(2\times2\) matrix. It must not be propagated by
+The diabatic potential is a $\(2\times2\)$ matrix. It must not be propagated by
 independently exponentiating its elements.
 
 Write a real symmetric matrix as
 
-\[
-V=v_0I+h_x\sigma_x+h_z\sigma_z,
-\]
+$V=v_0I+h_x\sigma_x+h_z\sigma_z$, where
 
-where
-
-\[
-v_0=\frac{V_{11}+V_{22}}{2},
+$v_0=\frac{V_{11}+V_{22}}{2},
 \qquad
 h_z=\frac{V_{11}-V_{22}}{2},
 \qquad
-h_x=V_{12}.
-\]
+h_x=V_{12}$.
 
 Define
 
-\[
-q=\sqrt{h_x^2+h_z^2}.
-\]
+$q=\sqrt{h_x^2+h_z^2}$.
 
-Using
+Using $(h_x\sigma_x+h_z\sigma_z)^2=q^2I$,
 
-\[
-(h_x\sigma_x+h_z\sigma_z)^2=q^2I,
-\]
+the exact local exponential is $e^{-iV\Delta t}=e^{-iv_0\Delta t}\left[\cos(q\Delta t)I-i\frac{\sin(q\Delta t)}{q(h_x\sigma_x+h_z\sigma_z)\right]$.
 
-the exact local exponential is
+At $\(q=0\)$, the stable limiting expression is
 
-\[
-e^{-iV\Delta t}
-=
-e^{-iv_0\Delta t}
-\left[
-\cos(q\Delta t)I
--i\frac{\sin(q\Delta t)}{q}
-(h_x\sigma_x+h_z\sigma_z)
-\right].
-\]
-
-At \(q=0\), the stable limiting expression is
-
-\[
-\frac{\sin(q\Delta t)}{q}\rightarrow\Delta t.
-\]
+$\frac{\sin(q\Delta t)}{q}\rightarrow\Delta t$.
 
 The code constructs this unitary matrix once for a time-independent
 potential.
@@ -414,53 +385,33 @@ potential.
 ## 10. Why splitting is required
 
 The full propagator is
-
-\[
-e^{-i(\hat T+\hat V)\Delta t}.
-\]
+$e^{-i(\hat T+\hat V)\Delta t}$.
 
 Since
 
-\[
-[\hat T,\hat V]\ne0,
-\]
+$[\hat T,\hat V]\ne0$,
 
 we cannot write this exactly as
 
-\[
-e^{-i\hat T\Delta t}e^{-i\hat V\Delta t}.
-\]
+$e^{-i\hat T\Delta t}e^{-i\hat V\Delta t}$.
 
 The symmetric Strang factorization is
 
-\[
-e^{-i(\hat T+\hat V)\Delta t}
-=
-e^{-i\hat V\Delta t/2}
-e^{-i\hat T\Delta t}
-e^{-i\hat V\Delta t/2}
-+
-O(\Delta t^3)
-\]
+$e^{-i(\hat T+\hat V)\Delta t}=e^{-i\hat V\Delta t/2}e^{-i\hat T\Delta t}e^{-i\hat V\Delta t/2} +O(\Delta t^3)$
 
 for one time step. Over a fixed final time, the global error is
 
-\[
-O(\Delta t^2).
-\]
+$O(\Delta t^2)$.
 
 ## 11. One complete step
 
 For the two-component diabatic wavefunction
 
-\[
-\boldsymbol\psi(x,t)
-=
+$\boldsymbol\psi(x,t)=
 \begin{pmatrix}
 \psi_1(x,t)\\
 \psi_2(x,t)
-\end{pmatrix},
-\]
+\end{pmatrix}$,
 
 one step is:
 
