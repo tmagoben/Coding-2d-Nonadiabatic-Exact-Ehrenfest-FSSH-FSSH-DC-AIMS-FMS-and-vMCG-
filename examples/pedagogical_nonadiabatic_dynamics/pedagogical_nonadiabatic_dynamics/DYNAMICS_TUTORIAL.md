@@ -4,7 +4,7 @@
 
 This tutorial builds the simplest complete nonadiabatic quantum-dynamics
 workflow in one and two nuclear dimensions. It begins with the static
-electronic problem—adiabatic states, derivative couplings, and
+electronic problem-adiabatic states, derivative couplings, and
 adiabatic-to-diabatic transformations—and then propagates a coupled nuclear
 wavepacket using two independent algorithms:
 
@@ -25,7 +25,7 @@ fully visible.
 
 # Part I. Molecular separation and the coupled nuclear equation
 
-## 1. Born--Oppenheimer electronic problem
+## 1. Born - Oppenheimer electronic problem
 
 At fixed nuclear coordinates $\(R\)$, the clamped-nuclei electronic Hamiltonian
 obeys
