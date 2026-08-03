@@ -15,7 +15,7 @@ wavepacket using two independent algorithms:
 The second method is computationally expensive but supplies a clean numerical
 reference for the first. Every equation uses atomic units, so
 
-\[\hbar=e=m_e=4\pi\epsilon_0=1.\]
+$\hbar=e=m_e=4\pi\epsilon_0=1$.
 
 The examples use two electronic states. After reading this derivation, continue to `IMPLEMENTATION_WALKTHROUGH.md`, which maps each equation to the exact Python array operation. All matrix formulas extend to more
 states, but the two-state case makes the geometry and numerical implementation
