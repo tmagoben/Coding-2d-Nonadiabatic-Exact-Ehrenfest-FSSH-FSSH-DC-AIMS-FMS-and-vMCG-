@@ -48,9 +48,7 @@ Substitution into the time-dependent molecular Schrödinger equation produces
 coupled nuclear equations. In one nuclear coordinate $\(R\)$, with nuclear mass
 $\(M\)$,
 
-$
-i\frac{\partial\boldsymbol\chi}{\partial t}
-=
+$i\frac{\partial\boldsymbol\chi}{\partial t}=
 \left[
 -\frac{1}{2M}
 \left(
