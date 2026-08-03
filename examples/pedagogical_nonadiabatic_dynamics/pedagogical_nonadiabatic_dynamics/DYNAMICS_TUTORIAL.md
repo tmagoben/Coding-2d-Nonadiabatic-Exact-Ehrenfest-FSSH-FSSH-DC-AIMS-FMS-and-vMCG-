@@ -48,7 +48,7 @@ Substitution into the time-dependent molecular Schrödinger equation produces
 coupled nuclear equations. In one nuclear coordinate $\(R\)$, with nuclear mass
 $\(M\)$,
 
-$i\frac{\partial\boldsymbol\chi}{\partial t}=
+$$i\frac{\partial\boldsymbol\chi}{\partial t}=
 \left[
 -\frac{1}{2M}
 \left(
@@ -61,22 +61,22 @@ D(R)
 +
 E_{\mathrm{ad}}(R)
 \right]\boldsymbol\chi,
-$
+$$
 
 where
 
-$\tau_{ij}(R)=
+$$\tau_{ij}(R)=
 \left\langle
 \phi_i(R)
 \middle|
 \frac{\partial}{\partial R}
 \phi_j(R)
 \right\rangle
-$
+$$
 
 and
 
-$
+$$
 D_{ij}(R)=
 \left\langle
 \phi_i(R)
@@ -84,7 +84,7 @@ D_{ij}(R)=
 \frac{\partial^2}{\partial R^2}
 \phi_j(R)
 \right\rangle.
-$
+$$
 
 For a complete electronic basis,
 
