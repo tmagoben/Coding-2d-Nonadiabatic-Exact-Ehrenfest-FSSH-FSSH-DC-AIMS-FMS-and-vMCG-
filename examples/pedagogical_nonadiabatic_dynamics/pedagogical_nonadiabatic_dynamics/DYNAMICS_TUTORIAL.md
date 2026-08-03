@@ -239,7 +239,7 @@ real parallel-transport gauge.
 
 Define
 
-$$|\chi_a(x)\rangle=\sum_i|\phi_i(x)\rangle A_{ia}(x).$$
+$$|\chi_a(x)\rangle=\sum_i|\phi_i(x)\rangle A_{ia}(x)$$.
 
 Demanding vanishing derivative coupling in the transformed basis gives
 
@@ -252,9 +252,7 @@ $$A(x)=\mathcal P\exp\left[-\int_{x_0}^x\tau(x')\,dx'\right]A(x_0)$$.
 Numerically, the interval is divided into steps and the midpoint approximation
 is used:
 
-$$
-A_{n+1}=
-\exp\left[-\frac{\tau_n+\tau_{n+1}}{2}\Delta x\right]A_n$$.
+$$A_{n+1}=\exp\left[-\frac{\tau_n+\tau_{n+1}}{2}\Delta x\right]A_n$$.
 
 Because $\(\tau\)$ is antisymmetric itself, every exponential is orthogonal. The
 recovered diabatic matrix is
