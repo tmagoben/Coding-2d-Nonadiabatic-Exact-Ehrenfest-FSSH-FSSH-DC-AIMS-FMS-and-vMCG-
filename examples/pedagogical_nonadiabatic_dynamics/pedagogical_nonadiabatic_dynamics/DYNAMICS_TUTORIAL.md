@@ -27,36 +27,36 @@ fully visible.
 
 ## 1. Born--Oppenheimer electronic problem
 
-At fixed nuclear coordinates \(R\), the clamped-nuclei electronic Hamiltonian
+At fixed nuclear coordinates $\(R\)$, the clamped-nuclei electronic Hamiltonian
 obeys
 
-\[
+$
 \hat H_e(r;R)\phi_i(r;R)
 =
 E_i(R)\phi_i(r;R).
-\]
+$
 
-The electronic coordinates are denoted by \(r\), and \(R\) denotes all nuclear
+The electronic coordinates are denoted by $\(r\)$, and $\(R\)$ denotes all nuclear
 coordinates. The adiabatic electronic functions are orthonormal at every
 geometry:
 
-\[
+$
 \langle\phi_i(R)|\phi_j(R)\rangle_r=\delta_{ij}.
-\]
+$
 
 The complete molecular wavefunction is expanded as
 
-\[
+$
 \Psi(r,R,t)
 =
 \sum_i \chi_i(R,t)\phi_i(r;R).
-\]
+$
 
 Substitution into the time-dependent molecular Schrödinger equation produces
-coupled nuclear equations. In one nuclear coordinate \(R\), with nuclear mass
-\(M\),
+coupled nuclear equations. In one nuclear coordinate $\(R\)$, with nuclear mass
+$\(M\)$,
 
-\[
+$
 i\frac{\partial\boldsymbol\chi}{\partial t}
 =
 \left[
@@ -71,7 +71,7 @@ D(R)
 +
 E_{\mathrm{ad}}(R)
 \right]\boldsymbol\chi,
-\]
+$
 
 where
 
