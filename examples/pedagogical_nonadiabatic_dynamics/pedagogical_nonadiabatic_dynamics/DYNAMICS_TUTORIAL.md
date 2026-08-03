@@ -180,9 +180,7 @@ $$
 
 and
 
-$$
-V_{12}(x)=Ce^{-Dx^2}.
-$$
+$$V_{12}(x)=Ce^{-Dx^2}.$$
 
 The hyperbolic tangent gives the same asymptotic scattering structure as the
 usual piecewise Tully model but avoids a higher-derivative discontinuity at
@@ -191,16 +189,11 @@ cleaner without changing the physical lesson.
 
 The adiabatic energies are
 
-$$
-E_\pm(x)=
-\pm\sqrt{V_{11}^2(x)+V_{12}^2(x)}.
-$$
+$$E_\pm(x)=\pm\sqrt{V_{11}^2(x)+V_{12}^2(x)}.$$
 
 At $\(x=0\)$,
 
-$$
-E_+(0)-E_-(0)=2|C|.
-$$
+$$E_+(0)-E_-(0)=2|C|$$.
 
 Thus $\(C\neq0\)$ converts the diabatic crossing into an adiabatic avoided
 crossing.
@@ -209,28 +202,21 @@ crossing.
 
 At every grid point $\(x_n\)$, we solve
 
-$$
-V_{\mathrm{d}}(x_n)U(x_n)=
-U(x_n)E_{\mathrm{ad}}(x_n)
-$$.
+$$V_{\mathrm{d}}(x_n)U(x_n)=
+U(x_n)E_{\mathrm{ad}}(x_n)$$.
 
 An eigensolver is free to return either $\(\phi_i\)$ or $\(-\phi_i\)$. If the signs
 are chosen independently at neighbouring points, the finite-difference
 derivative
 
-$$
-\frac{\phi_i(x_{n+1})-\phi_i(x_{n-1})}{2\Delta x}
-$$
+$$\frac{\phi_i(x_{n+1})-\phi_i(x_{n-1})}{2\Delta x}$$
 
 contains artificial sign discontinuities of order $\(1/\Delta x\)$.
 
 The implementation therefore performs:
 
 1. overlap calculation,
-   $$
-   O_{ij}=
-   \left\langle\phi_i(x_{n-1})|\phi_j(x_n)\right\rangle
-   $$
+   $$O_{ij}=\left\langle\phi_i(x_{n-1})|\phi_j(x_n)\right\rangle$$
 2. state assignment maximizing $\(|O_{ij}|\)$
 3. sign correction enforcing positive diagonal overlap.
 
@@ -238,30 +224,18 @@ The implementation therefore performs:
 
 For nondegenerate states,
 
-$$
-\tau_{ij}(x)=
-\frac{
-\langle\phi_i|\partial_xV|\phi_j\rangle
-}{
-E_j-E_i
-},
-\qquad i\ne j.
-$$
+$$\tau_{ij}(x)=\frac{\langle\phi_i|\partial_xV|\phi_j\rangle{E_j-E_i},\qquad i\ne j.$$
 
 The code independently evaluates
 
-$$
-\tau(x)=U^\mathsf{T}(x)\frac{dU(x)}{dx}
-$$
+$$\tau(x)=U^\mathsf{T}(x)\frac{dU(x)}{dx}$$
 
 with finite differences. Agreement tests both the derivative of the
 Hamiltonian and phase tracking.
 
 For a real orthonormal basis,
 
-$$
-\tau^\mathsf{T}=-\tau.
-$$
+$$\tau^\mathsf{T}=-\tau$$.
 
 The diagonal elements are gauge dependent and are set to zero in the chosen
 real parallel-transport gauge.
@@ -270,22 +244,15 @@ real parallel-transport gauge.
 
 Define
 
-$$
-|\chi_a(x)\rangle=
-\sum_i|\phi_i(x)\rangle A_{ia}(x).
-$$
+$$|\chi_a(x)\rangle=\sum_i|\phi_i(x)\rangle A_{ia}(x).$$
 
 Demanding vanishing derivative coupling in the transformed basis gives
 
-$$
-\frac{dA}{dx}=-\tau(x)A(x).
-$$
+$$\frac{dA}{dx}=-\tau(x)A(x).$$
 
 The exact formal solution is a path-ordered exponential:
 
-$$
-A(x)=\mathcal P\exp\left[-\int_{x_0}^x\tau(x')\,dx'\right]A(x_0).
-$$
+$$A(x)=\mathcal P\exp\left[-\int_{x_0}^x\tau(x')\,dx'\right]A(x_0)$$.
 
 Numerically, the interval is divided into steps and the midpoint approximation
 is used:
