@@ -30,19 +30,13 @@ fully visible.
 At fixed nuclear coordinates $\(R\)$, the clamped-nuclei electronic Hamiltonian
 obeys
 
-$
-\hat H_e(r;R)\phi_i(r;R)
-=
-E_i(R)\phi_i(r;R).
-$
+$\hat H_e(r;R)\phi_i(r;R)=E_i(R)\phi_i(r;R).$
 
 The electronic coordinates are denoted by $\(r\)$, and $\(R\)$ denotes all nuclear
 coordinates. The adiabatic electronic functions are orthonormal at every
 geometry:
 
-$
-\langle\phi_i(R)|\phi_j(R)\rangle_r=\delta_{ij}.
-$
+$\langle\phi_i(R)|\phi_j(R)\rangle_r=\delta_{ij}$
 
 The complete molecular wavefunction is expanded as
 
