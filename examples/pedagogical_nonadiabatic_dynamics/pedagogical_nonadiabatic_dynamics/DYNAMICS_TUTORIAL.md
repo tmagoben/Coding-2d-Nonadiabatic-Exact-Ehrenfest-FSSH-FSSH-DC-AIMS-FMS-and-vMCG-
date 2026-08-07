@@ -833,19 +833,14 @@ together with consistent state tracking and phase alignment.
 
 For a one-dimensional path:
 
-1. perform state-averaged electronic-structure calculations;
-2. order states by overlap rather than energy alone;
-3. phase-align neighboring states;
-4. calculate derivative couplings;
+1. perform state-averaged electronic-structure calculations
+2. order states by overlap rather than energy alone
+3. phase-align neighboring states
+4. calculate derivative couplings
 5. integrate
-   $$
-   dA/dR=-\tau A;
-   $$
-6. form
-   $$
-   V_{\mathrm{d}}=A^\mathsf{T}E_{\mathrm{ad}}A;
-   $$
-7. interpolate the smooth matrix elements;
+   $$dA/dR=-\tau A$$
+6. form$$V_{\mathrm{d}}=A^\mathsf{T}E_{\mathrm{ad}}A$$
+7. interpolate the smooth matrix elements
 8. propagate the nuclear wavepacket with the same FFT code.
 
 For a multidimensional system, a pathwise transformation always exists away
