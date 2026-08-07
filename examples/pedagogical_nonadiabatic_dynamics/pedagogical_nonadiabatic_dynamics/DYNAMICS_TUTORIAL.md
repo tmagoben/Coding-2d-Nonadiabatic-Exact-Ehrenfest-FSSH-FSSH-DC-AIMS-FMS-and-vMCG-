@@ -640,10 +640,7 @@ $$
 
 and
 
-$$
-\tau_{01}^{(y)}=
-\frac{\kappa\lambda x}
-{2(\kappa^2x^2+\lambda^2y^2)}$$.
+$$\tau_{01}^{(y)}=\frac{\kappa\lambda x}{2(\kappa^2x^2+\lambda^2y^2)}$$.
 
 The field diverges at the conical intersection. This singularity is a feature
 of the adiabatic representation, not a divergence in the smooth diabatic
