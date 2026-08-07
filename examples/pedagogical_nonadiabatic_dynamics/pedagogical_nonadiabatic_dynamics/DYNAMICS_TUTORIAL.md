@@ -649,10 +649,7 @@ potential matrix.
 ## 20. Berry phase
 
 For a closed loop enclosing the origin,
-$$
-\oint\boldsymbol\tau_{01}\cdot d\mathbf R=
-\pm\pi.
-$$
+$$\oint\boldsymbol\tau_{01}\cdot d\mathbf R=\pm\pi.$$
 
 Parallel transport around the loop gives
 
