@@ -520,10 +520,12 @@ $$
 The full matrix is
 
 
-$$H=\begin{pmatrix}
-T+\mathrm{diag}(V_{11})&\mathrm{diag}(V_{12})\\
-\mathrm{diag}(V_{21})&T+\mathrm{diag}(V_{22})
-\end{pmatrix}$$.
+$$
+H = \begin{pmatrix} 
+T + \mathrm{diag}(V_{11}) & \mathrm{diag}(V_{12}) \\ 
+\mathrm{diag}(V_{21}) & T + \mathrm{diag}(V_{22}) 
+\end{pmatrix}
+$$
 
 Its dimension is $\(2N\times2N\)$.
 
