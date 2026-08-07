@@ -570,15 +570,7 @@ method.
 
 The normalized wavefunction fidelity is
 
-$$
-\mathcal F(t)=
-\frac{
-|\langle\Psi_{\mathrm{direct}}(t)|
-\Psi_{\mathrm{FFT}}(t)\rangle|^2
-}{
-\langle\Psi_{\mathrm{direct}}|\Psi_{\mathrm{direct}}\rangle
-\langle\Psi_{\mathrm{FFT}}|\Psi_{\mathrm{FFT}}\rangle
-}$$.
+$$\mathcal F(t)=\frac{|\langle\Psi_{\mathrm{direct}}(t)|\Psi_{\mathrm{FFT}}(t)\rangle|^2}{\langle\Psi_{\mathrm{direct}}|\Psi_{\mathrm{direct}}\rangle\langle\Psi_{\mathrm{FFT}}|\Psi_{\mathrm{FFT}}\rangle}$$.
 
 
 Because a global phase is physically irrelevant, the code also removes the
