@@ -407,7 +407,14 @@ $O(\Delta t^2)$.
 
 
 
-For the two-component diabatic wavefunction $\mathbf{\psi}(x,t) = \begin{pmatrix} \psi_1(x,t) \\ \psi_2(x,t) \end{pmatrix}$
+For the two-component diabatic wavefunction 
+
+$$
+\mathbf{\psi}(x,t) = \begin{pmatrix} 
+\psi_1(x,t) \\ 
+\psi_2(x,t) 
+\end{pmatrix}
+$$
 
 one step is:
 
