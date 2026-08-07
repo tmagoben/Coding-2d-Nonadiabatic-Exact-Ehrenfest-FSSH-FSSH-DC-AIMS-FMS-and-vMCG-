@@ -498,7 +498,7 @@ The FFT kinetic operation defines a finite periodic spectral matrix
 \[
 $T=
 F^\dagger
-\operatorname{diag}\left(
+\mathrm{diag}\left(
 \frac{k_m^2}{2M}
 \right)
 F$,
@@ -521,8 +521,8 @@ The full matrix is
 
 
 $$H=\begin{pmatrix}
-T+\operatorname{diag}(V_{11})&\operatorname{diag}(V_{12})\\
-\operatorname{diag}(V_{21})&T+\operatorname{diag}(V_{22})
+T+\mathrm{diag}(V_{11})&\mathrm{diag}(V_{12})\\
+\mathrm{diag}(V_{21})&T+\mathrm{diag}(V_{22})
 \end{pmatrix}$$.
 
 Its dimension is $\(2N\times2N\)$.
@@ -628,7 +628,7 @@ Define
 
 $$
 \theta(x,y)=
-\operatorname{atan2}(\lambda y,\kappa x).
+\mathrm{atan2}(\lambda y,\kappa x).
 $$
 
 In a local real gauge,
