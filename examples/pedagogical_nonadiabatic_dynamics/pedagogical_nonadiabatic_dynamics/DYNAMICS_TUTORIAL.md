@@ -405,13 +405,9 @@ $O(\Delta t^2)$.
 
 ## 11. One complete step
 
-For the two-component diabatic wavefunction
 
-$\boldsymbol\psi(x,t)=
-\begin{pmatrix}
-\psi_1(x,t)\\
-\psi_2(x,t)
-\end{pmatrix}$,
+
+For the two-component diabatic wavefunction $\mathbf{\psi}(x,t) = \begin{pmatrix} \psi_1(x,t) \\ \psi_2(x,t) \end{pmatrix}$
 
 one step is:
 
