@@ -542,10 +542,7 @@ W e^{-i\varepsilon t}W^\dagger$$.
 
 Thus
 
-$$
-\boldsymbol\Psi(t)=
-W e^{-i\varepsilon t}W^\dagger
-\boldsymbol\Psi(0)$$.
+$$\boldsymbol\Psi(t)=W e^{-i\varepsilon t}W^\dagger\boldsymbol\Psi(0)$$.
 
 
 There is no time-step error. There is still finite-grid error, finite-box
@@ -553,15 +550,11 @@ error, and periodic-boundary error.
 
 Dense diagonalization scales approximately as
 
-$
-O((2N)^3)
-$
+$O((2N)^3)$
 
 in time and
 
-$
-O((2N)^2)
-$
+$O((2N)^2)$
 
 in memory. It is therefore a reference method, not a large-grid production
 method.
