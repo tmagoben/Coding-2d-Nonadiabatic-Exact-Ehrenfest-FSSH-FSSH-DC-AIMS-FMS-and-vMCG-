@@ -839,7 +839,7 @@ For a one-dimensional path:
 4. calculate derivative couplings
 5. integrate
    $$dA/dR=-\tau A$$
-6. form$$V_{\mathrm{d}}=A^\mathsf{T}E_{\mathrm{ad}}A$$
+6. form $$V_{\mathrm{d}}=A^\mathsf{T}E_{\mathrm{ad}}A$$
 7. interpolate the smooth matrix elements
 8. propagate the nuclear wavepacket with the same FFT code.
 
