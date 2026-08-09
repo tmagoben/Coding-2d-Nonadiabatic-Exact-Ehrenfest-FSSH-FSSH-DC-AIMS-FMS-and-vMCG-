@@ -15,10 +15,9 @@ wavepacket using two independent algorithms:
 The second method is computationally expensive but supplies a clean numerical
 reference for the first. Every equation uses atomic units, so
 
-$\hbar=e=m_e=4\pi\epsilon_0=1$.
+$$\hbar=e=m_e=4\pi\epsilon_0=1$$
 
-The examples use two electronic states. After reading this derivation, continue to `IMPLEMENTATION_WALKTHROUGH.md`, which maps each equation to the exact Python array operation. All matrix formulas extend to more
-states, but the two-state case makes the geometry and numerical implementation
+The examples use two electronic states. After reading this derivation, continue to `IMPLEMENTATION_WALKTHROUGH.md`, which maps each equation to the exact Python array operation. All matrix formulas extend to many electronic states, but the two-state case makes the geometry and numerical implementation
 fully visible.
 
 ---
@@ -27,24 +26,24 @@ fully visible.
 
 ## 1. Born - Oppenheimer electronic problem
 
-At fixed nuclear coordinates $\(R\)$, the clamped-nuclei electronic Hamiltonian
+At fixed nuclear coordinates $R$, the clamped-nuclei electronic Hamiltonian
 obeys
 
-$$\hat H_e(r;R)\phi_i(r;R)=E_i(R)\phi_i(r;R)$$.
+$$\hat H_e(r;R)\phi_i(r;R)=E_i(R)\phi_i(r;R)$$
 
-The electronic coordinates are denoted by $\(r\)$, and $\(R\)$ denotes all nuclear
+The electronic coordinates are denoted by $r$, and $R$ denotes all nuclear
 coordinates. The adiabatic electronic functions are orthonormal at every
 geometry:
 
-$\langle\phi_i(R)|\phi_j(R)\rangle_r=\delta_{ij}$
+$$\langle\phi_i(R)|\phi_j(R)\rangle_r=\delta_{ij}$$
 
 The complete molecular wavefunction is expanded as
 
 $$\Psi(r,R,t)=\sum_i \chi_i(R,t)\phi_i(r;R).$$
 
 Substitution into the time-dependent molecular Schrödinger equation produces
-coupled nuclear equations. In one nuclear coordinate $\(R\)$, with nuclear mass
-$\(M\)$,
+coupled nuclear equations. In one nuclear coordinate $R$, with nuclear mass
+$M$,
 
 $$i\frac{\partial\boldsymbol\chi}{\partial t}=
 \left[
@@ -86,7 +85,7 @@ $$
 
 For a complete electronic basis,
 
-$$D=\frac{\partial\tau}{\partial R}+\tau^2$$.
+$$D=\frac{\partial\tau}{\partial R}+\tau^2$$
 
 Consequently, the adiabatic nuclear kinetic operator can be written in a
 gauge-covariant form:
@@ -109,7 +108,7 @@ degeneracies.
 
 ## 2. Basis transformation
 
-Let the columns of $\(U(R)\)$ be adiabatic eigenvectors expressed in a fixed
+Let the columns of $U(R)$ be adiabatic eigenvectors expressed in a fixed
 diabatic electronic basis:
 
 $$
@@ -128,7 +127,7 @@ If the diabatic basis is independent of nuclear coordinates, its first-order
 derivative coupling is zero. The nuclear equation becomes
 
 $$
-i\frac{\partial\boldsymbol\psi_{\mathrm{d}}}{\partial t}
+i\frac{\partial\boldsymbol\psi_{\mathrm{d}}}{\partial t}=
 \left[
 -\frac{1}{2M}\frac{\partial^2}{\partial R^2}I
 +
@@ -190,47 +189,50 @@ The adiabatic energies are
 
 $$E_\pm(x)=\pm\sqrt{V_{11}^2(x)+V_{12}^2(x)}.$$
 
-At $\(x=0\)$,
+At $x=0$,
 
-$$E_+(0)-E_-(0)=2|C|$$.
+$$E_+(0)-E_-(0)=2|C|$$
 
-Thus $\(C\neq0\)$ converts the diabatic crossing into an adiabatic avoided
+Thus $C\neq0$ converts the diabatic crossing into an adiabatic avoided
 crossing.
 
 ## 4. Numerical diagonalization and state tracking
 
-At every grid point $\(x_n\)$, we solve
+At every grid point $x_n$, we solve
 
 $$V_{\mathrm{d}}(x_n)U(x_n)=
-U(x_n)E_{\mathrm{ad}}(x_n)$$.
+U(x_n)E_{\mathrm{ad}}(x_n)$$
 
-An eigensolver is free to return either $\(\phi_i\)$ or $\(-\phi_i\)$. If the signs
+An eigensolver is free to return either $\phi_i$ or $-\phi_i$. If the signs
 are chosen independently at neighbouring points, the finite-difference
 derivative
 
 $$\frac{\phi_i(x_{n+1})-\phi_i(x_{n-1})}{2\Delta x}$$
 
-contains artificial sign discontinuities of order $\(1/\Delta x\)$.
+contains artificial sign discontinuities of order $1/\Delta x$.
 
 The implementation therefore performs:
 
 1. overlap calculation,
    $$O_{ij}=\left\langle\phi_i(x_{n-1})|\phi_j(x_n)\right\rangle$$
-2. state assignment maximizing $\(|O_{ij}|\)$
+2. state assignment maximizing $|O_{ij}|$
 3. sign correction enforcing positive diagonal overlap.
 
 ## 5. Derivative couplings
 
 For nondegenerate states,
 
-$\tau_{ij}(x)=\frac{\langle\phi_i|\partial_xV|\phi_j\rangle}{E_j-E_i},\qquad i\ne j$.The code independently evaluates
+$$\tau_{ij}(x)=\frac{\langle\phi_i|\partial_xV|\phi_j\rangle}{E_j-E_i},\qquad i\ne j.$$
 
-$\tau(x)=U^\mathsf{T}(x)\frac{dU(x)}{dx}$
-with finite differences. Agreement tests both the derivative of theHamiltonian and phase tracking.
+The code independently evaluates
+
+$$\tau(x)=U^\mathsf{T}(x)\frac{dU(x)}{dx}$$
+
+with finite differences. Agreement tests both the derivative of the Hamiltonian and phase tracking.
 
 For a real orthonormal basis,
 
-$$\tau^\mathsf{T}=-\tau$$.
+$$\tau^\mathsf{T}=-\tau$$
 
 The diagonal elements are gauge dependent and are set to zero in the chosen
 real parallel-transport gauge.
@@ -239,7 +241,7 @@ real parallel-transport gauge.
 
 Define
 
-$$|\chi_a(x)\rangle=\sum_i|\phi_i(x)\rangle A_{ia}(x)$$.
+$$|\chi_a(x)\rangle=\sum_i|\phi_i(x)\rangle A_{ia}(x)$$
 
 Demanding vanishing derivative coupling in the transformed basis gives
 
@@ -247,14 +249,14 @@ $$\frac{dA}{dx}=-\tau(x)A(x).$$
 
 The exact formal solution is a path-ordered exponential:
 
-$$A(x)=\mathcal P\exp\left[-\int_{x_0}^x\tau(x')\,dx'\right]A(x_0)$$.
+$$A(x)=\mathcal P\exp\left[-\int_{x_0}^x\tau(x')\,dx'\right]A(x_0).$$
 
 Numerically, the interval is divided into steps and the midpoint approximation
 is used:
 
-$$A_{n+1}=\exp\left[-\frac{\tau_n+\tau_{n+1}}{2}\Delta x\right]A_n$$.
+$$A_{n+1}=\exp\left[-\frac{\tau_n+\tau_{n+1}}{2}\Delta x\right]A_n.$$
 
-Because $\(\tau\)$ is antisymmetric itself, every exponential is orthogonal. The
+Because $\tau$ is antisymmetric itself, every exponential is orthogonal. The
 recovered diabatic matrix is
 
 $$
@@ -264,7 +266,7 @@ E_{\mathrm{ad}}(x)
 A(x).
 $$
 
-The initial condition $\(A(x_0)\)$ fixes a constant diabatic gauge. In a real
+The initial condition $A(x_0)$ fixes a constant diabatic gauge. In a real
 ab initio calculation, different valid initial choices produce matrices
 related by a constant orthogonal rotation.
 
@@ -280,7 +282,7 @@ python examples/01_static_1d_derivative_coupling_and_adt.py
 
 ## 7. Uniform periodic grid
 
-Choose \(N\) coordinate points over a box of length $\(L=x_{\max}-x_{\min}\)$:
+Choose $N$ coordinate points over a box of length $L=x_{\max}-x_{\min}$:
 
 $$
 x_n=x_{\min}+n\Delta x,
@@ -336,13 +338,15 @@ $$
 
 The algorithm is:
 
-1. Fourier transform $\(\psi(x)\rightarrow\tilde\psi(k)\)$
-2. multiply by $\(e^{-ik^2\Delta t/(2M)}\)$
+1. Fourier transform $\psi(x)\rightarrow\tilde\psi(k)$
+2. multiply by $e^{-ik^2\Delta t/(2M)}$
 3. inverse Fourier transform.
 
 The cost is
 
-$O(N\log N)$ per electronic state and time step.
+$$O(N\log N)$$
+
+per electronic state and time step.
 
 ---
 
@@ -350,30 +354,34 @@ $O(N\log N)$ per electronic state and time step.
 
 ## 9. Matrix exponential at every coordinate
 
-The diabatic potential is a $\(2\times2\)$ matrix. It must not be propagated by
+The diabatic potential is a $2\times2$ matrix. It must not be propagated by
 independently exponentiating its elements.
 
 Write a real symmetric matrix as
 
-$V=v_0I+h_x\sigma_x+h_z\sigma_z$, where
+$$V=v_0I+h_x\sigma_x+h_z\sigma_z,$$
 
-$v_0=\frac{V_{11}+V_{22}}{2},
+where
+
+$$v_0=\frac{V_{11}+V_{22}}{2},
 \qquad
 h_z=\frac{V_{11}-V_{22}}{2},
 \qquad
-h_x=V_{12}$.
+h_x=V_{12}.$$
 
 Define
 
-$q=\sqrt{h_x^2+h_z^2}$.
+$$q=\sqrt{h_x^2+h_z^2}.$$
 
 Using $(h_x\sigma_x+h_z\sigma_z)^2=q^2I$,
 
-the exact local exponential is $e^{-iV\Delta t}=e^{-iv_0\Delta t}\left[\cos(q\Delta t)I-i\frac{\sin(q\Delta t)}{q(h_x\sigma_x+h_z\sigma_z)\right]$.
+the exact local exponential is
 
-At $\(q=0\)$, the stable limiting expression is
+$$e^{-iV\Delta t}=e^{-iv_0\Delta t}\left[\cos(q\Delta t)I-i\frac{\sin(q\Delta t)}{q}(h_x\sigma_x+h_z\sigma_z)\right].$$
 
-$\frac{\sin(q\Delta t)}{q}\rightarrow\Delta t$.
+At $q=0$, the stable limiting expression is
+
+$$\frac{\sin(q\Delta t)}{q}\rightarrow\Delta t.$$
 
 The code constructs this unitary matrix once for a time-independent
 potential.
@@ -385,27 +393,26 @@ potential.
 ## 10. Why splitting is required
 
 The full propagator is
-$e^{-i(\hat T+\hat V)\Delta t}$.
+
+$$e^{-i(\hat T+\hat V)\Delta t}.$$
 
 Since
 
-$[\hat T,\hat V]\ne0$,
+$$[\hat T,\hat V]\ne0,$$
 
 we cannot write this exactly as
 
-$e^{-i\hat T\Delta t}e^{-i\hat V\Delta t}$.
+$$e^{-i\hat T\Delta t}e^{-i\hat V\Delta t}.$$
 
 The symmetric Strang factorization is
 
-$e^{-i(\hat T+\hat V)\Delta t}=e^{-i\hat V\Delta t/2}e^{-i\hat T\Delta t}e^{-i\hat V\Delta t/2} +O(\Delta t^3)$
+$$e^{-i(\hat T+\hat V)\Delta t}=e^{-i\hat V\Delta t/2}e^{-i\hat T\Delta t}e^{-i\hat V\Delta t/2} +O(\Delta t^3)$$
 
 for one time step. Over a fixed final time, the global error is
 
-$O(\Delta t^2)$.
+$$O(\Delta t^2).$$
 
 ## 11. One complete step
-
-
 
 For the two-component diabatic wavefunction 
 
@@ -419,21 +426,21 @@ $$
 one step is:
 
 1. apply half the local potential evolution,
-   $\boldsymbol\psi^{(1)}=e^{-iV(x)\Delta t/2}\boldsymbol\psi(t)$
+   $$\boldsymbol\psi^{(1)}=e^{-iV(x)\Delta t/2}\boldsymbol\psi(t)$$
 
 2. FFT both electronic components,
 
-   $\tilde{\boldsymbol\psi}^{(1)}(k)=\mathcal F[\boldsymbol\psi^{(1)}(x)]$
+   $$\tilde{\boldsymbol\psi}^{(1)}(k)=\mathcal F[\boldsymbol\psi^{(1)}(x)]$$
 
 3. apply the full kinetic phase,
 
-   $\tilde{\boldsymbol\psi}^{(2)}(k)=e^{-ik^2\Delta t/(2M)}\tilde{\boldsymbol\psi}^{(1)}(k)$
+   $$\tilde{\boldsymbol\psi}^{(2)}(k)=e^{-ik^2\Delta t/(2M)}\tilde{\boldsymbol\psi}^{(1)}(k)$$
 
 4. inverse FFT,
-   $\boldsymbol\psi^{(2)}(x)=\mathcal F^{-1}[\tilde{\boldsymbol\psi}^{(2)}(k)]$
+   $$\boldsymbol\psi^{(2)}(x)=\mathcal F^{-1}[\tilde{\boldsymbol\psi}^{(2)}(k)]$$
 
 5. apply the second half potential step,
-   $\boldsymbol\psi(t+\Delta t) = e^{-iV(x)\Delta t/2}\boldsymbol\psi^{(2)}(x)$.
+   $$\boldsymbol\psi(t+\Delta t) = e^{-iV(x)\Delta t/2}\boldsymbol\psi^{(2)}(x).$$
 
 Both subpropagators are unitary, so norm conservation should be close to
 machine precision. Norm conservation alone does not prove convergence:
@@ -448,21 +455,20 @@ errors. Time-step convergence must be checked.
 
 The one-dimensional scalar packet is
 
-$$g(x)=\mathcal N\exp\left[-\frac{(x-x_0)^2}{4\sigma^2}+ip_0(x-x_0)\right]$$.
+$$g(x)=\mathcal N\exp\left[-\frac{(x-x_0)^2}{4\sigma^2}+ip_0(x-x_0)\right].$$
 
-Its probability density has variance $\(\sigma^2\)$:
+Its probability density has variance $\sigma^2$:
 
-$$|g(x)|^2\propto\exp\left[-\frac{(x-x_0)^2}{2\sigma^2}\right]$$.
+$$|g(x)|^2\propto\exp\left[-\frac{(x-x_0)^2}{2\sigma^2}\right].$$
 
 The discrete normalization is
 
+$$\Delta x\sum_n|g(x_n)|^2=1.$$
 
-$$\Delta x\sum_n|g(x_n)|^2=1$$.
-
-To prepare the packet on adiabatic state $\(i\)$, convert it to diabatic
+To prepare the packet on adiabatic state $i$, convert it to diabatic
 components:
 
-$\psi_a(x,0)=U_{ai}(x)g(x)$.
+$$\psi_a(x,0)=U_{ai}(x)g(x).$$
 
 This construction is valid when the packet is localized in a region where the
 chosen adiabatic state is smooth.
@@ -471,21 +477,23 @@ chosen adiabatic state is smooth.
 
 The diabatic state populations are
 
-$$P_a^{\mathrm{d}}(t)=\int|\psi_a(x,t)|^2dx$$.
+$$P_a^{\mathrm{d}}(t)=\int|\psi_a(x,t)|^2dx.$$
 
 On the grid,
+
 $$
-P_a^{\mathrm{d}}(t)\approx\Delta x\sum_n|\psi_a(x_n,t)|^2$$.
+P_a^{\mathrm{d}}(t)\approx\Delta x\sum_n|\psi_a(x_n,t)|^2.
+$$
 
 ## 14. Adiabatic populations
 
 At every coordinate,
 
-$$\boldsymbol\chi_{\mathrm{ad}}(x,t)=U^\mathsf{T}(x)\boldsymbol\psi_{\mathrm{d}}(x,t)$$.
+$$\boldsymbol\chi_{\mathrm{ad}}(x,t)=U^\mathsf{T}(x)\boldsymbol\psi_{\mathrm{d}}(x,t).$$
 
 The adiabatic population is
 
-$P_i^{\mathrm{ad}}(t)=\int|\chi_i(x,t)|^2dx$.
+$$P_i^{\mathrm{ad}}(t)=\int|\chi_i(x,t)|^2dx.$$
 
 These populations reveal transfer between the local Born--Oppenheimer
 surfaces. They are not generally identical to diabatic populations.
@@ -498,15 +506,16 @@ surfaces. They are not generally identical to diabatic populations.
 
 The FFT kinetic operation defines a finite periodic spectral matrix
 
-\[
-$T=
+$$
+T=
 F^\dagger
 \mathrm{diag}\left(
 \frac{k_m^2}{2M}
 \right)
-F$,
+F,
+$$
 
-where $\(F\)$ is the discrete Fourier transform matrix.
+where $F$ is the discrete Fourier transform matrix.
 
 For two electronic states, flatten the wavefunction in state-major order:
 
@@ -522,7 +531,6 @@ $$
 
 The full matrix is
 
-
 $$
 H = \begin{pmatrix} 
 T + \mathrm{diag}(V_{11}) & \mathrm{diag}(V_{12}) \\ 
@@ -530,27 +538,27 @@ T + \mathrm{diag}(V_{11}) & \mathrm{diag}(V_{12}) \\
 \end{pmatrix}
 $$
 
-Its dimension is $\(2N\times2N\)$.
+Its dimension is $2N\times2N$.
 
 ## 16. Exact finite-basis propagator
 
 Diagonalize
 
-$HW=W\varepsilon$.
+$$HW=W\varepsilon.$$
 
-Because $\(H\)$ is Hermitian, $\(W\)$ is unitary. The exact propagator within this
-finite periodic basis is $e^{-iHt}=W e^{-i\varepsilon t}W^\dagger$.
+Because $H$ is Hermitian, $W$ is unitary. The exact propagator within this
+finite periodic basis is 
+
+$$e^{-iHt}=W e^{-i\varepsilon t}W^\dagger.$$
 
 Thus
 
-$\boldsymbol{\Psi}(t) = W e^{-i\varepsilon t} W^\dagger \boldsymbol{\Psi}(0)$
-
+$$\boldsymbol{\Psi}(t) = W e^{-i\varepsilon t} W^\dagger \boldsymbol{\Psi}(0)$$
 
 There is no time-step error. There is still finite-grid error, finite-box
 error, and periodic-boundary error.
 
 Dense diagonalization scales approximately as $O((2N)^3)$ in time and $O((2N)^2)$
-
 in memory. It is therefore a reference method, not a large-grid production
 method.
 
@@ -558,11 +566,10 @@ method.
 
 The normalized wavefunction fidelity is
 
-$$\mathcal F(t)=\frac{|\langle\Psi_{\mathrm{direct}}(t)|\Psi_{\mathrm{FFT}}(t)\rangle|^2}{\langle\Psi_{\mathrm{direct}}|\Psi_{\mathrm{direct}}\rangle\langle\Psi_{\mathrm{FFT}}|\Psi_{\mathrm{FFT}}\rangle}$$.
-
+$$\mathcal F(t)=\frac{|\langle\Psi_{\mathrm{direct}}(t)|\Psi_{\mathrm{FFT}}(t)\rangle|^2}{\langle\Psi_{\mathrm{direct}}|\Psi_{\mathrm{direct}}\rangle\langle\Psi_{\mathrm{FFT}}|\Psi_{\mathrm{FFT}}\rangle}.$$
 
 Because a global phase is physically irrelevant, the code also removes the
-best global phase before computing an $\(L^2\)$ error.
+best global phase before computing an $L^2$ error.
 
 Run:
 
@@ -598,9 +605,9 @@ $$
 
 They are exactly degenerate at
 
-$x=y=0$.
+$$x=y=0.$$
 
-The coordinates $\(x\)$ and $\(y\)$ form the idealized branching plane.
+The coordinates $x$ and $y$ form the idealized branching plane.
 
 ## 19. Derivative-coupling vector field
 
@@ -628,7 +635,7 @@ $$
 
 and
 
-$$\tau_{01}^{(y)}=\frac{\kappa\lambda x}{2(\kappa^2x^2+\lambda^2y^2)}$$.
+$$\tau_{01}^{(y)}=\frac{\kappa\lambda x}{2(\kappa^2x^2+\lambda^2y^2)}.$$
 
 The field diverges at the conical intersection. This singularity is a feature
 of the adiabatic representation, not a divergence in the smooth diabatic
@@ -637,6 +644,7 @@ potential matrix.
 ## 20. Berry phase
 
 For a closed loop enclosing the origin,
+
 $$\oint\boldsymbol\tau_{01}\cdot d\mathbf R=\pm\pi.$$
 
 Parallel transport around the loop gives
@@ -662,14 +670,13 @@ python examples/03_static_2d_conical_intersection.py
 
 ## 21. Two-dimensional kinetic operator
 
-With masses $\(M_x\)$ and $\(M_y\)$,
+With masses $M_x$ and $M_y$,
 
 $$
 \hat T=-\frac{1}{2M_x}\frac{\partial^2}{\partial x^2}-\frac{1}{2M_y}\frac{\partial^2}{\partial y^2}.
 $$
 
 In Fourier space,
-
 
 $$
 T(k_x,k_y)=
@@ -687,7 +694,7 @@ $$
 The two-dimensional split step is exactly the same five-stage sequence as in
 one dimension, replacing the FFT by a two-dimensional FFT.
 
-For $\(N_xN_y\)$ spatial points, the split-operator cost scales approximately as
+For $N_xN_y$ spatial points, the split-operator cost scales approximately as
 
 $$
 O(N_xN_y\log(N_xN_y)).
@@ -697,8 +704,7 @@ $$
 
 The spatial kinetic matrix is a Kronecker sum:
 
-
-$$T_{2D}=I_y\otimes T_x+T_y\otimes I_x$$.
+$$T_{2D}=I_y\otimes T_x+T_y\otimes I_x.$$
 
 For two electronic states, the complete dimension is
 
@@ -714,8 +720,8 @@ $$
 
 which becomes prohibitive very quickly. The example performs:
 
-1. a meaningful $\(64\times64\)$ FFT propagation;
-2. a separate $\(14\times14\)$ direct-diagonalization benchmark.
+1. a meaningful $64\times64$ FFT propagation;
+2. a separate $14\times14$ direct-diagonalization benchmark.
 
 The tiny direct benchmark verifies the implementation but is not asserted to
 be a converged physical grid.
@@ -735,7 +741,7 @@ parameter.
 
 ## 23. Spatial spacing
 
-Repeat with increasing $\(N\)$ at fixed box length. Check:
+Repeat with increasing $N$ at fixed box length. Check:
 
 $$
 \Delta P_i,
@@ -750,7 +756,7 @@ Nyquist interval.
 
 ## 24. Box size
 
-Increase $\(x_{\max}-x_{\min}\)$ while maintaining similar spacing. Confirm that
+Increase $x_{\max}-x_{\min}$ while maintaining similar spacing. Confirm that
 the packet does not interact with its periodic image.
 
 ## 25. Time step
@@ -761,7 +767,7 @@ $$
 \Delta t,\quad\Delta t/2,\quad\Delta t/4.
 $$
 
-An observable $\(O(\Delta t)\)$ should approach
+An observable $O(\Delta t)$ should approach
 
 $$
 O(\Delta t)=O(0)+C\Delta t^2+O(\Delta t^4).
@@ -780,7 +786,7 @@ $$
 At a grid size where dense diagonalization is possible, compare:
 
 - wavefunction fidelity;
-- phase-aligned $\(L^2\)$ error;
+- phase-aligned $L^2$ error;
 - diabatic populations;
 - adiabatic populations;
 - norm.
@@ -791,7 +797,7 @@ This isolates the split-operator time-step error from the finite-grid error.
 
 Before propagating:
 
-1. verify $\(U^\mathsf{T}U=I\)$;
+1. verify $U^\mathsf{T}U=I$;
 2. verify derivative-coupling antisymmetry;
 3. compare Hellmann--Feynman and finite-difference couplings;
 4. reconstruct the known diabatic potential from the ADT;
@@ -863,7 +869,7 @@ Builds normalized Gaussian packets and embeds them on local adiabatic states.
 
 ## `nonadiabatic_dynamics/propagators.py`
 
-Constructs exact local \(2\times2\) potential exponentials and performs 1D and
+Constructs exact local $2\times2$ potential exponentials and performs 1D and
 2D Strang split-operator steps.
 
 ## `nonadiabatic_dynamics/direct.py`
