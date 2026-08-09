@@ -55,11 +55,9 @@ potential_derivative.shape == (256, 1, 2, 2)
 
 At grid point `n`, `potential[n]` is the complete electronic potential matrix
 
-\[
-V_{\mathrm d}(x_n).
-\]
+$V_{\mathrm{d}}(x_n)$.
 
-The coordinate index in `potential_derivative[:, 0]` is \(x\).
+The coordinate index in `potential_derivative[:, 0]` is $x$.
 
 ---
 
@@ -118,14 +116,7 @@ tau_hf[n, 0, 1]
 
 represents
 
-\[
-\left\langle
-\phi_0(x_n)
-\middle|
-\frac{\partial}{\partial x}
-\phi_1(x_n)
-\right\rangle.
-\]
+$\langle \phi_0(x_n) \mid \partial/\partial x\, \phi_1(x_n) \rangle$.
 
 For real orthonormal states,
 
@@ -202,9 +193,7 @@ psi_initial.shape == (2, N)
 
 and is constructed from
 
-\[
-\psi_a(x,0)=U_{a0}(x)g(x).
-\]
+$\psi_a(x,0) = U_{a0}(x) g(x)$.
 
 ---
 
@@ -274,7 +263,7 @@ hamiltonian = build_direct_hamiltonian_1d(
 )
 ```
 
-For \(N\) points,
+For $N$ points,
 
 ```python
 hamiltonian.shape == (2 * N, 2 * N)
@@ -414,7 +403,7 @@ and the derivative shape is
 derivatives.shape == (64, 64, 2, 2, 2)
 ```
 
-where the first matrix-adjacent index selects \(x\) or \(y\).
+where the first matrix-adjacent index selects $x$ or $y$.
 
 ## 14. Construct the 2D kinetic phase
 
@@ -465,12 +454,12 @@ hamiltonian_2d = build_direct_hamiltonian_2d(
 
 The direct matrix dimension is
 
-\[
-2N_xN_y.
-\]
+$$
+2 N_x N_y.
+$$
 
-This is why the example uses a separate \(14\times14\) direct benchmark rather
-than diagonalizing the physically more useful \(64\times64\) FFT grid.
+This is why the example uses a separate $14\times 14$ direct benchmark rather
+than diagonalizing the physically more useful $64\times 64$ FFT grid.
 
 ---
 
@@ -485,14 +474,12 @@ python examples/05_convergence_study_1d.py
 The script compares several split-operator time steps against the same direct
 finite-grid solution and fits
 
-\[
-\log\epsilon
-=
-p\log\Delta t+\mathrm{constant}.
-\]
+$$
+\log \epsilon = p \log \Delta t + \mathrm{constant}.
+$$
 
 For a converged Strang implementation, the fitted global order should approach
 
-\[
-p=2.
-\]
+$$
+ p = 2.
+$$
