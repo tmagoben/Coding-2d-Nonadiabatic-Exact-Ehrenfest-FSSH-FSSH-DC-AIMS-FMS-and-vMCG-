@@ -15,7 +15,7 @@ E_{ij}
 \|H_{ii}\|_F
 \|H_{jj}\|_F
 },
-E_{\rm floor}
+E_{\mathrm{floor}}
 \right].
 $$
 
@@ -82,12 +82,12 @@ Let $D$ be locally scored edges tentatively removed by the per-edge hysteresis r
 Define
 
 $$
-B_{\rm local}^2
+B_{\mathrm{local}}^2
 =
 \sum_{e\in D}\eta_e^2.
 $$
 
-If $B_{\rm local}>B_{\max}$, sort omitted edges so that
+If $B_{\mathrm{local}}>B_{\max}$, sort omitted edges so that
 
 $$
 \eta_1\ge\eta_2\ge\cdots.
@@ -97,7 +97,7 @@ Promote edges in that order until
 
 $$
 \sqrt{
-B_{\rm local}^2
+B_{\mathrm{local}}^2
 -
 \sum_{k=1}^{m}\eta_k^2
 }
@@ -128,7 +128,7 @@ $$
 Edge contributions can overlap in matrix support, sparse-LU fill can change, and the
 moving nonorthogonal metric couples blocks.
 
-Therefore $B_{\rm local}$ only prevents uncontrolled accumulation of small local
+Therefore $B_{\mathrm{local}}$ only prevents uncontrolled accumulation of small local
 omissions.
 
 The dense audit remains the authoritative matrix-error check.
@@ -150,23 +150,23 @@ $$
 With $0<r<1$,
 
 $$
-\eta_{\rm enter}^{(k+1)}
+\eta_{\mathrm{enter}}^{(k+1)}
 =
-r\eta_{\rm enter}^{(k)},
+r\eta_{\mathrm{enter}}^{(k)},
 $$
 
 $$
-\eta_{\rm exit}^{(k+1)}
+\eta_{\mathrm{exit}}^{(k+1)}
 =
-r\eta_{\rm exit}^{(k)},
+r\eta_{\mathrm{exit}}^{(k)},
 $$
 
 and
 
 $$
-\tau_{\rm search}^{(k+1)}
+\tau_{\mathrm{search}}^{(k+1)}
 =
-r\tau_{\rm search}^{(k)}.
+r\tau_{\mathrm{search}}^{(k)}.
 $$
 
 Because all thresholds only decrease, the controller is one-sided.
@@ -207,7 +207,7 @@ because every dense pair is restored.
 Let one dense audit cost
 
 $$
-C_{\rm audit}
+C_{\mathrm{audit}}
 =
 O(N^2d^3+s^2N^2).
 $$
@@ -217,7 +217,7 @@ is
 
 $$
 \boxed{
-C_{\rm audit}^{\rm amortized}
+C_{\mathrm{audit}}^{\mathrm{amortized}}
 =
 \frac{1}{m}
 O(N^2d^3+s^2N^2).
