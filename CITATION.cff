@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this educational/research software, please cite the repository and the primary methodological papers listed in REFERENCES.md."
+title: "Gaussian Nonadiabatic Dynamics"
+type: software
+authors:
+  - family-names: "Magobenny-Cohen"
+    given-names: "Timbila"
+version: 0.27.0
+date-released: 2026-08-25
+license: MIT
+repository-code: "https://github.com/tmagoben/Gaussian-Nonadiabatic-Dynamics"
+keywords:
+  - quantum dynamics
+  - gaussian wavepackets
+  - nonadiabatic dynamics
+  - Heller
+  - vMCG
+  - FMS
+  - AIMS

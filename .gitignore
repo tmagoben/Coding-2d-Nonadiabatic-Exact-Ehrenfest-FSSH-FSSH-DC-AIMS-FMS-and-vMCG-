@@ -1,2 +1,9 @@
-'n# Generated nonadiabatic tutorial data
-examples/pedagogical_nonadiabatic_dynamics/outputs/*.npz
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.egg-info/
+build/
+dist/
+results/
+*.png

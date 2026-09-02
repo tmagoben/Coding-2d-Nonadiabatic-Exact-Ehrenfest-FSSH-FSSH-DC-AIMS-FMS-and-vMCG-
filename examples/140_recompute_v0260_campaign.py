@@ -1,0 +1,24 @@
+"""Recompute all inherited and new v0.26.0 release gates."""
+
+import os
+import sys
+from pathlib import Path
+
+
+for _thread_key in (
+    "OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS",
+    "BLIS_NUM_THREADS", "NUMEXPR_NUM_THREADS", "VECLIB_MAXIMUM_THREADS",
+):
+    os.environ[_thread_key] = "1"
+
+root = Path(__file__).resolve().parents[1]
+if str(root) not in sys.path:
+    sys.path.insert(0, str(root))
+
+from gaussian_dynamics import save_v0260_release_benchmark
+
+
+if __name__ == "__main__":
+    target = root / "results/v0260_multidimensional_campaign.json"
+    save_v0260_release_benchmark(target)
+    print(f"saved {target}")
