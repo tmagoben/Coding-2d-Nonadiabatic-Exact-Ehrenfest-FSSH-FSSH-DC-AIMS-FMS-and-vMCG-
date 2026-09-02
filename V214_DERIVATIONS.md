@@ -33,7 +33,7 @@ The centered physical-operator derivative estimate is
 
 $$
 \boxed{
-K_a^{\rm FD}(q)=\frac{H_{+\to0}-H_{-\to0}}{2h_a}.
+K_a^{\mathrm{FD}}(q)=\frac{H_{+\to0}-H_{-\to0}}{2h_a}.
 }
 $$
 
@@ -45,7 +45,7 @@ The derivative connection is independently estimated from the raw overlaps:
 
 $$
 \boxed{
-D_a^{\rm FD}(q)=\frac{O_{0+}-O_{0-}}{2h_a}.
+D_a^{\mathrm{FD}}(q)=\frac{O_{0+}-O_{0-}}{2h_a}.
 }
 $$
 
@@ -73,14 +73,14 @@ Per-coordinate positive steps are therefore part of the audit settings.
 The future operator decomposition is
 
 $$
-H=H_{\rm sf}+H_{\rm SOC},\qquad
-K_a=K_{a,{\rm sf}}+K_{a,{\rm SOC}}.
+H=H_{\mathrm{sf}}+H_{\mathrm{SOC}},\qquad
+K_a=K_{a,{\mathrm{sf}}}+K_{a,{\mathrm{SOC}}}.
 $$
 
 v0.21.4 sets
 
 $$
-H_{\rm SOC}=0,\qquad K_{a,{\rm SOC}}=0
+H_{\mathrm{SOC}}=0,\qquad K_{a,{\mathrm{SOC}}}=0
 $$
 
 as explicit complex arrays and routes them through the same composition function a
@@ -95,7 +95,7 @@ For N Gaussian trajectory basis functions, electronic dimension s, and nuclear
 dimension d, a v0.21.4 checkpoint stores
 
 $$
-\{u_i,q_i,p_i,A_i\}_{i=1}^{N},\qquad C\in\mathbb C^{Ns},
+\{u_i,q_i,p_i,A_i\}_{i=1}^{N},\qquad C\in\mathbb{C}^{Ns},
 $$
 
 together with accepted density-guide state
@@ -107,7 +107,7 @@ $$
 six guidance counters, and the canonical active sparse-edge set
 
 $$
-\mathcal E_{\rm UID}=\{(\min(u_i,u_j),\max(u_i,u_j))\}.
+\mathcal E_{\mathrm{UID}}=\{(\min(u_i,u_j),\max(u_i,u_j))\}.
 $$
 
 Stable UIDs are essential: array indices can change after insertion or pruning, whereas
@@ -128,14 +128,14 @@ Propagation settings are serialized canonically together with the release semant
 hashed:
 
 $$
-f_{\rm settings}=\operatorname{SHA256}(\operatorname{canonical\ settings}).
+f_{\mathrm{settings}}=\operatorname{SHA256}(\operatorname{canonical\ settings}).
 $$
 
 The checkpoint integrity digest consumes the canonical manifest, then for each array in
 a fixed order consumes its name, exact dtype, shape, and contiguous bytes:
 
 $$
-f_{\rm checkpoint}=\operatorname{SHA256}
+f_{\mathrm{checkpoint}}=\operatorname{SHA256}
 \left(M\,\Vert\,\big\Vert_k(n_k,\tau_k,s_k,b_k)\right).
 $$
 
