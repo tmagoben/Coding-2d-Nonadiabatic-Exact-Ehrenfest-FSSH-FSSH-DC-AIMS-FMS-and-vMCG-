@@ -29,7 +29,7 @@ For a realistic molecule, one generally cannot evaluate
 $$
 r(R)
 =
-\Psi_{\rm target}(R)-P\Psi_{\rm target}(R)
+\Psi_{\mathrm{target}}(R)-P\Psi_{\mathrm{target}}(R)
 $$
 
 over the full
@@ -68,7 +68,7 @@ Then evaluate a discrete residual norm
 
 $$
 \boxed{
-\|r\|_{\rm sample}^2
+\|r\|_{\mathrm{sample}}^2
 =
 \sum_k
 w_k
@@ -131,7 +131,7 @@ The discrete residual-gain score becomes
 
 $$
 \boxed{
-\Delta_c^{\rm sample}
+\Delta_c^{\mathrm{sample}}
 =
 \frac{
 \sum_a
