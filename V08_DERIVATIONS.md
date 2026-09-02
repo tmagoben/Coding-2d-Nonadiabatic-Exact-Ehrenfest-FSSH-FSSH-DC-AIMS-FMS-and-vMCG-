@@ -284,7 +284,7 @@ Every additional edge creates one independent fundamental cycle. Therefore
 
 $$
 \boxed{
-N_{\rm cycle}=N_E-(N_V-1)=N_E-N_V+1.
+N_{\mathrm{cycle}}=N_E-(N_V-1)=N_E-N_V+1.
 }
 $$
 
