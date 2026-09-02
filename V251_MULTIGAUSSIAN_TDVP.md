@@ -154,7 +154,7 @@ $$G=U\,\operatorname{diag}(\sigma_i)V^T,$$
 v0.25.1 uses
 
 $$
-\tau=\max(\tau_{\rm abs},\tau_{\rm rel}\sigma_{\max}),
+\tau=\max(\tau_{\mathrm{abs}},\tau_{\mathrm{rel}}\sigma_{\max}),
 \qquad
 \sigma_i^+=\begin{cases}1/\sigma_i,&\sigma_i>\tau,\\0,&\sigma_i\le\tau.
 \end{cases}
@@ -165,7 +165,7 @@ be dynamically compatible:
 
 $$
 \frac{\|U_0^Tb\|_2}{\max(\|b\|_2,10^{-30})}
-\le\epsilon_{\rm null}.
+\le\epsilon_{\mathrm{null}}.
 $$
 
 The minimum-norm velocity is
