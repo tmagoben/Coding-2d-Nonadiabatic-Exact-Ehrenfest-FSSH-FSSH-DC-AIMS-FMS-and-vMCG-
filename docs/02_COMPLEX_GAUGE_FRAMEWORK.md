@@ -129,7 +129,7 @@ Therefore the Wilson eigenvalues/eigenphases are gauge invariant. Local gauge sm
 A later backend may provide
 
 $$
-H=H_{\rm spin\text{-}free}+H_{\mathrm{SOC}},
+H=H_{\mathrm{spin\text{-}free}}+H_{\mathrm{SOC}},
 $$
 
 but the same interface also accepts $H_{\mathrm{SOC}}=0$. The Gaussian engine therefore remains a general nonadiabatic framework rather than becoming an SOC-specific codebase.
