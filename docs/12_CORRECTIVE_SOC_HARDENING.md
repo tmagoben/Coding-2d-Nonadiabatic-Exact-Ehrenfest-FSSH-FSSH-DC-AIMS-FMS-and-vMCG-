@@ -19,10 +19,10 @@ The central changes are:
 
 The adversarial derivative fixture is essential. If
 
-\[
+$$
 K_{\mathrm{sf}}\mapsto K_{\mathrm{sf}}-\Delta,\qquad
 K_{\mathrm{SOC}}\mapsto K_{\mathrm{SOC}}+\Delta,
-\]
+$$
 
 then total K remains unchanged. If the sampled density also satisfies
 `Tr(rho Delta)=0`, a scalar-force check remains unchanged. Separate matrix-valued
