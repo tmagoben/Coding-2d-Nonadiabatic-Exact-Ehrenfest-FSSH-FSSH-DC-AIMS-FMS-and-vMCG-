@@ -8,7 +8,7 @@ A backend supplies electronic data at one molecular geometry. The intended real 
 
 ## v0.21 operator conversion
 
-A spin-free adiabatic point with energies \(E_i\), gradients, and derivative couplings \(D_a\) is lifted to the general complex operator contract.
+A spin-free adiabatic point with energies $E_i$, gradients, and derivative couplings $D_a$ is lifted to the general complex operator contract.
 
 In the adiabatic representation,
 
@@ -20,13 +20,13 @@ $$
 (K_a)_{ii}=\partial_aE_i,
 $$
 
-and for \(i\neq j\),
+and for $i\neq j$,
 
 $$
 \boxed{(K_a)_{ij}=(E_j-E_i)(D_a)_{ij}.}
 $$
 
-The block propagator itself does not require \(H\) to be diagonal.
+The block propagator itself does not require $H$ to be diagonal.
 
 ## PySCF derivative-coupling convention
 
