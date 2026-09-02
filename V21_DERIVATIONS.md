@@ -9,14 +9,14 @@ The full step-by-step derivation is maintained in:
 These derive, rather than merely state:
 
 1. the non-Abelian derivative connection;
-2. the local \(U(s)\) gauge transformation law;
+2. the local $U(s)$ gauge transformation law;
 3. the physical Hamiltonian-derivative operator;
 4. the gauge-invariant force expectation;
 5. the moving nonorthogonal Gaussian TDSE;
-6. the generalized norm \(C^\dagger SC\);
-7. the metric identity \(\dot S=T+T^\dagger\);
+6. the generalized norm $C^\dagger SC$;
+7. the metric identity $\dot S=T+T^\dagger$;
 8. the midpoint/Cayley solve;
-9. block pair \(S/H/T\) construction;
+9. block pair $S/H/T$ construction;
 10. the gauge-invariant sparse edge score;
 11. Procrustes alignment for degenerate subspaces;
 12. Wilson-loop gauge invariance.
