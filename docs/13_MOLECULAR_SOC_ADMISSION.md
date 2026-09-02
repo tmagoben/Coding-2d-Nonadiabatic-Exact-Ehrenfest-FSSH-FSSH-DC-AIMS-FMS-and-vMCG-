@@ -17,7 +17,7 @@ fields in every admission report.
 ## Why static SOC is a separate tier
 
 A static SOC matrix can support a single-geometry calculation. It cannot determine
-$K_{a,{\rm SOC}}$, $D_a$, or cross-geometry state identity. The `static_soc` tier is
+$K_{a,{\mathrm{SOC}}}$, $D_a$, or cross-geometry state identity. The `static_soc` tier is
 therefore rejected for moving-nuclear propagation. `trajectory_ready` is derived only
 when every required differential and overlap capability is present.
 
