@@ -93,7 +93,7 @@ Converge the **state manifold**, not only the active orbitals.
 
 ## 5. Geometry-step convergence of state tracking
 
-For a path coordinate \(q\), compare tracked scans with
+For a path coordinate $q$, compare tracked scans with
 
 ```text
 Delta q
@@ -103,18 +103,18 @@ Delta q / 4
 
 Monitor
 
-\[
+$$
 |\langle\Psi_I(q)|\Psi_I(q+\Delta q)\rangle|,
-\]
+$$
 
 assignment-score margin, overlap singular values, and the overlap-derived directional
 NAC
 
-\[
+$$
 d^{(q)}\approx\frac{O-O^\dagger}{2\Delta q}.
-\]
+$$
 
-The latter should approach the projected analytical PySCF NAC as \(\Delta q\to0\).
+The latter should approach the projected analytical PySCF NAC as $\Delta q\to0$.
 
 ---
 
@@ -159,16 +159,16 @@ additional backend points displaced around the centroid.
 
 Check whether
 
-\[
+$$
 H_e(q_c+\delta q)
 \approx
 H_e(q_c)
 +
 \sum_\alpha
 \frac{\partial H_e}{\partial q_\alpha}\delta q_\alpha
-\]
+$$
 
-is adequate over the region where \(|g_i^*g_j|\) is appreciable.
+is adequate over the region where $|g_i^*g_j|$ is appreciable.
 
 A large v0.9 SPA0/SPA1 difference is a warning that centroid-only electronic
 information may be insufficient.
