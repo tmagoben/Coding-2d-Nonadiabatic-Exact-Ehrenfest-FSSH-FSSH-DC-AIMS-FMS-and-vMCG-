@@ -149,18 +149,18 @@ A single overlap cutoff can cause graph flicker as moving TBFs cross the thresho
 v0.16 uses
 
 $$
-\tau_{\rm enter}
+\tau_{\mathrm{enter}}
 >
-\tau_{\rm exit}.
+\tau_{\mathrm{exit}}.
 $$
 
 The release values are
 
 $$
 \boxed{
-\tau_{\rm enter}=0.03,
+\tau_{\mathrm{enter}}=0.03,
 \qquad
-\tau_{\rm exit}=0.015.
+\tau_{\mathrm{exit}}=0.015.
 }
 $$
 
@@ -292,8 +292,8 @@ Measured errors are
 
 $$
 \boxed{
-\frac{\|S_{\rm sparse}-S_{\rm dense}\|_F}
-{\|S_{\rm dense}\|_F}
+\frac{\|S_{\mathrm{sparse}}-S_{\mathrm{dense}}\|_F}
+{\|S_{\mathrm{dense}}\|_F}
 =
 0.0051917427
 }
@@ -303,8 +303,8 @@ and
 
 $$
 \boxed{
-\frac{\|H_{\rm sparse}-H_{\rm dense}\|_F}
-{\|H_{\rm dense}\|_F}
+\frac{\|H_{\mathrm{sparse}}-H_{\mathrm{dense}}\|_F}
+{\|H_{\mathrm{dense}}\|_F}
 =
 0.0039626323.
 }
@@ -446,7 +446,7 @@ d_c
 \#\left\{
 i:
 \text{overlap upper bound}(c,i)
-\ge\tau_{\rm enter}
+\ge\tau_{\mathrm{enter}}
 \right\}.
 $$
 
