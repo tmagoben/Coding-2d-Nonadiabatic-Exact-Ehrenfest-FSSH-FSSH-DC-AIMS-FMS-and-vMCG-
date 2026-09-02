@@ -56,7 +56,7 @@ moving-frame matrix $H(q)$. Differentiating the matrix elements gives
 
 $$
 \boxed{
-\partial_a H_{\rm matrix}=K_a+[H,D_a].
+\partial_a H_{\mathrm{matrix}}=K_a+[H,D_a].
 }
 $$
 
@@ -78,7 +78,7 @@ fixed electronic frame, v0.21.3 requires $D_a=0$.
 The future composition rule is already frozen:
 
 $$
-H=H_{\rm spin\text{-}free}+H_{\rm SOC},
+H=H_{\mathrm{spin\text{-}free}}+H_{\mathrm{SOC}},
 $$
 
 $$
@@ -181,10 +181,10 @@ The block metric is
 
 $$
 \boxed{
-S=S^{\rm nuc}\otimes I_s,
+S=S^{\mathrm{nuc}}\otimes I_s,
 }
 
-where $S^{\rm nuc}_{ij}=\langle g_i|g_j\rangle$ is evaluated analytically for arbitrary
+where $S^{\mathrm{nuc}}_{ij}=\langle g_i|g_j\rangle$ is evaluated analytically for arbitrary
 nuclear dimension and unequal positive-definite widths. Given a grid target
 $\psi_a(q)$ and explicit quadrature weights $w(q)$,
 
@@ -222,7 +222,7 @@ and overlap design and are refused rather than silently discarded.
 Setting
 
 $$
-H_{\rm SOC}=0,
+H_{\mathrm{SOC}}=0,
 \qquad
 K_{a,\rm SOC}=0
 $$
