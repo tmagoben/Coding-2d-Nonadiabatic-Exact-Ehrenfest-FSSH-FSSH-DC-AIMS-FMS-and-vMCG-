@@ -36,11 +36,11 @@ The current release is **v0.27.0**.
 The central electronic data contract is now representation neutral:
 
 $$
-H(q)\in\mathbb C^{s\times s},
+H(q)\in\mathbb{C}^{s\times s},
 \qquad
-\partial_a H_{\rm op}(q)\in\mathbb C^{s\times s},
+\partial_a H_{\mathrm{op}}(q)\in\mathbb{C}^{s\times s},
 \qquad
-D_a(q)=\langle\Phi|\partial_a\Phi\rangle\in\mathbb C^{s\times s}.
+D_a(q)=\langle\Phi|\partial_a\Phi\rangle\in\mathbb{C}^{s\times s}.
 $$
 
 The framework requires
@@ -48,9 +48,9 @@ The framework requires
 $$
 H=H^\dagger,
 \qquad
-\partial_a H_{\rm op}
+\partial_a H_{\mathrm{op}}
 =
-(\partial_a H_{\rm op})^\dagger,
+(\partial_a H_{\mathrm{op}})^\dagger,
 \qquad
 D_a=-D_a^\dagger.
 $$
@@ -68,8 +68,8 @@ H' = G^\dagger H G,
 $$
 
 $$
-(\partial_a H_{\rm op})' =
-G^\dagger(\partial_a H_{\rm op})G,
+(\partial_a H_{\mathrm{op}})' =
+G^\dagger(\partial_a H_{\mathrm{op}})G,
 $$
 
 and
@@ -455,8 +455,8 @@ with a quaternionic SOC block that preserves twofold Kramers degeneracy at zero 
 field. Both models provide explicit
 
 $$
-H=H_{\rm sf}+H_{\rm SOC},\qquad
-K_a=K_{a,{\rm sf}}+K_{a,{\rm SOC}}.
+H=H_{\mathrm{sf}}+H_{\mathrm{SOC}},\qquad
+K_a=K_{a,{\mathrm{sf}}}+K_{a,{\mathrm{SOC}}}.
 $$
 
 Physical projector populations, time-reversal representations, SOC forces, differential
@@ -495,7 +495,7 @@ force covariance error:
 8.673617379884035e-19
 ```
 
-Full block matrix covariance under a coordinate-dependent complex \(U(2)\) gauge:
+Full block matrix covariance under a coordinate-dependent complex $U(2)$ gauge:
 
 ```text
 S error:
