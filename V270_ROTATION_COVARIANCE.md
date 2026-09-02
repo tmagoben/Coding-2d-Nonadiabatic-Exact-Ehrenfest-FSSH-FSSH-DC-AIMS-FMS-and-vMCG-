@@ -5,7 +5,7 @@
 Coordinates are row vectors related by
 
 $$
-R_{\rm old}=R_{\rm new}O,
+R_{\mathrm{old}}=R_{\mathrm{new}}O,
 \qquad OO^T=I.
 $$
 
