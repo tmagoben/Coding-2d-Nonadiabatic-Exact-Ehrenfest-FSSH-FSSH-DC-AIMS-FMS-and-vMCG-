@@ -87,7 +87,7 @@ State-averaged CASSCF instead optimizes a common orbital set using a weighted av
 
 $$
 \boxed{
-E_{\rm SA}
+E_{\mathrm{SA}}
 =
 \sum_I w_I E_I,
 \qquad
@@ -125,7 +125,7 @@ The optional PySCF adapter documents its conversion carefully because the PySCF
 SA-CASSCF NAC interface defines `state=(ket, bra)` and returns
 
 $$
-\langle {\rm bra}|\nabla\,{\rm ket}\rangle.
+\langle {\mathrm{bra}}|\nabla\,{\mathrm{ket}}\rangle.
 $$
 
 Therefore v0.3 requests the tuple `(J,I)` when constructing $d_{IJ}$.
@@ -197,8 +197,8 @@ A direct-dynamics workflow should identify an electronic-structure point by at l
 
 $$
 \{
-R,\ {\rm method},\ {\rm basis},\ {\rm active\ space},\ {\rm state\ averaging},
-\ {\rm convergence\ settings}
+R,\ {\mathrm{method}},\ {\mathrm{basis}},\ {\mathrm{active\ space}},\ {\mathrm{state\ averaging}},
+\ {\mathrm{convergence\ settings}}
 \}.
 $$
 
