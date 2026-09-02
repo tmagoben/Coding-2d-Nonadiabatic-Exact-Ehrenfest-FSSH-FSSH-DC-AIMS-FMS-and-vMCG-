@@ -821,7 +821,7 @@ Then
 
 $$
 \boxed{
-N_{\rm part}
+N_{\mathrm{part}}
 =
 \frac{1}{\sum_kp_k^2}.
 }
