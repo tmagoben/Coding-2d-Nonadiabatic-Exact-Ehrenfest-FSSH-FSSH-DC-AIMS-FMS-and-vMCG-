@@ -10,7 +10,7 @@ This document derives the core equations used by the Gaussian dynamics framework
 
 ## 1. Molecular time-dependent Schrödinger equation
 
-Let electronic coordinates be \(r\) and nuclear coordinates be \(R\). In atomic units,
+Let electronic coordinates be $r$ and nuclear coordinates be $R$. In atomic units,
 
 $$
 i\frac{\partial}{\partial t}\Psi(r,R,t)
@@ -41,7 +41,7 @@ No adiabatic, diabatic, spin, or SOC representation has yet been chosen.
 
 ## 2. Coordinate-dependent electronic basis
 
-Choose \(s\) electronic functions collected as columns of
+Choose $s$ electronic functions collected as columns of
 
 $$
 \Phi(R)
@@ -78,7 +78,7 @@ D_A(R)
 }
 $$
 
-Differentiating \(\Phi^\dagger\Phi=I\) gives
+Differentiating $\Phi^\dagger\Phi=I$ gives
 
 $$
 (\nabla_A\Phi^\dagger)\Phi
@@ -100,7 +100,7 @@ The connection is anti-Hermitian.
 
 ## 3. Covariant nuclear derivative
 
-For the electronic coefficient vector \(\chi\),
+For the electronic coefficient vector $\chi$,
 
 $$
 \nabla_A(\Phi\chi)
@@ -110,7 +110,7 @@ $$
 \Phi\nabla_A\chi.
 $$
 
-Projecting with \(\Phi^\dagger\),
+Projecting with $\Phi^\dagger$,
 
 $$
 \Phi^\dagger\nabla_A(\Phi\chi)
@@ -122,7 +122,7 @@ Thus the natural derivative is
 
 $$
 \boxed{
-\nabla_A^{\rm cov}
+\nabla_A^{\mathrm{cov}}
 =
 \nabla_A+D_A.
 }
@@ -133,7 +133,7 @@ written schematically as
 
 $$
 \boxed{
-\hat T_N^{\rm proj}
+\hat T_N^{\mathrm{proj}}
 =
 -\frac12
 \sum_A
@@ -208,9 +208,9 @@ This is the non-Abelian connection transformation law.
 
 The framework distinguishes:
 
-1. the derivative of the **matrix representation** \(H_e(R)\);
+1. the derivative of the **matrix representation** $H_e(R)$;
 2. the matrix elements of the derivative of the **physical operator**
-   \(\partial_A\hat H_e\).
+   $\partial_A\hat H_e$.
 
 v0.21 stores the second object:
 
@@ -238,7 +238,7 @@ $$
 H_e=\operatorname{diag}(E_1,\ldots,E_s).
 $$
 
-For \(i\ne j\),
+For $i\ne j$,
 
 $$
 \boxed{
@@ -259,7 +259,7 @@ projecting between different eigenstates.
 
 ## 6. Gauge-invariant force expectation
 
-For a normalized local electronic vector \(c\),
+For a normalized local electronic vector $c$,
 
 $$
 c^\dagger c=1,
@@ -385,7 +385,7 @@ C_\nu|\dot\Xi_\nu\rangle
 C_\nu\hat H|\Xi_\nu\rangle.
 $$
 
-Projecting with \(\langle\Xi_\mu|\) gives
+Projecting with $\langle\Xi_\mu|$ gives
 
 $$
 iS\dot C+iTC=HC.
@@ -419,9 +419,9 @@ C^\dagger SC.
 }
 $$
 
-It is not generally \(C^\dagger C\).
+It is not generally $C^\dagger C$.
 
-Differentiating \(S_{\mu\nu}=\langle\Xi_\mu|\Xi_\nu\rangle\) gives
+Differentiating $S_{\mu\nu}=\langle\Xi_\mu|\Xi_\nu\rangle$ gives
 
 $$
 \boxed{
@@ -471,7 +471,7 @@ $$
 
 The implementation solves this linear system directly.
 
-It never forms \(S^{-1}\).
+It never forms $S^{-1}$.
 
 ## 11. Why this framework can support SOC without requiring SOC
 
@@ -479,10 +479,10 @@ All equations above are valid for:
 
 - real adiabatic electronic states;
 - complex quasi-diabatic states;
-- arbitrary smooth \(U(s)\) electronic frames;
+- arbitrary smooth $U(s)$ electronic frames;
 - a future Hamiltonian containing spin-orbit coupling.
 
-A later SOC backend can supply a different complex Hermitian \(H\) while leaving the
+A later SOC backend can supply a different complex Hermitian $H$ while leaving the
 Gaussian propagation algebra unchanged.
 
 That is the intended abstraction boundary.
