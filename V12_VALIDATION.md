@@ -205,12 +205,12 @@ For each initial Gaussian bank:
 Define
 
 $$
-\epsilon_{\rm dyn}
+\epsilon_{\mathrm{dyn}}
 =
 \|
 \rho_G(t_f)
 -
-\rho_{\rm projected}^{\rm exact}(t_f)
+\rho_{\mathrm{projected}}^{\mathrm{exact}}(t_f)
 \|_F.
 $$
 
@@ -218,7 +218,7 @@ The release reference requires
 
 $$
 \boxed{
-\epsilon_{\rm dyn}<10^{-3}.
+\epsilon_{\mathrm{dyn}}<10^{-3}.
 }
 $$
 
@@ -232,12 +232,12 @@ The Gaussian result is also compared with exact propagation of the intended
 coordinate-dependent adiabatic packet:
 
 $$
-\epsilon_{\rm target}
+\epsilon_{\mathrm{target}}
 =
 \|
 \rho_G(t_f)
 -
-\rho_{\rm target}^{\rm exact}(t_f)
+\rho_{\mathrm{target}}^{\mathrm{exact}}(t_f)
 \|_F.
 $$
 
