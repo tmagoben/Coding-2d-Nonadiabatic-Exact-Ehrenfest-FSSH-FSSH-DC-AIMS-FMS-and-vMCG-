@@ -11,14 +11,14 @@
 | $J$ | sampled omitted edges per audit |
 | $N_c$ | trusted electronic-cache size |
 | $B$ | recent KD-tree buffer size |
-| $C_{\rm ES}$ | cost of one electronic-structure point |
+| $C_{\mathrm{ES}}$ | cost of one electronic-structure point |
 
 ## Candidate discovery
 
 KD-tree discovery is typically
 
 $$
-O(N\log N+M_{\rm spatial})
+O(N\log N+M_{\mathrm{spatial}})
 $$
 
 under bounded local density, followed by pair-specific geometric bounds.
@@ -31,7 +31,7 @@ Every admitted candidate may require one molecular pair-centroid electronic snap
 
 $$
 \boxed{
-O(MC_{\rm ES}).
+O(MC_{\mathrm{ES}}).
 }
 $$
 
@@ -70,7 +70,7 @@ The measured active-edge exponent is
 With fixed sample size $J$,
 
 $$
-O(JC_{\rm ES})
+O(JC_{\mathrm{ES}})
 $$
 
 new electronic work is required in the worst case per audit.
@@ -82,7 +82,7 @@ The canonical release samples at most eight omitted pairs at each checkpoint.
 A full validation sentinel remains
 
 $$
-O(PC_{\rm ES}).
+O(PC_{\mathrm{ES}}).
 $$
 
 It is intentionally isolated in a separate provider/cache and is not the production
