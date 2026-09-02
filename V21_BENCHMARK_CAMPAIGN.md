@@ -216,7 +216,7 @@ $$
 s=2,4,8.
 $$
 
-The Gaussian graph remains identical while scalar block storage scales as \(s^2\).
+The Gaussian graph remains identical while scalar block storage scales as $s^2$.
 
 ```text
 H_nnz / s^2:
