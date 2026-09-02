@@ -48,8 +48,7 @@ The framework requires
 $$
 H=H^\dagger,
 \qquad
-\partial_a H_{\mathrm{op}}
-=
+\partial_a H_{\mathrm{op}} =
 (\partial_a H_{\mathrm{op}})^\dagger,
 \qquad
 D_a=-D_a^\dagger.
