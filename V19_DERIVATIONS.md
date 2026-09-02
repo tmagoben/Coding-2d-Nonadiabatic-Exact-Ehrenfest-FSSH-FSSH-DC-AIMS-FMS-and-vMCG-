@@ -202,7 +202,7 @@ Therefore
 
 $$
 \boxed{
-S_{\rm second}
+S_{\mathrm{second}}
 =
 \max_{e\in B} S_e.
 }
@@ -221,7 +221,7 @@ The ambiguity margin remains
 $$
 \Delta S
 =
-S_{\rm best}-S_{\rm second}.
+S_{\mathrm{best}}-S_{\mathrm{second}}.
 $$
 
 ## 6. Nearest-anchor tracking
@@ -250,7 +250,7 @@ implementation performs a linear nearest-cache search:
 
 $$
 \boxed{
-O(N_{\rm cache}n_q)
+O(N_{\mathrm{cache}}n_q)
 }
 $$
 
@@ -352,7 +352,7 @@ $$
 \boxed{
 \|q-q_k\|
 \le
-r_{\rm fallback}.
+r_{\mathrm{fallback}}.
 }
 $$
 
