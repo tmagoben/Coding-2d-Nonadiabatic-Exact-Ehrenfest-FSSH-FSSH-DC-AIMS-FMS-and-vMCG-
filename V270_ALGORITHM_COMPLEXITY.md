@@ -22,7 +22,7 @@ time and $O(D^2+M_4)$ temporary memory. All overlap/Hamiltonian blocks therefore
 scale as
 
 $$
-O\!\left(G^2[D^3+M_4D+S^2M_4]\right).
+O\left(G^2[D^3+M_4D+S^2M_4]\right).
 $$
 
 ## Tangent metric
@@ -56,7 +56,7 @@ Nondegenerate principal-axis generation produces $4GD$ candidates. Naive residua
 evaluation scales roughly as
 
 $$
-O\!\left(GD\,[G^2S^2M_4+G^3]\right),
+O\left(GD\,[G^2S^2M_4+G^3]\right),
 $$
 
 because each candidate uses residual projections plus overlap conditioning. A
