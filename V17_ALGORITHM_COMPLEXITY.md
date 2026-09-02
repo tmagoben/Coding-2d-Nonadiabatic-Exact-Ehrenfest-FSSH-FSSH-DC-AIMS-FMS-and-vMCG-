@@ -31,19 +31,19 @@ $$
 The safe KD-tree query is typically
 
 $$
-O(N\log N+M_{\rm spatial})
+O(N\log N+M_{\mathrm{spatial}})
 $$
 
 for bounded local density, followed by pair-specific bound checks
 
 $$
-O(M_{\rm spatial}d).
+O(M_{\mathrm{spatial}}d).
 $$
 
 Worst-case geometry can still yield
 
 $$
-M_{\rm spatial}=O(N^2).
+M_{\mathrm{spatial}}=O(N^2).
 $$
 
 ## 2. Exact S/H/T edge scoring
