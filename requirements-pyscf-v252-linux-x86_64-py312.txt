@@ -1,0 +1,17 @@
+# Hash-locked runtime used for the canonical v0.25.2 cumulative validation.
+# Platform: CPython 3.12, Linux x86_64, manylinux-compatible glibc.
+# Install from a populated wheelhouse with:
+#   python -m pip install --no-index --only-binary=:all: --require-hashes \
+#     --find-links /path/to/wheelhouse \
+#     -r requirements-pyscf-v252-linux-x86_64-py312.txt
+
+h5py==3.16.0 \
+    --hash=sha256:dfc21898ff025f1e8e67e194965a95a8d4754f452f83454538f98f8a3fcb207e
+numpy==2.5.2 \
+    --hash=sha256:3cdec01fa790a186d430433fdd4d4ffb70eed6f0eeb4bf05c8dbe2dce0a9bcb8
+pyscf==2.13.1 \
+    --hash=sha256:27b991d37ff16137d28b7210f678f8a027264cb66590afdd2002c5b69001f8b3
+scipy==1.18.0 \
+    --hash=sha256:1f55797419e16e7f30cf88ffb3113ce0467f00cfe3f70d5c281730b21769bfc2
+setuptools==84.0.0 \
+    --hash=sha256:51a52592b3b99e102b609654876bd65f19f999935166d1352678931132b0c670
