@@ -19,10 +19,10 @@ $$
 D_a(q)=-D_a^\dagger(q),
 $$
 
-where \(K_a\) contains matrix elements of the derivative of the physical electronic
+where $K_a$ contains matrix elements of the derivative of the physical electronic
 operator.
 
-Under \(G(q)\in U(s)\),
+Under $G(q)\in U(s)$,
 
 $$
 H'=G^\dagger HG,
@@ -47,7 +47,7 @@ C_{i\alpha}
 |g_i\rangle|\phi_{i\alpha}\rangle.
 $$
 
-The coefficient dimension is \(Ns\).
+The coefficient dimension is $Ns$.
 
 Release covariance errors are:
 
