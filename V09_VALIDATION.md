@@ -4,7 +4,7 @@ v0.9 adds convergence management, so its tests are organized by approximation la
 
 ## SPA layer
 
-- SPA0 returns \(F(q_c)S_{ij}\).
+- SPA0 returns $F(q_c)S_{ij}$.
 - SPA1 exactly integrates a linear scalar field between equal-width Gaussians.
 - Graph SPA1 matrices remain Hermitian with symmetric pair references.
 - SPA0/SPA1 difference is reported rather than hidden.
@@ -14,7 +14,7 @@ v0.9 adds convergence management, so its tests are organized by approximation la
 - exact duplicate removal has zero projection loss;
 - near-duplicate pruning decreases overlap condition number;
 - pruning is rejected when the configured projection-loss budget would be exceeded;
-- canonical orthogonalization satisfies \(X^\dagger SX=I\).
+- canonical orthogonalization satisfies $X^\dagger SX=I$.
 
 ## Adaptive spawning
 
