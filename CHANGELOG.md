@@ -336,11 +336,11 @@
 - General complex `ElectronicOperatorPointV21`.
 - Physical Hamiltonian-derivative operator matrices.
 - Complex non-Abelian derivative connection contract.
-- Smooth analytic complex \(U(s)\) gauge-transform provider.
+- Smooth analytic complex $U(s)$ gauge-transform provider.
 - Arbitrary-state synthetic operator provider.
 - Full-subspace Procrustes alignment.
 - Wilson-loop gauge-spectrum utilities.
-- Block-sparse molecular Gaussian \(S/H/T\) matrices.
+- Block-sparse molecular Gaussian $S/H/T$ matrices.
 - Gauge-invariant block edge score.
 - Prescribed moving-basis block propagator.
 - Time-dependent complex-gauge equivalence campaign.
@@ -351,7 +351,7 @@
 ### Changed
 
 - The core representation is no longer defined by real adiabatic roots.
-- Sparse block importance no longer uses the norm of the full gauge connection \(T\),
+- Sparse block importance no longer uses the norm of the full gauge connection $T$,
   because that norm is representation dependent under coordinate-dependent gauges.
 - Documentation now separates implementation claims, validation claims, and future
   physics.
