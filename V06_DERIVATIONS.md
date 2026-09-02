@@ -124,7 +124,7 @@ embedded into the core+active determinant space.
 Suppose the active alpha determinant is encoded by bit string
 
 $$
-b_{\rm act}.
+b_{\mathrm{act}}.
 $$
 
 Let the $n_c$ core orbitals be the lowest orbital indices.
@@ -133,27 +133,27 @@ Their occupied bit mask is
 
 $$
 \boxed{
-b_{\rm core}=2^{n_c}-1.
+b_{\mathrm{core}}=2^{n_c}-1.
 }
 $$
 
 Shift the active string by $n_c$ positions:
 
 $$
-b_{\rm act}^{\rm shifted}
+b_{\mathrm{act}}^{\mathrm{shifted}}
 =
-b_{\rm act}\ll n_c.
+b_{\mathrm{act}}\ll n_c.
 $$
 
 Then the full core+active determinant string is
 
 $$
 \boxed{
-b_{\rm full}
+b_{\mathrm{full}}
 =
-b_{\rm core}
+b_{\mathrm{core}}
 \lor
-(b_{\rm act}\ll n_c).
+(b_{\mathrm{act}}\ll n_c).
 }
 $$
 
@@ -173,7 +173,7 @@ Take one core spatial orbital and one active spatial orbital.
 Assume the current correlated orbitals are a rotation of the previous ones:
 
 $$
-S_{\rm MO}
+S_{\mathrm{MO}}
 =
 \begin{pmatrix}
 \cos\theta&-\sin\theta\\
@@ -188,7 +188,7 @@ The alpha determinant occupies both core and active orbitals, so
 $$
 S_\alpha
 =
-S_{\rm MO}
+S_{\mathrm{MO}}
 $$
 
 and
@@ -260,7 +260,7 @@ Choose current ket phase $p_i$.
 The transformed overlap is
 
 $$
-\langle\Psi_i^{\rm prev}|p_i\Psi_{\pi(i)}^{\rm curr}\rangle
+\langle\Psi_i^{\mathrm{prev}}|p_i\Psi_{\pi(i)}^{\mathrm{curr}}\rangle
 =
 p_i z_i.
 $$
@@ -461,7 +461,7 @@ $$
 For subspace overlap matrix
 
 $$
-O_{\rm sub}
+O_{\mathrm{sub}}
 =
 \Phi_A^\dagger\Phi_B,
 $$
@@ -504,9 +504,9 @@ But after a complete loop,
 
 $$
 \boxed{
-|\Phi_{\rm final}\rangle
+|\Phi_{\mathrm{final}}\rangle
 =
--|\Phi_{\rm initial}\rangle.
+-|\Phi_{\mathrm{initial}}\rangle.
 }
 $$
 
