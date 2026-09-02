@@ -89,7 +89,7 @@ If $U_{\mu a}$ changes across the packet, $\rho_e$ is generally mixed.
 The center-frozen state is
 
 $$
-|\Psi_{\rm cf}\rangle
+|\Psi_{\mathrm{cf}}\rangle
 =
 \int dR\,
 g(R)|R\rangle
@@ -99,11 +99,11 @@ $$
 Because the electronic vector is independent of $R$,
 
 $$
-|\Psi_{\rm cf}\rangle
+|\Psi_{\mathrm{cf}}\rangle
 =
-|\chi\rangle_{\rm nuc}
+|\chi\rangle_{\mathrm{nuc}}
 \otimes
-|\Phi_a(q_0)\rangle_{\rm el}.
+|\Phi_a(q_0)\rangle_{\mathrm{el}}.
 $$
 
 The electronic reduced density is
@@ -158,7 +158,7 @@ Define residual
 $$
 |r\rangle
 =
-|\Psi_{\rm target}\rangle
+|\Psi_{\mathrm{target}}\rangle
 -
 \sum_{ia}C_{ia}|B_{ia}\rangle.
 $$
@@ -177,7 +177,7 @@ $$
 \frac{\partial\mathcal L}{\partial C_{jb}^*}
 =
 -
-\langle B_{jb}|\Psi_{\rm target}\rangle
+\langle B_{jb}|\Psi_{\mathrm{target}}\rangle
 +
 \sum_{ia}
 \langle B_{jb}|B_{ia}\rangle
@@ -211,7 +211,7 @@ $$
 \boxed{
 S_{jb,ia}
 =
-S_{ji}^{\rm nuc}\delta_{ba}.
+S_{ji}^{\mathrm{nuc}}\delta_{ba}.
 }
 $$
 
@@ -228,7 +228,7 @@ $$
 The overlap of target and projection is
 
 $$
-\langle\Psi_{\rm target}|\Psi_{\rm proj}\rangle
+\langle\Psi_{\mathrm{target}}|\Psi_{\mathrm{proj}}\rangle
 =
 b^\dagger C.
 $$
@@ -250,27 +250,27 @@ But
 $$
 C^\dagger SC
 =
-\langle\Psi_{\rm proj}|\Psi_{\rm proj}\rangle.
+\langle\Psi_{\mathrm{proj}}|\Psi_{\mathrm{proj}}\rangle.
 $$
 
 Thus for an exact orthogonal projection,
 
 $$
 \boxed{
-\langle\Psi_{\rm target}|\Psi_{\rm proj}\rangle
+\langle\Psi_{\mathrm{target}}|\Psi_{\mathrm{proj}}\rangle
 =
-\|\Psi_{\rm proj}\|^2.
+\|\Psi_{\mathrm{proj}}\|^2.
 }
 $$
 
 Therefore
 
 $$
-\|\Psi_{\rm target}-\Psi_{\rm proj}\|^2
+\|\Psi_{\mathrm{target}}-\Psi_{\mathrm{proj}}\|^2
 =
-\|\Psi_{\rm target}\|^2
+\|\Psi_{\mathrm{target}}\|^2
 -
-\|\Psi_{\rm proj}\|^2.
+\|\Psi_{\mathrm{proj}}\|^2.
 $$
 
 In the finite grid implementation small differences can arise from finite-domain and
@@ -406,7 +406,7 @@ Therefore
 $$
 \boxed{
 \begin{aligned}
-V_{ij}^{\rm LVC}
+V_{ij}^{\mathrm{LVC}}
 =
 S_{ij}
 \Big[
@@ -433,7 +433,7 @@ This is exact for the model.
 Let
 
 $$
-T_{ij}^{\rm nuc}
+T_{ij}^{\mathrm{nuc}}
 =
 \langle g_i|\hat T_N|g_j\rangle.
 $$
@@ -452,9 +452,9 @@ $$
 \boxed{
 H_{ia,jb}
 =
-T_{ij}^{\rm nuc}\delta_{ab}
+T_{ij}^{\mathrm{nuc}}\delta_{ab}
 +
-[V_{ij}^{\rm LVC}]_{ab}.
+[V_{ij}^{\mathrm{LVC}}]_{ab}.
 }
 $$
 
@@ -498,7 +498,7 @@ $$
 =
 \langle g_j|g_i\rangle
 =
-S_{ji}^{\rm nuc},
+S_{ji}^{\mathrm{nuc}},
 $$
 
 $$
@@ -507,7 +507,7 @@ $$
 =
 \sum_{ij}
 C_{ia}C_{jb}^*
-S_{ji}^{\rm nuc}.
+S_{ji}^{\mathrm{nuc}}.
 }
 $$
 
@@ -518,7 +518,7 @@ $$
 \rho
 =
 C^T
-(S^{\rm nuc})^T
+(S^{\mathrm{nuc}})^T
 C^*.
 }
 $$
@@ -537,7 +537,7 @@ $$
 \sum_a
 \sum_{ij}
 C_{ia}^*
-S_{ij}^{\rm nuc}
+S_{ij}^{\mathrm{nuc}}
 C_{ja}.
 $$
 
@@ -549,7 +549,7 @@ N
 =
 \sum_a
 C_a^\dagger
-S^{\rm nuc}
+S^{\mathrm{nuc}}
 C_a.
 }
 $$
@@ -770,7 +770,7 @@ H_{ij}
 \sum_R
 \boldsymbol\Xi_i^\dagger(R)
 [
-\hat T_{\rm FFT}
+\hat T_{\mathrm{FFT}}
 +
 V_d(R)
 ]
@@ -807,7 +807,7 @@ Therefore
 
 $$
 \boxed{
-\hat T_{\rm FFT}\Xi
+\hat T_{\mathrm{FFT}}\Xi
 =
 \mathcal F^{-1}
 \left[
@@ -826,7 +826,7 @@ This is the same momentum lattice used by the exact split-operator benchmark.
 Let
 
 $$
-\rho_{\rm G}(t)
+\rho_{\mathrm{G}}(t)
 $$
 
 be the Gaussian result initialized from the projected state.
@@ -834,7 +834,7 @@ be the Gaussian result initialized from the projected state.
 Let
 
 $$
-\rho_{\rm proj}^{\rm exact}(t)
+\rho_{\mathrm{proj}}^{\mathrm{exact}}(t)
 $$
 
 be exact grid propagation from the identical projected initial wavefunction.
@@ -843,12 +843,12 @@ Define
 
 $$
 \boxed{
-\epsilon_{\rm dyn}
+\epsilon_{\mathrm{dyn}}
 =
 \|
 \rho_G(t)
 -
-\rho_{\rm proj}^{\rm exact}(t)
+\rho_{\mathrm{proj}}^{\mathrm{exact}}(t)
 \|_F.
 }
 $$
@@ -856,7 +856,7 @@ $$
 For the nine-Gaussian v0.12 reference,
 
 $$
-\epsilon_{\rm dyn}
+\epsilon_{\mathrm{dyn}}
 \approx
 2.90\times10^{-4}.
 $$
@@ -868,13 +868,13 @@ $$
 Let
 
 $$
-\rho_{\rm target}(0)
+\rho_{\mathrm{target}}(0)
 $$
 
 be the intended exact initial density and
 
 $$
-\rho_{\rm proj}(0)
+\rho_{\mathrm{proj}}(0)
 $$
 
 the projected initial density.
@@ -883,12 +883,12 @@ Define
 
 $$
 \boxed{
-\epsilon_{\rm init}
+\epsilon_{\mathrm{init}}
 =
 \|
-\rho_{\rm proj}(0)
+\rho_{\mathrm{proj}}(0)
 -
-\rho_{\rm target}(0)
+\rho_{\mathrm{target}}(0)
 \|_F.
 }
 $$
@@ -896,7 +896,7 @@ $$
 For the nine-Gaussian reference,
 
 $$
-\epsilon_{\rm init}
+\epsilon_{\mathrm{init}}
 \approx
 3.545\times10^{-2}.
 $$
@@ -909,12 +909,12 @@ The final target error is
 
 $$
 \boxed{
-\epsilon_{\rm target}
+\epsilon_{\mathrm{target}}
 =
 \|
 \rho_G(t_f)
 -
-\rho_{\rm target}^{\rm exact}(t_f)
+\rho_{\mathrm{target}}^{\mathrm{exact}}(t_f)
 \|_F.
 }
 $$
@@ -922,7 +922,7 @@ $$
 For the nine-Gaussian reference,
 
 $$
-\epsilon_{\rm target}
+\epsilon_{\mathrm{target}}
 \approx
 3.500\times10^{-2}.
 $$
@@ -930,15 +930,15 @@ $$
 The near equality
 
 $$
-\epsilon_{\rm target}
+\epsilon_{\mathrm{target}}
 \approx
-\epsilon_{\rm init}
+\epsilon_{\mathrm{init}}
 $$
 
 combined with
 
 $$
-\epsilon_{\rm dyn}\ll\epsilon_{\rm init}
+\epsilon_{\mathrm{dyn}}\ll\epsilon_{\mathrm{init}}
 $$
 
 is the quantitative reason v0.12 identifies initial representation as the current
@@ -972,7 +972,7 @@ Therefore
 
 $$
 \boxed{
-D_{\rm tr}
+D_{\mathrm{tr}}
 =
 \frac12
 \sum_k|\lambda_k|.
@@ -982,7 +982,7 @@ $$
 The nine-Gaussian v0.12 reference gives approximately
 
 $$
-D_{\rm tr}
+D_{\mathrm{tr}}
 \approx
 2.475\times10^{-2}.
 $$
