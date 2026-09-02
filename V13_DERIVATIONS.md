@@ -545,7 +545,7 @@ is a two-component electronic residual-overlap vector.
 For all candidates simultaneously, stack the Gaussian rows into
 
 $$
-G_{\rm dict}.
+G_{\mathrm{dict}}.
 $$
 
 Then
@@ -554,7 +554,7 @@ $$
 \boxed{
 B
 =
-G_{\rm dict}^\dagger R\,\Delta A
+G_{\mathrm{dict}}^\dagger R\,\Delta A
 }
 $$
 
@@ -585,7 +585,7 @@ Let
 $$
 X
 =
-G_B^\dagger G_{\rm dict}\,\Delta A.
+G_B^\dagger G_{\mathrm{dict}}\,\Delta A.
 $$
 
 Each candidate column
@@ -678,7 +678,7 @@ $$
 c^*
 =
 \arg\min_{c\in\mathcal C_K}
-\|\rho_c-\rho_{\rm target}\|_F.
+\|\rho_c-\rho_{\mathrm{target}}\|_F.
 }
 $$
 
@@ -691,13 +691,13 @@ This uses only the known initial target state.
 The selection functional depends on
 
 $$
-\rho_{\rm target}(0),
+\rho_{\mathrm{target}}(0),
 $$
 
 not
 
 $$
-\rho_{\rm target}(t_f).
+\rho_{\mathrm{target}}(t_f).
 $$
 
 The exact final-time benchmark is not evaluated until after the complete initial bank
@@ -936,7 +936,7 @@ The squared defect captured by the candidate pair is
 
 $$
 \boxed{
-\Delta_c^{\rm TDSE}
+\Delta_c^{\mathrm{TDSE}}
 =
 \frac{
 \sum_a|b_a|^2
@@ -1007,14 +1007,14 @@ $$
 =
 \|\mathcal R\|^2
 -
-\Delta_c^{\rm TDSE}.
+\Delta_c^{\mathrm{TDSE}}.
 }
 $$
 
 The release benchmark obtains
 
 $$
-\Delta_c^{\rm predicted}
+\Delta_c^{\mathrm{predicted}}
 =
 0.0171436285450576,
 $$
@@ -1022,7 +1022,7 @@ $$
 and
 
 $$
-\Delta_c^{\rm actual}
+\Delta_c^{\mathrm{actual}}
 =
 0.017143629785279.
 $$
@@ -1075,7 +1075,7 @@ It does **not** imply that every nonlinear reduced observable improves monotonic
 For example,
 
 $$
-\|\rho_N-\rho_{\rm target}\|_F
+\|\rho_N-\rho_{\mathrm{target}}\|_F
 $$
 
 may temporarily increase even while the full wavefunction residual decreases.
@@ -1090,7 +1090,7 @@ proxy for the other.
 For the release reference,
 
 $$
-\epsilon_{\rm init}
+\epsilon_{\mathrm{init}}
 \approx
 3.21\times10^{-2},
 $$
@@ -1098,7 +1098,7 @@ $$
 while the representation-consistent projected dynamics error is only
 
 $$
-\epsilon_{\rm dyn}
+\epsilon_{\mathrm{dyn}}
 \approx
 1.14\times10^{-4}.
 $$
@@ -1107,9 +1107,9 @@ Thus
 
 $$
 \boxed{
-\epsilon_{\rm dyn}
+\epsilon_{\mathrm{dyn}}
 \ll
-\epsilon_{\rm init}.
+\epsilon_{\mathrm{init}}.
 }
 $$
 
