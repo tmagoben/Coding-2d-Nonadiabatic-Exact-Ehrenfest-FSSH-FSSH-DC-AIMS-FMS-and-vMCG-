@@ -11,10 +11,10 @@ receipt, plus fixed template, environment, reference, and optional runtime artif
 Structural receipt validation is linear in the number of receipts. Hash verification is
 
 $$
-O(B_{\rm raw}),
+O(B_{\mathrm{raw}}),
 $$
 
-where $B_{\rm raw}$ is the total raw-artifact byte count. Memory use is linear in the
+where $B_{\mathrm{raw}}$ is the total raw-artifact byte count. Memory use is linear in the
 manifest and one hashing block; artifacts are streamed rather than loaded together.
 
 ## Evidence derivation
