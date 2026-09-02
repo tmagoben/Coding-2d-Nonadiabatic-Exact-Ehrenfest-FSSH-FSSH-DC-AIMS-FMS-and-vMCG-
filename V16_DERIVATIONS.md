@@ -138,7 +138,7 @@ edge is allowed to persist below the enter threshold.
 Let
 
 $$
-\tau_{\rm exit}<\tau_{\rm enter}.
+\tau_{\mathrm{exit}}<\tau_{\mathrm{enter}}.
 $$
 
 For an inactive pair,
@@ -152,7 +152,7 @@ the next graph contains the edge only if
 $$
 |S_{ij}^{n+1}|
 \ge
-\tau_{\rm enter}.
+\tau_{\mathrm{enter}}.
 $$
 
 For an active pair,
@@ -166,7 +166,7 @@ the edge remains if
 $$
 |S_{ij}^{n+1}|
 \ge
-\tau_{\rm exit}.
+\tau_{\mathrm{exit}}.
 $$
 
 Thus the graph has memory and avoids rapid on/off switching near one cutoff.
@@ -268,7 +268,7 @@ d_c
 \sum_{i=1}^{N}
 \mathbf 1
 \left[
-B_{ci}\ge\tau_{\rm enter}
+B_{ci}\ge\tau_{\mathrm{enter}}
 \right],
 $$
 
@@ -295,7 +295,7 @@ Thus the estimated scalar nonzero growth is
 
 $$
 \boxed{
-\Delta n_{\rm nz}
+\Delta n_{\mathrm{nz}}
 =
 s^2(1+2d_c).
 }
@@ -310,17 +310,17 @@ It is not a prediction of sparse-LU fill-in.
 Let the electronic provider return a dimensionless cost estimate
 
 $$
-C_{\rm el}(c).
+C_{\mathrm{el}}(c).
 $$
 
 For the geometry-cache reference model,
 
 $$
-C_{\rm el}(c)
+C_{\mathrm{el}}(c)
 =
 \begin{cases}
-C_{\rm cached}, & d(q_c,\mathcal Q_{\rm cache})\le r_{\rm reuse},\\
-C_{\rm new}, & \text{otherwise}.
+C_{\mathrm{cached}}, & d(q_c,\mathcal Q_{\mathrm{cache}})\le r_{\mathrm{reuse}},\\
+C_{\mathrm{new}}, & \text{otherwise}.
 \end{cases}
 $$
 
@@ -337,9 +337,9 @@ $$
 C_c
 =
 \left[
-r_{\rm pair}
-+\frac12r_{\rm sparse}
-+w_{\rm el}C_{\rm el}(c)
+r_{\mathrm{pair}}
++\frac12r_{\mathrm{sparse}}
++w_{\mathrm{el}}C_{\mathrm{el}}(c)
 \right]
 m_\kappa,
 $$
