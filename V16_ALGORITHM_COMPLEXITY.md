@@ -87,7 +87,7 @@ $$
 Local-degree and electronic-cost reranking is only
 
 $$
-O(K_{\rm short}Nd)
+O(K_{\mathrm{short}}Nd)
 $$
 
 for a small shortlist.

@@ -232,7 +232,7 @@ Projection gives
 
 $$
 \boxed{
-(H_{\rm ad}\chi)_a
+(H_{\mathrm{ad}}\chi)_a
 =
 -\frac{1}{2M}
 \left[
@@ -265,7 +265,7 @@ Therefore the kinetic energy can be written compactly as
 
 $$
 \boxed{
-T_{\rm ad}
+T_{\mathrm{ad}}
 =
 -\frac{1}{2M}
 (\partial_x I+d)^2.
@@ -297,7 +297,7 @@ $$
 \boxed{
 U^\dagger H_d U
 =
-H_{\rm ad}
+H_{\mathrm{ad}}
 }
 $$
 
@@ -344,7 +344,7 @@ $$
 $$
 
 However, the Hamiltonian couples different electronic states through the derivative
-coupling terms in $H_{\rm ad}$.
+coupling terms in $H_{\mathrm{ad}}$.
 
 ---
 
@@ -360,7 +360,7 @@ Projection of the TDSE gives
 
 $$
 \boxed{
-iS\dot C=(H-i\tau^{\rm basis})C,
+iS\dot C=(H-i\tau^{\mathrm{basis}})C,
 }
 $$
 
@@ -377,7 +377,7 @@ $$
 and
 
 $$
-\tau^{\rm basis}_{\mu\nu}
+\tau^{\mathrm{basis}}_{\mu\nu}
 =
 \langle G_\mu|\dot G_\nu\rangle.
 $$
@@ -432,7 +432,7 @@ $$
 The v0.2 pedagogical criterion is
 
 $$
-\eta_{ab}>\eta_{\rm spawn}.
+\eta_{ab}>\eta_{\mathrm{spawn}}.
 $$
 
 A child is not created if a sufficiently overlapping target-state Gaussian already
@@ -472,7 +472,7 @@ $$
 \boxed{
 p_b
 =
-{\rm sgn}(p_a)
+{\mathrm{sgn}}(p_a)
 \sqrt{
 p_a^2+2M(E_a-E_b)
 }.
@@ -501,7 +501,7 @@ $$
 \boxed{
 G_{ka}
 \rightarrow
-G_{ka}+G_{{\rm child},b}.
+G_{ka}+G_{{\mathrm{child}},b}.
 }
 $$
 

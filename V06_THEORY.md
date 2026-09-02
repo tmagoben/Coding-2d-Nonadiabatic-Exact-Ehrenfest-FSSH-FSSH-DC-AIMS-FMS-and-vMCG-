@@ -203,9 +203,9 @@ subspace.
 A simple factorization such as
 
 $$
-(\det S_{\rm core})^2
+(\det S_{\mathrm{core}})^2
 \times
-\langle\Psi_{\rm CAS}^A|\Psi_{\rm CAS}^B\rangle
+\langle\Psi_{\mathrm{CAS}}^A|\Psi_{\mathrm{CAS}}^B\rangle
 $$
 
 assumes away those core-active cross blocks.
@@ -271,7 +271,7 @@ $$
 \boxed{
 \langle\mathcal D_A|\mathcal D_B\rangle
 =
-\det S_{\rm occ}^{AB}.
+\det S_{\mathrm{occ}}^{AB}.
 }
 $$
 
@@ -338,9 +338,9 @@ $$
 O_{ij}
 =
 \langle
-\Psi_i^{\rm previous}
+\Psi_i^{\mathrm{previous}}
 |
-\Psi_j^{\rm current}
+\Psi_j^{\mathrm{current}}
 \rangle.
 $$
 
@@ -428,10 +428,10 @@ Let raw current roots be transformed as
 
 $$
 \boxed{
-|\Phi_i^{\rm tracked}\rangle
+|\Phi_i^{\mathrm{tracked}}\rangle
 =
 p_i
-|\Phi_{\pi(i)}^{\rm raw}\rangle.
+|\Phi_{\pi(i)}^{\mathrm{raw}}\rangle.
 }
 $$
 
@@ -439,9 +439,9 @@ Then
 
 $$
 \boxed{
-E_i^{\rm tracked}
+E_i^{\mathrm{tracked}}
 =
-E_{\pi(i)}^{\rm raw},
+E_{\pi(i)}^{\mathrm{raw}},
 }
 $$
 
@@ -449,9 +449,9 @@ and
 
 $$
 \boxed{
-\nabla E_i^{\rm tracked}
+\nabla E_i^{\mathrm{tracked}}
 =
-\nabla E_{\pi(i)}^{\rm raw}.
+\nabla E_{\pi(i)}^{\mathrm{raw}}.
 }
 $$
 
@@ -459,10 +459,10 @@ The NAC tensor transforms as
 
 $$
 \boxed{
-\mathbf d_{ij}^{\rm tracked}
+\mathbf d_{ij}^{\mathrm{tracked}}
 =
 p_i^*p_j
-\mathbf d_{\pi(i),\pi(j)}^{\rm raw}.
+\mathbf d_{\pi(i),\pi(j)}^{\mathrm{raw}}.
 }
 $$
 
@@ -530,7 +530,7 @@ $$
 \boxed{
 \mathcal S_1-\mathcal S_2
 <
-\Delta_{\rm assign},
+\Delta_{\mathrm{assign}},
 }
 $$
 
@@ -596,8 +596,8 @@ Let
 $$
 O
 =
-\Phi_{\rm prev}^\dagger
-\Phi_{\rm curr}.
+\Phi_{\mathrm{prev}}^\dagger
+\Phi_{\mathrm{curr}}.
 $$
 
 Take the SVD
@@ -612,9 +612,9 @@ We seek a rotation $Q$ of the current subspace that maximizes its alignment with
 previous one:
 
 $$
-\Phi_{\rm curr}'
+\Phi_{\mathrm{curr}}'
 =
-\Phi_{\rm curr}Q.
+\Phi_{\mathrm{curr}}Q.
 $$
 
 The Procrustes solution is

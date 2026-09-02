@@ -22,7 +22,7 @@ $$
 g_I(x)=\left(\frac{\alpha_I}{\pi}\right)^{1/4}
 \exp\left[-\frac{\alpha_I}{2}y_I^2
 +\frac{i\beta_I}{2}y_I^2+ip_Iy_I\right],
-\qquad \alpha_I>0,\quad\beta_I\in\mathbb R.
+\qquad \alpha_I>0,\quad\beta_I\in\mathbb{R}.
 $$
 
 The wavefunction is

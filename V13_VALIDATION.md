@@ -105,7 +105,7 @@ defect rather than a failure of the projected coefficient equation.
 For an orthogonalized new Gaussian pair,
 
 $$
-\Delta_c^{\rm TDSE}
+\Delta_c^{\mathrm{TDSE}}
 =
 \frac{
 \sum_a
@@ -125,7 +125,7 @@ coefficients.
 The suite verifies:
 
 $$
-\Psi_{\rm after}=\Psi_{\rm before}
+\Psi_{\mathrm{after}}=\Psi_{\mathrm{before}}
 $$
 
 to numerical precision at insertion.
@@ -138,15 +138,15 @@ derivative in the enlarged basis.
 The release acceptance compares
 
 $$
-\Delta_{\rm predicted}^{\rm TDSE}
+\Delta_{\mathrm{predicted}}^{\mathrm{TDSE}}
 $$
 
 with
 
 $$
-\|\mathcal R_{\rm before}\|^2
+\|\mathcal R_{\mathrm{before}}\|^2
 -
-\|\mathcal R_{\rm after}\|^2.
+\|\mathcal R_{\mathrm{after}}\|^2.
 $$
 
 Their relative discrepancy must be below the configured threshold.

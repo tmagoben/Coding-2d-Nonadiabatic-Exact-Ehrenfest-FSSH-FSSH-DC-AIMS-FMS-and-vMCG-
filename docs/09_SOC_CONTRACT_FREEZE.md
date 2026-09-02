@@ -29,7 +29,7 @@ true:
 
 1. The basis convention and every state/component label are declared before dynamics.
 2. Complete multiplets are included wherever the model claims them.
-3. $H_{\rm spin\text{-}free}$, $H_{\rm SOC}$,
+3. $H_{\mathrm{spin\text{-}free}}$, $H_{\mathrm{SOC}}$,
    $K_{a,\rm spin\text{-}free}$, and $K_{a,\rm SOC}$ are separately testable.
 4. The zero-SOC branch reproduces v0.21.3 spin-free H, K, forces, and propagation.
 5. H, every K, D, and every frame pass explicit structural tolerances.

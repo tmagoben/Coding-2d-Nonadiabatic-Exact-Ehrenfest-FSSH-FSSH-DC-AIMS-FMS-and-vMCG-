@@ -40,7 +40,7 @@ where $a_i$ is the local tracked adiabatic state.
 For $N$ basis functions,
 
 $$
-P_{\rm dense}=\frac{N(N-1)}2.
+P_{\mathrm{dense}}=\frac{N(N-1)}2.
 $$
 
 v0.20 evaluates molecular pair-centroid electronic structure only for geometrically
@@ -65,7 +65,7 @@ The nuclear overlap satisfies
 
 $$
 \boxed{
-|S_{ij}^{\rm nuc}|
+|S_{ij}^{\mathrm{nuc}}|
 \le
 \exp\left[-\frac12 h_{ij}\|q_i-q_j\|^2\right].
 }
@@ -136,7 +136,7 @@ The v0.20 discrete pair-centroid approximation uses
 
 $$
 \boxed{
-S_{ij}=S_{ij}^{\rm nuc}s_{ij}^{e},
+S_{ij}=S_{ij}^{\mathrm{nuc}}s_{ij}^{e},
 }
 $$
 
@@ -144,9 +144,9 @@ $$
 \boxed{
 H_{ij}
 =
-T_{ij}^{\rm nuc}s_{ij}^{e}
+T_{ij}^{\mathrm{nuc}}s_{ij}^{e}
 +
-S_{ij}^{\rm nuc}v_{ij}^{e},
+S_{ij}^{\mathrm{nuc}}v_{ij}^{e},
 }
 $$
 
@@ -156,7 +156,7 @@ $$
 \boxed{
 T_{ij}^{(0)}
 =
-\tau_{ij}^{\rm nuc}s_{ij}^{e}.
+\tau_{ij}^{\mathrm{nuc}}s_{ij}^{e}.
 }
 $$
 
@@ -177,7 +177,7 @@ $$
 h_{ij}
 =
 \frac{|H_{ij}|}
-{\max\left[\sqrt{|H_{ii}H_{jj}|},E_{\rm floor}\right]},
+{\max\left[\sqrt{|H_{ii}H_{jj}|},E_{\mathrm{floor}}\right]},
 $$
 
 and
@@ -212,7 +212,7 @@ $$
 w_S=1,\qquad w_H=0.20,\qquad w_T=1.
 $$
 
-New edges require $\eta_{ij}\ge\eta_{\rm enter}$; existing edges persist down to the
+New edges require $\eta_{ij}\ge\eta_{\mathrm{enter}}$; existing edges persist down to the
 smaller exit threshold.
 
 ## 6. Global local-omission budget
@@ -221,7 +221,7 @@ For locally scored but omitted candidate edges,
 
 $$
 \boxed{
-B_{\rm local}
+B_{\mathrm{local}}
 =
 \left(\sum_{e\in D}\eta_e^2\right)^{1/2}.
 }
@@ -233,7 +233,7 @@ into the active graph until the budget is satisfied.
 The canonical v0.20 budget is
 
 $$
-B_{\rm local}\le0.01.
+B_{\mathrm{local}}\le0.01.
 $$
 
 This controls accumulation inside the **scored candidate set**. Geometrically screened
@@ -251,7 +251,7 @@ At each audit checkpoint v0.20 scores two omitted-edge samples:
 A violation occurs if an omitted sampled edge satisfies
 
 $$
-\eta_{ij}>\eta_{\rm enter}.
+\eta_{ij}>\eta_{\mathrm{enter}}.
 $$
 
 That means the score would retain the edge, so the failure belongs specifically to the
@@ -260,7 +260,7 @@ geometric search layer.
 v0.20 responds with
 
 $$
-\tau_{\rm search}\leftarrow r\tau_{\rm search},
+\tau_{\mathrm{search}}\leftarrow r\tau_{\mathrm{search}},
 \qquad 0<r<1,
 $$
 
@@ -470,21 +470,21 @@ The irregular chain benchmark avoids duplicate pair-centroid geometries.
 Fitted scaling is
 
 $$
-E_{\rm active}\sim N^{1.117286},
+E_{\mathrm{active}}\sim N^{1.117286},
 $$
 
 $$
-M_{\rm pair}\sim N^{1.032449},
+M_{\mathrm{pair}}\sim N^{1.032449},
 $$
 
 $$
-N_{\rm ES}\sim N^{1.021324},
+N_{\mathrm{ES}}\sim N^{1.021324},
 $$
 
 while the formal dense pair count behaves as
 
 $$
-P_{\rm dense}\sim N^{2.021324}.
+P_{\mathrm{dense}}\sim N^{2.021324}.
 $$
 
 At $N=160$, only `317` molecular pair scores are evaluated instead of

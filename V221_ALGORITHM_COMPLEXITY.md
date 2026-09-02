@@ -9,9 +9,9 @@ finite-difference steps, `N_x` the one-dimensional grid size, `N_t` the step cou
 The audit evaluates both spin-free and SOC operators at `2 d n_h` neighboring
 geometries. Frame transport and dense residuals cost at most
 
-\[
+$$
 O(n_h d s^3)
-\]
+$$
 
 time and `O(d s^2)` working storage when provider cost is excluded. The default
 `n_h=3` is fixed. Unlike v0.22.0, this cost covers every coordinate and both components,
@@ -28,21 +28,21 @@ Unitarity, time-reversal square, and projector algebra use dense products and co
 Static provider evaluation stores `N_x` dense `s`-state potentials. Potential
 eigendecompositions and half-step exponentials are computed once:
 
-\[
+$$
 O(N_xs^3)\ \text{setup time},\qquad O(N_xs^2)\ \text{storage}.
-\]
+$$
 
 Each Strang step then costs
 
-\[
+$$
 O(N_xs^2+sN_x\log N_x),
-\]
+$$
 
 so a trajectory costs
 
-\[
+$$
 O\!\left(N_xs^3+N_t(N_xs^2+sN_x\log N_x)\right).
-\]
+$$
 
 The v0.22.1 implementation now matches this precomputation model exactly. The direct-
 product grid remains a validation oracle, not a production multidimensional solver.

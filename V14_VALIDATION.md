@@ -100,7 +100,7 @@ Galerkin space.
 The settings object requires:
 
 $$
-\eta_{\rm add}>\eta_{\rm remove}.
+\eta_{\mathrm{add}}>\eta_{\mathrm{remove}}.
 $$
 
 Configurations that reverse or eliminate this ordering are rejected.

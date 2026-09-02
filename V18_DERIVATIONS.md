@@ -42,7 +42,7 @@ Therefore
 
 $$
 \boxed{
-\phi_{\rm aligned}
+\phi_{\mathrm{aligned}}
 =
 e^{-i\arg\langle\psi|\phi\rangle}\phi.
 }
@@ -143,17 +143,17 @@ $$
 =
 \left[
 \int
-(n_G-n_{\rm ref})^2dR
+(n_G-n_{\mathrm{ref}})^2dR
 \right]^{1/2}.
 $$
 
 The total-variation distance is
 
 $$
-D_{\rm TV}
+D_{\mathrm{TV}}
 =
 \frac12
-\int|n_G-n_{\rm ref}|dR.
+\int|n_G-n_{\mathrm{ref}}|dR.
 $$
 
 ## 4. Spatial moments
@@ -180,13 +180,13 @@ $$
 v0.18 reports
 
 $$
-\|\mu_G-\mu_{\rm ref}\|_2
+\|\mu_G-\mu_{\mathrm{ref}}\|_2
 $$
 
 and
 
 $$
-\|\Sigma_G-\Sigma_{\rm ref}\|_F.
+\|\Sigma_G-\Sigma_{\mathrm{ref}}\|_F.
 $$
 
 These diagnostics distinguish a globally misplaced packet from an incorrectly broadened
@@ -242,7 +242,7 @@ Hence
 
 $$
 \boxed{
-p_{\rm obs}
+p_{\mathrm{obs}}
 =
 \frac{
 \ln
@@ -266,7 +266,7 @@ Suppose enrichment is checked every $m$ numerical steps.
 The physical interval is
 
 $$
-\Delta t_{\rm control}
+\Delta t_{\mathrm{control}}
 =
 m\Delta t.
 $$
@@ -277,7 +277,7 @@ timestep convergence study.
 v0.18 instead specifies
 
 $$
-\tau_{\rm control}
+\tau_{\mathrm{control}}
 $$
 
 and resolves
@@ -288,7 +288,7 @@ m
 =
 \operatorname{round}
 \left(
-\tau_{\rm control}/\Delta t
+\tau_{\mathrm{control}}/\Delta t
 \right).
 }
 $$
@@ -316,7 +316,7 @@ Let
 $$
 Q
 \in
-\mathbb C^{K\times G}
+\mathbb{C}^{K\times G}
 $$
 
 contain all candidate Gaussian grid values.
@@ -328,7 +328,7 @@ v0.18 partitions the candidates into batches
 $$
 Q^{(b)}
 \in
-\mathbb C^{B\times G}.
+\mathbb{C}^{B\times G}.
 $$
 
 The basis-grid matrix
@@ -336,7 +336,7 @@ The basis-grid matrix
 $$
 B
 \in
-\mathbb C^{N\times G}
+\mathbb{C}^{N\times G}
 $$
 
 is retained.
@@ -375,7 +375,7 @@ Let $D$ be the omitted edge set.
 v0.18 selects
 
 $$
-J=J_{\rm priority}+J_{\rm random}
+J=J_{\mathrm{priority}}+J_{\mathrm{random}}
 $$
 
 audit candidates.
@@ -396,7 +396,7 @@ $$
 \boxed{
 \eta_{ij}
 >
-\eta_{\rm enter}.
+\eta_{\mathrm{enter}}.
 }
 $$
 

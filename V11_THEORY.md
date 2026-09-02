@@ -106,7 +106,7 @@ Therefore v0.11 distinguishes
 
 $$
 \boxed{
-N_{\rm TBF}
+N_{\mathrm{TBF}}
 }
 $$
 
@@ -694,9 +694,9 @@ subject to
 
 $$
 \boxed{
-E_{\rm child}^{\rm class}
+E_{\mathrm{child}}^{\mathrm{class}}
 =
-E_{\rm parent}^{\rm class}.
+E_{\mathrm{parent}}^{\mathrm{class}}.
 }
 $$
 
@@ -915,7 +915,7 @@ $$
 \boxed{
 V_{pc}^{(1)}
 =
-S_{pc}^{\rm nuc}
+S_{pc}^{\mathrm{nuc}}
 \,
 \mathbf F_{ab}(q_s)
 \cdot
@@ -958,7 +958,7 @@ $$
 If
 
 $$
-S_{\max}\ge S_{\rm block},
+S_{\max}\ge S_{\mathrm{block}},
 $$
 
 the child is rejected.
@@ -1002,7 +1002,7 @@ One optimized child may still fail to represent a bifurcating nuclear wavepacket
 v0.11 can therefore select the top
 
 $$
-N_{\rm child}
+N_{\mathrm{child}}
 $$
 
 nonredundant candidates from the ranked local search.
@@ -1013,7 +1013,7 @@ $$
 \boxed{
 |\langle g_c^{(1)}|g_c^{(2)}\rangle|
 <
-S_{\rm sibling}.
+S_{\mathrm{sibling}}.
 }
 $$
 
@@ -1021,7 +1021,7 @@ Every child enters with
 
 $$
 \boxed{
-C_{\rm child}=0.
+C_{\mathrm{child}}=0.
 }
 $$
 
@@ -1192,7 +1192,7 @@ v0.11 reports the participation ratio
 
 $$
 \boxed{
-N_{\rm part}
+N_{\mathrm{part}}
 =
 \frac{1}{\sum_kp_k^2}.
 }
@@ -1200,11 +1200,11 @@ $$
 
 Interpretation:
 
-- $N_{\rm part}\approx1$: one canonical basis direction dominates;
-- larger $N_{\rm part}$: the wavefunction genuinely uses multiple independent basis
+- $N_{\mathrm{part}}\approx1$: one canonical basis direction dominates;
+- larger $N_{\mathrm{part}}$: the wavefunction genuinely uses multiple independent basis
   directions.
 
-This is more informative than raw $N_{\rm TBF}$ alone.
+This is more informative than raw $N_{\mathrm{TBF}}$ alone.
 
 ---
 
@@ -1222,7 +1222,7 @@ Define spectral entropy
 
 $$
 \boxed{
-S_{\rm spec}
+S_{\mathrm{spec}}
 =
 -\sum_kw_k\ln w_k.
 }
@@ -1232,9 +1232,9 @@ The spectral effective rank is
 
 $$
 \boxed{
-r_{\rm eff}
+r_{\mathrm{eff}}
 =
-e^{S_{\rm spec}}.
+e^{S_{\mathrm{spec}}}.
 }
 $$
 
@@ -1248,7 +1248,7 @@ coefficient amplitudes are considered.
 The exact reference observable remains the global-diabatic reduced electronic density
 
 $$
-\rho_d^{\rm exact}.
+\rho_d^{\mathrm{exact}}.
 $$
 
 For each Gaussian basis size,
@@ -1274,7 +1274,7 @@ $$
 \|
 \operatorname{diag}\rho_d^{(N)}
 -
-\operatorname{diag}\rho_d^{\rm exact}
+\operatorname{diag}\rho_d^{\mathrm{exact}}
 \|_2,
 }
 $$
@@ -1288,7 +1288,7 @@ $$
 \|
 \rho_d^{(N)}
 -
-\rho_d^{\rm exact}
+\rho_d^{\mathrm{exact}}
 \|_F.
 }
 $$
@@ -1302,7 +1302,7 @@ $$
 |
 \operatorname{Tr}[(\rho_d^{(N)})^2]
 -
-\operatorname{Tr}[(\rho_d^{\rm exact})^2]
+\operatorname{Tr}[(\rho_d^{\mathrm{exact}})^2]
 |.
 }
 $$
@@ -1343,7 +1343,7 @@ This tests whether width diversity contributes materially.
 Set
 
 $$
-N_{\rm child}=1.
+N_{\mathrm{child}}=1.
 $$
 
 This tests whether multi-child basis growth changes convergence.

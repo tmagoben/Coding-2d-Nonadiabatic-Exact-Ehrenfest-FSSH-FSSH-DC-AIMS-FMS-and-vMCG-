@@ -38,7 +38,7 @@ using Gaussian moments through degree four. With
 `r_{I,a}=<g_I,a|R>`, the released capture score is
 
 $$
-\sigma_c=\frac{\|r_c-a^\dagger r_{\rm current}\|_2}{\sqrt\nu}.
+\sigma_c=\frac{\|r_c-a^\dagger r_{\mathrm{current}}\|_2}{\sqrt\nu}.
 $$
 
 A candidate is admitted only if `nu` exceeds the novelty gate, the enlarged nuclear
@@ -68,7 +68,7 @@ Production uses a full SVD, requires full retained target rank and bounded condi
 number, and records the linear residual. The exact squared projection error is
 
 $$
-\epsilon_{\rm proj}^2=
+\epsilon_{\mathrm{proj}}^2=
 \langle\Psi|\Psi\rangle-2\operatorname{Re}\operatorname{Tr}(D^\dagger BC)
 +\operatorname{Tr}(D^\dagger S^T D).
 $$

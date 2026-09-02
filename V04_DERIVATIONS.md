@@ -481,7 +481,7 @@ Real roots exist only for $D\ge0$.
 Old wavefunction:
 
 $$
-\Psi_{\rm old}
+\Psi_{\mathrm{old}}
 =
 \sum_{i=1}^NC_iG_i.
 $$
@@ -501,11 +501,11 @@ $$
 Then
 
 $$
-\Psi_{\rm new}
+\Psi_{\mathrm{new}}
 =
 \sum_{i=1}^NC_iG_i+0\cdot G_{N+1}
 =
-\boxed{\Psi_{\rm old}}.
+\boxed{\Psi_{\mathrm{old}}}.
 $$
 
 Thus spawning changes the variational space but not the instantaneous represented

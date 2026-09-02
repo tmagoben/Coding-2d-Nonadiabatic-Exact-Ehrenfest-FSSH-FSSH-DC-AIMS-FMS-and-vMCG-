@@ -7,10 +7,10 @@ must supply a complete, fixed electronic model space; explicit provenance; the t
 Hermitian Hamiltonian; physical Hermitian derivative operators; derivative connections;
 and cross-geometry overlaps. The analytic providers additionally expose the decomposition
 
-\[
-H=H_{\rm sf}+H_{\rm SOC},\qquad
-K_a=K_{a,{\rm sf}}+K_{a,{\rm SOC}}.
-\]
+$$
+H=H_{\mathrm{sf}}+H_{\mathrm{SOC}},\qquad
+K_a=K_{a,{\mathrm{sf}}}+K_{a,{\mathrm{SOC}}}.
+$$
 
 The Gaussian engine consumes the total operators and remains unaware of which physical
 terms produced them.
@@ -18,9 +18,9 @@ terms produced them.
 ## Model families
 
 The even-electron reference contains a singlet and all three triplet components. Its
-time-reversal representation squares to \(+I\). The odd-electron reference contains
+time-reversal representation squares to $+I$. The odd-electron reference contains
 two complete doublets, uses a quaternionic inter-doublet SOC block, and has a
-time-reversal representation that squares to \(-I\). At zero field this enforces
+time-reversal representation that squares to $-I$. At zero field this enforces
 Kramers pairing.
 
 The two references are separate models. Electron-number parity is provenance, not a
@@ -30,24 +30,24 @@ dynamical label, and the release never combines even- and odd-electron sectors.
 
 Every physical-SOC path is checked for:
 
-1. Hermiticity of spin-free, SOC, and total \(H\) and \(K_a\);
+1. Hermiticity of spin-free, SOC, and total $H$ and $K_a$;
 2. exact operator composition;
 3. correct time-reversal action and square;
 4. complete, orthogonal physical projectors;
 5. centered finite-difference agreement for SOC forces;
-6. cross-geometry consistency of \(H/K/D\);
+6. cross-geometry consistency of $H/K/D$;
 7. general complex-gauge covariance;
 8. complete provenance identity across cache and restart boundaries.
 
-For \(c'=G^\dagger c\), the non-obvious transformation is
+For $c'=G^\dagger c$, the non-obvious transformation is
 
-\[
+$$
 J'=G^\dagger JG^*,
-\]
+$$
 
-while a physical projector transforms as \(P'=G^\dagger PG\). The derivative
+while a physical projector transforms as $P'=G^\dagger PG$. The derivative
 connection receives the usual inhomogeneous gauge term; the physical derivative
-operator \(K_a\) does not.
+operator $K_a$ does not.
 
 ## Validation hierarchy
 

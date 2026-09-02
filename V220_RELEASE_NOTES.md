@@ -10,16 +10,16 @@ SOC data.
 
 - An even-electron model containing one singlet and one complete triplet in the
   ordered basis
-  \(\{|S\rangle,|T_{-1}\rangle,|T_0\rangle,|T_{+1}\rangle\}\).
+  $\{|S\rangle,|T_{-1}\rangle,|T_0\rangle,|T_{+1}\rangle\}$.
 - An odd-electron model containing two complete Kramers doublets in the ordered basis
-  \(\{|D_1,+\tfrac12\rangle,|D_1,-\tfrac12\rangle,
-  |D_2,+\tfrac12\rangle,|D_2,-\tfrac12\rangle\}\).
+  $\{|D_1,+\tfrac12\rangle,|D_1,-\tfrac12\rangle,
+  |D_2,+\tfrac12\rangle,|D_2,-\tfrac12\rangle\}$.
 - Explicit decompositions
 
-  \[
-  H=H_{\rm sf}+H_{\rm SOC},\qquad
-  K_a=K_{a,{\rm sf}}+K_{a,{\rm SOC}},
-  \]
+  $$
+  H=H_{\mathrm{sf}}+H_{\mathrm{SOC}},\qquad
+  K_a=K_{a,{\mathrm{sf}}}+K_{a,{\mathrm{SOC}}},
+  $$
 
   with analytic physical derivatives in atomic units.
 - Even- and odd-electron time-reversal conventions, including the correct

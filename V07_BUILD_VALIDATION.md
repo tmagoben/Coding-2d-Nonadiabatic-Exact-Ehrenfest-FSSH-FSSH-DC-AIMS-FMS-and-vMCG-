@@ -19,12 +19,12 @@ The cumulative suite includes all v0.1-v0.6 regression tests plus v0.7 tests for
 - flat and frustrated electronic gauge graphs;
 - unitary polar links;
 - gauge-invariant Wilson-loop spectra and traces;
-- a discrete Berry phase of \(-1\) around the v0.4 conical intersection;
+- a discrete Berry phase of $-1$ around the v0.4 conical intersection;
 - spanning-tree gauge transport;
 - multi-start graph synchronization without removing physical holonomy;
 - derivative-Hamiltonian reconstruction;
-- arbitrary local \(U(2)\) gauge covariance of electronic pair factors;
-- gauge invariance of graph-Gaussian \(S\) and \(H\) matrices;
+- arbitrary local $U(2)$ gauge covariance of electronic pair factors;
+- gauge invariance of graph-Gaussian $S$ and $H$ matrices;
 - generalized Cayley norm conservation;
 - PySCF snapshot-graph construction using an injected many-electron overlap engine;
 - deterministic TBF-center/pair-centroid graph topology.
@@ -44,7 +44,7 @@ The nontrivial W=-1 holonomy remains after gauge smoothing.
 ```
 
 The synchronization objective decreases substantially while the Wilson loop remains
-\(-1\).  This is the intended behavior: finite-step/local gauge variation can be
+$-1$.  This is the intended behavior: finite-step/local gauge variation can be
 redistributed, but the physical loop holonomy is not erased.
 
 ## Gauge-covariant graph-Gaussian regression
@@ -58,7 +58,7 @@ Hermiticity residual H: 2.7755575615628914e-17
 ```
 
 The matrices are invariant to machine precision under independently chosen random
-\(U(2)\) gauges at every electronic graph node.
+$U(2)$ gauges at every electronic graph node.
 
 ## PySCF runtime status
 

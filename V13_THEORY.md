@@ -72,7 +72,7 @@ $$
 \boxed{
 \mathcal V_N
 =
-\mathcal B_N\otimes\mathbb C^2.
+\mathcal B_N\otimes\mathbb{C}^2.
 }
 $$
 
@@ -411,7 +411,7 @@ compute the initial reduced electronic density error
 $$
 \epsilon_\rho
 =
-\|\rho_c-\rho_{\rm target}\|_F.
+\|\rho_c-\rho_{\mathrm{target}}\|_F.
 $$
 
 Choose the candidate with the smallest
@@ -521,7 +521,7 @@ The projected-state dynamics error is
 
 $$
 \boxed{
-\epsilon_{\rm dyn}
+\epsilon_{\mathrm{dyn}}
 =
 0.0001135488
 }.
@@ -557,7 +557,7 @@ trace distance
 
 $$
 \boxed{
-D_{\rm tr}
+D_{\mathrm{tr}}
 =
 0.022476309
 },
@@ -733,7 +733,7 @@ The squared TDSE defect that the new pair can capture is
 
 $$
 \boxed{
-\Delta_c^{\rm TDSE}
+\Delta_c^{\mathrm{TDSE}}
 =
 \frac{
 \displaystyle
@@ -750,7 +750,7 @@ $$
 c^*
 =
 \arg\max_c
-\Delta_c^{\rm TDSE}.
+\Delta_c^{\mathrm{TDSE}}.
 }
 $$
 
@@ -774,9 +774,9 @@ This is a strong audit property:
 
 $$
 \boxed{
-\Psi_{\rm after\ insertion}
+\Psi_{\mathrm{after\ insertion}}
 =
-\Psi_{\rm before\ insertion}.
+\Psi_{\mathrm{before\ insertion}}.
 }
 $$
 

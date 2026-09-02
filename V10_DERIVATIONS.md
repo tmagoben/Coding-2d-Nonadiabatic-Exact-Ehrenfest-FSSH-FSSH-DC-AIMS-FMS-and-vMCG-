@@ -142,7 +142,7 @@ $$
 =
 \sum_{ij}
 C_iC_j^*
-S^{\rm nuc}_{ji}
+S^{\mathrm{nuc}}_{ji}
 |v_i\rangle\langle v_j|.
 }
 $$
@@ -158,7 +158,7 @@ $$
 =
 \sum_{ij}
 C_iC_j^*
-S^{\rm nuc}_{ji}
+S^{\mathrm{nuc}}_{ji}
 \langle v_j|v_i\rangle.
 $$
 
@@ -169,7 +169,7 @@ $$
 =
 \sum_{ij}
 C_i^*C_j
-S^{\rm nuc}_{ij}
+S^{\mathrm{nuc}}_{ij}
 \langle v_i|v_j\rangle.
 $$
 
@@ -178,7 +178,7 @@ The full graph-Gaussian overlap is
 $$
 S_{ij}
 =
-S^{\rm nuc}_{ij}
+S^{\mathrm{nuc}}_{ij}
 \langle v_i|v_j\rangle.
 $$
 
@@ -263,8 +263,8 @@ $$
 =
 \sum_k
 \sqrt{\lambda_k}
-|u_k\rangle_{\rm nuc}
-|v_k\rangle_{\rm el},
+|u_k\rangle_{\mathrm{nuc}}
+|v_k\rangle_{\mathrm{el}},
 $$
 
 the electronic reduced density matrix is
@@ -325,7 +325,7 @@ $$
 Therefore
 
 $$
-S_{\rm vN}
+S_{\mathrm{vN}}
 =
 -\operatorname{Tr}(\rho_e\ln\rho_e)
 $$
@@ -334,7 +334,7 @@ becomes
 
 $$
 \boxed{
-S_{\rm vN}
+S_{\mathrm{vN}}
 =
 -\sum_k
 \lambda_k\ln\lambda_k.
@@ -520,7 +520,7 @@ Thus repeated spawning requires both:
 
 $$
 \boxed{
-\mathcal A\ge\mathcal A_{\rm spawn}
+\mathcal A\ge\mathcal A_{\mathrm{spawn}}
 }
 $$
 
@@ -528,6 +528,6 @@ and
 
 $$
 \boxed{
-|S_{\rm child,existing}|<S_{\rm block}.
+|S_{\mathrm{child,existing}}|<S_{\mathrm{block}}.
 }
 $$

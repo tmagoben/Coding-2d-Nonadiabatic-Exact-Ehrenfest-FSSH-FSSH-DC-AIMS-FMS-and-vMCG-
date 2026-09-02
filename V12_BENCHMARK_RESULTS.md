@@ -75,14 +75,14 @@ maximum overlap condition number:           2235.290713199147
 For the nine-Gaussian reference,
 
 $$
-\epsilon_{\rm init}
+\epsilon_{\mathrm{init}}
 =
 0.03545458,
 $$
 
 $$
 \boxed{
-\epsilon_{\rm dyn}
+\epsilon_{\mathrm{dyn}}
 =
 0.00029022869
 },
@@ -91,7 +91,7 @@ $$
 and
 
 $$
-\epsilon_{\rm target}
+\epsilon_{\mathrm{target}}
 =
 0.035000281.
 $$

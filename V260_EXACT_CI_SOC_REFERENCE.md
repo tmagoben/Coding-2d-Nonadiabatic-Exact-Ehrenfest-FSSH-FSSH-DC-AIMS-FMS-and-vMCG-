@@ -52,7 +52,7 @@ $$
 The antiunitary operator is
 
 $$
-\Theta=\mathbf1_{\rm orbital}\otimes(i\sigma_y)K,
+\Theta=\mathbf1_{\mathrm{orbital}}\otimes(i\sigma_y)K,
 \qquad \Theta^2=-1.
 $$
 

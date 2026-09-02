@@ -439,13 +439,13 @@ well-defined. Instead consider an $m$-dimensional electronic subspace.
 Let
 
 $$
-\Phi_{\rm ref}
+\Phi_{\mathrm{ref}}
 $$
 
 and
 
 $$
-\Phi_{\rm new}
+\Phi_{\mathrm{new}}
 $$
 
 contain orthonormal basis vectors as columns.
@@ -454,14 +454,14 @@ Find the unitary matrix $Q$ minimizing
 
 $$
 \boxed{
-\|\Phi_{\rm new}Q-\Phi_{\rm ref}\|_F.
+\|\Phi_{\mathrm{new}}Q-\Phi_{\mathrm{ref}}\|_F.
 }
 $$
 
 If
 
 $$
-\Phi_{\rm new}^\dagger\Phi_{\rm ref}
+\Phi_{\mathrm{new}}^\dagger\Phi_{\mathrm{ref}}
 =
 U\Sigma V^\dagger
 $$
@@ -580,7 +580,7 @@ $$
 Using the multidimensional Gaussian integral
 
 $$
-\int_{\mathbb R^D}
+\int_{\mathbb{R}^D}
 e^{-\mathbf x^TA\mathbf x}
 d^D x
 =
@@ -876,7 +876,7 @@ $$
 \boxed{
 |\Psi(t)\rangle
 =
-\sum_{k=1}^{N_{\rm TBF}}
+\sum_{k=1}^{N_{\mathrm{TBF}}}
 C_k(t)|G_k(t)\rangle.
 }
 $$
@@ -926,7 +926,7 @@ the basis merely grows geometrically.
 In v0.4, after a child is created with initial coefficient
 
 $$
-C_{\rm child}=0,
+C_{\mathrm{child}}=0,
 $$
 
 the enlarged matrices $S,H,T$ are rebuilt and the coupled coefficient equation
@@ -1024,7 +1024,7 @@ $$
 A spawn is considered when
 
 $$
-\eta_{ab}>\eta_{\rm spawn}.
+\eta_{ab}>\eta_{\mathrm{spawn}}.
 $$
 
 The implementation additionally blocks a spawn if an existing target-state Gaussian

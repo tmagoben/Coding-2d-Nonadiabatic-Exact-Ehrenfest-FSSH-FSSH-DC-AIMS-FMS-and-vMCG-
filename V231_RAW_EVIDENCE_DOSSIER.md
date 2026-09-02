@@ -46,11 +46,11 @@ method labels must agree with the corresponding raw convergence ladder.
 
 ## Derived evidence
 
-For stored observable arrays $x$ and $x_{\rm ref}$, the reference error is computed as
+For stored observable arrays $x$ and $x_{\mathrm{ref}}$, the reference error is computed as
 either
 
 $$
-\epsilon_{\rm ref}=\max_i|x_i-x_{{\rm ref},i}|
+\epsilon_{\mathrm{ref}}=\max_i|x_i-x_{{\mathrm{ref}},i}|
 $$
 
 or the root-mean-square difference. A basis or method ladder derives one change between

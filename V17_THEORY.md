@@ -37,7 +37,7 @@ h_{ij}
 \frac{\|H_{ij}\|_F}
 {\max\left[
 \sqrt{\|H_{ii}\|_F\|H_{jj}\|_F},
-E_{\rm floor}
+E_{\mathrm{floor}}
 \right]}.
 $$
 
@@ -98,7 +98,7 @@ $$
 A safe KD-tree global radius is generated from the initial search floor
 
 $$
-\tau_{\rm search}=10^{-5}.
+\tau_{\mathrm{search}}=10^{-5}.
 $$
 
 Pairs inside that radius receive the tighter pair-specific overlap bound.
@@ -113,9 +113,9 @@ membership is decided by the S/H/T score.
 The deliberately aggressive initial release values are
 
 $$
-\eta_{\rm enter}=0.060,
+\eta_{\mathrm{enter}}=0.060,
 \qquad
-\eta_{\rm exit}=0.030.
+\eta_{\mathrm{exit}}=0.030.
 $$
 
 A new edge is admitted only above the enter score.
@@ -130,7 +130,7 @@ For all locally scored but omitted edges, define
 
 $$
 \boxed{
-B_{\rm local}
+B_{\mathrm{local}}
 =
 \left(
 \sum_{(i,j)\in D}
@@ -142,7 +142,7 @@ $$
 The release imposes
 
 $$
-B_{\rm local}\le0.08.
+B_{\mathrm{local}}\le0.08.
 $$
 
 If the tentative dropped-edge set violates this budget, the largest omitted scores are
@@ -198,15 +198,15 @@ the geometric search floor.
 With relaxation factor $r=0.5$,
 
 $$
-\eta_{\rm enter}\leftarrow r\eta_{\rm enter},
+\eta_{\mathrm{enter}}\leftarrow r\eta_{\mathrm{enter}},
 $$
 
 $$
-\eta_{\rm exit}\leftarrow r\eta_{\rm exit},
+\eta_{\mathrm{exit}}\leftarrow r\eta_{\mathrm{exit}},
 $$
 
 $$
-\tau_{\rm search}\leftarrow r\tau_{\rm search}.
+\tau_{\mathrm{search}}\leftarrow r\tau_{\mathrm{search}}.
 $$
 
 Thresholds are **never tightened during the same run**.
@@ -246,7 +246,7 @@ The final representation-consistent error is
 
 $$
 \boxed{
-\|\rho_G-\rho_{\rm exact,projected}\|_F
+\|\rho_G-\rho_{\mathrm{exact,projected}}\|_F
 =
 0.0001336146005.
 }
@@ -256,7 +256,7 @@ Against the original exact target,
 
 $$
 \boxed{
-\|\rho_G-\rho_{\rm target}\|_F
+\|\rho_G-\rho_{\mathrm{target}}\|_F
 =
 0.03333954068.
 }

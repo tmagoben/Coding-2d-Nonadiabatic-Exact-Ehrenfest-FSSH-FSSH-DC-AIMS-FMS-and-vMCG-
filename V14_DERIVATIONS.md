@@ -188,7 +188,7 @@ The squared defect norm captured is
 
 $$
 \boxed{
-\Delta_c^{\rm TDSE}
+\Delta_c^{\mathrm{TDSE}}
 =
 \frac{
 \sum_a
@@ -205,7 +205,7 @@ $$
 \boxed{
 f_c
 =
-\frac{\Delta_c^{\rm TDSE}}{\|\mathcal R\|^2}.
+\frac{\Delta_c^{\mathrm{TDSE}}}{\|\mathcal R\|^2}.
 }
 $$
 
@@ -224,9 +224,9 @@ to exceed a configurable minimum before a candidate is accepted.
 Define
 
 $$
-\eta_{\rm add}
+\eta_{\mathrm{add}}
 >
-\eta_{\rm remove}.
+\eta_{\mathrm{remove}}.
 $$
 
 The control law is
@@ -236,15 +236,15 @@ $$
 \begin{cases}
 \text{consider enrichment},
 &
-\eta\ge\eta_{\rm add},
+\eta\ge\eta_{\mathrm{add}},
 \\[4pt]
 \text{no basis-size action},
 &
-\eta_{\rm remove}<\eta<\eta_{\rm add},
+\eta_{\mathrm{remove}}<\eta<\eta_{\mathrm{add}},
 \\[4pt]
 \text{accumulate pruning patience},
 &
-\eta\le\eta_{\rm remove}.
+\eta\le\eta_{\mathrm{remove}}.
 \end{cases}
 }
 $$
@@ -565,7 +565,7 @@ benchmark size.
 Let
 
 $$
-B\in\mathbb C^{N\times G}
+B\in\mathbb{C}^{N\times G}
 $$
 
 contain current nuclear Gaussian values on the diagnostic grid.
@@ -573,7 +573,7 @@ contain current nuclear Gaussian values on the diagnostic grid.
 Let
 
 $$
-Q\in\mathbb C^{K\times G}
+Q\in\mathbb{C}^{K\times G}
 $$
 
 contain candidate Gaussians.
@@ -623,7 +623,7 @@ $$
 Let
 
 $$
-R\in\mathbb C^{G\times s}
+R\in\mathbb{C}^{G\times s}
 $$
 
 contain the TDSE residual electronic components.
@@ -654,7 +654,7 @@ Hence
 
 $$
 \boxed{
-\Delta_k^{\rm TDSE}
+\Delta_k^{\mathrm{TDSE}}
 =
 \frac{\|b_k^\perp\|^2}{n_k}.
 }
@@ -689,7 +689,7 @@ Thus
 
 $$
 \boxed{
-T_{\rm rank}
+T_{\mathrm{rank}}
 =
 O\left(
 KG(N+s)+N^2K+N^3
@@ -720,7 +720,7 @@ Therefore
 
 $$
 \boxed{
-T_{\rm defect}
+T_{\mathrm{defect}}
 =
 O\left(
 N^2d^3
@@ -752,7 +752,7 @@ Ignoring basis-size variation for notation, the total reference scaling is rough
 
 $$
 \boxed{
-T_{\rm total}
+T_{\mathrm{total}}
 =
 T\left[
 O(N^2d^3)
@@ -762,9 +762,9 @@ O((sN)^3)
 +
 \frac{T}{m}
 \left[
-T_{\rm defect}
+T_{\mathrm{defect}}
 +
-T_{\rm candidate}
+T_{\mathrm{candidate}}
 \right].
 }
 $$
@@ -801,7 +801,7 @@ Hence
 
 $$
 \boxed{
-M_{\rm total}
+M_{\mathrm{total}}
 =
 O(
 s^2N^2+KG+NGs
@@ -826,7 +826,7 @@ $$
 complex numbers, or about
 
 $$
-13.7\;{\rm MiB}
+13.7\;{\mathrm{MiB}}
 $$
 
 for `complex128`.

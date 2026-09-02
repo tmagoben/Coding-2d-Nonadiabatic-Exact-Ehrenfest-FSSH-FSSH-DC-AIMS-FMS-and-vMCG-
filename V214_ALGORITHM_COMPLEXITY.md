@@ -1,7 +1,7 @@
 # v0.21.4 Algorithmic Complexity
 
 Let N be the Gaussian count, s the electronic dimension, d the nuclear dimension, E the
-active sparse-edge count, and $C_{\rm provider}$ the cost of one provider snapshot.
+active sparse-edge count, and $C_{\mathrm{provider}}$ the cost of one provider snapshot.
 
 ## Differential provider audit
 
@@ -16,7 +16,7 @@ $$
 The total cost is therefore approximately
 
 $$
-O\!\left((2d+1)C_{\rm provider}+d\,C_{\rm overlap}+d\,s^3\right).
+O\!\left((2d+1)C_{\mathrm{provider}}+d\,C_{\mathrm{overlap}}+d\,s^3\right).
 $$
 
 The audit is a certification operation, not a per-timestep requirement.
@@ -44,7 +44,7 @@ $$
 O\!\left(Nd^3+Ns^2+E\right),
 $$
 
-plus $NC_{\rm provider}$. Checkpointing does not alter the asymptotic cost of subsequent
+plus $NC_{\mathrm{provider}}$. Checkpointing does not alter the asymptotic cost of subsequent
 dense or sparse propagation steps.
 
 ## Zero-SOC rehearsal

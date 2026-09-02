@@ -180,7 +180,7 @@ $$
 Then
 
 $$
-|\Psi_{\rm cf}\rangle
+|\Psi_{\mathrm{cf}}\rangle
 =
 g(R)
 |\Phi_+(q_0)\rangle.
@@ -190,7 +190,7 @@ Its reduced electronic density is
 
 $$
 \boxed{
-\rho_{\rm cf}
+\rho_{\mathrm{cf}}
 =
 |\Phi_+(q_0)\rangle
 \langle\Phi_+(q_0)|.
@@ -201,7 +201,7 @@ Therefore
 
 $$
 \boxed{
-\operatorname{Tr}(\rho_{\rm cf}^2)=1.
+\operatorname{Tr}(\rho_{\mathrm{cf}}^2)=1.
 }
 $$
 
@@ -234,7 +234,7 @@ These are different ansätze.
 Therefore the earlier quantity
 
 $$
-\|\rho_{\rm Gaussian}-\rho_{\rm exact}\|_F
+\|\rho_{\mathrm{Gaussian}}-\rho_{\mathrm{exact}}\|_F
 $$
 
 combined:
@@ -324,7 +324,7 @@ $$
 \boxed{
 S
 =
-S^{\rm nuc}\otimes I_2.
+S^{\mathrm{nuc}}\otimes I_2.
 }
 $$
 
@@ -430,7 +430,7 @@ The kinetic matrix element is scalar in electronic space:
 $$
 T_{ka,lb}
 =
-T_{kl}^{\rm nuc}\delta_{ab}.
+T_{kl}^{\mathrm{nuc}}\delta_{ab}.
 $$
 
 Thus
@@ -439,7 +439,7 @@ $$
 \boxed{
 H_{ka,lb}
 =
-T_{kl}^{\rm nuc}\delta_{ab}
+T_{kl}^{\mathrm{nuc}}\delta_{ab}
 +
 [V_{kl}]_{ab}.
 }
@@ -540,7 +540,7 @@ $$
 We seek
 
 $$
-|\Psi_{\rm proj}\rangle
+|\Psi_{\mathrm{proj}}\rangle
 =
 \sum_{ia}C_{ia}|B_{ia}\rangle
 $$
@@ -549,9 +549,9 @@ that minimizes
 
 $$
 \|
-\Psi_{\rm target}
+\Psi_{\mathrm{target}}
 -
-\Psi_{\rm proj}
+\Psi_{\mathrm{proj}}
 \|^2.
 $$
 
@@ -577,7 +577,7 @@ $$
 \boxed{
 b_{ia}
 =
-\langle B_{ia}|\Psi_{\rm target}\rangle.
+\langle B_{ia}|\Psi_{\mathrm{target}}\rangle.
 }
 $$
 
@@ -592,12 +592,12 @@ The squared residual is
 
 $$
 \boxed{
-\epsilon_{\rm proj}^2
+\epsilon_{\mathrm{proj}}^2
 =
 \|
-\Psi_{\rm target}
+\Psi_{\mathrm{target}}
 -
-\Psi_{\rm proj}
+\Psi_{\mathrm{proj}}
 \|^2.
 }
 $$
@@ -606,12 +606,12 @@ The relative residual is
 
 $$
 \boxed{
-\epsilon_{\rm rel}
+\epsilon_{\mathrm{rel}}
 =
 \frac{
-\|\Psi_{\rm target}-\Psi_{\rm proj}\|^2
+\|\Psi_{\mathrm{target}}-\Psi_{\mathrm{proj}}\|^2
 }{
-\|\Psi_{\rm target}\|^2
+\|\Psi_{\mathrm{target}}\|^2
 }.
 }
 $$
@@ -620,13 +620,13 @@ The wavefunction fidelity is
 
 $$
 \boxed{
-F_{\rm proj}
+F_{\mathrm{proj}}
 =
 \frac{
-|\langle\Psi_{\rm target}|\Psi_{\rm proj}\rangle|^2
+|\langle\Psi_{\mathrm{target}}|\Psi_{\mathrm{proj}}\rangle|^2
 }{
-\langle\Psi_{\rm target}|\Psi_{\rm target}\rangle
-\langle\Psi_{\rm proj}|\Psi_{\rm proj}\rangle
+\langle\Psi_{\mathrm{target}}|\Psi_{\mathrm{target}}\rangle
+\langle\Psi_{\mathrm{proj}}|\Psi_{\mathrm{proj}}\rangle
 }.
 }
 $$
@@ -640,7 +640,7 @@ These metrics quantify the **initial representation** independently of propagati
 After forming
 
 $$
-\Psi_{\rm proj}(0),
+\Psi_{\mathrm{proj}}(0),
 $$
 
 v0.12 propagates that projected wavefunction with the same exact two-dimensional TDSE
@@ -648,10 +648,10 @@ solver:
 
 $$
 \boxed{
-\Psi_{\rm proj}^{\rm exact}(t)
+\Psi_{\mathrm{proj}}^{\mathrm{exact}}(t)
 =
 e^{-iHt}
-\Psi_{\rm proj}(0).
+\Psi_{\mathrm{proj}}(0).
 }
 $$
 
@@ -661,12 +661,12 @@ Thus
 
 $$
 \boxed{
-\epsilon_{\rm dyn}(t)
+\epsilon_{\mathrm{dyn}}(t)
 =
 \|
 \rho_G(t)
 -
-\rho_{\rm proj}^{\rm exact}(t)
+\rho_{\mathrm{proj}}^{\mathrm{exact}}(t)
 \|_F
 }
 $$
@@ -683,28 +683,28 @@ This is the most important new validation quantity in v0.12.
 The physically intended exact benchmark remains
 
 $$
-\Psi_{\rm target}^{\rm exact}(t).
+\Psi_{\mathrm{target}}^{\mathrm{exact}}(t).
 $$
 
 Therefore v0.12 also reports
 
 $$
 \boxed{
-\epsilon_{\rm target}(t)
+\epsilon_{\mathrm{target}}(t)
 =
 \|
 \rho_G(t)
 -
-\rho_{\rm target}^{\rm exact}(t)
+\rho_{\mathrm{target}}^{\mathrm{exact}}(t)
 \|_F.
 }
 $$
 
 The two errors answer different questions:
 
-- $\epsilon_{\rm dyn}$: how well does the Gaussian method propagate what it actually
+- $\epsilon_{\mathrm{dyn}}$: how well does the Gaussian method propagate what it actually
   represents?
-- $\epsilon_{\rm target}$: how well does the complete calculation reproduce the
+- $\epsilon_{\mathrm{target}}$: how well does the complete calculation reproduce the
   intended physical benchmark?
 
 They must not be conflated.
@@ -716,11 +716,11 @@ They must not be conflated.
 It is tempting to write
 
 $$
-\epsilon_{\rm target}
+\epsilon_{\mathrm{target}}
 =
-\epsilon_{\rm init}
+\epsilon_{\mathrm{init}}
 +
-\epsilon_{\rm dyn}.
+\epsilon_{\mathrm{dyn}}.
 $$
 
 That is not generally valid.
@@ -732,11 +732,11 @@ partial tracing.
 v0.12 therefore reports:
 
 $$
-\epsilon_{\rm init},
+\epsilon_{\mathrm{init}},
 \qquad
-\epsilon_{\rm dyn},
+\epsilon_{\mathrm{dyn}},
 \qquad
-\epsilon_{\rm target}
+\epsilon_{\mathrm{target}}
 $$
 
 separately.
@@ -794,7 +794,7 @@ For the nine-Gaussian reference bank, the initial wavefunction projection gives
 
 $$
 \boxed{
-F_{\rm proj}\approx0.832276.
+F_{\mathrm{proj}}\approx0.832276.
 }
 $$
 
@@ -811,7 +811,7 @@ initial state** gives
 
 $$
 \boxed{
-\epsilon_{\rm dyn}
+\epsilon_{\mathrm{dyn}}
 \approx
 2.90\times10^{-4}.
 }
@@ -831,7 +831,7 @@ reference gives final reduced-density error
 
 $$
 \boxed{
-\epsilon_{\rm target}
+\epsilon_{\mathrm{target}}
 \approx0.0350003.
 }
 $$
@@ -848,7 +848,7 @@ $$
 The target purity is
 
 $$
-\mathcal P_{\rm exact}
+\mathcal P_{\mathrm{exact}}
 \approx0.676208,
 $$
 
@@ -866,7 +866,7 @@ The coherence-phase error is only
 $$
 \boxed{
 \Delta\phi_{\rho_{01}}
-\approx1.96\times10^{-3}\ {\rm rad}.
+\approx1.96\times10^{-3}\ {\mathrm{rad}}.
 }
 $$
 
@@ -982,7 +982,7 @@ The trace distance between normalized density matrices is
 
 $$
 \boxed{
-D_{\rm tr}(\rho,\sigma)
+D_{\mathrm{tr}}(\rho,\sigma)
 =
 \frac12
 \|\rho-\sigma\|_1.
@@ -999,7 +999,7 @@ this becomes
 
 $$
 \boxed{
-D_{\rm tr}
+D_{\mathrm{tr}}
 =
 \frac12
 \sum_k
@@ -1094,7 +1094,7 @@ $$
 \boxed{
 H_{ij}
 =
-\langle\Xi_i|\hat H_d|\Xi_j\rangle_{\rm grid}.
+\langle\Xi_i|\hat H_d|\Xi_j\rangle_{\mathrm{grid}}.
 }
 $$
 
@@ -1225,7 +1225,7 @@ $$
 $$
 
 $$
-\epsilon_{\rm dyn}
+\epsilon_{\mathrm{dyn}}
 \approx
 2.90\times10^{-4},
 $$
@@ -1233,7 +1233,7 @@ $$
 and
 
 $$
-\epsilon_{\rm target}
+\epsilon_{\mathrm{target}}
 \approx
 3.50\times10^{-2}.
 $$

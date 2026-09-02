@@ -117,7 +117,7 @@ trajectory graph rather than an unbounded linear search.
 For the deterministic validation backend with state matrix
 
 $$
-V\in\mathbb C^{m\times n_s},
+V\in\mathbb{C}^{m\times n_s},
 $$
 
 the overlap

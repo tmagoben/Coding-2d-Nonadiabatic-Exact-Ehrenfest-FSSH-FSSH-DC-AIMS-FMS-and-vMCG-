@@ -132,18 +132,18 @@ add it again
 v0.14 therefore uses two thresholds:
 
 $$
-\eta_{\rm add}
+\eta_{\mathrm{add}}
 >
-\eta_{\rm remove}.
+\eta_{\mathrm{remove}}.
 $$
 
 For the release benchmark,
 
 $$
 \boxed{
-\eta_{\rm add}=0.020,
+\eta_{\mathrm{add}}=0.020,
 \qquad
-\eta_{\rm remove}=0.006.
+\eta_{\mathrm{remove}}=0.006.
 }
 $$
 
@@ -168,7 +168,7 @@ For the release,
 
 $$
 \boxed{
-\Delta n_{\rm adapt,min}=10\;\text{steps}.
+\Delta n_{\mathrm{adapt,min}}=10\;\text{steps}.
 }
 $$
 
@@ -182,7 +182,7 @@ second change.
 If
 
 $$
-\eta\ge\eta_{\rm add},
+\eta\ge\eta_{\mathrm{add}},
 $$
 
 the code constructs a local candidate dictionary around the current TBFs.
@@ -200,7 +200,7 @@ and the TDSE-defect capture is
 
 $$
 \boxed{
-\Delta_c^{\rm TDSE}
+\Delta_c^{\mathrm{TDSE}}
 =
 \frac{
 \sum_a
@@ -257,9 +257,9 @@ $$
 Therefore
 
 $$
-\Psi_{\rm after}(t_*)
+\Psi_{\mathrm{after}}(t_*)
 =
-\Psi_{\rm before}(t_*).
+\Psi_{\mathrm{before}}(t_*).
 $$
 
 The basis change alters only the future Galerkin tangent space.
@@ -462,7 +462,7 @@ The final representation-consistent projected-state error is
 
 $$
 \boxed{
-\epsilon_{\rm dyn}
+\epsilon_{\mathrm{dyn}}
 =
 9.5278046e-05.
 }

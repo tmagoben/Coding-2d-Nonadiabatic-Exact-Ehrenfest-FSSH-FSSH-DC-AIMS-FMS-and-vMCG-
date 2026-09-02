@@ -7,8 +7,8 @@ untraceable file from being presented as a trajectory-ready molecular calculatio
 The Gaussian engine still consumes the representation-neutral operators
 
 $$
-H=H_{\rm sf}+H_{\rm SOC},\qquad
-K_a=K_{a,{\rm sf}}+K_{a,{\rm SOC}},\qquad
+H=H_{\mathrm{sf}}+H_{\mathrm{SOC}},\qquad
+K_a=K_{a,{\mathrm{sf}}}+K_{a,{\mathrm{SOC}}},\qquad
 D_a=\langle\Phi|\partial_a\Phi\rangle.
 $$
 

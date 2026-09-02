@@ -28,7 +28,7 @@ The exact overlap is
 
 $$
 \boxed{
-S_{ij}^{\rm nuc}
+S_{ij}^{\mathrm{nuc}}
 =
 \frac{2^{d/2}(\det A_i\det A_j)^{1/4}}
 {\sqrt{\det(A_i+A_j)}}
@@ -59,9 +59,9 @@ The exact unequal-width kinetic matrix element used by v0.21.2 is
 
 $$
 \boxed{
-T_{ij}^{\rm nuc}
+T_{ij}^{\mathrm{nuc}}
 =
-\frac12S_{ij}^{\rm nuc}
+\frac12S_{ij}^{\mathrm{nuc}}
 \left[
  u_i^TM^{-1}u_j
 +
@@ -92,18 +92,18 @@ For equal widths this reduces to $(q_i+q_j)/2$.
 The full block pair algebra remains
 
 $$
-S_{ij}=S_{ij}^{\rm nuc}O_{ij},
+S_{ij}=S_{ij}^{\mathrm{nuc}}O_{ij},
 $$
 
 $$
-H_{ij}=T_{ij}^{\rm nuc}O_{ij}+S_{ij}^{\rm nuc}H_{ij}^{e},
+H_{ij}=T_{ij}^{\mathrm{nuc}}O_{ij}+S_{ij}^{\mathrm{nuc}}H_{ij}^{e},
 $$
 
 and therefore does not require a common Gaussian width.
 
 ## 2. Self-consistent local electronic guidance
 
-Each Gaussian carries a local electronic coefficient block $c_i\in\mathbb C^s$.
+Each Gaussian carries a local electronic coefficient block $c_i\in\mathbb{C}^s$.
 For non-negligible local amplitude define
 
 $$
@@ -174,7 +174,7 @@ To leave the represented state unchanged at the instant of birth,
 
 $$
 \boxed{
-c_{\rm new}=0_s.}
+c_{\mathrm{new}}=0_s.}
 $$
 
 If the old coefficient vector is $C$, insertion is
@@ -219,7 +219,7 @@ The squared lost norm is the Schur-complement expression
 
 $$
 \boxed{
-\epsilon_{\rm prune}^2
+\epsilon_{\mathrm{prune}}^2
 =
 C_d^\dagger
 \left(
@@ -250,7 +250,7 @@ The molecular block is
 
 $$
 \boxed{
-\mathcal O_{ij}=S_{ij}^{\rm nuc}O_{ij}^{e}.
+\mathcal O_{ij}=S_{ij}^{\mathrm{nuc}}O_{ij}^{e}.
 }
 $$
 

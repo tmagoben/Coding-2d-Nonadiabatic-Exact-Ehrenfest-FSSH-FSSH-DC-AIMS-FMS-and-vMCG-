@@ -5,7 +5,7 @@
 The conservative bound is
 
 $$
-|S_{ij}^{\rm nuc}|
+|S_{ij}^{\mathrm{nuc}}|
 \le
 \exp\left[-\frac12 h_{ij}r_{ij}^2\right],
 \qquad
@@ -15,7 +15,7 @@ $$
 Since $h_{ij}\ge a_{\min}/2$,
 
 $$
-|S_{ij}^{\rm nuc}|
+|S_{ij}^{\mathrm{nuc}}|
 \le
 \exp\left[-\frac{a_{\min}}4r_{ij}^2\right].
 $$
@@ -113,7 +113,7 @@ E_{ij}
 =
 \max\left[
 \sqrt{|H_{ii}H_{jj}|},
-E_{\rm floor}
+E_{\mathrm{floor}}
 \right].
 $$
 
@@ -232,7 +232,7 @@ The implementation solves this sparse system directly and never forms $S^{-1}$.
 If a sampled omitted pair has
 
 $$
-\eta_{ij}>\eta_{\rm enter},
+\eta_{ij}>\eta_{\mathrm{enter}},
 $$
 
 the score threshold would retain it. Therefore the failure belongs to candidate

@@ -242,7 +242,7 @@ Hence
 
 $$
 \boxed{
-H_{\rm eff}=E-iD
+H_{\mathrm{eff}}=E-iD
 }
 $$
 
@@ -254,7 +254,7 @@ $$
 \boxed{
 c(t+\Delta t)
 =
-\exp[-iH_{\rm eff}(t+\Delta t/2)\Delta t]c(t).
+\exp[-iH_{\mathrm{eff}}(t+\Delta t/2)\Delta t]c(t).
 }
 $$
 
@@ -569,7 +569,7 @@ Hence the exact nuclear moving-basis matrix element is
 
 $$
 \boxed{
-T_{ij}^{\rm nuc}
+T_{ij}^{\mathrm{nuc}}
 =\langle g_i|\dot g_j\rangle.
 }
 $$
@@ -705,7 +705,7 @@ $$
 If
 
 $$
-\eta_{ab}>\eta_{\rm spawn},
+\eta_{ab}>\eta_{\mathrm{spawn}},
 $$
 
 a child candidate on state $b$ is constructed.
@@ -738,7 +738,7 @@ Therefore
 
 $$
 \boxed{
-\Psi_{\rm after}=\Psi_{\rm before}.
+\Psi_{\mathrm{after}}=\Psi_{\mathrm{before}}.
 }
 $$
 
@@ -774,7 +774,7 @@ The v0.8 CI benchmark propagates the same electronic state along the same path u
 
 $$
 \boxed{
-H_{\rm eff}=E-i\dot R\cdot d.
+H_{\mathrm{eff}}=E-i\dot R\cdot d.
 }
 $$
 
@@ -864,13 +864,13 @@ in all $3N$ Cartesian coordinates.
 The incremental snapshot graph can directly flatten these to
 
 $$
-(n_{\rm state},3N)
+(n_{\mathrm{state}},3N)
 $$
 
 and
 
 $$
-(n_{\rm state},n_{\rm state},3N)
+(n_{\mathrm{state}},n_{\mathrm{state}},3N)
 $$
 
 when a Cartesian graph calculation is desired.

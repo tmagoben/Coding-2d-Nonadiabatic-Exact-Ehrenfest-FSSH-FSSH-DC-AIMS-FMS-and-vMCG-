@@ -11,19 +11,19 @@ an explicit fail-closed contract and an adversarial regression.
 For every coordinate `a` and displacement `h`, neighboring operators are transported
 to the center electronic frame before forming centered differences:
 
-\[
+$$
 \delta_a H_X(h)=
 \frac{\widetilde H_X(q+h e_a)-\widetilde H_X(q-h e_a)}{2h},
 \qquad X\in\{\mathrm{sf},\mathrm{SOC}\}.
-\]
+$$
 
 The audit separately requires
 
-\[
+$$
 \delta_aH_{\mathrm{sf}}\approx K_{a,\mathrm{sf}},
 \qquad
 \delta_aH_{\mathrm{SOC}}\approx K_{a,\mathrm{SOC}}.
-\]
+$$
 
 This is stronger than checking only their sum or one density-contracted force. The
 negative fixture adds `Delta` to one component and subtracts it from the other while
@@ -45,9 +45,9 @@ An SOC provider must now emit a `SOCSymmetryContractV221` containing:
 Admission requires complete multiplets, a single charge and electron-parity sector,
 fermionic-declaration agreement, zero external magnetic field,
 
-\[
+$$
 J^\dagger J=I,\qquad JJ^*=\begin{cases}+I&\text{even},\\-I&\text{odd},\end{cases}
-\]
+$$
 
 and Hermitian, idempotent, mutually orthogonal projectors that resolve the identity.
 The numerical `J` and projectors are part of provenance identity, not only descriptive

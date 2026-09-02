@@ -105,7 +105,7 @@ Maximum eigenphase change under local complex gauges:
 
 Both edge threshold and omitted-score budget are swept against a dense block reference.
 
-The release requires non-increasing \(S,H,T\) errors as the sparse approximation is
+The release requires non-increasing $S,H,T$ errors as the sparse approximation is
 relaxed.
 
 ## 8. Dynamic graph topology

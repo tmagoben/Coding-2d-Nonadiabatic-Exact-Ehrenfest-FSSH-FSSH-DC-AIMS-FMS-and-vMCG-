@@ -8,10 +8,10 @@ v0.21 supports:
 - complex Hermitian physical Hamiltonian-derivative operators;
 - complex anti-Hermitian derivative connections;
 - arbitrary electronic block dimension;
-- smooth local \(U(s)\) gauge transformations;
+- smooth local $U(s)$ gauge transformations;
 - full-subspace Procrustes alignment;
 - Wilson-loop diagnostics;
-- block-sparse \(S/H/T\);
+- block-sparse $S/H/T$;
 - dynamic sparse topology;
 - sparse moving-basis propagation;
 - molecular provider adapters.
@@ -33,15 +33,15 @@ A future calculation may use
 $$
 H_e
 =
-H_{\rm spin-free}
+H_{\mathrm{spin-free}}
 +
-H_{\rm SOC}.
+H_{\mathrm{SOC}}.
 $$
 
 A spin-free calculation simply has
 
 $$
-H_{\rm SOC}=0.
+H_{\mathrm{SOC}}=0.
 $$
 
 The Gaussian engine should not care which physical terms produced the final Hermitian
@@ -80,7 +80,7 @@ H(q)
 =
 H_0(q)
 +
-H_{\rm SOC}(q).
+H_{\mathrm{SOC}}(q).
 $$
 
 The first SOC benchmark should be analytic and exactly reproducible.

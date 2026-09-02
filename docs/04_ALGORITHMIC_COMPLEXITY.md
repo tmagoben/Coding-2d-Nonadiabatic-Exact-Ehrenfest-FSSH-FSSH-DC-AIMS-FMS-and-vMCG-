@@ -2,17 +2,17 @@
 
 Let:
 
-- \(N\): nuclear Gaussian count;
-- \(s\): electronic block dimension;
-- \(E\): active off-diagonal Gaussian edges;
-- \(M\): geometrically admitted candidate pairs;
-- \(d\): nuclear dimension;
-- \(N_c\): electronic-cache size;
-- \(C_{\rm ES}\): cost of one electronic-structure point.
+- $N$: nuclear Gaussian count;
+- $s$: electronic block dimension;
+- $E$: active off-diagonal Gaussian edges;
+- $M$: geometrically admitted candidate pairs;
+- $d$: nuclear dimension;
+- $N_c$: electronic-cache size;
+- $C_{\mathrm{ES}}$: cost of one electronic-structure point.
 
 ## 1. Electronic operator transformations
 
-For an \(s\times s\) operator,
+For an $s\times s$ operator,
 
 $$
 G^\dagger A G
@@ -24,7 +24,7 @@ $$
 O(s^3).
 $$
 
-For \(d\) physical derivative operators and \(d\) connection matrices, the local
+For $d$ physical derivative operators and $d$ connection matrices, the local
 gauge-transform work is
 
 $$
@@ -33,7 +33,7 @@ $$
 
 ## 2. Full-subspace tracking
 
-One SVD of an \(s\times s\) overlap matrix costs
+One SVD of an $s\times s$ overlap matrix costs
 
 $$
 \boxed{
@@ -46,27 +46,27 @@ treated as one subspace.
 
 ## 3. One block Gaussian pair
 
-General unequal-width Gaussian algebra is typically \(O(d^3)\).
+General unequal-width Gaussian algebra is typically $O(d^3)$.
 
-Electronic polar decomposition and dense block multiplications are \(O(s^3)\).
+Electronic polar decomposition and dense block multiplications are $O(s^3)$.
 
 Thus one admitted pair costs approximately
 
 $$
 \boxed{
-O(d^3+s^3+C_{\rm ES}).
+O(d^3+s^3+C_{\mathrm{ES}}).
 }
 $$
 
-For \(M\) admitted pairs:
+For $M$ admitted pairs:
 
 $$
-O\left[M(d^3+s^3+C_{\rm ES})\right].
+O\left[M(d^3+s^3+C_{\mathrm{ES}})\right].
 $$
 
 ## 4. Block sparse storage
 
-Each active Gaussian edge carries an \(s\times s\) block.
+Each active Gaussian edge carries an $s\times s$ block.
 
 Therefore storage scales as
 

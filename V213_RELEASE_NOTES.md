@@ -15,7 +15,7 @@ This release deliberately contains **no physical SOC Hamiltonian**.
 - canonical electronic-operator provenance and SHA-256 fingerprints;
 - explicit hartree/bohr internal-unit rules and cm$^{-1}$ conversion helpers;
 - a composition contract for
-  $H=H_{\rm spin\text{-}free}+H_{\rm SOC}$ and
+  $H=H_{\mathrm{spin\text{-}free}}+H_{\mathrm{SOC}}$ and
   $K_a=K_{a,\rm spin\text{-}free}+K_{a,\rm SOC}$;
 - transported density-matrix guidance for exact degeneracies and weak local blocks;
 - parent-density inheritance for a newly inserted zero electronic block;

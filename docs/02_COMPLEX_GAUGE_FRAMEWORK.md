@@ -2,7 +2,7 @@
 
 v0.21 is representation neutral and deliberately does **not** introduce spin physics.
 
-For an orthonormal electronic frame \(\Phi(q)\), define
+For an orthonormal electronic frame $\Phi(q)$, define
 
 $$
 H=\Phi^\dagger\hat H_e\Phi,
@@ -30,7 +30,7 @@ $$
 \Phi'=\Phi G(q),\qquad G(q)\in U(s),
 $$
 
-the coefficient vector changes as \(c'=G^\dagger c\). Physical operator matrices transform homogeneously,
+the coefficient vector changes as $c'=G^\dagger c$. Physical operator matrices transform homogeneously,
 
 $$
 H'=G^\dagger HG,
@@ -84,7 +84,7 @@ T'=\mathcal G^\dagger T\mathcal G+\mathcal G^\dagger S\dot{\mathcal G}.
 }
 $$
 
-The extra term means that \(\|T_{ij}\|\) is not a representation-invariant sparsification criterion under a coordinate-dependent gauge.
+The extra term means that $\|T_{ij}\|$ is not a representation-invariant sparsification criterion under a coordinate-dependent gauge.
 
 ## Degenerate subspaces
 
@@ -116,7 +116,7 @@ $$
 W=L_{01}L_{12}\cdots L_{m0}.
 $$
 
-Under local gauges \(L_{ij}'=G_i^\dagger L_{ij}G_j\),
+Under local gauges $L_{ij}'=G_i^\dagger L_{ij}G_j$,
 
 $$
 W'=G_0^\dagger WG_0.
@@ -129,7 +129,7 @@ Therefore the Wilson eigenvalues/eigenphases are gauge invariant. Local gauge sm
 A later backend may provide
 
 $$
-H=H_{\rm spin\mbox{-}free}+H_{\rm SOC},
+H=H_{\mathrm{spin\text{-}free}}+H_{\mathrm{SOC}},
 $$
 
-but the same interface also accepts \(H_{\rm SOC}=0\). The Gaussian engine therefore remains a general nonadiabatic framework rather than becoming an SOC-specific codebase.
+but the same interface also accepts $H_{\mathrm{SOC}}=0$. The Gaussian engine therefore remains a general nonadiabatic framework rather than becoming an SOC-specific codebase.
