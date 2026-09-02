@@ -83,7 +83,7 @@ maximum block-edge score change:
 5.551115123125783e-17
 ```
 
-The \(T\) test includes the inhomogeneous term
+The $T$ test includes the inhomogeneous term
 
 $$
 \mathcal G^\dagger S\dot{\mathcal G},
