@@ -34,7 +34,7 @@ Validation and convergence campaign
 
 The electronic backend and Gaussian propagation engine are intentionally separated.
 
-A future SOC backend may change the contents of \(H\) without changing the Gaussian
+A future SOC backend may change the contents of $H$ without changing the Gaussian
 algebra.
 
 ## v0.24.0 external-SOC evidence plane
