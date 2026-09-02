@@ -34,7 +34,7 @@ $$
 \mathbf R
 =
 (R_{1x},R_{1y},R_{1z},\ldots,R_{Nz})^T
-\in\mathbb R^{3N}.
+\in\mathbb{R}^{3N}.
 }
 $$
 
@@ -107,7 +107,7 @@ $$
 where
 
 $$
-\mathbf q\in\mathbb R^D
+\mathbf q\in\mathbb{R}^D
 $$
 
 and
