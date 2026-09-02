@@ -23,7 +23,7 @@ The cumulative source suite, including all inherited releases, reports:
 
 | Quantity | Singlet–triplet | Two doublets |
 |---|---:|---:|
-| Cross-geometry \(K\) differential error | 1.8665508646787508e-15 | 2.8189256543263856e-15 |
+| Cross-geometry $K$ differential error | 1.8665508646787508e-15 | 2.8189256543263856e-15 |
 | SOC-force finite-difference error | 3.108180623686077e-15 | within the 2.0e-10 gate |
 | Maximum Kramers pair splitting | not applicable | 4.336808689942018e-18 |
 
@@ -34,7 +34,7 @@ but physically wrong SOC derivative.
 
 ## Independent exact-grid propagation
 
-For \(\Delta t=0.04\), 100 steps, and a 256-point periodic grid on \([-8,8)\):
+For $\Delta t=0.04$, 100 steps, and a 256-point periodic grid on $[-8,8)$:
 
 | Model | Maximum norm drift | Maximum energy drift | Final transferred population |
 |---|---:|---:|---:|
@@ -43,24 +43,24 @@ For \(\Delta t=0.04\), 100 steps, and a 256-point periodic grid on \([-8,8)\):
 
 The timestep differences are
 
-\[
+$$
 \epsilon_{0.08,0.04}=1.5208404669523864\times10^{-10},
 \qquad
 \epsilon_{0.04,0.02}=3.802085470115884\times10^{-11},
-\]
+$$
 
 giving observed order
 
-\[
+$$
 p=2.0000059562889683.
-\]
+$$
 
 The maximum transferred-population change under grid-spacing and box refinement is
-\(8.632959798415829\times10^{-18}\).
+$8.632959798415829\times10^{-18}$.
 
 ## Gaussian versus grid populations
 
-At the deliberately short comparison time \(t=0.2\), where the single-Gaussian
+At the deliberately short comparison time $t=0.2$, where the single-Gaussian
 representation error remains controlled:
 
 | Model | Gaussian population | Grid population | Absolute error |
@@ -68,18 +68,18 @@ representation error remains controlled:
 | Singlet–triplet | 4.636143889725949e-07 | 4.710200388641343e-07 | 7.405649891539424e-09 |
 | Two doublets | 1.819251440398155e-07 | 1.8417504618510336e-07 | 2.2499021452878545e-09 |
 
-Both satisfy the release threshold of \(10^{-8}\). This gate compares physical
+Both satisfy the release threshold of $10^{-8}$. This gate compares physical
 projector populations, not gauge-dependent amplitudes.
 
 ## Gauge and restart checks
 
 - Moving-complex-frame Gaussian dynamics coefficient error:
-  \(5.936673241766072\times10^{-16}\); position and momentum errors are zero.
+  $5.936673241766072\times10^{-16}$; position and momentum errors are zero.
 - Dense SOC restart coefficient error:
-  \(1.3877787809430044\times10^{-17}\); position and momentum errors are zero.
+  $1.3877787809430044\times10^{-17}$; position and momentum errors are zero.
 - Sparse SOC restart coefficient error:
-  \(1.6531559496939515\times10^{-16}\); position and momentum errors are zero.
-- Sparse edge \([[3,8]]\) is preserved across the restart boundary.
+  $1.6531559496939515\times10^{-16}$; position and momentum errors are zero.
+- Sparse edge $[[3,8]]$ is preserved across the restart boundary.
 - Changed SOC provenance and deliberately corrupted checkpoint data are rejected.
 
 ## Failure controls and claim boundary
