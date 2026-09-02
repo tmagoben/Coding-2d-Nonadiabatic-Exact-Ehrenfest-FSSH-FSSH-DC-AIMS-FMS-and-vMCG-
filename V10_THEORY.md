@@ -336,7 +336,7 @@ The comparison
 
 $$
 \boxed{
-\|\rho_{\rm G}-\rho_{\rm exact}\|_F
+\|\rho_{\mathrm{G}}-\rho_{\mathrm{exact}}\|_F
 }
 $$
 
@@ -355,9 +355,9 @@ Therefore the cleanest analytic-model comparison is
 
 $$
 \boxed{
-\rho_d^{\rm exact}
+\rho_d^{\mathrm{exact}}
 \quad\text{versus}\quad
-\rho_d^{\rm Gaussian}.
+\rho_d^{\mathrm{Gaussian}}.
 }
 $$
 
@@ -367,18 +367,18 @@ in the global diabatic basis,
 $$
 |u_i^{(d)}\rangle
 =
-U_{\rm ad}(q_i)|e_{a_i}\rangle.
+U_{\mathrm{ad}}(q_i)|e_{a_i}\rangle.
 $$
 
 Then
 
 $$
 \boxed{
-\rho_d^{\rm Gaussian}
+\rho_d^{\mathrm{Gaussian}}
 =
 \sum_{ij}
 C_iC_j^*
-S_{ji}^{\rm nuc}
+S_{ji}^{\mathrm{nuc}}
 |u_i^{(d)}\rangle
 \langle u_j^{(d)}|.
 }
@@ -388,7 +388,7 @@ The exact density is simply
 
 $$
 \boxed{
-\rho_d^{\rm exact}
+\rho_d^{\mathrm{exact}}
 =
 \int
 \Psi_d(R)
@@ -490,7 +490,7 @@ The von Neumann entropy is
 
 $$
 \boxed{
-S_{\rm vN}
+S_{\mathrm{vN}}
 =
 -\operatorname{Tr}(\rho_e\ln\rho_e)
 =
@@ -649,7 +649,7 @@ The observed refinement order is
 
 $$
 \boxed{
-p_{\rm obs}
+p_{\mathrm{obs}}
 =
 \frac{\ln(e_1/e_2)}{\ln r}.
 }
@@ -727,13 +727,13 @@ TBF satisfies
 
 $$
 \boxed{
-|\langle g_{\rm existing}|g_{\rm child}\rangle|
+|\langle g_{\mathrm{existing}}|g_{\mathrm{child}}\rangle|
 \ge
-S_{\rm block}.
+S_{\mathrm{block}}.
 }
 $$
 
-Changing $S_{\rm block}$ changes how aggressively the basis is allowed to grow.
+Changing $S_{\mathrm{block}}$ changes how aggressively the basis is allowed to grow.
 
 This is not merely a numerical tolerance.
 
@@ -764,7 +764,7 @@ Define
 
 $$
 \boxed{
-\epsilon_{\rm SPA}
+\epsilon_{\mathrm{SPA}}
 =
 \|P^{(1)}-P^{(0)}\|.
 }
@@ -784,7 +784,7 @@ For integrated coupling-action thresholds $A_1$ and $A_2$,
 
 $$
 \boxed{
-\epsilon_{\rm spawn}
+\epsilon_{\mathrm{spawn}}
 =
 \|P(A_1)-P(A_2)\|.
 }
@@ -804,9 +804,9 @@ $$
 \{
 \Delta t,\;
 \text{SPA order},\;
-A_{\rm spawn},\;
-N_{\rm max},\;
-S_{\rm block}
+A_{\mathrm{spawn}},\;
+N_{\mathrm{max}},\;
+S_{\mathrm{block}}
 \}.
 }
 $$
@@ -835,16 +835,16 @@ The exact campaign independently varies
 
 $$
 \boxed{
-N_{\rm grid}
+N_{\mathrm{grid}}
 \quad\text{and}\quad
-\Delta t_{\rm exact}.
+\Delta t_{\mathrm{exact}}.
 }
 $$
 
 A convenient candidate numerical reference is the row with
 
 $$
-\max N_{\rm grid},
+\max N_{\mathrm{grid}},
 \qquad
 \min\Delta t.
 $$
@@ -862,31 +862,31 @@ The code therefore names the function `select_finest_exact_reference`, not
 v0.10 defines the following population-vector differences:
 
 $$
-\epsilon_{\rm exact}
+\epsilon_{\mathrm{exact}}
 =
-\|P_{\rm exact}^{\rm fine}
+\|P_{\mathrm{exact}}^{\mathrm{fine}}
 -
-P_{\rm exact}^{\rm next}\|,
+P_{\mathrm{exact}}^{\mathrm{next}}\|,
 $$
 
 $$
 \epsilon_{\Delta t}
 =
-\|P_{\rm G}^{\rm fine}
+\|P_{\mathrm{G}}^{\mathrm{fine}}
 -
-P_{\rm G}^{\rm coarse}\|,
+P_{\mathrm{G}}^{\mathrm{coarse}}\|,
 $$
 
 $$
-\epsilon_{\rm SPA}
+\epsilon_{\mathrm{SPA}}
 =
-\|P_{\rm SPA1}
+\|P_{\mathrm{SPA1}}
 -
-P_{\rm SPA0}\|,
+P_{\mathrm{SPA0}}\|,
 $$
 
 $$
-\epsilon_{\rm spawn}
+\epsilon_{\mathrm{spawn}}
 =
 \|P_{A_1}
 -
@@ -894,7 +894,7 @@ P_{A_2}\|,
 $$
 
 $$
-\epsilon_{\rm basis}
+\epsilon_{\mathrm{basis}}
 =
 \|P_{N_1}
 -
@@ -905,9 +905,9 @@ and the actual reference discrepancy
 
 $$
 \boxed{
-\epsilon_{\rm total}
+\epsilon_{\mathrm{total}}
 =
-\|P_{\rm G}-P_{\rm exact}\|.
+\|P_{\mathrm{G}}-P_{\mathrm{exact}}\|.
 }
 $$
 
@@ -936,18 +936,18 @@ $$
 $$
 
 $$
-\epsilon_{\rm prune}
+\epsilon_{\mathrm{prune}}
 <
-\epsilon_{\rm prune,max},
+\epsilon_{\mathrm{prune,max}},
 $$
 
 and, when a validated exact reference is available,
 
 $$
 \boxed{
-\|P_{\rm G}-P_{\rm exact}\|
+\|P_{\mathrm{G}}-P_{\mathrm{exact}}\|
 <
-\epsilon_{\rm ref}.
+\epsilon_{\mathrm{ref}}.
 }
 $$
 
