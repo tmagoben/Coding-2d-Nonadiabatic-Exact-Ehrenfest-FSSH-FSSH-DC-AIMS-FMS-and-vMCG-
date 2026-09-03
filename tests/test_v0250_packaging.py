@@ -30,13 +30,13 @@ def test_v0250_metadata_evidence_and_claim_boundary_are_consistent():
     assert '[tool.setuptools]\npackages = ["gaussian_dynamics"]' in pyproject
 
     required = (
-        "V250_RELEASE_NOTES.md",
-        "V250_VARIATIONAL_SOC_DYNAMICS.md",
-        "V250_INTEGRATOR_DECISION.md",
-        "V250_PROGRAM_ARCHITECTURE.md",
-        "V250_ALGORITHM_COMPLEXITY.md",
-        "V250_VALIDATION.md",
-        "V250_BUILD_VALIDATION.md",
+        "docs/releases/v0.25.0/V250_RELEASE_NOTES.md",
+        "docs/releases/v0.25.0/V250_VARIATIONAL_SOC_DYNAMICS.md",
+        "docs/releases/v0.25.0/V250_INTEGRATOR_DECISION.md",
+        "docs/releases/v0.25.0/V250_PROGRAM_ARCHITECTURE.md",
+        "docs/releases/v0.25.0/V250_ALGORITHM_COMPLEXITY.md",
+        "docs/releases/v0.25.0/V250_VALIDATION.md",
+        "docs/releases/v0.25.0/V250_BUILD_VALIDATION.md",
         "docs/20_VARIATIONAL_SOC_DYNAMICS.md",
         "examples/131_recompute_v0250_variational_soc.py",
         "examples/132_recompute_v0250_campaign.py",

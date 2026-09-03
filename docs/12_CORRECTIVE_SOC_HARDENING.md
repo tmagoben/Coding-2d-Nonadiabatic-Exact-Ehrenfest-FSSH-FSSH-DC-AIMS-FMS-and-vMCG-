@@ -32,8 +32,9 @@ Likewise, testing only `JJ* = +/-I` does not prove that the antiunitary represen
 is norm preserving. The independent condition `J†J = I` is mandatory.
 
 The full equations, measured residuals, and cost model are in
-`V221_CORRECTIVE_HARDENING.md`, `V221_VALIDATION.md`, and
-`V221_ALGORITHM_COMPLEXITY.md`.
+`docs/releases/v0.22.1/V221_CORRECTIVE_HARDENING.md`,
+`docs/releases/v0.22.1/V221_VALIDATION.md`, and
+`docs/releases/v0.22.1/V221_ALGORITHM_COMPLEXITY.md`.
 
 No molecular SOC backend is admitted in v0.22.1. A v0.23 backend must satisfy these
 contracts and add independent molecular reference and method/basis convergence evidence.

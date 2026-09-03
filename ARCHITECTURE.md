@@ -60,4 +60,4 @@ strict digest/parser boundary <--- caller-owned trust policy
 ```
 
 Protocol fixtures terminate at diagnostics. They cannot enter the admitted dynamics
-path. See `V240_PROGRAM_ARCHITECTURE.md` for the complete diagram.
+path. See `docs/releases/v0.24.0/V240_PROGRAM_ARCHITECTURE.md` for the complete diagram.

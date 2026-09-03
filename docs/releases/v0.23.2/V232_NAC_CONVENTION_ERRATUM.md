@@ -42,5 +42,6 @@ not hard-code an absolute, unaligned root sign.
 but it is not interchangeable with the full-overlap derivative used by the
 framework contract.
 
-This document supersedes the adapter mapping stated in `V03_PYSCF_NOTES.md`,
-`V05_PYSCF_BACKEND.md`, and the historical v0.23.1 adapter notes.
+This document supersedes the adapter mapping stated in
+`../v0.3/V03_PYSCF_NOTES.md`, `../v0.5/V05_PYSCF_BACKEND.md`, and the
+historical v0.23.1 adapter notes.
