@@ -16,6 +16,27 @@ See [`V270_RELEASE_NOTES.md`](V270_RELEASE_NOTES.md),
 [`V270_ROTATION_COVARIANCE.md`](V270_ROTATION_COVARIANCE.md), and
 [`V270_PROGRAM_ARCHITECTURE.md`](V270_PROGRAM_ARCHITECTURE.md).
 
+
+## v0.28.0 development branch
+
+The `develop` branch is extending the sealed v0.27.0 correlated-width manifold to
+**coordinate-dependent electronic frames**. The admitted first milestone uses exact
+parallel-transported electronic sections
+
+```text
+Psi(R) = sum_I g_I(R) Phi(R) W(R,q_I) c_I,
+W(R,q) = G(R)^dagger G(q),
+D_a(R) = G(R)^dagger partial_a G(R),
+```
+
+for analytically trivializable flat pure-gauge connections. Packet coefficients live
+in the electronic frame at their own centers. The current development evidence passes
+50/50 frozen moving-frame gates and an independent gauge-link lattice oracle.
+
+This development milestone does **not** admit nonzero-curvature connections, live
+molecular-SOC trajectories, general ab-initio SOC-dynamics accuracy, or full AIMS
+branching semantics. See `V280_MOVING_FRAME.md` and `V280_VALIDATION.md`.
+
 ---
 
 A research-oriented Python framework for **Gaussian-basis nonadiabatic quantum dynamics**

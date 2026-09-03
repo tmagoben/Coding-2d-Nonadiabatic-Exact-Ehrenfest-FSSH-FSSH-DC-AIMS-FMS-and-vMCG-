@@ -1,6 +1,7 @@
 from .grids import uniform_grid, inner_product, normalize
 
 __version__ = "0.27.0"
+__development_version__ = "0.28.0.dev0"
 from .gaussian import (
     frozen_gaussian,
     analytic_overlap,
@@ -1541,4 +1542,24 @@ from .v270_benchmark import (
     V270AcceptanceThresholds,
     run_v0270_release_benchmark,
     save_v0270_release_benchmark,
+)
+
+
+# v0.28.0 development: flat coordinate-dependent electronic frames
+from .moving_frame_v280 import (
+    CLAIM_BOUNDARY_V280, CONNECTION_CONVENTION_V280, TRANSPORT_CONVENTION_V280,
+    FlatMovingFrameV280, MovingFrameCorrelatedStateV280, MovingFrameImplicitMidpointStepV280,
+    MovingFrameBasisEventV280, adapt_moving_frame_basis_once_v280,
+    evaluate_moving_physical_v280, evaluate_moving_section_v280, fixed_to_moving_state_v280,
+    moving_frame_hamiltonian_v280, moving_frame_implicit_midpoint_step_v280,
+    moving_frame_velocity_v280, moving_to_fixed_state_v280, reference_wavefunction_error_v280,
+    require_flat_moving_frame_v280,
+)
+from .moving_frame_validation_v280 import (
+    LatticeGaugeOracleV280, build_lattice_gauge_oracle_v280,
+    finite_difference_connection_residual_v280, finite_difference_curvature_residual_v280,
+    lattice_action_covariance_v280, lattice_propagation_covariance_v280,
+)
+from .moving_frame_evidence_v280 import (
+    MOVING_FRAME_EVIDENCE_SCHEMA_V280, MovingFrameEvidenceV280, run_moving_frame_evidence_v280,
 )
