@@ -16,6 +16,8 @@ See [`V270_RELEASE_NOTES.md`](V270_RELEASE_NOTES.md),
 [`V270_ROTATION_COVARIANCE.md`](V270_ROTATION_COVARIANCE.md), and
 [`V270_PROGRAM_ARCHITECTURE.md`](V270_PROGRAM_ARCHITECTURE.md).
 
+Historical design, validation, and release records through v0.26.0 are preserved in
+the [version-document archive](docs/releases/README.md).
 
 ## v0.28.0 development branch
 

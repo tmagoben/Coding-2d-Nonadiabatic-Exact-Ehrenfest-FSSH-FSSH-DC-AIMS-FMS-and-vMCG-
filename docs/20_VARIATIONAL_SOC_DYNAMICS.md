@@ -35,5 +35,7 @@ Real PySCF molecular SOC trajectories remain closed until an arbitrary-geometry
 provider supplies all Cartesian `H`, physical `K`, `D`, mass, overlaps, and independent
 accuracy evidence.
 
-See `V250_VARIATIONAL_SOC_DYNAMICS.md`, `V250_INTEGRATOR_DECISION.md`, and
-`V250_PROGRAM_ARCHITECTURE.md` for the complete equations and data flow.
+See `docs/releases/v0.25.0/V250_VARIATIONAL_SOC_DYNAMICS.md`,
+`docs/releases/v0.25.0/V250_INTEGRATOR_DECISION.md`, and
+`docs/releases/v0.25.0/V250_PROGRAM_ARCHITECTURE.md` for the complete equations and
+data flow.

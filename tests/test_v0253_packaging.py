@@ -24,13 +24,13 @@ def test_v0253_metadata_evidence_and_claim_boundary_are_consistent():
     assert "Current release: v0.27.0" in readme
     assert '[tool.setuptools]\npackages = ["gaussian_dynamics"]' in pyproject
     required = (
-        "V253_RELEASE_NOTES.md",
-        "V253_CONTROLLED_BASIS_ADAPTATION.md",
-        "V253_LIFECYCLE_POLICY.md",
-        "V253_PROGRAM_ARCHITECTURE.md",
-        "V253_ALGORITHM_COMPLEXITY.md",
-        "V253_VALIDATION.md",
-        "V253_BUILD_VALIDATION.md",
+        "docs/releases/v0.25.3/V253_RELEASE_NOTES.md",
+        "docs/releases/v0.25.3/V253_CONTROLLED_BASIS_ADAPTATION.md",
+        "docs/releases/v0.25.3/V253_LIFECYCLE_POLICY.md",
+        "docs/releases/v0.25.3/V253_PROGRAM_ARCHITECTURE.md",
+        "docs/releases/v0.25.3/V253_ALGORITHM_COMPLEXITY.md",
+        "docs/releases/v0.25.3/V253_VALIDATION.md",
+        "docs/releases/v0.25.3/V253_BUILD_VALIDATION.md",
         "docs/23_CONTROLLED_BASIS_ADAPTATION.md",
         "examples/137_recompute_v0253_controlled_basis.py",
         "examples/138_recompute_v0253_campaign.py",

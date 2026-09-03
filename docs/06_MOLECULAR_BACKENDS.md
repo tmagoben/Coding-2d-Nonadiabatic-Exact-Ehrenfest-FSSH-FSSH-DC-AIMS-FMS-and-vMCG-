@@ -60,8 +60,8 @@ connections, and cross-geometry overlaps in addition to the static Hamiltonian.
 A real source must also bind molecule/isotope/geometry identity, calculation and
 environment hashes, and independent reference, basis, method, frame-invariance, and
 tracking evidence. Deterministic replay transports these data without changing their
-source classification. See `13_MOLECULAR_SOC_ADMISSION.md` and the root-level
-`V230_MOLECULAR_SOC_CONTRACT.md`.
+source classification. See `13_MOLECULAR_SOC_ADMISSION.md` and the archived
+`docs/releases/v0.23.0/V230_MOLECULAR_SOC_CONTRACT.md`.
 
 ## v0.23.1 raw-evidence boundary
 

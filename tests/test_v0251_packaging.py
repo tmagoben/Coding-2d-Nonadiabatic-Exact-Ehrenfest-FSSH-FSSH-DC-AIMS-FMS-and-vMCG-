@@ -30,13 +30,13 @@ def test_v0251_metadata_evidence_and_claim_boundary_are_consistent():
     assert '[tool.setuptools]\npackages = ["gaussian_dynamics"]' in pyproject
 
     required = (
-        "V251_RELEASE_NOTES.md",
-        "V251_MULTIGAUSSIAN_TDVP.md",
-        "V251_METRIC_AND_SOLVER.md",
-        "V251_PROGRAM_ARCHITECTURE.md",
-        "V251_ALGORITHM_COMPLEXITY.md",
-        "V251_VALIDATION.md",
-        "V251_BUILD_VALIDATION.md",
+        "docs/releases/v0.25.1/V251_RELEASE_NOTES.md",
+        "docs/releases/v0.25.1/V251_MULTIGAUSSIAN_TDVP.md",
+        "docs/releases/v0.25.1/V251_METRIC_AND_SOLVER.md",
+        "docs/releases/v0.25.1/V251_PROGRAM_ARCHITECTURE.md",
+        "docs/releases/v0.25.1/V251_ALGORITHM_COMPLEXITY.md",
+        "docs/releases/v0.25.1/V251_VALIDATION.md",
+        "docs/releases/v0.25.1/V251_BUILD_VALIDATION.md",
         "docs/21_MULTIGAUSSIAN_TDVP.md",
         "examples/133_recompute_v0251_multigaussian_tdvp.py",
         "examples/134_recompute_v0251_campaign.py",

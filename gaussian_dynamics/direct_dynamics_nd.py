@@ -121,7 +121,7 @@ def run_backend_spawned_gaussians(
 
     Electronic quantities are evaluated at TBF centers and pair centroids through the
     provider. Gaussian matrix elements use the local constant-electronic-quantity
-    approximation documented in V05_THEORY.md.
+    approximation documented in docs/releases/v0.5/V05_THEORY.md.
     """
     basis = [b.copy() for b in initial_basis]
     C = np.asarray(C0, dtype=complex).copy()

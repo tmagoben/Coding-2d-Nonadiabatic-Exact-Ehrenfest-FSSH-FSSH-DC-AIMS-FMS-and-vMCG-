@@ -395,7 +395,7 @@ Used for:
 
 v0.8 continues to use the primary methodological sources already cited for AIMS/FMS, variational Gaussian dynamics, conical-intersection geometric phase, PySCF SA-CASSCF/NACs, and nonorthogonal many-electron overlaps.
 
-The new overlap/local-diabatic propagator is derived directly in `V08_THEORY.md` from the finite-step electronic overlap relation
+The new overlap/local-diabatic propagator is derived directly in `docs/releases/v0.8/V08_THEORY.md` from the finite-step electronic overlap relation
 
 $$
 O(t,t+\Delta t)=I+\Delta t\,\dot R\cdot d+\mathcal O(\Delta t^2),
@@ -709,7 +709,7 @@ ledger, or Hermitian half-build optimization.
 The scientific context remains the AIMS/FMS, SSAIMS, optimal-spawning,
 local-diabatic, and variational-Gaussian literature listed above.
 
-Algorithmic-complexity expressions in `V14_ALGORITHM_COMPLEXITY.md` are direct
+Algorithmic-complexity expressions in `docs/releases/v0.14/V14_ALGORITHM_COMPLEXITY.md` are direct
 operation-count analyses of the implementation and standard dense linear-algebra/FFT
 scaling, not quotations from those papers.
 
@@ -722,7 +722,7 @@ cost-aware utility formulas to an external publication.
 Those are repository-specific numerical-architecture derivations built on the
 Gaussian/AIMS/local-diabatic context already cited in earlier release sections.
 
-The complexity expressions in `V15_ALGORITHM_COMPLEXITY.md` are direct operation-count
+The complexity expressions in `docs/releases/v0.15/V15_ALGORITHM_COMPLEXITY.md` are direct operation-count
 analyses of the implementation and standard dense-linear-algebra/FFT scaling.
 
 
@@ -737,7 +737,7 @@ The release does not attribute those implementation formulas to an external pape
 The broader scientific context remains the Gaussian/AIMS/local-diabatic and
 gauge-transport literature already cited in earlier sections.
 
-Complexity statements in `V16_ALGORITHM_COMPLEXITY.md` are direct implementation
+Complexity statements in `docs/releases/v0.16/V16_ALGORITHM_COMPLEXITY.md` are direct implementation
 operation counts and standard sparse/dense linear-algebra considerations.
 
 

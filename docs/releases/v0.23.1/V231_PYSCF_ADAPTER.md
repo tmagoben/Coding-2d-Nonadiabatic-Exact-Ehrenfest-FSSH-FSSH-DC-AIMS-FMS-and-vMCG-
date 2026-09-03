@@ -3,7 +3,7 @@
 > **Historical convention notice:** v0.23.2 real-runtime finite-difference
 > evidence supersedes the tuple interpretation below. Production internal
 > `d[i,j]` now uses PySCF `state=(i,j)`, `mult_ediff=False`, and
-> `use_etfs=False`. See `V232_NAC_CONVENTION_ERRATUM.md`.
+> `use_etfs=False`. See `../v0.23.2/V232_NAC_CONVENTION_ERRATUM.md`.
 
 ## Frozen runtime
 

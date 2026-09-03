@@ -182,7 +182,7 @@ nac_cart[i, j]
 many-electron overlap derivatives establish `state=(i,j)` as the production
 mapping for `nac_cart[i,j]`. The centralized v0.23.2 helper enforces the corrected
 mapping with `mult_ediff=False` and `use_etfs=False`. See
-`V232_NAC_CONVENTION_ERRATUM.md`.
+`../v0.23.2/V232_NAC_CONVENTION_ERRATUM.md`.
 
 and then sets
 

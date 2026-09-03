@@ -48,5 +48,6 @@ coordinate. It is not a full molecular SOC gradient. The recorded polar-gauge
 connection is not claimed to be a continuous physical derivative coupling. No v0.24.2
 object satisfies the trajectory-ready molecular-SOC admission contract.
 
-For the complete derivation, see `V242_PYSCF_DIFFERENTIAL_SOC.md`; for data flow and
-claim boundaries, see `V242_PROGRAM_ARCHITECTURE.md`.
+For the complete derivation, see
+`docs/releases/v0.24.2/V242_PYSCF_DIFFERENTIAL_SOC.md`; for data flow and claim
+boundaries, see `docs/releases/v0.24.2/V242_PROGRAM_ARCHITECTURE.md`.
