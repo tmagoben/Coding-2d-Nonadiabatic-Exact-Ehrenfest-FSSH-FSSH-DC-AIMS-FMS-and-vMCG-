@@ -50,7 +50,7 @@ so v0.3 requested PySCF `state=(j,i)` and then projected the Cartesian NAC onto
 the generalized coordinate tangent. **v0.23.2 erratum:** real PySCF 2.13.1
 overlap finite differences show that the production mapping for this internal
 convention is `state=(i,j)`, `mult_ediff=False`, `use_etfs=False`. See
-`V232_NAC_CONVENTION_ERRATUM.md`.
+`../v0.23.2/V232_NAC_CONVENTION_ERRATUM.md`.
 
 ## Scaled NAC warning
 

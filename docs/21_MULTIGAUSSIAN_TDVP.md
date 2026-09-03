@@ -12,16 +12,15 @@ and constant-unitary electronic covariance, duplicate-packet null directions,
 one-packet harmonic reduction, zero SOC, and second-order timestep refinement.
 
 For the complete derivation, solver thresholds, architecture diagram, complexity,
-and evidence tables, see the release-root documents:
+and evidence tables, see the archived release documents:
 
-- `V251_MULTIGAUSSIAN_TDVP.md`
-- `V251_METRIC_AND_SOLVER.md`
-- `V251_PROGRAM_ARCHITECTURE.md`
-- `V251_ALGORITHM_COMPLEXITY.md`
-- `V251_VALIDATION.md`
+- `docs/releases/v0.25.1/V251_MULTIGAUSSIAN_TDVP.md`
+- `docs/releases/v0.25.1/V251_METRIC_AND_SOLVER.md`
+- `docs/releases/v0.25.1/V251_PROGRAM_ARCHITECTURE.md`
+- `docs/releases/v0.25.1/V251_ALGORITHM_COMPLEXITY.md`
+- `docs/releases/v0.25.1/V251_VALIDATION.md`
 
 The exact scope remains one coordinate, frozen widths, a fixed electronic frame,
 and a Hermitian quadratic matrix potential. Adaptive widths, spawning/pruning,
 multidimensional propagation, coordinate-dependent gauges, and real molecular SOC
 trajectories remain later milestones.
-

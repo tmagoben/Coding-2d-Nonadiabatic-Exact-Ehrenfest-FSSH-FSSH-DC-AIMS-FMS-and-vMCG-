@@ -1,5 +1,10 @@
 # Release history
 
+The complete per-version scientific record is indexed in the
+[version-document archive](releases/README.md). These archived documents are
+historical evidence, not separate active GitHub releases. The certified v0.27.0
+documents remain at the repository root.
+
 - **v0.1–v0.4:** Heller Gaussians, moving nonorthogonal bases, exact-grid references, conical-intersection models, Berry/Wilson topology, and spawning prototypes.
 - **v0.5–v0.8:** provider-neutral molecular interfaces, PySCF-oriented backends, many-electron overlap tracking, and electronic gauge graphs.
 - **v0.9–v0.10:** convergence controls, conditioning/pruning, repeated spawning, and corrected reduced electronic density matrices.

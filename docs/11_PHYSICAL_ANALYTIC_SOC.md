@@ -67,6 +67,7 @@ The release does not claim an ab-initio SOC backend, PySCF SOC runtime, molecula
 accuracy, external magnetic fields, or production AIMS. Those require a separate
 backend-validation milestone. Spin-free propagation remains supported indefinitely.
 
-See `V220_DERIVATIONS.md`, `V220_VALIDATION.md`, and
-`V220_ALGORITHM_COMPLEXITY.md` at the repository root for the detailed equations,
-measured values, and scaling analysis.
+See `docs/releases/v0.22.0/V220_DERIVATIONS.md`,
+`docs/releases/v0.22.0/V220_VALIDATION.md`, and
+`docs/releases/v0.22.0/V220_ALGORITHM_COMPLEXITY.md` in the version archive for the
+detailed equations, measured values, and scaling analysis.

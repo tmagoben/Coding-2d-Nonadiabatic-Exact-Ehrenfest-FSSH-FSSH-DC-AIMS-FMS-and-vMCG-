@@ -15,8 +15,8 @@ The release therefore hardens six spin-neutral interfaces:
 5. full-subspace continuity diagnostics;
 6. complex dtype preservation.
 
-See `V212_DERIVATIONS.md` for the step-by-step mathematics and
-`V212_VALIDATION.md` for numerical acceptance values.
+See `docs/releases/v0.21.2/V212_DERIVATIONS.md` for the step-by-step mathematics and
+`docs/releases/v0.21.2/V212_VALIDATION.md` for numerical acceptance values.
 
 ## Boundary found by the v0.21.3 audit
 

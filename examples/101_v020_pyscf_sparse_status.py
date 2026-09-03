@@ -12,6 +12,6 @@ for key,value in data["pyscf"].items():
     print(f"{key}: {value}")
 
 print(
-    "\nSee V20_PYSCF_SPARSE_MOLECULAR_PROTOCOL.md "
+    "\nSee docs/releases/v0.20/V20_PYSCF_SPARSE_MOLECULAR_PROTOCOL.md "
     "for the real-backend integration path."
 )

@@ -18,14 +18,14 @@ def test_v0260_metadata_artifacts_and_claim_boundaries_are_consistent():
     assert "date-released: 2026-08-25" in citation
     assert "Current release: v0.27.0" in readme
     required = (
-        "V260_RELEASE_NOTES.md",
-        "V260_MULTIDIMENSIONAL_TDVP.md",
-        "V260_EXACT_CI_SOC_REFERENCE.md",
-        "V260_LIFECYCLE_POLICY.md",
-        "V260_PROGRAM_ARCHITECTURE.md",
-        "V260_ALGORITHM_COMPLEXITY.md",
-        "V260_VALIDATION.md",
-        "V260_BUILD_VALIDATION.md",
+        "docs/releases/v0.26.0/V260_RELEASE_NOTES.md",
+        "docs/releases/v0.26.0/V260_MULTIDIMENSIONAL_TDVP.md",
+        "docs/releases/v0.26.0/V260_EXACT_CI_SOC_REFERENCE.md",
+        "docs/releases/v0.26.0/V260_LIFECYCLE_POLICY.md",
+        "docs/releases/v0.26.0/V260_PROGRAM_ARCHITECTURE.md",
+        "docs/releases/v0.26.0/V260_ALGORITHM_COMPLEXITY.md",
+        "docs/releases/v0.26.0/V260_VALIDATION.md",
+        "docs/releases/v0.26.0/V260_BUILD_VALIDATION.md",
         "docs/24_REFERENCE_FIRST_MULTIDIMENSIONAL_CI_SOC.md",
         "examples/139_recompute_v0260_multidimensional.py",
         "examples/140_recompute_v0260_campaign.py",

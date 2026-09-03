@@ -32,12 +32,12 @@ def test_v0242_release_metadata_evidence_and_claim_boundary_are_consistent():
     assert '[tool.setuptools]\npackages = ["gaussian_dynamics"]' in pyproject
 
     required = (
-        "V242_RELEASE_NOTES.md",
-        "V242_PYSCF_DIFFERENTIAL_SOC.md",
-        "V242_PROGRAM_ARCHITECTURE.md",
-        "V242_ALGORITHM_COMPLEXITY.md",
-        "V242_VALIDATION.md",
-        "V242_BUILD_VALIDATION.md",
+        "docs/releases/v0.24.2/V242_RELEASE_NOTES.md",
+        "docs/releases/v0.24.2/V242_PYSCF_DIFFERENTIAL_SOC.md",
+        "docs/releases/v0.24.2/V242_PROGRAM_ARCHITECTURE.md",
+        "docs/releases/v0.24.2/V242_ALGORITHM_COMPLEXITY.md",
+        "docs/releases/v0.24.2/V242_VALIDATION.md",
+        "docs/releases/v0.24.2/V242_BUILD_VALIDATION.md",
         "docs/19_PYSCF_CONNECTED_GEOMETRY_SOC.md",
         "examples/129_recompute_v0242_pyscf_differential_soc.py",
         "examples/130_recompute_v0242_campaign.py",
