@@ -53,8 +53,7 @@ $$
 For the variance,
 
 $$
-\langle(x-q)^2\rangle
-=
+\langle(x-q)^2\rangle =
 \sqrt{\frac{\alpha}{\pi}}
 \int y^2e^{-\alpha y^2}dy.
 $$
@@ -62,8 +61,7 @@ $$
 Using
 
 $$
-\int_{-\infty}^{\infty}y^2e^{-\alpha y^2}dy
-=
+\int_{-\infty}^{\infty}y^2e^{-\alpha y^2}dy=
 \frac{\sqrt\pi}{2\alpha^{3/2}},
 $$
 
@@ -88,10 +86,8 @@ $$
 we get
 
 $$
-\hat p g
-=
--i\partial_xg
-=
+\hat p g=
+-i\partial_xg=
 [p+i\alpha(x-q)]g.
 $$
 
@@ -105,8 +101,7 @@ Applying $\hat p^2$ or using the second derivative gives
 
 $$
 \boxed{
-\langle \hat p^2\rangle
-=
+\langle \hat p^2\rangle=
 p^2+\frac{\alpha}{2}.
 }
 $$
@@ -122,11 +117,9 @@ $$
 Together,
 
 $$
-\sigma_x\sigma_p
-=
+\sigma_x\sigma_p=
 \sqrt{\frac{1}{2\alpha}}
-\sqrt{\frac{\alpha}{2}}
-=
+\sqrt{\frac{\alpha}{2}}=
 \boxed{\frac12}.
 $$
 
@@ -137,15 +130,13 @@ $$
 Let
 
 $$
-g_i(x)
-=
+g_i(x)=
 N
 e^{-\alpha(x-q_i)^2/2+ip_i(x-q_i)},
 $$
 
 $$
-g_j(x)
-=
+g_j(x)=
 N
 e^{-\alpha(x-q_j)^2/2+ip_j(x-q_j)}.
 $$
@@ -153,8 +144,7 @@ $$
 Then
 
 $$
-S_{ij}
-=
+S_{ij}=
 N^2
 \int
 e^{-\frac{\alpha}{2}[(x-q_i)^2+(x-q_j)^2]}
@@ -175,8 +165,7 @@ $$
 The quadratic coordinate term satisfies
 
 $$
-(x-q_i)^2+(x-q_j)^2
-=
+(x-q_i)^2+(x-q_j)^2=
 2(x-\bar q)^2+\frac{(\Delta q)^2}{2}.
 $$
 
@@ -184,8 +173,7 @@ Thus
 
 $$
 -\frac{\alpha}{2}
-[(x-q_i)^2+(x-q_j)^2]
-=
+[(x-q_i)^2+(x-q_j)^2]=
 -\alpha(x-\bar q)^2
 -\frac{\alpha(\Delta q)^2}{4}.
 $$
@@ -193,8 +181,7 @@ $$
 The momentum phase is
 
 $$
-p_j(x-q_j)-p_i(x-q_i)
-=
+p_j(x-q_j)-p_i(x-q_i)=
 \Delta p\,x-p_jq_j+p_iq_i.
 $$
 
@@ -207,8 +194,7 @@ $$
 The integral becomes a standard Fourier transform of a Gaussian:
 
 $$
-\int e^{-\alpha y^2+i\Delta p\,y}dy
-=
+\int e^{-\alpha y^2+i\Delta p\,y}dy=
 \sqrt{\frac{\pi}{\alpha}}
 e^{-(\Delta p)^2/(4\alpha)}.
 $$
@@ -223,8 +209,7 @@ the result is
 
 $$
 \boxed{
-S_{ij}
-=
+S_{ij}=
 \exp
 \left[
 -\frac{\alpha}{4}(q_i-q_j)^2
@@ -247,8 +232,7 @@ Checks:
 Let
 
 $$
-g(x)
-=
+g(x)=
 N e^{-\alpha(x-q)^2/2+ip(x-q)}.
 $$
 
@@ -267,10 +251,8 @@ $$
 Differentiate once more:
 
 $$
-g''
-=
-f'g+fg'
-=
+g''=
+f'g+fg'=
 (-\alpha+f^2)g.
 $$
 
@@ -278,8 +260,7 @@ Therefore,
 
 $$
 \boxed{
-g''
-=
+g''=
 \left(
 [-\alpha(x-q)+ip]^2-\alpha
 \right)g.
@@ -290,8 +271,7 @@ The kinetic operator gives
 
 $$
 \boxed{
-\hat T g
-=
+\hat T g=
 -\frac{1}{2m}
 \left(
 [-\alpha(x-q)+ip]^2-\alpha
@@ -310,8 +290,7 @@ formula because it is both simple and auditable.
 Again use
 
 $$
-g(x;q,p,\alpha)
-=
+g(x;q,p,\alpha)=
 N_\alpha
 e^{-\alpha(x-q)^2/2+ip(x-q)}.
 $$
@@ -322,8 +301,7 @@ The normalization does not depend on $q$:
 
 $$
 \boxed{
-\partial_qg
-=
+\partial_qg=
 [\alpha(x-q)-ip]g.
 }
 $$
@@ -332,8 +310,7 @@ $$
 
 $$
 \boxed{
-\partial_pg
-=
+\partial_pg=
 i(x-q)g.
 }
 $$
@@ -366,8 +343,7 @@ $$
 \partial_\lambda
 \left[
 -\frac{\alpha}{2}(x-q)^2
-\right]
-=
+\right]=
 -\frac{\alpha}{2}(x-q)^2.
 $$
 
@@ -375,14 +351,7 @@ Therefore,
 
 $$
 \boxed{
-\partial_\lambda g
-=
-\left[
-\frac14
--
-\frac{\alpha}{2}(x-q)^2
-\right]g.
-}
+\partial_\lambda g=\left[\frac14-\frac{\alpha}{2}(x-q)^2\right]g.}
 $$
 
 This analytic result is useful for checking the numerical tangent vectors used by the
@@ -395,8 +364,7 @@ TDVP code.
 If $\alpha$ is fixed,
 
 $$
-\dot g
-=
+\dot g=
 \partial_qg\,\dot q
 +
 \partial_pg\,\dot p.
@@ -406,8 +374,7 @@ Substituting the derivatives above,
 
 $$
 \boxed{
-\dot g
-=
+\dot g=
 \left[
 (\alpha(x-q)-ip)\dot q
 +
@@ -427,8 +394,7 @@ $$
 This is the quantity used in
 
 $$
-\tau_{ij}
-=
+\tau_{ij}=
 \langle g_i|\dot g_j\rangle.
 $$
 
@@ -445,8 +411,7 @@ $$
 Differentiate:
 
 $$
-\dot N
-=
+\dot N=
 \dot C^\dagger SC
 +
 C^\dagger\dot S C
@@ -463,18 +428,14 @@ $$
 Hence
 
 $$
-S\dot C
-=
+S\dot C=
 -iHC-\tau C.
 $$
 
 Its Hermitian conjugate is
 
 $$
-\dot C^\dagger S
-=
-iC^\dagger H
--
+\dot C^\dagger S=iC^\dagger H-
 C^\dagger\tau^\dagger
 $$
 
@@ -483,24 +444,13 @@ for Hermitian $H$.
 Therefore,
 
 $$
-\dot N
-=
-iC^\dagger HC
--
-C^\dagger\tau^\dagger C
-+
-C^\dagger\dot S C
--iC^\dagger HC
--
-C^\dagger\tau C.
+\dot N=iC^\dagger HC-C^\dagger\tau^\dagger C+C^\dagger\dot S C-iC^\dagger HC-C^\dagger\tau C.
 $$
 
 So
 
 $$
-\dot N
-=
-C^\dagger
+\dot N=C^\dagger
 (\dot S-\tau^\dagger-\tau)
 C.
 $$
@@ -558,9 +508,7 @@ $$
 with solution
 
 $$
-\boxed{
-q(t)
-=
+\boxed{q(t)=
 q_0\cos\omega t
 +
 \frac{p_0}{m\omega}\sin\omega t.
@@ -570,22 +518,13 @@ $$
 Similarly,
 
 $$
-\boxed{
-p(t)
-=
-p_0\cos\omega t
--
-m\omega q_0\sin\omega t.
-}
+\boxed{p(t)=p_0\cos\omega t-m\omega q_0\sin\omega t.}
 $$
 
 The width equation is
 
 $$
-\dot A
-=
--\frac{A^2}{m}
--
+\dot A=-\frac{A^2}{m}-
 m\omega^2.
 $$
 
@@ -598,8 +537,7 @@ $$
 we obtain
 
 $$
--\frac{A^2}{m}-m\omega^2
-=
+-\frac{A^2}{m}-m\omega^2=
 -\frac{-m^2\omega^2}{m}
 -m\omega^2
 =0.
@@ -640,26 +578,22 @@ with real $\theta_\mu$.
 Define
 
 $$
-|D_\mu\rangle
-=
+|D_\mu\rangle=
 \partial_{\theta_\mu}|\Psi\rangle.
 $$
 
 Then
 
 $$
-|\dot\Psi\rangle
-=
+|\dot\Psi\rangle=
 \sum_\nu |D_\nu\rangle\dot\theta_\nu.
 $$
 
 The TDSE residual is
 
 $$
-|r\rangle
-=
-i\sum_\nu|D_\nu\rangle\dot\theta_\nu
--
+|r\rangle=
+i\sum_\nu|D_\nu\rangle\dot\theta_\nu-
 H|\Psi\rangle.
 $$
 
@@ -674,16 +608,14 @@ with respect to each real $\dot\theta_\mu$.
 Because
 
 $$
-\frac{\partial r}{\partial\dot\theta_\mu}
-=
+\frac{\partial r}{\partial\dot\theta_\mu}=
 i|D_\mu\rangle,
 $$
 
 stationarity gives
 
 $$
-0
-=
+0=
 2\operatorname{Re}
 \left\langle
 iD_\mu
@@ -695,32 +627,20 @@ $$
 Substitute $r$:
 
 $$
-0
-=
-2\operatorname{Re}
-\left[
-\sum_\nu
-\langle iD_\mu|iD_\nu\rangle
-\dot\theta_\nu
--
-\langle iD_\mu|H|\Psi\rangle
-\right].
+0=2\operatorname{Re}\left[\sum_\nu\langle iD_\mu|iD_\nu\rangle\dot\theta_\nu-\langle iD_\mu|H|\Psi\rangle\right].
 $$
 
 Now
 
 $$
-\langle iD_\mu|iD_\nu\rangle
-=
-\langle D_\mu|D_\nu\rangle,
+\langle iD_\mu|iD_\nu\rangle=\langle D_\mu|D_\nu\rangle,
 $$
 
 and
 
 $$
 \operatorname{Re}
-\langle iD_\mu|H|\Psi\rangle
-=
+\langle iD_\mu|H|\Psi\rangle=
 \operatorname{Im}
 \langle D_\mu|H|\Psi\rangle.
 $$
@@ -728,15 +648,7 @@ $$
 Therefore,
 
 $$
-\boxed{
-\sum_\nu
-\operatorname{Re}
-\langle D_\mu|D_\nu\rangle
-\dot\theta_\nu
-=
-\operatorname{Im}
-\langle D_\mu|H|\Psi\rangle.
-}
+\boxed{\sum_\nu\operatorname{Re}\langle D_\mu|D_\nu\rangle\dot\theta_\nu=\operatorname{Im}\langle D_\mu|H|\Psi\rangle.}
 $$
 
 Or
@@ -760,8 +672,7 @@ $$
 The variational manifold allows only velocities in the tangent space
 
 $$
-\mathcal T
-=
+\mathcal T=
 \operatorname{span}
 \{
 |D_1\rangle,\ldots,|D_M\rangle
@@ -797,8 +708,7 @@ the residual obtained by setting every parameter velocity to zero.
 For two electronic diabatic states,
 
 $$
-\boldsymbol\Psi(x,t)
-=
+\boldsymbol\Psi(x,t)=
 \begin{pmatrix}
 \Psi_1(x,t)\\
 \Psi_2(x,t)
@@ -808,8 +718,7 @@ $$
 The Hamiltonian is
 
 $$
-\hat H
-=
+\hat H=
 -\frac{1}{2m}\partial_x^2 I
 +
 \begin{pmatrix}
@@ -821,16 +730,14 @@ $$
 Expanding each component,
 
 $$
-\Psi_I(x,t)
-=
+\Psi_I(x,t)=
 \sum_k C_k^{(I)}g_k^{(I)}(x,t),
 $$
 
 gives
 
 $$
-\Psi
-=
+\Psi=
 \sum_{I,k}
 C_k^{(I)}
 |g_k^{(I)}\rangle|I\rangle.
@@ -840,8 +747,7 @@ The Hamiltonian matrix element between basis functions is
 
 $$
 \boxed{
-H_{Ik,Jl}
-=
+H_{Ik,Jl}=
 \delta_{IJ}
 \langle g_k^{(I)}|\hat T|g_l^{(J)}\rangle
 +
