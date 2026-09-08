@@ -66,7 +66,7 @@ one-active-state structure.
 
 The nuclear packet is now
 
-$$g_I(\mathbf{R}) = \left(\frac{\det\Gamma_I}{\pi^D}\right)^{1/4} \exp\!\left[-\frac{1}{2}\mathbf{x}_I^T(\Gamma_I - i B_I)\mathbf{x}_I + i\mathbf{p}_I^T\mathbf{x}_I\right], \qquad \mathbf{x}_I = \mathbf{R} - \mathbf{q}_I$$
+$$g_I(\mathbf{R}) = \left(\frac{\det\Gamma_I}{\pi^D}\right)^{1/4} \exp\left[-\frac{1}{2}\mathbf{x}_I^T(\Gamma_I - i B_I)\mathbf{x}_I + i\mathbf{p}_I^T\mathbf{x}_I\right], \qquad \mathbf{x}_I = \mathbf{R} - \mathbf{q}_I$$
 
 where $\Gamma_I = \exp(E_I)$ is positive definite by construction and both $E_I$
 and $B_I$ are real symmetric. Symmetric matrices use an orthonormal packing:
@@ -90,7 +90,7 @@ full-shape activation gates remain mandatory.
 
 The released multidimensional packet is
 
-$$g_I(\mathbf{R}) = \prod_{\mu=1}^{D}\left(\frac{\alpha_{I\mu}}{\pi}\right)^{1/4} \exp\!\left[-\frac{\alpha_{I\mu} - i\beta_{I\mu}}{2}(R_\mu - q_{I\mu})^2 + i p_{I\mu}(R_\mu - q_{I\mu})\right]$$
+$$g_I(\mathbf{R}) = \prod_{\mu=1}^{D}\left(\frac{\alpha_{I\mu}}{\pi}\right)^{1/4} \exp\left[-\frac{\alpha_{I\mu} - i\beta_{I\mu}}{2}(R_\mu - q_{I\mu})^2 + i p_{I\mu}(R_\mu - q_{I\mu})\right]$$
 
 with every positive width represented by `eta[I,mu]=log(alpha[I,mu])`.  Exact
 complex-normal moments through total operator/tangent degree four build the
