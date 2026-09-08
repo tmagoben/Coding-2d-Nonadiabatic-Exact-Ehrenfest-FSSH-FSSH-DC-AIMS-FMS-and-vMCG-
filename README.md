@@ -38,41 +38,25 @@ The current release is **v0.27.0**.
 
 The central electronic data contract is now representation neutral:
 
-$$
-H(q) \in \mathbb{C}^{s \times s}, \qquad
-\partial_a H_{\mathrm{op}}(q) \in \mathbb{C}^{s \times s}, \qquad
-D_a(q) = \langle\Phi|\partial_a\Phi\rangle \in \mathbb{C}^{s \times s}.
-$$
+$$H(q) \in \mathbb{C}^{s \times s}, \qquad \partial_a H_{\mathrm{op}}(q) \in \mathbb{C}^{s \times s}, \qquad D_a(q) = \langle\Phi|\partial_a\Phi\rangle \in \mathbb{C}^{s \times s}$$
 
 The framework requires
 
-$$
-H = H^\dagger, \qquad
-\partial_a H_{\mathrm{op}} = (\partial_a H_{\mathrm{op}})^\dagger, \qquad
-D_a = -D_a^\dagger.
-$$
+$$H = H^\dagger, \qquad \partial_a H_{\mathrm{op}} = (\partial_a H_{\mathrm{op}})^\dagger, \qquad D_a = -D_a^\dagger$$
 
 A local electronic basis may be transformed by any smooth
 
-$$
-G(q) \in U(s),
-$$
+$$G(q) \in U(s)$$
 
 with
 
-$$
-H' = G^\dagger H G,
-$$
+$$H' = G^\dagger H G$$
 
-$$
-(\partial_a H_{\mathrm{op}})' = G^\dagger(\partial_a H_{\mathrm{op}})G,
-$$
+$$(\partial_a H_{\mathrm{op}})' = G^\dagger(\partial_a H_{\mathrm{op}})G$$
 
 and
 
-$$
-D'_a = G^\dagger D_a G + G^\dagger\partial_a G.
-$$
+$$D'_a = G^\dagger D_a G + G^\dagger\partial_a G$$
 
 v0.27.0 inherits numerical validation of these identities and propagates full
 **electronic blocks** on each Gaussian rather than hard-coding a two-state or
@@ -82,11 +66,7 @@ one-active-state structure.
 
 The nuclear packet is now
 
-$$
-g_I(\mathbf{R}) = \left(\frac{\det\Gamma_I}{\pi^D}\right)^{1/4}
-\exp\!\left[-\frac{1}{2}\mathbf{x}_I^T(\Gamma_I - i B_I)\mathbf{x}_I + i\mathbf{p}_I^T\mathbf{x}_I\right],
-\qquad \mathbf{x}_I = \mathbf{R} - \mathbf{q}_I,
-$$
+$$g_I(\mathbf{R}) = \left(\frac{\det\Gamma_I}{\pi^D}\right)^{1/4} \exp\!\left[-\frac{1}{2}\mathbf{x}_I^T(\Gamma_I - i B_I)\mathbf{x}_I + i\mathbf{p}_I^T\mathbf{x}_I\right], \qquad \mathbf{x}_I = \mathbf{R} - \mathbf{q}_I$$
 
 where $\Gamma_I = \exp(E_I)$ is positive definite by construction and both $E_I$
 and $B_I$ are real symmetric. Symmetric matrices use an orthonormal packing:
@@ -110,10 +90,7 @@ full-shape activation gates remain mandatory.
 
 The released multidimensional packet is
 
-$$
-g_I(\mathbf{R}) = \prod_{\mu=1}^{D}\left(\frac{\alpha_{I\mu}}{\pi}\right)^{1/4}
-\exp\!\left[-\frac{\alpha_{I\mu} - i\beta_{I\mu}}{2}(R_\mu - q_{I\mu})^2 + i p_{I\mu}(R_\mu - q_{I\mu})\right],
-$$
+$$g_I(\mathbf{R}) = \prod_{\mu=1}^{D}\left(\frac{\alpha_{I\mu}}{\pi}\right)^{1/4} \exp\!\left[-\frac{\alpha_{I\mu} - i\beta_{I\mu}}{2}(R_\mu - q_{I\mu})^2 + i p_{I\mu}(R_\mu - q_{I\mu})\right]$$
 
 with every positive width represented by `eta[I,mu]=log(alpha[I,mu])`.  Exact
 complex-normal moments through total operator/tangent degree four build the
@@ -123,9 +100,7 @@ independent velocity-Verlet updates are not used on this noncanonical manifold.
 
 The reference solver independently propagates
 
-$$
-i\partial_t\boldsymbol{\Psi}(\mathbf{R},t) = \left[-\frac{1}{2}\nabla^T M^{-1}\nabla\,\mathbf{1} + \mathbf{V}(\mathbf{R})\right]\boldsymbol{\Psi}(\mathbf{R},t)
-$$
+$$i\partial_t\boldsymbol{\Psi}(\mathbf{R},t) = \left[-\frac{1}{2}\nabla^T M^{-1}\nabla\,\mathbf{1} + \mathbf{V}(\mathbf{R})\right]\boldsymbol{\Psi}(\mathbf{R},t)$$
 
 on a periodic two-dimensional FFT grid.  It uses pointwise Hermitian matrix
 exponentials and a unitary Strang kinetic step, and shares no Gaussian moment,
@@ -150,9 +125,7 @@ the frozen order **merge, prune, spawn**. A trial spawn packet is admitted only 
 its component orthogonal to the existing nuclear basis has sufficient novelty, the
 enlarged overlap remains full rank and conditioned, and its analytic coupling to
 
-$$
-R = \dot{\Psi} + i\hat{H}\Psi
-$$
+$$R = \dot{\Psi} + i\hat{H}\Psi$$
 
 exceeds the residual threshold. Every accepted topology change solves the full-SVD
 least-squares projection and records projection loss, fidelity, norm, energy jump,
@@ -168,10 +141,7 @@ silently regularizing the null shape metric.
 
 Each packet is now
 
-$$
-g_I(x) = \left(\frac{\alpha_I}{\pi}\right)^{1/4}
-\exp\left[-\frac{\alpha_I}{2}(x-q_I)^2 + \frac{i\beta_I}{2}(x-q_I)^2 + ip_I(x-q_I)\right],
-$$
+$$g_I(x) = \left(\frac{\alpha_I}{\pi}\right)^{1/4} \exp\left[-\frac{\alpha_I}{2}(x-q_I)^2 + \frac{i\beta_I}{2}(x-q_I)^2 + ip_I(x-q_I)\right]$$
 
 with `eta_I=log(alpha_I)` and real chirp `beta_I` propagated alongside `q_I`,
 `p_I`, and the complete electronic coefficients. Log-width coordinates make
@@ -181,11 +151,7 @@ uses exact complex cross moments through degree four.
 
 For a scalar harmonic potential, the continuous equations reduce exactly to
 
-$$
-\dot{q} = \frac{p}{m}, \qquad \dot{p} = -m\omega^2 q, \qquad
-\dot{\eta} = -\frac{2\beta}{m}, \qquad
-\dot{\beta} = \frac{\alpha^2 - \beta^2}{m} - m\omega^2.
-$$
+$$\dot{q} = \frac{p}{m}, \qquad \dot{p} = -m\omega^2 q, \qquad \dot{\eta} = -\frac{2\beta}{m}, \qquad \dot{\beta} = \frac{\alpha^2 - \beta^2}{m} - m\omega^2$$
 
 The release compares these equations with a closed-form harmonic breathing solution
 and proves that `alpha=m omega`, `beta=0` reduces to the v0.25.1 frozen coherent-state
@@ -198,26 +164,18 @@ timestep refinement are also validated.
 For frozen normalized nuclear Gaussians `g_I(x)` and complete electronic spinors
 `C_I`, the released wavefunction is
 
-$$
-\Psi(x,t) = \sum_{I=1}^{N_g} g_I(x; q_I, p_I, \alpha_I)C_I(t), \qquad \dot{\alpha}_I = 0.
-$$
+$$\Psi(x,t) = \sum_{I=1}^{N_g} g_I(x; q_I, p_I, \alpha_I)C_I(t), \qquad \dot{\alpha}_I = 0$$
 
 All real degrees of freedom are propagated together. With
 `theta=(Re C, Im C, q, p)`, McLachlan variation gives
 
-$$
-G_{\mu\nu}\dot{\theta}_\nu = b_\mu, \quad
-G_{\mu\nu} = \operatorname{Re}\langle\partial_\mu\Psi|\partial_\nu\Psi\rangle, \quad
-b_\mu = \operatorname{Im}\langle\partial_\mu\Psi|\hat{H}\Psi\rangle.
-$$
+$$G_{\mu\nu}\dot{\theta}_\nu = b_\mu, \quad G_{\mu\nu} = \operatorname{Re}\langle\partial_\mu\Psi|\partial_\nu\Psi\rangle, \quad b_\mu = \operatorname{Im}\langle\partial_\mu\Psi|\hat{H}\Psi\rangle$$
 
 The metric is solved by full SVD. Directions below the absolute/relative cutoff are
 retained as explicit null-space evidence; the projected right-hand side must be
 compatible or the solve fails closed. The timestep solves
 
-$$
-R(\theta_{n+1}) = \theta_{n+1} - \theta_n - h\,v\!\left(\frac{\theta_n + \theta_{n+1}}{2}\right) = 0
-$$
+$$R(\theta_{n+1}) = \theta_{n+1} - \theta_n - h\,v\!\left(\frac{\theta_n + \theta_{n+1}}{2}\right) = 0$$
 
 with a nonlinear implicit-midpoint solve and stores a receipt that independently
 rebuilds the midpoint metric, SVD spectrum, velocity, residual, norm, and energy.
@@ -234,11 +192,7 @@ reduction, and second-order timestep refinement are validated.
 The new trajectory is the single-canonical-nuclear-packet / complete-electronic-
 spinor restriction of a time-dependent variational principle. Its equations are
 
-$$
-\dot{q} = M^{-1}p, \qquad
-\dot{p}_a = -c^\dagger K_a c, \qquad
-i\dot{c} = (H - i\dot{q}^a D_a)c.
-$$
+$$\dot{q} = M^{-1}p, \qquad \dot{p}_a = -c^\dagger K_a c, \qquad i\dot{c} = (H - i\dot{q}^a D_a)c$$
 
 For constant `M`, one step applies a nuclear half kick, a drift, an endpoint
 electronic Strang step, and the final force half kick. Electronic frame motion is
@@ -294,7 +248,7 @@ The pinned OH radical smoke case uses three SA-CASSCF(5e,4o)/STO-3G doublet root
 Its six-state SOC matrix is Hermitian, nonzero, time-reversal invariant, and Kramers
 paired. The explicit rank-five two-electron contraction agrees with a separate
 PySCF JK-driver contraction to about machine precision. A mixed singlet/triplet CI
-test exercises the zero-Clebsch--Gordan fallback by constructing a normalized
+test exercises the zero-Clebsch–Gordan fallback by constructing a normalized
 `M_S=+1` triplet component with PySCF determinant ladder operations.
 
 The provider is deliberately static-only. Calls to trajectory `components(q)`,
@@ -425,25 +379,17 @@ over 1/3/5-Gaussian bases and a four-level sparse-threshold ladder.
 
 The even-electron model uses
 
-$$
-\{|S\rangle, |T_{-1}\rangle, |T_0\rangle, |T_{+1}\rangle\},
-$$
+$$\{|S\rangle, |T_{-1}\rangle, |T_0\rangle, |T_{+1}\rangle\}$$
 
 with a time-reversal-constrained complex singlet–triplet SOC vector. The odd-electron
 model uses two complete doublets,
 
-$$
-\{|D_1,+\tfrac{1}{2}\rangle, |D_1,-\tfrac{1}{2}\rangle,
-|D_2,+\tfrac{1}{2}\rangle, |D_2,-\tfrac{1}{2}\rangle\},
-$$
+$$\{|D_1,+\tfrac{1}{2}\rangle, |D_1,-\tfrac{1}{2}\rangle, |D_2,+\tfrac{1}{2}\rangle, |D_2,-\tfrac{1}{2}\rangle\}$$
 
 with a quaternionic SOC block that preserves twofold Kramers degeneracy at zero magnetic
 field. Both models provide explicit
 
-$$
-H = H_{\mathrm{sf}} + H_{\mathrm{SOC}}, \qquad
-K_a = K_{a,{\mathrm{sf}}} + K_{a,{\mathrm{SOC}}}.
-$$
+$$H = H_{\mathrm{sf}} + H_{\mathrm{SOC}}, \qquad K_a = K_{a,{\mathrm{sf}}} + K_{a,{\mathrm{SOC}}}$$
 
 Physical projector populations, time-reversal representations, SOC forces, differential
 providers, exact-grid dynamics, moving complex gauges, and checkpoint identity are all
