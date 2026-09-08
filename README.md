@@ -169,7 +169,7 @@ $$\Psi(x,t) = \sum_{I=1}^{N_g} g_I(x; q_I, p_I, \alpha_I)C_I(t), \qquad \dot{\al
 All real degrees of freedom are propagated together. With
 `theta=(Re C, Im C, q, p)`, McLachlan variation gives
 
-$$G_{\mu\nu}\dot{\theta}_\nu = b_\mu, \quad G_{\mu\nu} = \operatorname{Re}\langle\partial_\mu\Psi|\partial_\nu\Psi\rangle, \quad b_\mu = \operatorname{Im}\langle\partial_\mu\Psi|\hat{H}\Psi\rangle$$
+$$G_{\mu\nu}\dot{\theta}_\nu = b_\mu, \quad G_{\mu\nu} = \Re\langle\partial_\mu\Psi|\partial_\nu\Psi\rangle, \quad b_\mu = \Im\langle\partial_\mu\Psi|\hat{H}\Psi\rangle$$
 
 The metric is solved by full SVD. Directions below the absolute/relative cutoff are
 retained as explicit null-space evidence; the projected right-hand side must be
