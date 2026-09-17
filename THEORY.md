@@ -12,8 +12,7 @@ The one-dimensional Hamiltonian is
 
 $$
 \boxed{
-\hat H
-=
+\hat H=
 -\frac{1}{2m}\frac{\partial^2}{\partial x^2}
 +
 V(x).
@@ -24,8 +23,7 @@ The time-dependent Schrödinger equation (TDSE) is
 
 $$
 \boxed{
-i\frac{\partial}{\partial t}\Psi(x,t)
-=
+i\frac{\partial}{\partial t}\Psi(x,t)=
 \hat H\Psi(x,t).
 }
 $$
@@ -42,8 +40,7 @@ The central question is:
 We begin with
 
 $$
-g(x;q,p,\alpha)
-=
+g(x;q,p,\alpha)=
 N_\alpha
 \exp\left[
 -\frac{\alpha}{2}(x-q)^2
@@ -67,10 +64,9 @@ The parameters have direct meanings:
 The normalization constant follows from
 
 $$
-1
-=
+1=
 \int_{-\infty}^{\infty}|g(x)|^2 dx
-=
+\=
 |N_\alpha|^2
 \int_{-\infty}^{\infty}
 e^{-\alpha(x-q)^2}dx.
@@ -80,8 +76,7 @@ Using
 
 $$
 \int_{-\infty}^{\infty}
-e^{-\alpha y^2}dy
-=
+e^{-\alpha y^2}dy=
 \sqrt{\frac{\pi}{\alpha}},
 $$
 
@@ -89,8 +84,7 @@ we obtain
 
 $$
 \boxed{
-N_\alpha
-=
+N_\alpha=
 \left(\frac{\alpha}{\pi}\right)^{1/4}.
 }
 $$
@@ -98,8 +92,7 @@ $$
 The coordinate probability density is therefore
 
 $$
-|g(x)|^2
-=
+|g(x)|^2=
 \sqrt{\frac{\alpha}{\pi}}
 e^{-\alpha(x-q)^2}.
 $$
@@ -127,18 +120,15 @@ $$
 Differentiate the Gaussian:
 
 $$
-\frac{\partial g}{\partial x}
-=
+\frac{\partial g}{\partial x}=
 [-\alpha(x-q)+ip]g.
 $$
 
 Therefore,
 
 $$
-\hat p g
-=
--i\frac{\partial g}{\partial x}
-=
+\hat p g=
+-i\frac{\partial g}{\partial x}=
 [p+i\alpha(x-q)]g.
 $$
 
@@ -153,8 +143,7 @@ $$
 A second derivative gives
 
 $$
-\frac{\partial^2 g}{\partial x^2}
-=
+\frac{\partial^2 g}{\partial x^2}=
 \left(
 [-\alpha(x-q)+ip]^2-\alpha
 \right)g.
@@ -170,8 +159,7 @@ Hence
 
 $$
 \boxed{
-\sigma_x\sigma_p
-=
+\sigma_x\sigma_p=
 \frac12.
 }
 $$
@@ -189,8 +177,7 @@ Use
 
 $$
 \boxed{
-\Psi(x,t)
-=
+\Psi(x,t)=
 \exp
 \left\{
 i\left[
@@ -223,8 +210,7 @@ The Gaussian envelope is determined by
 $$
 \left|
 e^{iA(x-q)^2/2}
-\right|
-=
+\right|=
 e^{-A_I(x-q)^2/2}.
 $$
 
@@ -250,8 +236,7 @@ Heller's thawed Gaussian approximation begins by expanding the potential around 
 instantaneous packet center:
 
 $$
-V(x)
-=
+V(x)=
 V(q)
 +
 V'(q)(x-q)
@@ -289,8 +274,7 @@ single Gaussian remains an exact Gaussian solution of the TDSE.
 Define the complex phase polynomial
 
 $$
-S(x,t)
-=
+S(x,t)=
 \frac12 A\xi^2+p\xi+\gamma,
 \qquad
 \xi=x-q.
@@ -313,24 +297,18 @@ $$
 we have
 
 $$
-\dot S
-=
-\frac12\dot A\xi^2
--
-A\xi\dot q
-+
-\dot p\,\xi
--
-p\dot q
-+
+\dot S=
+\frac12\dot A\xi^2-
+A\xi\dot q+
+\dot p\,\xi-
+p\dot q+
 \dot\gamma.
 $$
 
 Since
 
 $$
-i\partial_t\Psi
-=
+i\partial_t\Psi=
 -\dot S\,\Psi,
 $$
 
@@ -345,8 +323,7 @@ $$
 The first spatial derivative is
 
 $$
-\frac{\partial S}{\partial x}
-=
+\frac{\partial S}{\partial x}=
 A\xi+p.
 $$
 
@@ -360,11 +337,9 @@ For $\Psi=e^{iS}$,
 
 $$
 -\frac{1}{2m}
-\frac{\partial^2\Psi}{\partial x^2}
-=
+\frac{\partial^2\Psi}{\partial x^2}=
 \left[
-\frac{(A\xi+p)^2}{2m}
--
+\frac{(A\xi+p)^2}{2m}-
 \frac{iA}{2m}
 \right]\Psi.
 $$
@@ -376,8 +351,7 @@ Substitute the local quadratic potential and collect equal powers of $\xi$.
 ### Quadratic term
 
 $$
--\frac12\dot A
-=
+-\frac12\dot A=
 \frac{A^2}{2m}
 +
 \frac12V''(q),
@@ -387,10 +361,8 @@ so
 
 $$
 \boxed{
-\dot A
-=
--\frac{A^2}{m}
--
+\dot A=
+-\frac{A^2}{m}-
 V''(q).
 }
 $$
