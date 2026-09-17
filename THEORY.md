@@ -110,7 +110,7 @@ $$
 \boxed{
 \langle x\rangle=q,
 \qquad
-\operatorname{Var}(x)=\frac{1}{2\alpha}.
+Var(x)=\frac{1}{2\alpha}.
 }
 $$
 
@@ -163,7 +163,7 @@ $$
 From this one obtains
 
 $$
-\operatorname{Var}(p)=\frac{\alpha}{2}.
+Var(p)=\frac{\alpha}{2}.
 $$
 
 Hence
@@ -1028,9 +1028,7 @@ Differentiate $\langle r|r\rangle$ with respect to the real velocity
 $\dot\theta_\mu$ and set the result to zero:
 
 $$
-\operatorname{Re}
-\langle iD_\mu|r\rangle
-=
+Re\langle iD_\mu|r\rangle=
 0.
 $$
 
@@ -1038,21 +1036,16 @@ This gives
 
 $$
 \sum_\nu
-\operatorname{Re}
-\langle D_\mu|D_\nu\rangle
-\dot\theta_\nu
-=
-\operatorname{Im}
-\langle D_\mu|\hat H|\Psi\rangle.
+Re\langle D_\mu|D_\nu\rangle
+\dot\theta_\nu=Im\langle D_\mu|\hat H|\Psi\rangle.
 $$
 
 Define
 
 $$
 \boxed{
-G_{\mu\nu}
-=
-\operatorname{Re}
+G_{\mu\nu}=
+Re
 \langle D_\mu|D_\nu\rangle,
 }
 $$
@@ -1061,9 +1054,7 @@ and
 
 $$
 \boxed{
-b_\mu
-=
-\operatorname{Im}
+b_\mu=Im
 \langle D_\mu|\hat H|\Psi\rangle.
 }
 $$
