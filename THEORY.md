@@ -176,19 +176,7 @@ by a complex width parameter.
 Use
 
 $$
-\boxed{
-\Psi(x,t)=
-\exp
-\left\{
-i\left[
-\frac12 A_t(x-q_t)^2
-+
-p_t(x-q_t)
-+
-\gamma_t
-\right]
-\right\}.
-}
+\boxed{\Psi(x,t)=\exp\left\{i\left[\frac12 A_t(x-q_t)^2+p_t(x-q_t)+\gamma_t\right]\right\}.}
 $$
 
 Here
