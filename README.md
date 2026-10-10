@@ -39,6 +39,25 @@ This development milestone does **not** admit nonzero-curvature connections, liv
 molecular-SOC trajectories, general ab-initio SOC-dynamics accuracy, or full AIMS
 branching semantics. See `V280_MOVING_FRAME.md` and `V280_VALIDATION.md`.
 
+
+## v0.29.4–v0.29.5 development checkpoint (not a release)
+
+The newest development work adds a deterministic pre-ML spawning data contract
+(v0.29.4) and an exact-oracle dataset certification harness (v0.29.5).
+It includes grouped train/validation/test/audit splits, deterministic replay,
+gauge/permutation/coordinate invariance audits, canonical JSONL records, and
+fail-closed provenance and leakage checks.
+
+See [v0.29.4 pre-ML contract](V294_PRE_ML_CONTRACT.md),
+[v0.29.4 acceptance gates](V294_ACCEPTANCE_GATES.md), and
+[v0.29.5 integration status](V295_INTEGRATION.md).
+
+**Scientific boundary:** v0.29.5 is a development checkpoint, not an upgraded
+validated release. The public tree does not yet include the advanced curved
+v0.29.2/v0.29.3 TDVP and spawning engine. It does not certify a complete curved
+oracle, live molecular-SOC trajectories, or a learned spawning model.
+The package's declared stable release remains **v0.27.0**.
+
 ---
 
 A research-oriented Python framework for **Gaussian-basis nonadiabatic quantum dynamics**
