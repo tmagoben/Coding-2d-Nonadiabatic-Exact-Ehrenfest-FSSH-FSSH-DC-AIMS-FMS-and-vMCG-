@@ -1,0 +1,54 @@
+name: Gaussian dynamics validation
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  development-integration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v5
+      - name: Configure Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install package and test dependencies
+        run: python -m pip install -e ".[dev]"
+      - name: Compile development modules
+        run: python -m py_compile v294_preml_contract.py test_v294_preml_contract.py v295_oracle_dataset.py test_v295_oracle_dataset.py
+      - name: Validate moving-frame and dataset integration
+        run: |
+          python -m pytest -q \
+            tests/test_v0280_moving_frame.py \
+            tests/test_v0280_evidence.py \
+            tests/test_v0280_lattice_validation.py \
+            test_v294_preml_contract.py \
+            test_v295_oracle_dataset.py
+
+  cumulative-regression:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Configure Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install package and test dependencies
+        run: python -m pip install -e ".[dev]"
+      - name: Run all scientific regression and development tests
+        run: python -m pytest -q tests test_v294_preml_contract.py test_v295_oracle_dataset.py
