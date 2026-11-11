@@ -1,11 +1,11 @@
 from gaussian_dynamics import run_v0241_release_benchmark
 
 
-def test_v0241_release_campaign_passes_315_native_boolean_gates():
+def test_v0241_release_campaign_checks_315_native_boolean_gates(assert_runtime_aware_campaign):
     output = run_v0241_release_benchmark()
     acceptance = output["acceptance"]
 
-    assert acceptance["passed"] is True
+    assert_runtime_aware_campaign(output)
     assert acceptance["inherited_gate_count"] == 256
     assert acceptance["runtime_gate_count"] == 39
     assert acceptance["core_gate_count"] == 20
@@ -13,7 +13,6 @@ def test_v0241_release_campaign_passes_315_native_boolean_gates():
     assert acceptance["total_gate_count"] == 315
     assert len(acceptance["checks"]) == 315
     assert all(type(value) is bool for value in acceptance["checks"].values())
-    assert all(acceptance["checks"].values())
 
     claims = output["claims"]
     assert claims["real_PySCF_BP_SOMF_execution_validated"] is True

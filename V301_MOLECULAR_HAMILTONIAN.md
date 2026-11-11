@@ -107,9 +107,9 @@ the curved engine but does not promote its previous claims to a current release.
 The restored package-level v0.29.4 record schema and the existing top-level
 v0.29.4/v0.29.5 dataset schema remain separate.
 
-The next acceptance slice is a converged implicit-midpoint Gaussian trajectory
-using this action, with replayable stepwise transport and Hamiltonian receipts.
-After that, the two dataset contracts need an explicit audited adapter, real physical
+The [v0.30.2 development slice](V302_MOLECULAR_MIDPOINT.md) adds converged
+implicit-midpoint Gaussian trajectories using this action, with replayable stepwise
+transport and Hamiltonian receipts. The two dataset contracts still need an explicit audited adapter, real physical
 symmetry re-evaluations, and trajectory-level split/leakage checks. Live ab-initio SOC
 trajectories, changing atlas membership, molecular accuracy, and learned ranking
 remain later milestones.

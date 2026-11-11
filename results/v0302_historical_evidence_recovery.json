@@ -1,0 +1,74 @@
+{
+  "archive_sha256": "d15d0b48288514cde3ea78be25bf0f47c4afe78eae11f2787f382ee55cddd1d9",
+  "historical_only": true,
+  "files": [
+    {
+      "path": "results/v0232_pyscf_runtime_evidence.json",
+      "sha256": "55e570af5d69b9b2ac63b729542ae76dba5dc8466965c49670160b441164be16"
+    },
+    {
+      "path": "results/v0233_transport_compatibility_campaign.json",
+      "sha256": "cb0eb5814ad47441b620fe394b631fa01996e94313df79da837a0d88d07980cf"
+    },
+    {
+      "path": "results/v0240_external_soc_intake_campaign.json",
+      "sha256": "3668e40280e6265e00f058d37944b246e14c4efe7ffe4b9afa8986e93000aa40"
+    },
+    {
+      "path": "results/v0241_pyscf_static_soc_campaign.json",
+      "sha256": "91d546b403734b09cbaf728db8832cf39e4a84c46801279e46f899e0dde8f6bd"
+    },
+    {
+      "path": "results/v0241_pyscf_static_soc_evidence.json",
+      "sha256": "9ee704ef66c98b8057630ac6f345dfd42596d6ae20166ad0752b92b740cb2c0f"
+    },
+    {
+      "path": "results/v0242_pyscf_differential_soc_campaign.json",
+      "sha256": "5b1af33354141b5b432733cda56dfb8a0e6dbdfc252abd444dc42ef2723e19e2"
+    },
+    {
+      "path": "results/v0242_pyscf_differential_soc_evidence.json",
+      "sha256": "43f62aa3b8a04ff7a4467f44ab21d5c914a4130760552633ac8a892206ef8f41"
+    },
+    {
+      "path": "results/v0250_variational_soc_campaign.json",
+      "sha256": "1e1b9c95357a015d041d13a2631f8f07307ce26dd3fc2bf2e4dafa27694c331a"
+    },
+    {
+      "path": "results/v0250_variational_soc_evidence.json",
+      "sha256": "b8305a63207a807b0cdcb3bc4e4b7c84aa4334bea8d9e30f7a32e7fcb11bad72"
+    },
+    {
+      "path": "results/v0251_multigaussian_tdvp_campaign.json",
+      "sha256": "b89aea1b5944550ca41c2a25ef74a6b31878f4dac11caaf4cc716a0844cf4f3e"
+    },
+    {
+      "path": "results/v0251_multigaussian_tdvp_evidence.json",
+      "sha256": "33832f7f3804b1c8f8f16f87a50a61f3886899f7fc1cbb90a8d9755f8095fc75"
+    },
+    {
+      "path": "results/v0252_adaptive_multigaussian_tdvp_campaign.json",
+      "sha256": "affbece366e7857e57cee4b5735645a074346e9e51c007554a2d94d418b2c953"
+    },
+    {
+      "path": "results/v0252_adaptive_multigaussian_tdvp_evidence.json",
+      "sha256": "6944161005d3ed24056516a721a26d8fbb52b73d11cefc427c1512d1c330658b"
+    },
+    {
+      "path": "results/v0253_controlled_basis_campaign.json",
+      "sha256": "08d27ba09bcf7c322e53dd0b851f509555655687df3c45dddc1fea0246ff88c7"
+    },
+    {
+      "path": "results/v0253_controlled_basis_evidence.json",
+      "sha256": "e37f535e7c3d866aa22d601828f434c2144aca7943277782aaeed94daed41a29"
+    },
+    {
+      "path": "results/v0260_multidimensional_campaign.json",
+      "sha256": "b4cb8ee7a5aa38ff7c7fecce4c889c19167f96610175b0cf7678e22b6ac3f24f"
+    },
+    {
+      "path": "results/v0260_multidimensional_evidence.json",
+      "sha256": "ed8b8ce2ab07b8f844a2e1ab3dcfc602351a2468b886949f04eef64601571d49"
+    }
+  ]
+}

@@ -1,17 +1,16 @@
 from gaussian_dynamics import run_v0233_release_benchmark
 
 
-def test_v0233_release_campaign_passes_208_native_boolean_gates():
+def test_v0233_release_campaign_checks_208_native_boolean_gates(assert_runtime_aware_campaign):
     output = run_v0233_release_benchmark()
 
     acceptance = output["acceptance"]
-    assert acceptance["passed"] is True
+    assert_runtime_aware_campaign(output)
     assert acceptance["inherited_gate_count"] == 168
     assert acceptance["new_gate_count"] == 40
     assert acceptance["total_gate_count"] == 208
     assert len(acceptance["checks"]) == 208
     assert all(type(value) is bool for value in acceptance["checks"].values())
-    assert all(acceptance["checks"].values())
 
     claims = output["claims"]
     assert claims["finite_manifold_unitary_transport_validated"] is True

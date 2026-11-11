@@ -2,10 +2,11 @@
 
 **Current release: v0.27.0 — rotation-covariant full-correlated-width Gaussian TDVP.**
 
-**Current development: v0.30.1 — audited covariant kinetic + electronic Hamiltonian
-action connected to the curved Gaussian TDVP residual.** The saved v0.30.0 curved
-geometry and molecular-frame bridge have been recovered into this branch. See
-[the v0.30.1 implementation and remaining work](V301_MOLECULAR_HAMILTONIAN.md).
+**Current development: v0.30.2 — full-parameter implicit-midpoint Gaussian
+trajectories with convergence receipts and deterministic replay.** This builds on
+the recovered curved geometry and the audited kinetic + electronic Hamiltonian.
+See [the v0.30.2 implementation and validation](V302_MOLECULAR_MIDPOINT.md) and
+[the v0.30.1 Hamiltonian](V301_MOLECULAR_HAMILTONIAN.md).
 This is an analytic-model development slice, not a new validated release or a live
 ab-initio SOC trajectory.
 

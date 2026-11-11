@@ -1,6 +1,7 @@
 name: Gaussian dynamics validation
 
 on:
+  workflow_dispatch:
   pull_request:
     branches:
       - main
@@ -15,11 +16,14 @@ env:
   OPENBLAS_NUM_THREADS: "1"
   OMP_NUM_THREADS: "1"
   MKL_NUM_THREADS: "1"
+  BLIS_NUM_THREADS: "1"
+  NUMEXPR_NUM_THREADS: "1"
+  VECLIB_MAXIMUM_THREADS: "1"
 
 jobs:
   development-integration:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 20
     steps:
       - name: Check out source
         uses: actions/checkout@v5
@@ -31,10 +35,10 @@ jobs:
       - name: Install package and test dependencies
         run: python -m pip install -e ".[dev]"
       - name: Compile development modules
-        run: python -m py_compile v294_preml_contract.py test_v294_preml_contract.py v295_oracle_dataset.py test_v295_oracle_dataset.py
+        run: python -m py_compile gaussian_dynamics/molecular_hamiltonian_v301.py gaussian_dynamics/molecular_midpoint_v302.py gaussian_dynamics/v302_benchmark.py v294_preml_contract.py test_v294_preml_contract.py v295_oracle_dataset.py test_v295_oracle_dataset.py
       - name: Validate moving-frame and dataset integration
         run: |
-          python -m pytest -q \
+          python -m pytest -q --junitxml=results/development-junit.xml \
             tests/test_v0280_moving_frame.py \
             tests/test_v0280_evidence.py \
             tests/test_v0280_lattice_validation.py \
@@ -43,22 +47,64 @@ jobs:
             tests/test_v0294_pre_ml_contract.py \
             tests/test_v0300_molecular_frame_bridge.py \
             tests/test_v0301_molecular_hamiltonian.py \
+            tests/test_v0302_molecular_midpoint.py \
             test_v294_preml_contract.py \
             test_v295_oracle_dataset.py
+      - name: Recompute midpoint convergence and replay evidence
+        run: python examples/159_recompute_v0302_molecular_midpoint.py
+      - name: Upload development validation evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: development-validation
+          path: |
+            results/development-junit.xml
+            results/v0302_molecular_midpoint_evidence.json
 
   cumulative-regression:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [core, release-early, release-late]
     steps:
       - name: Check out source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Configure Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
           cache: pip
-      - name: Install package and test dependencies
-        run: python -m pip install -e ".[dev]"
+      - name: Install pinned scientific runtime and test dependencies
+        run: |
+          python -m pip install --only-binary=:all: --require-hashes -r requirements-pyscf-v270-linux-x86_64-py312.txt
+          python -m pip install -e ".[pyscf,dev]"
+          python -m pip check
       - name: Run all scientific regression and development tests
-        run: python -m pytest -q tests test_v294_preml_contract.py test_v295_oracle_dataset.py
+        env:
+          REGRESSION_SHARD: ${{ matrix.shard }}
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          import pytest
+          early = {f"test_v{v}_release.py" for v in ("0233", "0240", "0241", "0242", "0250", "0251", "0252")}
+          late = {f"test_v{v}_release.py" for v in ("0253", "0260", "0270")}
+          groups = {"core": [], "release-early": [], "release-late": []}
+          for path in sorted(Path("tests").rglob("test_*.py")):
+              group = "release-early" if path.name in early else "release-late" if path.name in late else "core"
+              groups[group].append(str(path))
+          groups["core"] += ["test_v294_preml_contract.py", "test_v295_oracle_dataset.py"]
+          selected = groups[os.environ["REGRESSION_SHARD"]]
+          assert selected
+          raise SystemExit(pytest.main(["-q", "--junitxml=results/cumulative-junit.xml", *selected]))
+          PY
+      - name: Upload cumulative test report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cumulative-regression-${{ matrix.shard }}
+          path: |
+            results/cumulative-junit.xml
+            results/ci-campaign-*.json

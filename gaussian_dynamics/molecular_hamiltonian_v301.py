@@ -13,6 +13,7 @@ an omitted-state Born--Huang correction or certify a live molecular trajectory.
 from __future__ import annotations
 
 from dataclasses import dataclass
+from functools import lru_cache
 
 import numpy as np
 from scipy import sparse
@@ -22,7 +23,7 @@ from .curved_basis_adaptation_v293 import (
     build_tdvp_snapshot_v293,
     evaluate_curved_state_v293,
 )
-from .curved_geometry_v293 import straight_path_v293, wilson_path_v293
+from .curved_geometry_v293 import ConnectionFieldV293, straight_path_v293, wilson_path_v293
 from .molecular_frame_bridge_v300 import MolecularFrameBridgeV300, _hash_v300
 
 
@@ -245,7 +246,18 @@ def build_molecular_tdvp_snapshot_v301(
         })
         if observed != expected:
             raise ValueError("molecular provider changed after Hamiltonian assembly")
-    connection = bridge.connection_field(transport_mode="nac_ode")
+    original = bridge.connection_field(transport_mode="nac_ode")
+
+    @lru_cache(maxsize=None)
+    def segment(start, end):
+        return wilson_path_v293(original, straight_path_v293(start, end))
+
+    # Coefficient, momentum, width and chirp perturbations share the same Wilson
+    # sections. Cache only within this evaluation; never reuse across provider calls.
+    connection = ConnectionFieldV293(
+        original.ndim, original.nstate, original.at, original.name,
+        lambda start, end: segment(tuple(start), tuple(end)).copy(),
+    )
     quadrature = hamiltonian.quadrature
     psi = evaluate_curved_state_v293(
         state, connection, quadrature, path_factory=path_factory,

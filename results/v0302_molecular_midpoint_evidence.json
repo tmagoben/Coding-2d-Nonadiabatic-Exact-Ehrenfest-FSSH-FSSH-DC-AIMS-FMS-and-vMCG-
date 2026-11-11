@@ -1,0 +1,361 @@
+{
+  "dataset_certified": false,
+  "gates": {
+    "accepted_nonlinear_residuals": true,
+    "energy_drift_refines": true,
+    "fine_grid_norm_drift": true,
+    "same_runtime_exact_replay": true,
+    "second_order_time_refinement": true,
+    "signed_step_reversal": true,
+    "svd_equation_residuals": true
+  },
+  "live_molecular_soc_validated": false,
+  "observed_time_order": 1.9986138530477833,
+  "operator": {
+    "audited_segments": 12,
+    "boundary": "zero Dirichlet ghost values, one grid step beyond each axis",
+    "bridge_fingerprint": "6d095bc2ee92062e20ca910b01857f25e48207d0c7df2169b2a99e29c65a60eb",
+    "fingerprint": "1995f68f115bbb5304f35cd52022dd1aacb948b5cf21f40487f475e95b3b3f63",
+    "grid_shape": [
+      13
+    ],
+    "hermiticity_residual": 0.0,
+    "mass_matrix_au": [
+      [
+        2.0
+      ]
+    ],
+    "matrix_dimension": 13,
+    "matrix_nnz": 37,
+    "maximum_connection_overlap_residual": 0.0,
+    "nstate": 1,
+    "point_fingerprints": [
+      "ef15b3cfb953cb5b6e3ed95bf34d4a4bbdba41db51ea1c99cd1d922fc75958b4",
+      "7c13db2add623a17c0f62d324c64cea4604d241b118cbbbaeb3569c3bd80ac85",
+      "6408f76374da5b4919a07591bdbeb59717b884e5ddf217042d8b322c7b1f8e82",
+      "b52531443867ad64d1dcc10c70b3f1f86ac23a732f4198e0a497380f96a4678b",
+      "f18b6eab4ad02aac0b8a27b08beb1124d4304513a343998a51843e59eabd13a3",
+      "5e8b8478a934e62e5ddce899946d3a68584a6490a82b86de45b920f42a75578e",
+      "42494e01f2db7f410db6601485d3939995162985295c72d5a690924ad19095a8",
+      "9c46dddef9b2a2746759f623040b65117a20fe372dc5eedcca490a83c481f73d",
+      "e770400d4cc7d9eecef0d993ea7403e67be691c6e24b539c49b3d4d83d264333",
+      "a2d5b89919a13d0013132a92e55386154d2df209561726d2d0ec2f664124d40a",
+      "8a2effa8d0a5c5f7771d8445fdc85987d6af251454592a24930f7c925c85e3bf",
+      "217d2362f0b3af8e2673dd5a66d9e122bbc164f87b90c5fdaefdd6a8c23d9c7a",
+      "4e5a082fa4db5b19d1c7ff6172a5710fc25da34056b34607dc0e61d9ec62da3b"
+    ],
+    "production_molecular_accuracy_certified": false,
+    "schema": "gnd-covariant-grid-hamiltonian-v0.30.1-dev"
+  },
+  "passed": true,
+  "refinement": [
+    {
+      "dt": 0.08,
+      "energy_drift_hartree": 9.180031876609984e-07,
+      "grid_exact_wavefunction_error": 0.0014623726617103614,
+      "maximum_scaled_midpoint_residual": 0.3556284718472033,
+      "maximum_svd_residual": 1.85175583022228e-15,
+      "norm_drift": 5.978050277022362e-10,
+      "steps": 2
+    },
+    {
+      "dt": 0.04,
+      "energy_drift_hartree": 2.2963566104206024e-07,
+      "grid_exact_wavefunction_error": 0.0014623184126486856,
+      "maximum_scaled_midpoint_residual": 0.1571558323139031,
+      "maximum_svd_residual": 1.468985416116504e-15,
+      "norm_drift": 1.166499119520381e-10,
+      "steps": 4
+    },
+    {
+      "dt": 0.02,
+      "energy_drift_hartree": 5.7429699301669856e-08,
+      "grid_exact_wavefunction_error": 0.0014623139723172049,
+      "maximum_scaled_midpoint_residual": 0.275889090349985,
+      "maximum_svd_residual": 1.6463375744879876e-15,
+      "norm_drift": 5.4970472618265376e-12,
+      "steps": 8
+    }
+  ],
+  "reversal_wavefunction_error": 6.421798270927462e-12,
+  "runtime": {
+    "numpy": "2.5.2",
+    "python": "3.12.14",
+    "scipy": "1.18.0"
+  },
+  "schema": "gnd-molecular-midpoint-evidence-v0.30.2-dev",
+  "scope": "Fixed basis, fixed finite grid; temporal self-convergence does not remove projection or spatial error.",
+  "source_kind": "analytic scalar zero-potential model",
+  "successive_wavefunction_differences": [
+    9.245210909555603e-06,
+    2.3135245031264095e-06
+  ],
+  "trajectory": {
+    "fingerprint": "49010507abc252ea3cc2ec930bae9f8d8406647f72eabbdb775146c48fdccc29",
+    "schema": "gnd-molecular-midpoint-v0.30.2-dev",
+    "steps": [
+      {
+        "after": {
+          "chirp_matrices": [
+            [
+              [
+                0.12391953479419361
+              ]
+            ]
+          ],
+          "coefficients_imag": [
+            [
+              -0.0190280464963721
+            ]
+          ],
+          "coefficients_real": [
+            [
+              0.9998190383213653
+            ]
+          ],
+          "p": [
+            [
+              0.2999978343221896
+            ]
+          ],
+          "q": [
+            [
+              0.11115742805466279
+            ]
+          ],
+          "time_au": 0.08,
+          "width_matrices": [
+            [
+              [
+                1.0917489646040137
+              ]
+            ]
+          ]
+        },
+        "after_observables": {
+          "energy_hartree": 0.15452757977802112,
+          "norm": 0.9999989019805735
+        },
+        "before": {
+          "chirp_matrices": [
+            [
+              [
+                0.08
+              ]
+            ]
+          ],
+          "coefficients_imag": [
+            [
+              0.0
+            ]
+          ],
+          "coefficients_real": [
+            [
+              1.0
+            ]
+          ],
+          "p": [
+            [
+              0.3
+            ]
+          ],
+          "q": [
+            [
+              0.1
+            ]
+          ],
+          "time_au": 0.0,
+          "width_matrices": [
+            [
+              [
+                1.1
+              ]
+            ]
+          ]
+        },
+        "before_observables": {
+          "energy_hartree": 0.15452719372015358,
+          "norm": 0.9999989021802688
+        },
+        "bridge_fingerprint": "6d095bc2ee92062e20ca910b01857f25e48207d0c7df2169b2a99e29c65a60eb",
+        "center_transport_audits": [
+          {
+            "audit": {
+              "bridge_fingerprint": "6d095bc2ee92062e20ca910b01857f25e48207d0c7df2169b2a99e29c65a60eb",
+              "connection_overlap_residual": 0.0,
+              "connection_transport_unitarity_residual": 0.0,
+              "end": [
+                0.11115742805466279
+              ],
+              "maximum_principal_angle_radians": 0.0,
+              "overlap_condition_number": 1.0,
+              "overlap_reciprocity_residual": 0.0,
+              "overlap_singular_values": [
+                1.0
+              ],
+              "overlap_transport_unitarity_residual": 0.0,
+              "passed": true,
+              "provider_fingerprint": "fac15b6befd59b02798215ff063f6abda172681ebecc9de1ee9dbd87588bd228",
+              "schema": "gnd-molecular-frame-segment-audit-v1",
+              "segment_length": 0.011157428054662785,
+              "start": [
+                0.1
+              ],
+              "transport_reciprocity_residual": 0.0
+            },
+            "kind": "audited-segment"
+          }
+        ],
+        "dt": 0.08,
+        "fingerprint": "75c6a1826249795c20c96fbabcc3a05de61591c0cde7a695ad549d55263ce3a5",
+        "hamiltonian_fingerprint": "1995f68f115bbb5304f35cd52022dd1aacb948b5cf21f40487f475e95b3b3f63",
+        "iterations": 6,
+        "midpoint_metric_condition": 12.437231113332889,
+        "midpoint_metric_rank": 6,
+        "midpoint_null_rhs_relative": 0.0,
+        "midpoint_residual_inf": 1.592643239511915e-10,
+        "midpoint_svd_residual": 6.576774319285206e-16,
+        "midpoint_tdse_defect_norm": 0.009109574179009264,
+        "scaled_midpoint_residual": 0.3556284718472033,
+        "schema": "gnd-molecular-midpoint-v0.30.2-dev",
+        "settings": {
+          "absolute_tolerance": 2e-10,
+          "maximum_iterations": 24,
+          "relative_tolerance": 2e-09,
+          "tangent_step": 2e-06
+        }
+      },
+      {
+        "after": {
+          "chirp_matrices": [
+            [
+              [
+                0.16663986566760525
+              ]
+            ]
+          ],
+          "coefficients_imag": [
+            [
+              -0.037865115962065723
+            ]
+          ],
+          "coefficients_real": [
+            [
+              0.9992830799401388
+            ]
+          ],
+          "p": [
+            [
+              0.29999535801537647
+            ]
+          ],
+          "q": [
+            [
+              0.12231496123939739
+            ]
+          ],
+          "time_au": 0.16,
+          "width_matrices": [
+            [
+              [
+                1.0800988780203233
+              ]
+            ]
+          ]
+        },
+        "after_observables": {
+          "energy_hartree": 0.15452811172334124,
+          "norm": 0.9999989015824637
+        },
+        "before": {
+          "chirp_matrices": [
+            [
+              [
+                0.12391953479419361
+              ]
+            ]
+          ],
+          "coefficients_imag": [
+            [
+              -0.0190280464963721
+            ]
+          ],
+          "coefficients_real": [
+            [
+              0.9998190383213653
+            ]
+          ],
+          "p": [
+            [
+              0.2999978343221896
+            ]
+          ],
+          "q": [
+            [
+              0.11115742805466279
+            ]
+          ],
+          "time_au": 0.08,
+          "width_matrices": [
+            [
+              [
+                1.0917489646040137
+              ]
+            ]
+          ]
+        },
+        "before_observables": {
+          "energy_hartree": 0.15452757977802112,
+          "norm": 0.9999989019805735
+        },
+        "bridge_fingerprint": "6d095bc2ee92062e20ca910b01857f25e48207d0c7df2169b2a99e29c65a60eb",
+        "center_transport_audits": [
+          {
+            "audit": {
+              "bridge_fingerprint": "6d095bc2ee92062e20ca910b01857f25e48207d0c7df2169b2a99e29c65a60eb",
+              "connection_overlap_residual": 0.0,
+              "connection_transport_unitarity_residual": 0.0,
+              "end": [
+                0.12231496123939739
+              ],
+              "maximum_principal_angle_radians": 0.0,
+              "overlap_condition_number": 1.0,
+              "overlap_reciprocity_residual": 0.0,
+              "overlap_singular_values": [
+                1.0
+              ],
+              "overlap_transport_unitarity_residual": 0.0,
+              "passed": true,
+              "provider_fingerprint": "fac15b6befd59b02798215ff063f6abda172681ebecc9de1ee9dbd87588bd228",
+              "schema": "gnd-molecular-frame-segment-audit-v1",
+              "segment_length": 0.0111575331847346,
+              "start": [
+                0.11115742805466279
+              ],
+              "transport_reciprocity_residual": 0.0
+            },
+            "kind": "audited-segment"
+          }
+        ],
+        "dt": 0.08,
+        "fingerprint": "6d75738276b803b330800e925965933cf5deaa7b77396b024d5bb35d457d40f6",
+        "hamiltonian_fingerprint": "1995f68f115bbb5304f35cd52022dd1aacb948b5cf21f40487f475e95b3b3f63",
+        "iterations": 6,
+        "midpoint_metric_condition": 12.244240822238083,
+        "midpoint_metric_rank": 6,
+        "midpoint_null_rhs_relative": 0.0,
+        "midpoint_residual_inf": 1.3041824564741233e-10,
+        "midpoint_svd_residual": 1.85175583022228e-15,
+        "midpoint_tdse_defect_norm": 0.009158719292872531,
+        "scaled_midpoint_residual": 0.24455878966349398,
+        "schema": "gnd-molecular-midpoint-v0.30.2-dev",
+        "settings": {
+          "absolute_tolerance": 2e-10,
+          "maximum_iterations": 24,
+          "relative_tolerance": 2e-09,
+          "tangent_step": 2e-06
+        }
+      }
+    ]
+  }
+}
