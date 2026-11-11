@@ -185,7 +185,11 @@ def build_molecular_grid_hamiltonian_v301(bridge, axes):
         shape=(dimension, dimension),
     ).tocsr()
     kinetic.eliminate_zeros()
-    matrix = (kinetic + sparse.block_diag(electronic, format="csr")).tocsr()
+    # Keep the matrix API explicit as SciPy migrates dense block inputs to arrays.
+    potential = sparse.block_diag(
+        [sparse.csr_matrix(block) for block in electronic], format="csr",
+    )
+    matrix = (kinetic + potential).tocsr()
     matrix.eliminate_zeros()
     fingerprint = _hash_v300({
         "schema": V301_HAMILTONIAN_SCHEMA,

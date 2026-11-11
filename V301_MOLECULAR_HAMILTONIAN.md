@@ -44,6 +44,14 @@ therefore transforms by block-diagonal unitary similarity, without assuming a
 single global electronic frame. Numerical Wilson integration sets the accuracy of
 this covariance.
 
+For $N$ tensor-grid points, $d$ coordinates, and $s$ electronic states, the sparse
+operator stores $O(N d s^2)$ entries. Assembly evaluates $O(Nd)$ transport segments
+in addition to $N$ electronic snapshots; provider and Wilson-integration costs are
+additional. With $P$ real packet parameters, the inherited finite-difference TDVP
+stores an $Ns$ by $P$ complex Jacobian and uses a dense $P$ by $P$ metric solve.
+The grid size is the product of the axis sizes, so this is a small-system validation
+operator, not a scalable substitute for high-dimensional molecular matrix elements.
+
 ## TDVP integration
 
 `build_molecular_tdvp_snapshot_v301` evaluates the path-dependent packet sections,

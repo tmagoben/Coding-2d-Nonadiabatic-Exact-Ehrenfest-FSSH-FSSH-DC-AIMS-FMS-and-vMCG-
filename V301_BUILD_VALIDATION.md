@@ -11,6 +11,11 @@ kinetic-plus-electronic action. It does not certify a new release.
   and top-level v0.29.4/v0.29.5 integration suite: **131 passed** in 190.82 seconds.
 - After tightening uniform-grid validation and adding two very-small-spacing
   regressions, the affected grid tests passed: **13 passed, 14 deselected**.
+- GitHub's [development integration run](https://github.com/tmagoben/Coding-2d-Nonadiabatic-Exact-Ehrenfest-FSSH-FSSH-DC-AIMS-FMS-and-vMCG-/actions/runs/43053744252)
+  passed **133 tests** in 144.79 seconds on Python 3.12.16, NumPy 2.5.4, and
+  SciPy 1.18.1. Its sparse `block_diag` deprecation prompted an explicit sparse-matrix
+  input change; the affected stencil, gauge-action, and fingerprint checks then
+  passed locally: **4 passed, 23 deselected**.
 - The reproducible analytic-SOC example passed **8/8 numerical gates**.
 - New Python modules compile, and `git diff --check` passes.
 
@@ -48,9 +53,26 @@ finished with **22 failed, 617 passed, 16 skipped**. Its failures include missin
 PySCF 2.13.1, absent historical result JSON files, and two machine-precision
 assertions. The development-integration job on that same commit passed.
 
-A local cumulative run was started before recovery or implementation changes.
-Its result will be recorded separately when complete. The focused passing results
-above must not be presented as a green cumulative or release campaign.
+A local cumulative run started before recovery or implementation changes completed
+with **619 passed, 20 failed, 16 skipped** in 1225.64 seconds. Eleven failing release
+tests require the unavailable PySCF 2.13.1 runtime. Nine fail because these historical
+JSON records are absent from the baseline tree:
+
+- `v0232_pyscf_runtime_evidence.json`
+- `v0240_external_soc_intake_campaign.json`
+- `v0241_pyscf_static_soc_campaign.json`
+- `v0242_pyscf_differential_soc_campaign.json`
+- `v0250_variational_soc_campaign.json`
+- `v0251_multigaussian_tdvp_campaign.json`
+- `v0252_adaptive_multigaussian_tdvp_campaign.json`
+- `v0253_controlled_basis_campaign.json`
+- `v0260_multidimensional_campaign.json`
+
+All 20 local failures are present in the earlier GitHub baseline failure list; the
+two additional machine-precision failures seen in that CI environment did not occur
+locally. No legacy test or release gate was relaxed. Exact failing node IDs and counts
+are recorded in `results/v0301_validation_summary.json`. The focused passing results
+must not be presented as a green cumulative or release campaign.
 
 ## Acceptance boundary
 
