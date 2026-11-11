@@ -1,0 +1,93 @@
+{
+  "archive_sha256": "d15d0b48288514cde3ea78be25bf0f47c4afe78eae11f2787f382ee55cddd1d9",
+  "base_commit": "7e7f53f0ec63d496e1e7ec6bf605e557b22b1997",
+  "historical_validation_is_not_current_release_certification": true,
+  "modified_file_note": "curved_geometry_v293.py now admits the constant path and returns identity without shifting its endpoint; all other recovered source files match the archive",
+  "restored_source_files": [
+    {
+      "modified_after_recovery": false,
+      "path": "gaussian_dynamics/curved_basis_adaptation_v292.py",
+      "restored_sha256": "5b87fe26cfa16b993b7958bad1c5cc0036213d1f8f5fc57869db3fd8bde471fb",
+      "source_sha256": "5b87fe26cfa16b993b7958bad1c5cc0036213d1f8f5fc57869db3fd8bde471fb"
+    },
+    {
+      "modified_after_recovery": false,
+      "path": "gaussian_dynamics/curved_basis_adaptation_v293.py",
+      "restored_sha256": "c03e09dedee421a134ae9cb9745d33e9094e759c77f27f61372a54978521156d",
+      "source_sha256": "c03e09dedee421a134ae9cb9745d33e9094e759c77f27f61372a54978521156d"
+    },
+    {
+      "modified_after_recovery": true,
+      "path": "gaussian_dynamics/curved_geometry_v293.py",
+      "restored_sha256": "21af1dbe3a29dfcb6502a4e6480a4b904a72a4815dda9bf8b0415452a65e2586",
+      "source_sha256": "267e529deb9dfad6f46cb775a21a8ff5abd641cc9572e81e734516532b8db8b3"
+    },
+    {
+      "modified_after_recovery": false,
+      "path": "gaussian_dynamics/molecular_frame_bridge_v300.py",
+      "restored_sha256": "9edf4c010a70855bebd939658fdd18e735d228eb7832d880955453415afba12a",
+      "source_sha256": "9edf4c010a70855bebd939658fdd18e735d228eb7832d880955453415afba12a"
+    },
+    {
+      "modified_after_recovery": false,
+      "path": "gaussian_dynamics/pre_ml_contract_v294.py",
+      "restored_sha256": "eb1d8ab348699fcd958608e67ec75bdfce0f4e5fb1b20f23a07a9a5c435aa60d",
+      "source_sha256": "eb1d8ab348699fcd958608e67ec75bdfce0f4e5fb1b20f23a07a9a5c435aa60d"
+    },
+    {
+      "modified_after_recovery": false,
+      "path": "gaussian_dynamics/v293_benchmark.py",
+      "restored_sha256": "4eba48661c4756619e50915aed6e3f54edd7df9eeb92b824484a5431f55c00c8",
+      "source_sha256": "4eba48661c4756619e50915aed6e3f54edd7df9eeb92b824484a5431f55c00c8"
+    },
+    {
+      "modified_after_recovery": false,
+      "path": "gaussian_dynamics/v294_benchmark.py",
+      "restored_sha256": "a4632ef824841dea9f69ad6b0aa509b3ae2a64b8f568b8bab7484397462d1cfb",
+      "source_sha256": "a4632ef824841dea9f69ad6b0aa509b3ae2a64b8f568b8bab7484397462d1cfb"
+    },
+    {
+      "modified_after_recovery": false,
+      "path": "gaussian_dynamics/v300_benchmark.py",
+      "restored_sha256": "d8679bc4a7bb2479ac812bc42f77a1efd54a045bc157b9b9082107a7f0dbe37e",
+      "source_sha256": "d8679bc4a7bb2479ac812bc42f77a1efd54a045bc157b9b9082107a7f0dbe37e"
+    },
+    {
+      "modified_after_recovery": false,
+      "path": "tests/test_v0292_curved_basis_adaptation.py",
+      "restored_sha256": "b9d79d4aa252572409c68388102670ef8a872973cd0dfde38bac9b2fca50d551",
+      "source_sha256": "b9d79d4aa252572409c68388102670ef8a872973cd0dfde38bac9b2fca50d551"
+    },
+    {
+      "modified_after_recovery": false,
+      "path": "tests/test_v0293_coordinate_dependent_geometry.py",
+      "restored_sha256": "a413af88e35f4278ea7a5c56d92213bc87e159785025be55ffddb9a3c69482dd",
+      "source_sha256": "a413af88e35f4278ea7a5c56d92213bc87e159785025be55ffddb9a3c69482dd"
+    },
+    {
+      "modified_after_recovery": false,
+      "path": "tests/test_v0294_pre_ml_contract.py",
+      "restored_sha256": "a7f4252647b6b96d02bac9be6dbaedad1e6597b4adb4e681be9e54b0edaa35cc",
+      "source_sha256": "a7f4252647b6b96d02bac9be6dbaedad1e6597b4adb4e681be9e54b0edaa35cc"
+    },
+    {
+      "modified_after_recovery": false,
+      "path": "tests/test_v0300_molecular_frame_bridge.py",
+      "restored_sha256": "e5dd57e27ce1862441d5e0075fd0d78d3fc88b0fc1e7496a78619331bc7d25b7",
+      "source_sha256": "e5dd57e27ce1862441d5e0075fd0d78d3fc88b0fc1e7496a78619331bc7d25b7"
+    },
+    {
+      "modified_after_recovery": false,
+      "path": "examples/156_recompute_v0292_curved_basis.py",
+      "restored_sha256": "ba75dc4be97acba473da48dcf967b1956181b691633e81e27b1b84b92d0f6a87",
+      "source_sha256": "ba75dc4be97acba473da48dcf967b1956181b691633e81e27b1b84b92d0f6a87"
+    },
+    {
+      "modified_after_recovery": false,
+      "path": "examples/157_recompute_v0293_coordinate_dependent_geometry.py",
+      "restored_sha256": "ee5c379dda85ef3cc5d08e88c357f39e75fd162c456fbcc17cbc07ed7b4bff8e",
+      "source_sha256": "ee5c379dda85ef3cc5d08e88c357f39e75fd162c456fbcc17cbc07ed7b4bff8e"
+    }
+  ],
+  "source_archive": "Gaussian-Nonadiabatic-Dynamics-v0.30.0-development-checkpoint.zip"
+}

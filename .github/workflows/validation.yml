@@ -11,6 +11,11 @@ on:
 permissions:
   contents: read
 
+env:
+  OPENBLAS_NUM_THREADS: "1"
+  OMP_NUM_THREADS: "1"
+  MKL_NUM_THREADS: "1"
+
 jobs:
   development-integration:
     runs-on: ubuntu-latest
@@ -33,6 +38,11 @@ jobs:
             tests/test_v0280_moving_frame.py \
             tests/test_v0280_evidence.py \
             tests/test_v0280_lattice_validation.py \
+            tests/test_v0292_curved_basis_adaptation.py \
+            tests/test_v0293_coordinate_dependent_geometry.py \
+            tests/test_v0294_pre_ml_contract.py \
+            tests/test_v0300_molecular_frame_bridge.py \
+            tests/test_v0301_molecular_hamiltonian.py \
             test_v294_preml_contract.py \
             test_v295_oracle_dataset.py
 
