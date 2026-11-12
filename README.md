@@ -2,6 +2,18 @@
 
 **Current release: v0.27.0 — rotation-covariant full-correlated-width Gaussian TDVP.**
 
+**Current development: v0.30.4 — complete-complex spawning scores and replayable
+full-Hamiltonian candidate checkpoints.** This repairs omitted imaginary coefficient
+directions and audits residual-screening labels on analytic SOC trajectory snapshots
+in fixed and coordinate-dependent electronic frames. Every generated candidate,
+including rejections, carries replayable state and operator provenance.
+See [the v0.30.4 correction, replay and limits](V304_MOLECULAR_SPAWNING.md),
+[the v0.30.3 SOC trajectory campaign](V303_SOC_TRAJECTORIES.md),
+[the v0.30.2 integrator](V302_MOLECULAR_MIDPOINT.md), and
+[the v0.30.1 Hamiltonian](V301_MOLECULAR_HAMILTONIAN.md).
+This is an analytic-model development slice, not a new validated release or a live
+ab-initio SOC trajectory.
+
 v0.27.0 promotes every multidimensional packet to a full real symmetric positive-
 definite width matrix and a full real symmetric chirp matrix. Width positivity is
 structural through `Gamma=exp(E)`, and the orthonormal `svec` parameterization makes
@@ -42,7 +54,7 @@ branching semantics. See `V280_MOVING_FRAME.md` and `V280_VALIDATION.md`.
 
 ## v0.29.4–v0.29.5 development checkpoint (not a release)
 
-The newest development work adds a deterministic pre-ML spawning data contract
+The October integration adds a deterministic pre-ML spawning data contract
 (v0.29.4) and an exact-oracle dataset certification harness (v0.29.5).
 It includes grouped train/validation/test/audit splits, deterministic replay,
 gauge/permutation/coordinate invariance audits, canonical JSONL records, and
@@ -53,9 +65,12 @@ See [v0.29.4 pre-ML contract](V294_PRE_ML_CONTRACT.md),
 [v0.29.5 integration status](V295_INTEGRATION.md).
 
 **Scientific boundary:** v0.29.5 is a development checkpoint, not an upgraded
-validated release. The public tree does not yet include the advanced curved
-v0.29.2/v0.29.3 TDVP and spawning engine. It does not certify a complete curved
-oracle, live molecular-SOC trajectories, or a learned spawning model.
+validated release. The curved v0.29.2/v0.29.3 research engine has since been
+[recovered](docs/development/recovered-v0300/README.md), but its package-level
+record schema now has [full-Hamiltonian checkpoint capture and replay](V304_MOLECULAR_SPAWNING.md).
+The top-level v0.29.5 adapter still requires explicit full-spinor and residual-versus-final
+admission semantics. This checkpoint does not certify a complete curved campaign, live
+molecular-SOC trajectories, or a learned spawning model.
 The package's declared stable release remains **v0.27.0**.
 
 ---

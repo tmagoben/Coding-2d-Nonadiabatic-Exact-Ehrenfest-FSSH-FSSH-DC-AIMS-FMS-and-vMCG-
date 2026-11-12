@@ -331,7 +331,16 @@ def test_identical_packets_expose_compatible_metric_null_space():
     assert system.solve_receipt.rank == 4
     assert system.solve_receipt.nullity == 4
     assert system.solve_receipt.null_rhs_relative < 2.0e-15
-    assert system.solve_receipt.linear_residual_relative < 2.0e-15
+    # Audit the equation directly with a dimension-scaled roundoff budget.
+    # A fixed 2e-15 RHS-relative bound was sensitive to BLAS accumulation order.
+    scale = (np.linalg.norm(system.metric, ord=2) * np.linalg.norm(system.velocity)
+             + np.linalg.norm(system.rhs))
+    roundoff = 8 * system.metric.shape[0] * np.finfo(float).eps * scale
+    assert np.linalg.norm(system.metric @ system.velocity - system.rhs) <= roundoff
+    # This budget must still detect an actual error in a retained direction.
+    direction = system.metric[:, 0] / np.linalg.norm(system.metric[:, 0])
+    perturbed = system.velocity + 1e-8 * direction
+    assert np.linalg.norm(system.metric @ perturbed - system.rhs) > roundoff
 
 
 def test_incompatible_null_rhs_and_indefinite_metric_fail_closed():

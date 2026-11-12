@@ -75,7 +75,15 @@ def test_state_normalization_is_explicit_and_zero_vector_is_rejected():
     )
     with pytest.raises(ValueError, match="unit norm"):
         raw.validate()
-    assert raw.normalized().electronic_norm == pytest.approx(1.0, abs=2.0e-16)
+    normalized = raw.normalized()
+    # The old 2e-16 bound is smaller than one float64 step above 1.0.
+    # Allow accumulated rounding in the complex norm and rescaling while
+    # independently checking that the original electronic direction is retained.
+    roundoff = 2 * raw.electronic_coefficients.size * np.finfo(float).eps
+    assert abs(normalized.electronic_norm - 1.0) <= roundoff
+    np.testing.assert_allclose(
+        normalized.electronic_coefficients, _coefficients(), rtol=0, atol=roundoff,
+    )
     with pytest.raises(ValueError, match="cannot normalize"):
         CanonicalVariationalSOCStateV250(
             np.asarray([0.1]), np.asarray([0.2]), np.zeros(4, dtype=complex)

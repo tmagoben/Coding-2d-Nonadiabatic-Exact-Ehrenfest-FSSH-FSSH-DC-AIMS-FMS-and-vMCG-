@@ -1,0 +1,82 @@
+{
+  "dataset_certified": false,
+  "full_hamiltonian_gauge_covariance_error": 1.1074921889809016e-16,
+  "gates": {
+    "coordinate_dependent_gauge_covariance": true,
+    "discrete_grid_energy_preservation": true,
+    "discrete_grid_norm_preservation": true,
+    "discrete_grid_propagation_gauge_covariance": true,
+    "hermitian_full_hamiltonian": true,
+    "second_order_kinetic_refinement": true,
+    "tdvp_null_rhs_compatibility": true,
+    "tdvp_svd_equation_residual": true
+  },
+  "gaussian_time_trajectory_validated": false,
+  "grid_energy_drift_hartree": 2.168404344971009e-19,
+  "grid_norm_drift": 4.440892098500626e-16,
+  "grid_propagation_gauge_covariance_error": 2.1048318536954602e-16,
+  "kinetic_refinement": [
+    {
+      "relative_kinetic_error": 0.04383112790799144,
+      "spacing_bohr": 0.4
+    },
+    {
+      "relative_kinetic_error": 0.011180239996375284,
+      "spacing_bohr": 0.2
+    },
+    {
+      "relative_kinetic_error": 0.0028092311346297073,
+      "spacing_bohr": 0.1
+    }
+  ],
+  "live_molecular_soc_validated": false,
+  "observed_orders": [
+    1.9710046466850215,
+    1.9927039227450645
+  ],
+  "operator": {
+    "audited_segments": 8,
+    "boundary": "zero Dirichlet ghost values, one grid step beyond each axis",
+    "bridge_fingerprint": "b395729acf5a9c039bd9ed425d769746f254533abf1dacefcb966de03dbd3ac4",
+    "fingerprint": "5f73c34e9a7a2829dff56f6dd2a29518531e199ecb0109df1013da39b4cdecbc",
+    "grid_shape": [
+      9
+    ],
+    "hermiticity_residual": 5.9797368815469286e-18,
+    "mass_matrix_au": [
+      [
+        900.0
+      ]
+    ],
+    "matrix_dimension": 36,
+    "matrix_nnz": 400,
+    "maximum_connection_overlap_residual": 6.102249675707356e-16,
+    "nstate": 4,
+    "point_fingerprints": [
+      "432c7ea4beacad44715ffbf3c5b532c22bb9c9141d9e4ddf254010c01614cfe8",
+      "0077479b2ba857d4f26dfea7b1e73121bc902f2c07e2686040e252d8091329b6",
+      "9d1cc0504d8f3431009bb8291ba4462cddd2972bb876e7758ead242b06cc24c8",
+      "1f492b73823124fda8b2e1dc467cd630eedfcb5712eabac5b338e70425bd8a43",
+      "59c752f05f9447923d7ed281948f5b3e921190179452c1507cb11afbf5ddda0d",
+      "029389ac4ae7c2d5d57593611f5e532d8ff6d14a2f924bd067c0a0b2c077cca5",
+      "bdccbf61e97bee8a31d0bd59772541daca01caf433c0aceec86d168716eca077",
+      "2301e3ca2fa1ed26d52686a58c8964b5815ea48f868c9859e8899d4c4dbdbe71",
+      "76091e4b62f033d59171a9431f13608dbc7f782c0c0b1290149d6b21be2909fa"
+    ],
+    "production_molecular_accuracy_certified": false,
+    "schema": "gnd-covariant-grid-hamiltonian-v0.30.1-dev"
+  },
+  "passed": true,
+  "runtime": {
+    "numpy": "2.3.5",
+    "python": "3.12.14",
+    "scipy": "1.17.0"
+  },
+  "schema": "gnd-molecular-hamiltonian-evidence-v0.30.1-dev",
+  "source_kind": "analytic singlet/triplet SOC model",
+  "tdse_defect_norm": 0.0028885786383167677,
+  "tdvp_metric_condition": 96.76362733999304,
+  "tdvp_metric_rank": 12,
+  "tdvp_null_rhs_relative": 0.0,
+  "tdvp_svd_residual": 1.1975730204227045e-15
+}

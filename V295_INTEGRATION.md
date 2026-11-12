@@ -31,11 +31,13 @@ A campaign is not certified when:
 
 ## Integration boundary
 
-The public repository still does not contain the advanced curved v0.29.2/v0.29.3
-TDVP/spawning engine. Therefore this branch implements the **integration harness**,
-not a fabricated curved oracle.
+At the original v0.29.5 integration, the public repository did not contain the
+curved v0.29.2/v0.29.3 TDVP/spawning engine. The v0.30.1 development branch restores
+that research implementation from the verified v0.30.0 checkpoint. This file still
+describes the **integration harness**: restoring the engine does not certify it.
 
-When that engine is recovered into the repository, three adapters are required:
+Three adapters remain required. In particular, the recovered package-level
+`SpawnOracleRecordV294` and the top-level `SpawningRecord` are different contracts:
 
 1. emit a v0.29.4 `SpawningRecord` for every exact candidate evaluation;
 2. expose an exact replay callback that recomputes the candidate and oracle decision;
@@ -47,6 +49,17 @@ be frozen for future surrogate training.
 
 ## Next acceptance step
 
-Run the combined v0.29.4 + v0.29.5 focused test suite, then connect the recovered
-curved spawning oracle and require real (not identity-placeholder) invariance
-transforms before calling v0.29.5 scientifically integrated.
+The v0.30.4 development increment now emits every package-level residual-oracle
+record from a complete molecular Hamiltonian snapshot and exactly replays it.
+It also repairs the missing imaginary coefficient directions and versions those
+corrected labels separately. See [the implementation and audit](V304_MOLECULAR_SPAWNING.md).
+
+The schema adapter must still distinguish a full-spinor residual-screening result
+from a final, state-targeted spawn. The existing top-level `OracleDecision` cannot
+express that distinction without an explicit contract extension. No target-state
+label or final admission outcome is inferred from residual acceptance.
+
+Connect the recovered curved spawning oracle through an explicit schema adapter
+and require physical invariance transforms before calling v0.29.5 scientifically
+integrated. Passing the focused test suites verifies their separate interfaces;
+it is not sufficient evidence for an end-to-end curved dataset campaign.

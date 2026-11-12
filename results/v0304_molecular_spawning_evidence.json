@@ -1,0 +1,2543 @@
+{
+  "dataset_certified": false,
+  "fingerprint": "11c7bed0faedf7be489777bdcee92326bdcc26e2cb279c6d162c3a553f078bea",
+  "gates": {
+    "bounded_residual_gains": true,
+    "comparison_records_match_checkpoints": true,
+    "complete_candidate_coverage": true,
+    "full_kinetic_action": true,
+    "imaginary_directions_change_scores": true,
+    "independent_complex_lstsq": true,
+    "initial_and_propagated_snapshots": true,
+    "physical_gauge_decisions": true,
+    "physical_gauge_ranks": true,
+    "physical_gauge_scores": true,
+    "residual_labels_are_not_final_admission": true,
+    "residual_rejections_recorded": true,
+    "same_runtime_exact_replay": true
+  },
+  "live_molecular_soc_validated": false,
+  "passed": true,
+  "propagation_receipt": {
+    "after": {
+      "chirp_matrices": [
+        [
+          [
+            0.10697731612152644
+          ]
+        ]
+      ],
+      "coefficients_imag": [
+        [
+          -0.012041710938512855,
+          -0.007635471854803833,
+          5.028249401599992e-05,
+          -0.007569262674828866
+        ]
+      ],
+      "coefficients_real": [
+        [
+          0.9998535930944087,
+          0.0026455744476072234,
+          -0.004157997672350241,
+          -0.0028294446738984865
+        ]
+      ],
+      "p": [
+        [
+          0.29960667572957267
+        ]
+      ],
+      "q": [
+        [
+          0.10696875822705354
+        ]
+      ],
+      "time_au": 0.05,
+      "width_matrices": [
+        [
+          [
+            1.0952639561303021
+          ]
+        ]
+      ]
+    },
+    "after_observables": {
+      "energy_hartree": 0.15978946195709637,
+      "norm": 0.9999989021787974
+    },
+    "before": {
+      "chirp_matrices": [
+        [
+          [
+            0.08
+          ]
+        ]
+      ],
+      "coefficients_imag": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "coefficients_real": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "p": [
+        [
+          0.3
+        ]
+      ],
+      "q": [
+        [
+          0.1
+        ]
+      ],
+      "time_au": 0.0,
+      "width_matrices": [
+        [
+          [
+            1.1
+          ]
+        ]
+      ]
+    },
+    "before_observables": {
+      "energy_hartree": 0.1597893726331969,
+      "norm": 0.9999989021802688
+    },
+    "bridge_fingerprint": "1aef722e82809d71f25a9ca52f934ec6e8368d894ed2607e1a0f3dbbfcc0f77b",
+    "center_transport_audits": [
+      {
+        "audit": {
+          "bridge_fingerprint": "1aef722e82809d71f25a9ca52f934ec6e8368d894ed2607e1a0f3dbbfcc0f77b",
+          "connection_overlap_residual": 0.0,
+          "connection_transport_unitarity_residual": 0.0,
+          "end": [
+            0.10696875822705354
+          ],
+          "maximum_principal_angle_radians": 0.0,
+          "overlap_condition_number": 1.0,
+          "overlap_reciprocity_residual": 0.0,
+          "overlap_singular_values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "overlap_transport_unitarity_residual": 0.0,
+          "passed": true,
+          "provider_fingerprint": "e8c2ee8532914a2a7505b6851a2ac18dbb8e114e4314bac5949a820d5fb6cbf1",
+          "schema": "gnd-molecular-frame-segment-audit-v1",
+          "segment_length": 0.006968758227053534,
+          "start": [
+            0.1
+          ],
+          "transport_reciprocity_residual": 0.0
+        },
+        "kind": "audited-segment"
+      }
+    ],
+    "dt": 0.05,
+    "fingerprint": "94cc171034f8333f28301e4fc7c406c51144a5b6aaae3c46a025508e44b004f9",
+    "hamiltonian_fingerprint": "33e61d65342409db561475f6ad16b53f2f0a96c3622b043793322b47a56decd1",
+    "iterations": 5,
+    "midpoint_metric_condition": 12.46989162068579,
+    "midpoint_metric_rank": 12,
+    "midpoint_null_rhs_relative": 0.0,
+    "midpoint_residual_inf": 2.3176643677152997e-10,
+    "midpoint_svd_residual": 2.198069603749483e-15,
+    "midpoint_tdse_defect_norm": 0.024649189587753258,
+    "scaled_midpoint_residual": 0.5933291265302438,
+    "schema": "gnd-molecular-midpoint-v0.30.2-dev",
+    "settings": {
+      "absolute_tolerance": 2e-10,
+      "maximum_iterations": 24,
+      "relative_tolerance": 2e-09,
+      "tangent_step": 2e-06
+    }
+  },
+  "rejected_checkpoint": {
+    "bridge_fingerprint": "1aef722e82809d71f25a9ca52f934ec6e8368d894ed2607e1a0f3dbbfcc0f77b",
+    "candidate_count": 4,
+    "candidate_space": "full_complex_electronic_spinor",
+    "candidates": [
+      {
+        "candidate": {
+          "chirp_matrices": [
+            [
+              0.08
+            ]
+          ],
+          "coordinate_axis": 0,
+          "displacement_kind": "momentum",
+          "p": [
+            -0.7488088481701516
+          ],
+          "q": [
+            0.1
+          ],
+          "sign": -1,
+          "source_packet": 0,
+          "width_matrices": [
+            [
+              1.1
+            ]
+          ]
+        },
+        "record": {
+          "accepted_by_residual_oracle": false,
+          "candidate_fingerprint": "58ef147a8110e500ac540cbc037c0414c900a0c317191de4f8b92e3c327c7694",
+          "dataset_schema": "gnd-spawn-dataset-v1",
+          "exact_candidate_cost_seconds": null,
+          "features": {
+            "chirp_eigenvalues": [
+              0.08
+            ],
+            "chirp_frobenius_norm": 0.08,
+            "displacement_kind": "momentum",
+            "dp_euclidean_norm": 1.0488088481701516,
+            "dp_width_inverse_norm2": 1.0000000000000002,
+            "dq_euclidean_norm": 0.0,
+            "dq_width_norm2": 0.0,
+            "feature_schema": "gnd-spawn-features-invariant-v1",
+            "ndim": 1,
+            "ngaussian": 1,
+            "nstate": 4,
+            "source_population": 1.0,
+            "tdse_residual_norm2": 0.0006064190852465488,
+            "tdvp_metric_condition": 12.517975712108806,
+            "tdvp_metric_rank": 12,
+            "width_eigenvalues": [
+              1.1
+            ],
+            "width_logdet": 0.09531017980432493
+          },
+          "oracle_config_fingerprint": "58214ca4bceca4022b2ee12870b3a271195f5dbe087adac00ad3beb91521d121",
+          "oracle_implementation": "full-complex-coefficient-tangent-v0.30.4",
+          "oracle_schema": "gnd-spawn-oracle-v2",
+          "predicted_residual_reduction": 0.0004140507212966942,
+          "rejection_reasons": [
+            "insufficient-predicted-residual-reduction"
+          ],
+          "relative_residual_reduction": 0.6827798322481157,
+          "schur_condition_number": 27.39177614866226,
+          "schur_rank": 8,
+          "schur_singular_values": [
+            0.39346606031235876,
+            0.39346606031235876,
+            0.3934660603123586,
+            0.3934660603123586,
+            0.3934660603123586,
+            0.3934660603123586,
+            0.014364386533271567,
+            0.014364386528895264
+          ],
+          "split": "train",
+          "state_fingerprint": "55e16e24ad8063d29e076cd3b6a43ebea3213f505f02b4f3504a2ad18e93cc71",
+          "trajectory_group_id": "[\"analytic-singlet-triplet\",\"v304-soc\"]"
+        },
+        "record_fingerprint": "3a22f3aee8c4effe3e553e0ca516dc16b331782ae03b4f26e1d81dc9f80bb0f7",
+        "serial": 0,
+        "source_packet_id": "g000000"
+      },
+      {
+        "candidate": {
+          "chirp_matrices": [
+            [
+              0.08
+            ]
+          ],
+          "coordinate_axis": 0,
+          "displacement_kind": "momentum",
+          "p": [
+            1.3488088481701517
+          ],
+          "q": [
+            0.1
+          ],
+          "sign": 1,
+          "source_packet": 0,
+          "width_matrices": [
+            [
+              1.1
+            ]
+          ]
+        },
+        "record": {
+          "accepted_by_residual_oracle": false,
+          "candidate_fingerprint": "1c3dc3cf6db0e62ce371ea112f833289a43861f71ae30671bf676d8aa2fe6c51",
+          "dataset_schema": "gnd-spawn-dataset-v1",
+          "exact_candidate_cost_seconds": null,
+          "features": {
+            "chirp_eigenvalues": [
+              0.08
+            ],
+            "chirp_frobenius_norm": 0.08,
+            "displacement_kind": "momentum",
+            "dp_euclidean_norm": 1.0488088481701516,
+            "dp_width_inverse_norm2": 1.0000000000000002,
+            "dq_euclidean_norm": 0.0,
+            "dq_width_norm2": 0.0,
+            "feature_schema": "gnd-spawn-features-invariant-v1",
+            "ndim": 1,
+            "ngaussian": 1,
+            "nstate": 4,
+            "source_population": 1.0,
+            "tdse_residual_norm2": 0.0006064190852465488,
+            "tdvp_metric_condition": 12.517975712108806,
+            "tdvp_metric_rank": 12,
+            "width_eigenvalues": [
+              1.1
+            ],
+            "width_logdet": 0.09531017980432493
+          },
+          "oracle_config_fingerprint": "58214ca4bceca4022b2ee12870b3a271195f5dbe087adac00ad3beb91521d121",
+          "oracle_implementation": "full-complex-coefficient-tangent-v0.30.4",
+          "oracle_schema": "gnd-spawn-oracle-v2",
+          "predicted_residual_reduction": 0.0004640016344639239,
+          "rejection_reasons": [
+            "insufficient-predicted-residual-reduction"
+          ],
+          "relative_residual_reduction": 0.7651501177197898,
+          "schur_condition_number": 27.39177614303945,
+          "schur_rank": 8,
+          "schur_singular_values": [
+            0.3934660603123592,
+            0.39346606031235887,
+            0.39346606031235876,
+            0.39346606031235876,
+            0.39346606031235876,
+            0.3934660603123585,
+            0.014364386534538351,
+            0.014364386531843909
+          ],
+          "split": "train",
+          "state_fingerprint": "55e16e24ad8063d29e076cd3b6a43ebea3213f505f02b4f3504a2ad18e93cc71",
+          "trajectory_group_id": "[\"analytic-singlet-triplet\",\"v304-soc\"]"
+        },
+        "record_fingerprint": "144839c016ce7a3c646b0983cd197475fc48f98ee467f123b59ea098cdd21b6e",
+        "serial": 1,
+        "source_packet_id": "g000000"
+      },
+      {
+        "candidate": {
+          "chirp_matrices": [
+            [
+              0.08
+            ]
+          ],
+          "coordinate_axis": 0,
+          "displacement_kind": "position",
+          "p": [
+            0.3
+          ],
+          "q": [
+            -0.8534625892455923
+          ],
+          "sign": -1,
+          "source_packet": 0,
+          "width_matrices": [
+            [
+              1.1
+            ]
+          ]
+        },
+        "record": {
+          "accepted_by_residual_oracle": false,
+          "candidate_fingerprint": "1a47b8e0146d67bb43eb5698c1e2a9584f24aae9f746d3ea3dbe03c842fd0755",
+          "dataset_schema": "gnd-spawn-dataset-v1",
+          "exact_candidate_cost_seconds": null,
+          "features": {
+            "chirp_eigenvalues": [
+              0.08
+            ],
+            "chirp_frobenius_norm": 0.08,
+            "displacement_kind": "position",
+            "dp_euclidean_norm": 0.0,
+            "dp_width_inverse_norm2": 0.0,
+            "dq_euclidean_norm": 0.9534625892455922,
+            "dq_width_norm2": 1.0,
+            "feature_schema": "gnd-spawn-features-invariant-v1",
+            "ndim": 1,
+            "ngaussian": 1,
+            "nstate": 4,
+            "source_population": 1.0,
+            "tdse_residual_norm2": 0.0006064190852465488,
+            "tdvp_metric_condition": 12.517975712108806,
+            "tdvp_metric_rank": 12,
+            "width_eigenvalues": [
+              1.1
+            ],
+            "width_logdet": 0.09531017980432493
+          },
+          "oracle_config_fingerprint": "58214ca4bceca4022b2ee12870b3a271195f5dbe087adac00ad3beb91521d121",
+          "oracle_implementation": "full-complex-coefficient-tangent-v0.30.4",
+          "oracle_schema": "gnd-spawn-oracle-v2",
+          "predicted_residual_reduction": 0.0004390539582881175,
+          "rejection_reasons": [
+            "insufficient-predicted-residual-reduction"
+          ],
+          "relative_residual_reduction": 0.7240107855603087,
+          "schur_condition_number": 27.19875141367746,
+          "schur_rank": 8,
+          "schur_singular_values": [
+            0.3949394245923145,
+            0.39493942459231435,
+            0.39493942459231435,
+            0.39493942459231435,
+            0.39493942459231435,
+            0.3949394245923138,
+            0.01452049833575124,
+            0.014520498334115109
+          ],
+          "split": "train",
+          "state_fingerprint": "55e16e24ad8063d29e076cd3b6a43ebea3213f505f02b4f3504a2ad18e93cc71",
+          "trajectory_group_id": "[\"analytic-singlet-triplet\",\"v304-soc\"]"
+        },
+        "record_fingerprint": "55021c5adcbac6a7b523b332950d9051795f9cb475e7b0805a0ebd6d1871f49a",
+        "serial": 2,
+        "source_packet_id": "g000000"
+      },
+      {
+        "candidate": {
+          "chirp_matrices": [
+            [
+              0.08
+            ]
+          ],
+          "coordinate_axis": 0,
+          "displacement_kind": "position",
+          "p": [
+            0.3
+          ],
+          "q": [
+            1.0534625892455922
+          ],
+          "sign": 1,
+          "source_packet": 0,
+          "width_matrices": [
+            [
+              1.1
+            ]
+          ]
+        },
+        "record": {
+          "accepted_by_residual_oracle": false,
+          "candidate_fingerprint": "25123638ac621a5e5aac0d77e12fde86591fe1bceb95c8dd871ba5314c193ba9",
+          "dataset_schema": "gnd-spawn-dataset-v1",
+          "exact_candidate_cost_seconds": null,
+          "features": {
+            "chirp_eigenvalues": [
+              0.08
+            ],
+            "chirp_frobenius_norm": 0.08,
+            "displacement_kind": "position",
+            "dp_euclidean_norm": 0.0,
+            "dp_width_inverse_norm2": 0.0,
+            "dq_euclidean_norm": 0.9534625892455922,
+            "dq_width_norm2": 1.0,
+            "feature_schema": "gnd-spawn-features-invariant-v1",
+            "ndim": 1,
+            "ngaussian": 1,
+            "nstate": 4,
+            "source_population": 1.0,
+            "tdse_residual_norm2": 0.0006064190852465488,
+            "tdvp_metric_condition": 12.517975712108806,
+            "tdvp_metric_rank": 12,
+            "width_eigenvalues": [
+              1.1
+            ],
+            "width_logdet": 0.09531017980432493
+          },
+          "oracle_config_fingerprint": "58214ca4bceca4022b2ee12870b3a271195f5dbe087adac00ad3beb91521d121",
+          "oracle_implementation": "full-complex-coefficient-tangent-v0.30.4",
+          "oracle_schema": "gnd-spawn-oracle-v2",
+          "predicted_residual_reduction": 0.00043954125122409605,
+          "rejection_reasons": [
+            "insufficient-predicted-residual-reduction"
+          ],
+          "relative_residual_reduction": 0.7248143436075962,
+          "schur_condition_number": 27.368993894609055,
+          "schur_rank": 8,
+          "schur_singular_values": [
+            0.3946697818001897,
+            0.3946697818001897,
+            0.3946697818001897,
+            0.3946697818001895,
+            0.3946697818001895,
+            0.3946697818001894,
+            0.014420324817767066,
+            0.014420324814275649
+          ],
+          "split": "train",
+          "state_fingerprint": "55e16e24ad8063d29e076cd3b6a43ebea3213f505f02b4f3504a2ad18e93cc71",
+          "trajectory_group_id": "[\"analytic-singlet-triplet\",\"v304-soc\"]"
+        },
+        "record_fingerprint": "c7011610cf98f5fe0561b7a56dd8fb59f817126579949945121727ab2f2d52e7",
+        "serial": 3,
+        "source_packet_id": "g000000"
+      }
+    ],
+    "dataset_certified": false,
+    "decision_stage": "residual_screening",
+    "empty_candidate_reason": null,
+    "final_admission": null,
+    "fingerprint": "81042f724a6ab31b0623a264b06717f5d77c4b94d7119a5755771aef3e7cff94",
+    "hamiltonian_fingerprint": "33e61d65342409db561475f6ad16b53f2f0a96c3622b043793322b47a56decd1",
+    "identity": {
+      "family_id": "analytic-singlet-triplet",
+      "step": 0,
+      "trajectory_id": "v304-soc"
+    },
+    "oracle_implementation": "full-complex-coefficient-tangent-v0.30.4",
+    "packet_ids": [
+      "g000000"
+    ],
+    "schema": "gnd-molecular-spawn-checkpoint-v0.30.4-dev",
+    "settings": {
+      "event_order": "merge -> prune -> spawn -> no-op; at most one topology event",
+      "inherited": {
+        "adapt_every_steps": 2,
+        "basis_absolute_cutoff": 1e-12,
+        "basis_relative_cutoff": 1e-10,
+        "event_order": "merge then prune then spawn, with at most one event per checkpoint",
+        "maximum_activation_condition_number": 100000000.0,
+        "maximum_activation_velocity_amplification": 100.0,
+        "maximum_basis_condition_number": 10000000000.0,
+        "maximum_event_energy_jump_hartree": 2e-06,
+        "maximum_events_per_checkpoint": 1,
+        "maximum_packet_count": 12,
+        "maximum_projection_loss": 2e-07,
+        "merge_enabled": true,
+        "minimum_candidate_novelty": 1e-06,
+        "minimum_merge_overlap": 0.997,
+        "minimum_principal_axis_relative_gap": 1e-08,
+        "minimum_prune_age": 64,
+        "momentum_displacement_in_width_units": 1.0,
+        "newborn_activation": "coefficients active immediately; all shape coordinates dormant until both population and compatible-metric gates pass",
+        "newborn_activation_population": 1e-06,
+        "position_displacement_in_width_units": 1.0,
+        "projection_policy": "fixed-time full-SVD least-squares projection with fidelity, norm, loss, and energy receipts",
+        "prune_enabled": true,
+        "prune_population_threshold": 1e-10,
+        "spawn_directions": "signed intrinsic principal axes of each nondegenerate SPD width matrix",
+        "spawn_enabled": true,
+        "spawn_residual_capture_threshold": 2e-05,
+        "spawn_score": "norm of orthogonalized <g_candidate|dPsi/dt+iHPsi> divided by sqrt(novelty)",
+        "tdvp_settings": {
+          "adaptive_full_widths": true,
+          "allow_compatible_rank_deficiency": true,
+          "arbitrary_orthogonal_coordinate_covariance": true,
+          "fixed_electronic_frame": true,
+          "full_correlated_width_matrices": true,
+          "integrator": "fully implicit midpoint on the full-SVD TDVP vector field",
+          "linear_residual_relative_tolerance": 3e-09,
+          "maximum_chirp_spectral_radius": 100000000.0,
+          "maximum_retained_condition_number": 10000000000.0,
+          "maximum_step_log_width_frobenius_change": 0.75,
+          "maximum_step_norm_drift": 1e-07,
+          "maximum_width_eigenvalue": 100000000.0,
+          "metric_absolute_cutoff": 1e-12,
+          "metric_relative_cutoff": 1e-10,
+          "metric_solver": "full SVD with compatible-null-space audit",
+          "minimum_width_eigenvalue": 1e-08,
+          "multidimensional_nuclear_motion": true,
+          "nonlinear_max_function_evaluations": 1600,
+          "nonlinear_residual_tolerance": 8e-10,
+          "nonlinear_solver": "scipy.optimize.root-hybr",
+          "nonlinear_xtol": 1e-10,
+          "null_rhs_relative_tolerance": 3e-09,
+          "real_molecular_soc_provider": false,
+          "structural_tolerance": 5e-10,
+          "variational_principle": "real-parameter McLachlan time-dependent variation",
+          "width_coordinates": "Gamma=exp(E) with real symmetric E; real symmetric B; orthonormal svec coordinates"
+        }
+      },
+      "maximum_schur_condition_number": 10000000000.0,
+      "minimum_predicted_residual_reduction": 1000000.0,
+      "minimum_relative_residual_reduction": 1e-08,
+      "one_event_per_checkpoint": true,
+      "score": "full-curved-tangent Schur-complement predicted TDSE-defect reduction",
+      "tangent_absolute_cutoff": 1e-12,
+      "tangent_relative_cutoff": 1e-10
+    },
+    "state": {
+      "chirp_matrices": [
+        [
+          [
+            0.08
+          ]
+        ]
+      ],
+      "coefficients_imag": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "coefficients_real": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "p": [
+        [
+          0.3
+        ]
+      ],
+      "q": [
+        [
+          0.1
+        ]
+      ],
+      "time_au": 0.0,
+      "width_matrices": [
+        [
+          [
+            1.1
+          ]
+        ]
+      ]
+    },
+    "tangent_step": 2e-06
+  },
+  "runtime": {
+    "numpy": "2.5.2",
+    "python": "3.12.14",
+    "scipy": "1.18.0"
+  },
+  "same_runtime_exact_replay": true,
+  "schema": "gnd-molecular-spawn-audit-v0.30.4-dev",
+  "scope": "Local residual screening on one analytic SOC trajectory; fixed finite grid; no topology change, final admission, or certified training dataset.",
+  "snapshots": [
+    {
+      "comparisons": [
+        {
+          "fixed_accepted": true,
+          "fixed_gain": 0.0004140507212966942,
+          "fixed_legacy_gain": 0.0002805988766681882,
+          "fixed_rank": 8,
+          "fixed_reasons": [],
+          "fixed_reference_gain": 0.00041405072129669404,
+          "fixed_relative_gain": 0.6827798322481157,
+          "moving_accepted": true,
+          "moving_gain": 0.00041405072133820955,
+          "moving_legacy_gain": 0.00022916424879575382,
+          "moving_rank": 8,
+          "moving_reasons": [],
+          "moving_reference_gain": 0.00041405072133820977,
+          "moving_relative_gain": 0.682779832321173,
+          "serial": 0
+        },
+        {
+          "fixed_accepted": true,
+          "fixed_gain": 0.0004640016344639239,
+          "fixed_legacy_gain": 0.0002840474887835008,
+          "fixed_rank": 8,
+          "fixed_reasons": [],
+          "fixed_reference_gain": 0.0004640016344639236,
+          "fixed_relative_gain": 0.7651501177197898,
+          "moving_accepted": true,
+          "moving_gain": 0.00046400163450306203,
+          "moving_legacy_gain": 0.00018203008784638502,
+          "moving_rank": 8,
+          "moving_reasons": [],
+          "moving_reference_gain": 0.000464001634503062,
+          "moving_relative_gain": 0.7651501177894816,
+          "serial": 1
+        },
+        {
+          "fixed_accepted": true,
+          "fixed_gain": 0.0004390539582881175,
+          "fixed_legacy_gain": 0.00015147814096801978,
+          "fixed_rank": 8,
+          "fixed_reasons": [],
+          "fixed_reference_gain": 0.0004390539582881176,
+          "fixed_relative_gain": 0.7240107855603087,
+          "moving_accepted": true,
+          "moving_gain": 0.0004390539582925522,
+          "moving_legacy_gain": 0.00030717950804057004,
+          "moving_rank": 8,
+          "moving_reasons": [],
+          "moving_reference_gain": 0.000439053958292552,
+          "moving_relative_gain": 0.7240107855724968,
+          "serial": 2
+        },
+        {
+          "fixed_accepted": true,
+          "fixed_gain": 0.00043954125122409605,
+          "fixed_legacy_gain": 0.0001655962632284719,
+          "fixed_rank": 8,
+          "fixed_reasons": [],
+          "fixed_reference_gain": 0.000439541251224096,
+          "fixed_relative_gain": 0.7248143436075962,
+          "moving_accepted": true,
+          "moving_gain": 0.0004395412512374514,
+          "moving_legacy_gain": 0.00023972957426488493,
+          "moving_rank": 8,
+          "moving_reasons": [],
+          "moving_reference_gain": 0.00043954125123745185,
+          "moving_relative_gain": 0.7248143436345,
+          "serial": 3
+        }
+      ],
+      "fixed": {
+        "bridge_fingerprint": "1aef722e82809d71f25a9ca52f934ec6e8368d894ed2607e1a0f3dbbfcc0f77b",
+        "candidate_count": 4,
+        "candidate_space": "full_complex_electronic_spinor",
+        "candidates": [
+          {
+            "candidate": {
+              "chirp_matrices": [
+                [
+                  0.08
+                ]
+              ],
+              "coordinate_axis": 0,
+              "displacement_kind": "momentum",
+              "p": [
+                -0.7488088481701516
+              ],
+              "q": [
+                0.1
+              ],
+              "sign": -1,
+              "source_packet": 0,
+              "width_matrices": [
+                [
+                  1.1
+                ]
+              ]
+            },
+            "record": {
+              "accepted_by_residual_oracle": true,
+              "candidate_fingerprint": "58ef147a8110e500ac540cbc037c0414c900a0c317191de4f8b92e3c327c7694",
+              "dataset_schema": "gnd-spawn-dataset-v1",
+              "exact_candidate_cost_seconds": null,
+              "features": {
+                "chirp_eigenvalues": [
+                  0.08
+                ],
+                "chirp_frobenius_norm": 0.08,
+                "displacement_kind": "momentum",
+                "dp_euclidean_norm": 1.0488088481701516,
+                "dp_width_inverse_norm2": 1.0000000000000002,
+                "dq_euclidean_norm": 0.0,
+                "dq_width_norm2": 0.0,
+                "feature_schema": "gnd-spawn-features-invariant-v1",
+                "ndim": 1,
+                "ngaussian": 1,
+                "nstate": 4,
+                "source_population": 1.0,
+                "tdse_residual_norm2": 0.0006064190852465488,
+                "tdvp_metric_condition": 12.517975712108806,
+                "tdvp_metric_rank": 12,
+                "width_eigenvalues": [
+                  1.1
+                ],
+                "width_logdet": 0.09531017980432493
+              },
+              "oracle_config_fingerprint": "138069f3a19dac1fd60ec90bd600609be5569e810a556caf1d84c7b6ae9be50b",
+              "oracle_implementation": "full-complex-coefficient-tangent-v0.30.4",
+              "oracle_schema": "gnd-spawn-oracle-v2",
+              "predicted_residual_reduction": 0.0004140507212966942,
+              "rejection_reasons": [],
+              "relative_residual_reduction": 0.6827798322481157,
+              "schur_condition_number": 27.39177614866226,
+              "schur_rank": 8,
+              "schur_singular_values": [
+                0.39346606031235876,
+                0.39346606031235876,
+                0.3934660603123586,
+                0.3934660603123586,
+                0.3934660603123586,
+                0.3934660603123586,
+                0.014364386533271567,
+                0.014364386528895264
+              ],
+              "split": "train",
+              "state_fingerprint": "55e16e24ad8063d29e076cd3b6a43ebea3213f505f02b4f3504a2ad18e93cc71",
+              "trajectory_group_id": "[\"analytic-singlet-triplet\",\"v304-soc\"]"
+            },
+            "record_fingerprint": "e1efa31d5bb8192f3596d3b3ec608c7fafcac1b9fe4b4ada3858487b04be52a5",
+            "serial": 0,
+            "source_packet_id": "g000000"
+          },
+          {
+            "candidate": {
+              "chirp_matrices": [
+                [
+                  0.08
+                ]
+              ],
+              "coordinate_axis": 0,
+              "displacement_kind": "momentum",
+              "p": [
+                1.3488088481701517
+              ],
+              "q": [
+                0.1
+              ],
+              "sign": 1,
+              "source_packet": 0,
+              "width_matrices": [
+                [
+                  1.1
+                ]
+              ]
+            },
+            "record": {
+              "accepted_by_residual_oracle": true,
+              "candidate_fingerprint": "1c3dc3cf6db0e62ce371ea112f833289a43861f71ae30671bf676d8aa2fe6c51",
+              "dataset_schema": "gnd-spawn-dataset-v1",
+              "exact_candidate_cost_seconds": null,
+              "features": {
+                "chirp_eigenvalues": [
+                  0.08
+                ],
+                "chirp_frobenius_norm": 0.08,
+                "displacement_kind": "momentum",
+                "dp_euclidean_norm": 1.0488088481701516,
+                "dp_width_inverse_norm2": 1.0000000000000002,
+                "dq_euclidean_norm": 0.0,
+                "dq_width_norm2": 0.0,
+                "feature_schema": "gnd-spawn-features-invariant-v1",
+                "ndim": 1,
+                "ngaussian": 1,
+                "nstate": 4,
+                "source_population": 1.0,
+                "tdse_residual_norm2": 0.0006064190852465488,
+                "tdvp_metric_condition": 12.517975712108806,
+                "tdvp_metric_rank": 12,
+                "width_eigenvalues": [
+                  1.1
+                ],
+                "width_logdet": 0.09531017980432493
+              },
+              "oracle_config_fingerprint": "138069f3a19dac1fd60ec90bd600609be5569e810a556caf1d84c7b6ae9be50b",
+              "oracle_implementation": "full-complex-coefficient-tangent-v0.30.4",
+              "oracle_schema": "gnd-spawn-oracle-v2",
+              "predicted_residual_reduction": 0.0004640016344639239,
+              "rejection_reasons": [],
+              "relative_residual_reduction": 0.7651501177197898,
+              "schur_condition_number": 27.39177614303945,
+              "schur_rank": 8,
+              "schur_singular_values": [
+                0.3934660603123592,
+                0.39346606031235887,
+                0.39346606031235876,
+                0.39346606031235876,
+                0.39346606031235876,
+                0.3934660603123585,
+                0.014364386534538351,
+                0.014364386531843909
+              ],
+              "split": "train",
+              "state_fingerprint": "55e16e24ad8063d29e076cd3b6a43ebea3213f505f02b4f3504a2ad18e93cc71",
+              "trajectory_group_id": "[\"analytic-singlet-triplet\",\"v304-soc\"]"
+            },
+            "record_fingerprint": "c85a0e0109c5a468ebccebb624174ec50decc160fce6e80b996b4aa556c4f331",
+            "serial": 1,
+            "source_packet_id": "g000000"
+          },
+          {
+            "candidate": {
+              "chirp_matrices": [
+                [
+                  0.08
+                ]
+              ],
+              "coordinate_axis": 0,
+              "displacement_kind": "position",
+              "p": [
+                0.3
+              ],
+              "q": [
+                -0.8534625892455923
+              ],
+              "sign": -1,
+              "source_packet": 0,
+              "width_matrices": [
+                [
+                  1.1
+                ]
+              ]
+            },
+            "record": {
+              "accepted_by_residual_oracle": true,
+              "candidate_fingerprint": "1a47b8e0146d67bb43eb5698c1e2a9584f24aae9f746d3ea3dbe03c842fd0755",
+              "dataset_schema": "gnd-spawn-dataset-v1",
+              "exact_candidate_cost_seconds": null,
+              "features": {
+                "chirp_eigenvalues": [
+                  0.08
+                ],
+                "chirp_frobenius_norm": 0.08,
+                "displacement_kind": "position",
+                "dp_euclidean_norm": 0.0,
+                "dp_width_inverse_norm2": 0.0,
+                "dq_euclidean_norm": 0.9534625892455922,
+                "dq_width_norm2": 1.0,
+                "feature_schema": "gnd-spawn-features-invariant-v1",
+                "ndim": 1,
+                "ngaussian": 1,
+                "nstate": 4,
+                "source_population": 1.0,
+                "tdse_residual_norm2": 0.0006064190852465488,
+                "tdvp_metric_condition": 12.517975712108806,
+                "tdvp_metric_rank": 12,
+                "width_eigenvalues": [
+                  1.1
+                ],
+                "width_logdet": 0.09531017980432493
+              },
+              "oracle_config_fingerprint": "138069f3a19dac1fd60ec90bd600609be5569e810a556caf1d84c7b6ae9be50b",
+              "oracle_implementation": "full-complex-coefficient-tangent-v0.30.4",
+              "oracle_schema": "gnd-spawn-oracle-v2",
+              "predicted_residual_reduction": 0.0004390539582881175,
+              "rejection_reasons": [],
+              "relative_residual_reduction": 0.7240107855603087,
+              "schur_condition_number": 27.19875141367746,
+              "schur_rank": 8,
+              "schur_singular_values": [
+                0.3949394245923145,
+                0.39493942459231435,
+                0.39493942459231435,
+                0.39493942459231435,
+                0.39493942459231435,
+                0.3949394245923138,
+                0.01452049833575124,
+                0.014520498334115109
+              ],
+              "split": "train",
+              "state_fingerprint": "55e16e24ad8063d29e076cd3b6a43ebea3213f505f02b4f3504a2ad18e93cc71",
+              "trajectory_group_id": "[\"analytic-singlet-triplet\",\"v304-soc\"]"
+            },
+            "record_fingerprint": "7be043cb6a69afbd356c44623f12934e528b0305d97e1c30f8ed7c65737ef3e7",
+            "serial": 2,
+            "source_packet_id": "g000000"
+          },
+          {
+            "candidate": {
+              "chirp_matrices": [
+                [
+                  0.08
+                ]
+              ],
+              "coordinate_axis": 0,
+              "displacement_kind": "position",
+              "p": [
+                0.3
+              ],
+              "q": [
+                1.0534625892455922
+              ],
+              "sign": 1,
+              "source_packet": 0,
+              "width_matrices": [
+                [
+                  1.1
+                ]
+              ]
+            },
+            "record": {
+              "accepted_by_residual_oracle": true,
+              "candidate_fingerprint": "25123638ac621a5e5aac0d77e12fde86591fe1bceb95c8dd871ba5314c193ba9",
+              "dataset_schema": "gnd-spawn-dataset-v1",
+              "exact_candidate_cost_seconds": null,
+              "features": {
+                "chirp_eigenvalues": [
+                  0.08
+                ],
+                "chirp_frobenius_norm": 0.08,
+                "displacement_kind": "position",
+                "dp_euclidean_norm": 0.0,
+                "dp_width_inverse_norm2": 0.0,
+                "dq_euclidean_norm": 0.9534625892455922,
+                "dq_width_norm2": 1.0,
+                "feature_schema": "gnd-spawn-features-invariant-v1",
+                "ndim": 1,
+                "ngaussian": 1,
+                "nstate": 4,
+                "source_population": 1.0,
+                "tdse_residual_norm2": 0.0006064190852465488,
+                "tdvp_metric_condition": 12.517975712108806,
+                "tdvp_metric_rank": 12,
+                "width_eigenvalues": [
+                  1.1
+                ],
+                "width_logdet": 0.09531017980432493
+              },
+              "oracle_config_fingerprint": "138069f3a19dac1fd60ec90bd600609be5569e810a556caf1d84c7b6ae9be50b",
+              "oracle_implementation": "full-complex-coefficient-tangent-v0.30.4",
+              "oracle_schema": "gnd-spawn-oracle-v2",
+              "predicted_residual_reduction": 0.00043954125122409605,
+              "rejection_reasons": [],
+              "relative_residual_reduction": 0.7248143436075962,
+              "schur_condition_number": 27.368993894609055,
+              "schur_rank": 8,
+              "schur_singular_values": [
+                0.3946697818001897,
+                0.3946697818001897,
+                0.3946697818001897,
+                0.3946697818001895,
+                0.3946697818001895,
+                0.3946697818001894,
+                0.014420324817767066,
+                0.014420324814275649
+              ],
+              "split": "train",
+              "state_fingerprint": "55e16e24ad8063d29e076cd3b6a43ebea3213f505f02b4f3504a2ad18e93cc71",
+              "trajectory_group_id": "[\"analytic-singlet-triplet\",\"v304-soc\"]"
+            },
+            "record_fingerprint": "33d4aa83462bd0f02b825f41dd85175e21c9ac06473eabf2bdc12a914b5915a5",
+            "serial": 3,
+            "source_packet_id": "g000000"
+          }
+        ],
+        "dataset_certified": false,
+        "decision_stage": "residual_screening",
+        "empty_candidate_reason": null,
+        "final_admission": null,
+        "fingerprint": "b18ea1f85bd1a39652612ad469b88b280d13eb3f6c372d4aefcf0542946158f6",
+        "hamiltonian_fingerprint": "33e61d65342409db561475f6ad16b53f2f0a96c3622b043793322b47a56decd1",
+        "identity": {
+          "family_id": "analytic-singlet-triplet",
+          "step": 0,
+          "trajectory_id": "v304-soc"
+        },
+        "oracle_implementation": "full-complex-coefficient-tangent-v0.30.4",
+        "packet_ids": [
+          "g000000"
+        ],
+        "schema": "gnd-molecular-spawn-checkpoint-v0.30.4-dev",
+        "settings": {
+          "event_order": "merge -> prune -> spawn -> no-op; at most one topology event",
+          "inherited": {
+            "adapt_every_steps": 2,
+            "basis_absolute_cutoff": 1e-12,
+            "basis_relative_cutoff": 1e-10,
+            "event_order": "merge then prune then spawn, with at most one event per checkpoint",
+            "maximum_activation_condition_number": 100000000.0,
+            "maximum_activation_velocity_amplification": 100.0,
+            "maximum_basis_condition_number": 10000000000.0,
+            "maximum_event_energy_jump_hartree": 2e-06,
+            "maximum_events_per_checkpoint": 1,
+            "maximum_packet_count": 12,
+            "maximum_projection_loss": 2e-07,
+            "merge_enabled": true,
+            "minimum_candidate_novelty": 1e-06,
+            "minimum_merge_overlap": 0.997,
+            "minimum_principal_axis_relative_gap": 1e-08,
+            "minimum_prune_age": 64,
+            "momentum_displacement_in_width_units": 1.0,
+            "newborn_activation": "coefficients active immediately; all shape coordinates dormant until both population and compatible-metric gates pass",
+            "newborn_activation_population": 1e-06,
+            "position_displacement_in_width_units": 1.0,
+            "projection_policy": "fixed-time full-SVD least-squares projection with fidelity, norm, loss, and energy receipts",
+            "prune_enabled": true,
+            "prune_population_threshold": 1e-10,
+            "spawn_directions": "signed intrinsic principal axes of each nondegenerate SPD width matrix",
+            "spawn_enabled": true,
+            "spawn_residual_capture_threshold": 2e-05,
+            "spawn_score": "norm of orthogonalized <g_candidate|dPsi/dt+iHPsi> divided by sqrt(novelty)",
+            "tdvp_settings": {
+              "adaptive_full_widths": true,
+              "allow_compatible_rank_deficiency": true,
+              "arbitrary_orthogonal_coordinate_covariance": true,
+              "fixed_electronic_frame": true,
+              "full_correlated_width_matrices": true,
+              "integrator": "fully implicit midpoint on the full-SVD TDVP vector field",
+              "linear_residual_relative_tolerance": 3e-09,
+              "maximum_chirp_spectral_radius": 100000000.0,
+              "maximum_retained_condition_number": 10000000000.0,
+              "maximum_step_log_width_frobenius_change": 0.75,
+              "maximum_step_norm_drift": 1e-07,
+              "maximum_width_eigenvalue": 100000000.0,
+              "metric_absolute_cutoff": 1e-12,
+              "metric_relative_cutoff": 1e-10,
+              "metric_solver": "full SVD with compatible-null-space audit",
+              "minimum_width_eigenvalue": 1e-08,
+              "multidimensional_nuclear_motion": true,
+              "nonlinear_max_function_evaluations": 1600,
+              "nonlinear_residual_tolerance": 8e-10,
+              "nonlinear_solver": "scipy.optimize.root-hybr",
+              "nonlinear_xtol": 1e-10,
+              "null_rhs_relative_tolerance": 3e-09,
+              "real_molecular_soc_provider": false,
+              "structural_tolerance": 5e-10,
+              "variational_principle": "real-parameter McLachlan time-dependent variation",
+              "width_coordinates": "Gamma=exp(E) with real symmetric E; real symmetric B; orthonormal svec coordinates"
+            }
+          },
+          "maximum_schur_condition_number": 10000000000.0,
+          "minimum_predicted_residual_reduction": 1e-10,
+          "minimum_relative_residual_reduction": 1e-08,
+          "one_event_per_checkpoint": true,
+          "score": "full-curved-tangent Schur-complement predicted TDSE-defect reduction",
+          "tangent_absolute_cutoff": 1e-12,
+          "tangent_relative_cutoff": 1e-10
+        },
+        "state": {
+          "chirp_matrices": [
+            [
+              [
+                0.08
+              ]
+            ]
+          ],
+          "coefficients_imag": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "coefficients_real": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "p": [
+            [
+              0.3
+            ]
+          ],
+          "q": [
+            [
+              0.1
+            ]
+          ],
+          "time_au": 0.0,
+          "width_matrices": [
+            [
+              [
+                1.1
+              ]
+            ]
+          ]
+        },
+        "tangent_step": 2e-06
+      },
+      "kinetic_action_norm": 0.3666296122028337,
+      "moving": {
+        "bridge_fingerprint": "2dcf66c3a5934b1df58b155f9beca3f135e87a432558f65f59509b9cf054e3bb",
+        "candidate_count": 4,
+        "candidate_space": "full_complex_electronic_spinor",
+        "candidates": [
+          {
+            "candidate": {
+              "chirp_matrices": [
+                [
+                  0.08
+                ]
+              ],
+              "coordinate_axis": 0,
+              "displacement_kind": "momentum",
+              "p": [
+                -0.7488088481701516
+              ],
+              "q": [
+                0.1
+              ],
+              "sign": -1,
+              "source_packet": 0,
+              "width_matrices": [
+                [
+                  1.1
+                ]
+              ]
+            },
+            "record": {
+              "accepted_by_residual_oracle": true,
+              "candidate_fingerprint": "58ef147a8110e500ac540cbc037c0414c900a0c317191de4f8b92e3c327c7694",
+              "dataset_schema": "gnd-spawn-dataset-v1",
+              "exact_candidate_cost_seconds": null,
+              "features": {
+                "chirp_eigenvalues": [
+                  0.08
+                ],
+                "chirp_frobenius_norm": 0.08,
+                "displacement_kind": "momentum",
+                "dp_euclidean_norm": 1.0488088481701516,
+                "dp_width_inverse_norm2": 1.0000000000000002,
+                "dq_euclidean_norm": 0.0,
+                "dq_width_norm2": 0.0,
+                "feature_schema": "gnd-spawn-features-invariant-v1",
+                "ndim": 1,
+                "ngaussian": 1,
+                "nstate": 4,
+                "source_population": 1.0000000000000002,
+                "tdse_residual_norm2": 0.0006064190852424653,
+                "tdvp_metric_condition": 10.823659551773838,
+                "tdvp_metric_rank": 12,
+                "width_eigenvalues": [
+                  1.1
+                ],
+                "width_logdet": 0.09531017980432493
+              },
+              "oracle_config_fingerprint": "138069f3a19dac1fd60ec90bd600609be5569e810a556caf1d84c7b6ae9be50b",
+              "oracle_implementation": "full-complex-coefficient-tangent-v0.30.4",
+              "oracle_schema": "gnd-spawn-oracle-v2",
+              "predicted_residual_reduction": 0.00041405072133820955,
+              "rejection_reasons": [],
+              "relative_residual_reduction": 0.682779832321173,
+              "schur_condition_number": 27.39177615348035,
+              "schur_rank": 8,
+              "schur_singular_values": [
+                0.39346606031640097,
+                0.39346606031462295,
+                0.39346606031366144,
+                0.39346606031159703,
+                0.3934660603102613,
+                0.39346606030735964,
+                0.014364386532298386,
+                0.014364386526516204
+              ],
+              "split": "train",
+              "state_fingerprint": "1b70ae277112e4e89704dadea9ecaac6d97a51917f857ae643aead7150193913",
+              "trajectory_group_id": "[\"analytic-singlet-triplet\",\"v304-soc\"]"
+            },
+            "record_fingerprint": "69c7b5757d30333332315c8ce6649e655c240ffe1fab267f677d95c2a2991a9c",
+            "serial": 0,
+            "source_packet_id": "g000000"
+          },
+          {
+            "candidate": {
+              "chirp_matrices": [
+                [
+                  0.08
+                ]
+              ],
+              "coordinate_axis": 0,
+              "displacement_kind": "momentum",
+              "p": [
+                1.3488088481701517
+              ],
+              "q": [
+                0.1
+              ],
+              "sign": 1,
+              "source_packet": 0,
+              "width_matrices": [
+                [
+                  1.1
+                ]
+              ]
+            },
+            "record": {
+              "accepted_by_residual_oracle": true,
+              "candidate_fingerprint": "1c3dc3cf6db0e62ce371ea112f833289a43861f71ae30671bf676d8aa2fe6c51",
+              "dataset_schema": "gnd-spawn-dataset-v1",
+              "exact_candidate_cost_seconds": null,
+              "features": {
+                "chirp_eigenvalues": [
+                  0.08
+                ],
+                "chirp_frobenius_norm": 0.08,
+                "displacement_kind": "momentum",
+                "dp_euclidean_norm": 1.0488088481701516,
+                "dp_width_inverse_norm2": 1.0000000000000002,
+                "dq_euclidean_norm": 0.0,
+                "dq_width_norm2": 0.0,
+                "feature_schema": "gnd-spawn-features-invariant-v1",
+                "ndim": 1,
+                "ngaussian": 1,
+                "nstate": 4,
+                "source_population": 1.0000000000000002,
+                "tdse_residual_norm2": 0.0006064190852424653,
+                "tdvp_metric_condition": 10.823659551773838,
+                "tdvp_metric_rank": 12,
+                "width_eigenvalues": [
+                  1.1
+                ],
+                "width_logdet": 0.09531017980432493
+              },
+              "oracle_config_fingerprint": "138069f3a19dac1fd60ec90bd600609be5569e810a556caf1d84c7b6ae9be50b",
+              "oracle_implementation": "full-complex-coefficient-tangent-v0.30.4",
+              "oracle_schema": "gnd-spawn-oracle-v2",
+              "predicted_residual_reduction": 0.00046400163450306203,
+              "rejection_reasons": [],
+              "relative_residual_reduction": 0.7651501177894816,
+              "schur_condition_number": 27.391776141400406,
+              "schur_rank": 8,
+              "schur_singular_values": [
+                0.39346606031812875,
+                0.39346606031514775,
+                0.3934660603135878,
+                0.3934660603120568,
+                0.3934660603102734,
+                0.39346606030678916,
+                0.0143643865357165,
+                0.014364386532914063
+              ],
+              "split": "train",
+              "state_fingerprint": "1b70ae277112e4e89704dadea9ecaac6d97a51917f857ae643aead7150193913",
+              "trajectory_group_id": "[\"analytic-singlet-triplet\",\"v304-soc\"]"
+            },
+            "record_fingerprint": "a0a39fc62ed0b242b06aaf74d5b38773baed6d8fc29d8626ffc38feaa375026c",
+            "serial": 1,
+            "source_packet_id": "g000000"
+          },
+          {
+            "candidate": {
+              "chirp_matrices": [
+                [
+                  0.08
+                ]
+              ],
+              "coordinate_axis": 0,
+              "displacement_kind": "position",
+              "p": [
+                0.3
+              ],
+              "q": [
+                -0.8534625892455923
+              ],
+              "sign": -1,
+              "source_packet": 0,
+              "width_matrices": [
+                [
+                  1.1
+                ]
+              ]
+            },
+            "record": {
+              "accepted_by_residual_oracle": true,
+              "candidate_fingerprint": "1a47b8e0146d67bb43eb5698c1e2a9584f24aae9f746d3ea3dbe03c842fd0755",
+              "dataset_schema": "gnd-spawn-dataset-v1",
+              "exact_candidate_cost_seconds": null,
+              "features": {
+                "chirp_eigenvalues": [
+                  0.08
+                ],
+                "chirp_frobenius_norm": 0.08,
+                "displacement_kind": "position",
+                "dp_euclidean_norm": 0.0,
+                "dp_width_inverse_norm2": 0.0,
+                "dq_euclidean_norm": 0.9534625892455922,
+                "dq_width_norm2": 1.0,
+                "feature_schema": "gnd-spawn-features-invariant-v1",
+                "ndim": 1,
+                "ngaussian": 1,
+                "nstate": 4,
+                "source_population": 1.0000000000000002,
+                "tdse_residual_norm2": 0.0006064190852424653,
+                "tdvp_metric_condition": 10.823659551773838,
+                "tdvp_metric_rank": 12,
+                "width_eigenvalues": [
+                  1.1
+                ],
+                "width_logdet": 0.09531017980432493
+              },
+              "oracle_config_fingerprint": "138069f3a19dac1fd60ec90bd600609be5569e810a556caf1d84c7b6ae9be50b",
+              "oracle_implementation": "full-complex-coefficient-tangent-v0.30.4",
+              "oracle_schema": "gnd-spawn-oracle-v2",
+              "predicted_residual_reduction": 0.0004390539582925522,
+              "rejection_reasons": [],
+              "relative_residual_reduction": 0.7240107855724968,
+              "schur_condition_number": 27.19875141784438,
+              "schur_rank": 8,
+              "schur_singular_values": [
+                0.39493942459600034,
+                0.39493942459516745,
+                0.394939424593224,
+                0.3949394245914071,
+                0.39493942459086034,
+                0.3949394245898636,
+                0.014520498336297377,
+                0.014520498332026044
+              ],
+              "split": "train",
+              "state_fingerprint": "1b70ae277112e4e89704dadea9ecaac6d97a51917f857ae643aead7150193913",
+              "trajectory_group_id": "[\"analytic-singlet-triplet\",\"v304-soc\"]"
+            },
+            "record_fingerprint": "1fe558f1bb1da5f8eee8ab167acd610afec95ff0456ddaef335a1e2807c1d35f",
+            "serial": 2,
+            "source_packet_id": "g000000"
+          },
+          {
+            "candidate": {
+              "chirp_matrices": [
+                [
+                  0.08
+                ]
+              ],
+              "coordinate_axis": 0,
+              "displacement_kind": "position",
+              "p": [
+                0.3
+              ],
+              "q": [
+                1.0534625892455922
+              ],
+              "sign": 1,
+              "source_packet": 0,
+              "width_matrices": [
+                [
+                  1.1
+                ]
+              ]
+            },
+            "record": {
+              "accepted_by_residual_oracle": true,
+              "candidate_fingerprint": "25123638ac621a5e5aac0d77e12fde86591fe1bceb95c8dd871ba5314c193ba9",
+              "dataset_schema": "gnd-spawn-dataset-v1",
+              "exact_candidate_cost_seconds": null,
+              "features": {
+                "chirp_eigenvalues": [
+                  0.08
+                ],
+                "chirp_frobenius_norm": 0.08,
+                "displacement_kind": "position",
+                "dp_euclidean_norm": 0.0,
+                "dp_width_inverse_norm2": 0.0,
+                "dq_euclidean_norm": 0.9534625892455922,
+                "dq_width_norm2": 1.0,
+                "feature_schema": "gnd-spawn-features-invariant-v1",
+                "ndim": 1,
+                "ngaussian": 1,
+                "nstate": 4,
+                "source_population": 1.0000000000000002,
+                "tdse_residual_norm2": 0.0006064190852424653,
+                "tdvp_metric_condition": 10.823659551773838,
+                "tdvp_metric_rank": 12,
+                "width_eigenvalues": [
+                  1.1
+                ],
+                "width_logdet": 0.09531017980432493
+              },
+              "oracle_config_fingerprint": "138069f3a19dac1fd60ec90bd600609be5569e810a556caf1d84c7b6ae9be50b",
+              "oracle_implementation": "full-complex-coefficient-tangent-v0.30.4",
+              "oracle_schema": "gnd-spawn-oracle-v2",
+              "predicted_residual_reduction": 0.0004395412512374514,
+              "rejection_reasons": [],
+              "relative_residual_reduction": 0.7248143436345,
+              "schur_condition_number": 27.368993896300836,
+              "schur_rank": 8,
+              "schur_singular_values": [
+                0.3946697818022757,
+                0.3946697818014895,
+                0.39466978180089946,
+                0.39466978179975865,
+                0.39466978179667245,
+                0.39466978179548706,
+                0.014420324819007726,
+                0.014420324813460492
+              ],
+              "split": "train",
+              "state_fingerprint": "1b70ae277112e4e89704dadea9ecaac6d97a51917f857ae643aead7150193913",
+              "trajectory_group_id": "[\"analytic-singlet-triplet\",\"v304-soc\"]"
+            },
+            "record_fingerprint": "9be597e5429b905727c9e1038282fd755c5c0592ee99b95bef381dda69749a67",
+            "serial": 3,
+            "source_packet_id": "g000000"
+          }
+        ],
+        "dataset_certified": false,
+        "decision_stage": "residual_screening",
+        "empty_candidate_reason": null,
+        "final_admission": null,
+        "fingerprint": "7e91810c472ff2f1f55f3ef3268740a2e61e1912d151d5f0d3868dfbcba13281",
+        "hamiltonian_fingerprint": "8e4d2ce9754066dace63169fc4ae4f863897d1e51766e2634de05314c0e65bbf",
+        "identity": {
+          "family_id": "analytic-singlet-triplet",
+          "step": 0,
+          "trajectory_id": "v304-soc"
+        },
+        "oracle_implementation": "full-complex-coefficient-tangent-v0.30.4",
+        "packet_ids": [
+          "g000000"
+        ],
+        "schema": "gnd-molecular-spawn-checkpoint-v0.30.4-dev",
+        "settings": {
+          "event_order": "merge -> prune -> spawn -> no-op; at most one topology event",
+          "inherited": {
+            "adapt_every_steps": 2,
+            "basis_absolute_cutoff": 1e-12,
+            "basis_relative_cutoff": 1e-10,
+            "event_order": "merge then prune then spawn, with at most one event per checkpoint",
+            "maximum_activation_condition_number": 100000000.0,
+            "maximum_activation_velocity_amplification": 100.0,
+            "maximum_basis_condition_number": 10000000000.0,
+            "maximum_event_energy_jump_hartree": 2e-06,
+            "maximum_events_per_checkpoint": 1,
+            "maximum_packet_count": 12,
+            "maximum_projection_loss": 2e-07,
+            "merge_enabled": true,
+            "minimum_candidate_novelty": 1e-06,
+            "minimum_merge_overlap": 0.997,
+            "minimum_principal_axis_relative_gap": 1e-08,
+            "minimum_prune_age": 64,
+            "momentum_displacement_in_width_units": 1.0,
+            "newborn_activation": "coefficients active immediately; all shape coordinates dormant until both population and compatible-metric gates pass",
+            "newborn_activation_population": 1e-06,
+            "position_displacement_in_width_units": 1.0,
+            "projection_policy": "fixed-time full-SVD least-squares projection with fidelity, norm, loss, and energy receipts",
+            "prune_enabled": true,
+            "prune_population_threshold": 1e-10,
+            "spawn_directions": "signed intrinsic principal axes of each nondegenerate SPD width matrix",
+            "spawn_enabled": true,
+            "spawn_residual_capture_threshold": 2e-05,
+            "spawn_score": "norm of orthogonalized <g_candidate|dPsi/dt+iHPsi> divided by sqrt(novelty)",
+            "tdvp_settings": {
+              "adaptive_full_widths": true,
+              "allow_compatible_rank_deficiency": true,
+              "arbitrary_orthogonal_coordinate_covariance": true,
+              "fixed_electronic_frame": true,
+              "full_correlated_width_matrices": true,
+              "integrator": "fully implicit midpoint on the full-SVD TDVP vector field",
+              "linear_residual_relative_tolerance": 3e-09,
+              "maximum_chirp_spectral_radius": 100000000.0,
+              "maximum_retained_condition_number": 10000000000.0,
+              "maximum_step_log_width_frobenius_change": 0.75,
+              "maximum_step_norm_drift": 1e-07,
+              "maximum_width_eigenvalue": 100000000.0,
+              "metric_absolute_cutoff": 1e-12,
+              "metric_relative_cutoff": 1e-10,
+              "metric_solver": "full SVD with compatible-null-space audit",
+              "minimum_width_eigenvalue": 1e-08,
+              "multidimensional_nuclear_motion": true,
+              "nonlinear_max_function_evaluations": 1600,
+              "nonlinear_residual_tolerance": 8e-10,
+              "nonlinear_solver": "scipy.optimize.root-hybr",
+              "nonlinear_xtol": 1e-10,
+              "null_rhs_relative_tolerance": 3e-09,
+              "real_molecular_soc_provider": false,
+              "structural_tolerance": 5e-10,
+              "variational_principle": "real-parameter McLachlan time-dependent variation",
+              "width_coordinates": "Gamma=exp(E) with real symmetric E; real symmetric B; orthonormal svec coordinates"
+            }
+          },
+          "maximum_schur_condition_number": 10000000000.0,
+          "minimum_predicted_residual_reduction": 1e-10,
+          "minimum_relative_residual_reduction": 1e-08,
+          "one_event_per_checkpoint": true,
+          "score": "full-curved-tangent Schur-complement predicted TDSE-defect reduction",
+          "tangent_absolute_cutoff": 1e-12,
+          "tangent_relative_cutoff": 1e-10
+        },
+        "state": {
+          "chirp_matrices": [
+            [
+              [
+                0.08
+              ]
+            ]
+          ],
+          "coefficients_imag": [
+            [
+              0.7474710869057715,
+              0.27071893262571134,
+              -0.0545040448654391,
+              0.444916716965025
+            ]
+          ],
+          "coefficients_real": [
+            [
+              -0.16103502120397029,
+              -0.13920864510966657,
+              -0.26824858408389174,
+              -0.22317712702207054
+            ]
+          ],
+          "p": [
+            [
+              0.3
+            ]
+          ],
+          "q": [
+            [
+              0.1
+            ]
+          ],
+          "time_au": 0.0,
+          "width_matrices": [
+            [
+              [
+                1.1
+              ]
+            ]
+          ]
+        },
+        "tangent_step": 2e-06
+      },
+      "time_au": 0.0
+    },
+    {
+      "comparisons": [
+        {
+          "fixed_accepted": true,
+          "fixed_gain": 0.0004157666680257377,
+          "fixed_legacy_gain": 0.0002817954246611655,
+          "fixed_rank": 8,
+          "fixed_reasons": [],
+          "fixed_reference_gain": 0.00041576666802573795,
+          "fixed_relative_gain": 0.68278732952487,
+          "moving_accepted": true,
+          "moving_gain": 0.0004157666679078506,
+          "moving_legacy_gain": 0.00022669829924919417,
+          "moving_rank": 8,
+          "moving_reasons": [],
+          "moving_reference_gain": 0.00041576666790785026,
+          "moving_relative_gain": 0.6827873294831,
+          "serial": 0
+        },
+        {
+          "fixed_accepted": true,
+          "fixed_gain": 0.0004657695696373832,
+          "fixed_legacy_gain": 0.0002881398901638283,
+          "fixed_rank": 8,
+          "fixed_reasons": [],
+          "fixed_reference_gain": 0.00046576956963738315,
+          "fixed_relative_gain": 0.7649039355097363,
+          "moving_accepted": true,
+          "moving_gain": 0.0004657695695325511,
+          "moving_legacy_gain": 0.00018004897847958363,
+          "moving_rank": 8,
+          "moving_reasons": [],
+          "moving_reference_gain": 0.000465769569532551,
+          "moving_relative_gain": 0.7649039355076657,
+          "serial": 1
+        },
+        {
+          "fixed_accepted": true,
+          "fixed_gain": 0.000440221042154434,
+          "fixed_legacy_gain": 0.00014234590227134108,
+          "fixed_rank": 8,
+          "fixed_reasons": [],
+          "fixed_reference_gain": 0.000440221042154434,
+          "fixed_relative_gain": 0.7229472030563888,
+          "moving_accepted": true,
+          "moving_gain": 0.0004402210420380723,
+          "moving_legacy_gain": 0.00030810306794265346,
+          "moving_rank": 8,
+          "moving_reasons": [],
+          "moving_reference_gain": 0.0004402210420380723,
+          "moving_relative_gain": 0.7229472030260541,
+          "serial": 2
+        },
+        {
+          "fixed_accepted": true,
+          "fixed_gain": 0.0004411351730798478,
+          "fixed_legacy_gain": 0.00016157792142196665,
+          "fixed_rank": 8,
+          "fixed_reasons": [],
+          "fixed_reference_gain": 0.0004411351730798479,
+          "fixed_relative_gain": 0.7244484225176872,
+          "moving_accepted": true,
+          "moving_gain": 0.00044113517296103796,
+          "moving_legacy_gain": 0.00024090270874729938,
+          "moving_rank": 8,
+          "moving_reasons": [],
+          "moving_reference_gain": 0.00044113517296103796,
+          "moving_relative_gain": 0.7244484224836657,
+          "serial": 3
+        }
+      ],
+      "fixed": {
+        "bridge_fingerprint": "1aef722e82809d71f25a9ca52f934ec6e8368d894ed2607e1a0f3dbbfcc0f77b",
+        "candidate_count": 4,
+        "candidate_space": "full_complex_electronic_spinor",
+        "candidates": [
+          {
+            "candidate": {
+              "chirp_matrices": [
+                [
+                  0.10697731612152644
+                ]
+              ],
+              "coordinate_axis": 0,
+              "displacement_kind": "momentum",
+              "p": [
+                -0.7469419166111281
+              ],
+              "q": [
+                0.10696875822705354
+              ],
+              "sign": -1,
+              "source_packet": 0,
+              "width_matrices": [
+                [
+                  1.0952639561303021
+                ]
+              ]
+            },
+            "record": {
+              "accepted_by_residual_oracle": true,
+              "candidate_fingerprint": "c3c33997a46d5d45219748424db87c5952585c43578eb1118790b9e43f523da3",
+              "dataset_schema": "gnd-spawn-dataset-v1",
+              "exact_candidate_cost_seconds": null,
+              "features": {
+                "chirp_eigenvalues": [
+                  0.10697731612152644
+                ],
+                "chirp_frobenius_norm": 0.10697731612152644,
+                "displacement_kind": "momentum",
+                "dp_euclidean_norm": 1.0465485923407007,
+                "dp_width_inverse_norm2": 1.0,
+                "dq_euclidean_norm": 0.0,
+                "dq_width_norm2": 0.0,
+                "feature_schema": "gnd-spawn-features-invariant-v1",
+                "ndim": 1,
+                "ngaussian": 1,
+                "nstate": 4,
+                "source_population": 1.000000100888305,
+                "tdse_residual_norm2": 0.0006089255761600856,
+                "tdvp_metric_condition": 12.421438413949291,
+                "tdvp_metric_rank": 12,
+                "width_eigenvalues": [
+                  1.0952639561303021
+                ],
+                "width_logdet": 0.09099539004593653
+              },
+              "oracle_config_fingerprint": "138069f3a19dac1fd60ec90bd600609be5569e810a556caf1d84c7b6ae9be50b",
+              "oracle_implementation": "full-complex-coefficient-tangent-v0.30.4",
+              "oracle_schema": "gnd-spawn-oracle-v2",
+              "predicted_residual_reduction": 0.0004157666680257377,
+              "rejection_reasons": [],
+              "relative_residual_reduction": 0.68278732952487,
+              "schur_condition_number": 27.394739248111485,
+              "schur_rank": 8,
+              "schur_singular_values": [
+                0.39346574650977484,
+                0.3934657465097531,
+                0.3934657465097435,
+                0.3934657465097056,
+                0.3934657465096786,
+                0.39346574650966354,
+                0.014362821379278343,
+                0.014362821377717595
+              ],
+              "split": "train",
+              "state_fingerprint": "3bc83ae71ff78e1c62003d1b58a3abc517028bf861256d97c84e6f3007ddfed7",
+              "trajectory_group_id": "[\"analytic-singlet-triplet\",\"v304-soc\"]"
+            },
+            "record_fingerprint": "05df1fc6e1fc02682290d2ff4e652e855e0ef108913c97a40dcb111b8d56fe15",
+            "serial": 0,
+            "source_packet_id": "g000000"
+          },
+          {
+            "candidate": {
+              "chirp_matrices": [
+                [
+                  0.10697731612152644
+                ]
+              ],
+              "coordinate_axis": 0,
+              "displacement_kind": "momentum",
+              "p": [
+                1.3461552680702735
+              ],
+              "q": [
+                0.10696875822705354
+              ],
+              "sign": 1,
+              "source_packet": 0,
+              "width_matrices": [
+                [
+                  1.0952639561303021
+                ]
+              ]
+            },
+            "record": {
+              "accepted_by_residual_oracle": true,
+              "candidate_fingerprint": "5498fbbd7f0e0adb6853b01ac05495debd3b457d19033aeef23723f7b6ef6bb4",
+              "dataset_schema": "gnd-spawn-dataset-v1",
+              "exact_candidate_cost_seconds": null,
+              "features": {
+                "chirp_eigenvalues": [
+                  0.10697731612152644
+                ],
+                "chirp_frobenius_norm": 0.10697731612152644,
+                "displacement_kind": "momentum",
+                "dp_euclidean_norm": 1.046548592340701,
+                "dp_width_inverse_norm2": 1.0000000000000004,
+                "dq_euclidean_norm": 0.0,
+                "dq_width_norm2": 0.0,
+                "feature_schema": "gnd-spawn-features-invariant-v1",
+                "ndim": 1,
+                "ngaussian": 1,
+                "nstate": 4,
+                "source_population": 1.000000100888305,
+                "tdse_residual_norm2": 0.0006089255761600856,
+                "tdvp_metric_condition": 12.421438413949291,
+                "tdvp_metric_rank": 12,
+                "width_eigenvalues": [
+                  1.0952639561303021
+                ],
+                "width_logdet": 0.09099539004593653
+              },
+              "oracle_config_fingerprint": "138069f3a19dac1fd60ec90bd600609be5569e810a556caf1d84c7b6ae9be50b",
+              "oracle_implementation": "full-complex-coefficient-tangent-v0.30.4",
+              "oracle_schema": "gnd-spawn-oracle-v2",
+              "predicted_residual_reduction": 0.0004657695696373832,
+              "rejection_reasons": [],
+              "relative_residual_reduction": 0.7649039355097363,
+              "schur_condition_number": 27.394739245065903,
+              "schur_rank": 8,
+              "schur_singular_values": [
+                0.39346574650978694,
+                0.39346574650976285,
+                0.3934657465097517,
+                0.39346574650972177,
+                0.3934657465097202,
+                0.3934657465096761,
+                0.014362821380360054,
+                0.014362821379314807
+              ],
+              "split": "train",
+              "state_fingerprint": "3bc83ae71ff78e1c62003d1b58a3abc517028bf861256d97c84e6f3007ddfed7",
+              "trajectory_group_id": "[\"analytic-singlet-triplet\",\"v304-soc\"]"
+            },
+            "record_fingerprint": "7eada359f4a1713a3bff19e5a7ac3f329100a72cc8ff395a91af1bcf513760d4",
+            "serial": 1,
+            "source_packet_id": "g000000"
+          },
+          {
+            "candidate": {
+              "chirp_matrices": [
+                [
+                  0.10697731612152644
+                ]
+              ],
+              "coordinate_axis": 0,
+              "displacement_kind": "position",
+              "p": [
+                0.29960667572957267
+              ],
+              "q": [
+                -0.8485530467981764
+              ],
+              "sign": -1,
+              "source_packet": 0,
+              "width_matrices": [
+                [
+                  1.0952639561303021
+                ]
+              ]
+            },
+            "record": {
+              "accepted_by_residual_oracle": true,
+              "candidate_fingerprint": "f4072f8d0a8373d5674295b3be7392ad58e36b9296ebea90df1598a173b2e786",
+              "dataset_schema": "gnd-spawn-dataset-v1",
+              "exact_candidate_cost_seconds": null,
+              "features": {
+                "chirp_eigenvalues": [
+                  0.10697731612152644
+                ],
+                "chirp_frobenius_norm": 0.10697731612152644,
+                "displacement_kind": "position",
+                "dp_euclidean_norm": 0.0,
+                "dp_width_inverse_norm2": 0.0,
+                "dq_euclidean_norm": 0.95552180502523,
+                "dq_width_norm2": 0.9999999999999998,
+                "feature_schema": "gnd-spawn-features-invariant-v1",
+                "ndim": 1,
+                "ngaussian": 1,
+                "nstate": 4,
+                "source_population": 1.000000100888305,
+                "tdse_residual_norm2": 0.0006089255761600856,
+                "tdvp_metric_condition": 12.421438413949291,
+                "tdvp_metric_rank": 12,
+                "width_eigenvalues": [
+                  1.0952639561303021
+                ],
+                "width_logdet": 0.09099539004593653
+              },
+              "oracle_config_fingerprint": "138069f3a19dac1fd60ec90bd600609be5569e810a556caf1d84c7b6ae9be50b",
+              "oracle_implementation": "full-complex-coefficient-tangent-v0.30.4",
+              "oracle_schema": "gnd-spawn-oracle-v2",
+              "predicted_residual_reduction": 0.000440221042154434,
+              "rejection_reasons": [],
+              "relative_residual_reduction": 0.7229472030563888,
+              "schur_condition_number": 26.98695118980474,
+              "schur_rank": 8,
+              "schur_singular_values": [
+                0.3962231199998379,
+                0.3962231199998108,
+                0.39622311999978244,
+                0.39622311999976506,
+                0.3962231199997587,
+                0.396223119999755,
+                0.014682026039743222,
+                0.014682026035957889
+              ],
+              "split": "train",
+              "state_fingerprint": "3bc83ae71ff78e1c62003d1b58a3abc517028bf861256d97c84e6f3007ddfed7",
+              "trajectory_group_id": "[\"analytic-singlet-triplet\",\"v304-soc\"]"
+            },
+            "record_fingerprint": "6f008c7808a70e326de607b4eef5ec72985ffd74e9f71ccb14313bbb28df06ea",
+            "serial": 2,
+            "source_packet_id": "g000000"
+          },
+          {
+            "candidate": {
+              "chirp_matrices": [
+                [
+                  0.10697731612152644
+                ]
+              ],
+              "coordinate_axis": 0,
+              "displacement_kind": "position",
+              "p": [
+                0.29960667572957267
+              ],
+              "q": [
+                1.0624905632522834
+              ],
+              "sign": 1,
+              "source_packet": 0,
+              "width_matrices": [
+                [
+                  1.0952639561303021
+                ]
+              ]
+            },
+            "record": {
+              "accepted_by_residual_oracle": true,
+              "candidate_fingerprint": "ec9e53f24c5d528350a01a784e6a96675eed3633833448695810dbc10c15e065",
+              "dataset_schema": "gnd-spawn-dataset-v1",
+              "exact_candidate_cost_seconds": null,
+              "features": {
+                "chirp_eigenvalues": [
+                  0.10697731612152644
+                ],
+                "chirp_frobenius_norm": 0.10697731612152644,
+                "displacement_kind": "position",
+                "dp_euclidean_norm": 0.0,
+                "dp_width_inverse_norm2": 0.0,
+                "dq_euclidean_norm": 0.9555218050252299,
+                "dq_width_norm2": 0.9999999999999997,
+                "feature_schema": "gnd-spawn-features-invariant-v1",
+                "ndim": 1,
+                "ngaussian": 1,
+                "nstate": 4,
+                "source_population": 1.000000100888305,
+                "tdse_residual_norm2": 0.0006089255761600856,
+                "tdvp_metric_condition": 12.421438413949291,
+                "tdvp_metric_rank": 12,
+                "width_eigenvalues": [
+                  1.0952639561303021
+                ],
+                "width_logdet": 0.09099539004593653
+              },
+              "oracle_config_fingerprint": "138069f3a19dac1fd60ec90bd600609be5569e810a556caf1d84c7b6ae9be50b",
+              "oracle_implementation": "full-complex-coefficient-tangent-v0.30.4",
+              "oracle_schema": "gnd-spawn-oracle-v2",
+              "predicted_residual_reduction": 0.0004411351730798478,
+              "rejection_reasons": [],
+              "relative_residual_reduction": 0.7244484225176872,
+              "schur_condition_number": 27.17332030078885,
+              "schur_rank": 8,
+              "schur_singular_values": [
+                0.39592231004743217,
+                0.39592231004742645,
+                0.395922310047426,
+                0.3959223100474014,
+                0.3959223100473805,
+                0.39592231004734146,
+                0.01457025883250143,
+                0.014570258829795579
+              ],
+              "split": "train",
+              "state_fingerprint": "3bc83ae71ff78e1c62003d1b58a3abc517028bf861256d97c84e6f3007ddfed7",
+              "trajectory_group_id": "[\"analytic-singlet-triplet\",\"v304-soc\"]"
+            },
+            "record_fingerprint": "c35660df7560173143942b3161929b723a6ed35a3f861e08f6c70920ff252cc2",
+            "serial": 3,
+            "source_packet_id": "g000000"
+          }
+        ],
+        "dataset_certified": false,
+        "decision_stage": "residual_screening",
+        "empty_candidate_reason": null,
+        "final_admission": null,
+        "fingerprint": "ebfb792e498125088b82127260d32e068d4908404128ac89ce8318eba1c61a47",
+        "hamiltonian_fingerprint": "33e61d65342409db561475f6ad16b53f2f0a96c3622b043793322b47a56decd1",
+        "identity": {
+          "family_id": "analytic-singlet-triplet",
+          "step": 1,
+          "trajectory_id": "v304-soc"
+        },
+        "oracle_implementation": "full-complex-coefficient-tangent-v0.30.4",
+        "packet_ids": [
+          "g000000"
+        ],
+        "schema": "gnd-molecular-spawn-checkpoint-v0.30.4-dev",
+        "settings": {
+          "event_order": "merge -> prune -> spawn -> no-op; at most one topology event",
+          "inherited": {
+            "adapt_every_steps": 2,
+            "basis_absolute_cutoff": 1e-12,
+            "basis_relative_cutoff": 1e-10,
+            "event_order": "merge then prune then spawn, with at most one event per checkpoint",
+            "maximum_activation_condition_number": 100000000.0,
+            "maximum_activation_velocity_amplification": 100.0,
+            "maximum_basis_condition_number": 10000000000.0,
+            "maximum_event_energy_jump_hartree": 2e-06,
+            "maximum_events_per_checkpoint": 1,
+            "maximum_packet_count": 12,
+            "maximum_projection_loss": 2e-07,
+            "merge_enabled": true,
+            "minimum_candidate_novelty": 1e-06,
+            "minimum_merge_overlap": 0.997,
+            "minimum_principal_axis_relative_gap": 1e-08,
+            "minimum_prune_age": 64,
+            "momentum_displacement_in_width_units": 1.0,
+            "newborn_activation": "coefficients active immediately; all shape coordinates dormant until both population and compatible-metric gates pass",
+            "newborn_activation_population": 1e-06,
+            "position_displacement_in_width_units": 1.0,
+            "projection_policy": "fixed-time full-SVD least-squares projection with fidelity, norm, loss, and energy receipts",
+            "prune_enabled": true,
+            "prune_population_threshold": 1e-10,
+            "spawn_directions": "signed intrinsic principal axes of each nondegenerate SPD width matrix",
+            "spawn_enabled": true,
+            "spawn_residual_capture_threshold": 2e-05,
+            "spawn_score": "norm of orthogonalized <g_candidate|dPsi/dt+iHPsi> divided by sqrt(novelty)",
+            "tdvp_settings": {
+              "adaptive_full_widths": true,
+              "allow_compatible_rank_deficiency": true,
+              "arbitrary_orthogonal_coordinate_covariance": true,
+              "fixed_electronic_frame": true,
+              "full_correlated_width_matrices": true,
+              "integrator": "fully implicit midpoint on the full-SVD TDVP vector field",
+              "linear_residual_relative_tolerance": 3e-09,
+              "maximum_chirp_spectral_radius": 100000000.0,
+              "maximum_retained_condition_number": 10000000000.0,
+              "maximum_step_log_width_frobenius_change": 0.75,
+              "maximum_step_norm_drift": 1e-07,
+              "maximum_width_eigenvalue": 100000000.0,
+              "metric_absolute_cutoff": 1e-12,
+              "metric_relative_cutoff": 1e-10,
+              "metric_solver": "full SVD with compatible-null-space audit",
+              "minimum_width_eigenvalue": 1e-08,
+              "multidimensional_nuclear_motion": true,
+              "nonlinear_max_function_evaluations": 1600,
+              "nonlinear_residual_tolerance": 8e-10,
+              "nonlinear_solver": "scipy.optimize.root-hybr",
+              "nonlinear_xtol": 1e-10,
+              "null_rhs_relative_tolerance": 3e-09,
+              "real_molecular_soc_provider": false,
+              "structural_tolerance": 5e-10,
+              "variational_principle": "real-parameter McLachlan time-dependent variation",
+              "width_coordinates": "Gamma=exp(E) with real symmetric E; real symmetric B; orthonormal svec coordinates"
+            }
+          },
+          "maximum_schur_condition_number": 10000000000.0,
+          "minimum_predicted_residual_reduction": 1e-10,
+          "minimum_relative_residual_reduction": 1e-08,
+          "one_event_per_checkpoint": true,
+          "score": "full-curved-tangent Schur-complement predicted TDSE-defect reduction",
+          "tangent_absolute_cutoff": 1e-12,
+          "tangent_relative_cutoff": 1e-10
+        },
+        "state": {
+          "chirp_matrices": [
+            [
+              [
+                0.10697731612152644
+              ]
+            ]
+          ],
+          "coefficients_imag": [
+            [
+              -0.012041710938512855,
+              -0.007635471854803833,
+              5.028249401599992e-05,
+              -0.007569262674828866
+            ]
+          ],
+          "coefficients_real": [
+            [
+              0.9998535930944087,
+              0.0026455744476072234,
+              -0.004157997672350241,
+              -0.0028294446738984865
+            ]
+          ],
+          "p": [
+            [
+              0.29960667572957267
+            ]
+          ],
+          "q": [
+            [
+              0.10696875822705354
+            ]
+          ],
+          "time_au": 0.05,
+          "width_matrices": [
+            [
+              [
+                1.0952639561303021
+              ]
+            ]
+          ]
+        },
+        "tangent_step": 2e-06
+      },
+      "kinetic_action_norm": 0.3664810422605557,
+      "moving": {
+        "bridge_fingerprint": "2dcf66c3a5934b1df58b155f9beca3f135e87a432558f65f59509b9cf054e3bb",
+        "candidate_count": 4,
+        "candidate_space": "full_complex_electronic_spinor",
+        "candidates": [
+          {
+            "candidate": {
+              "chirp_matrices": [
+                [
+                  0.10697731612152644
+                ]
+              ],
+              "coordinate_axis": 0,
+              "displacement_kind": "momentum",
+              "p": [
+                -0.7469419166111281
+              ],
+              "q": [
+                0.10696875822705354
+              ],
+              "sign": -1,
+              "source_packet": 0,
+              "width_matrices": [
+                [
+                  1.0952639561303021
+                ]
+              ]
+            },
+            "record": {
+              "accepted_by_residual_oracle": true,
+              "candidate_fingerprint": "c3c33997a46d5d45219748424db87c5952585c43578eb1118790b9e43f523da3",
+              "dataset_schema": "gnd-spawn-dataset-v1",
+              "exact_candidate_cost_seconds": null,
+              "features": {
+                "chirp_eigenvalues": [
+                  0.10697731612152644
+                ],
+                "chirp_frobenius_norm": 0.10697731612152644,
+                "displacement_kind": "momentum",
+                "dp_euclidean_norm": 1.0465485923407007,
+                "dp_width_inverse_norm2": 1.0,
+                "dq_euclidean_norm": 0.0,
+                "dq_width_norm2": 0.0,
+                "feature_schema": "gnd-spawn-features-invariant-v1",
+                "ndim": 1,
+                "ngaussian": 1,
+                "nstate": 4,
+                "source_population": 1.0000001008883053,
+                "tdse_residual_norm2": 0.0006089255760246815,
+                "tdvp_metric_condition": 10.742030423329211,
+                "tdvp_metric_rank": 12,
+                "width_eigenvalues": [
+                  1.0952639561303021
+                ],
+                "width_logdet": 0.09099539004593653
+              },
+              "oracle_config_fingerprint": "138069f3a19dac1fd60ec90bd600609be5569e810a556caf1d84c7b6ae9be50b",
+              "oracle_implementation": "full-complex-coefficient-tangent-v0.30.4",
+              "oracle_schema": "gnd-spawn-oracle-v2",
+              "predicted_residual_reduction": 0.0004157666679078506,
+              "rejection_reasons": [],
+              "relative_residual_reduction": 0.6827873294831,
+              "schur_condition_number": 27.39473924827324,
+              "schur_rank": 8,
+              "schur_singular_values": [
+                0.39346574651433003,
+                0.393465746512132,
+                0.39346574651091565,
+                0.39346574651017957,
+                0.3934657465080753,
+                0.39346574650214916,
+                0.014362821383061403,
+                0.014362821377799068
+              ],
+              "split": "train",
+              "state_fingerprint": "7c437f8da2cba4833c7280e98fe6308dcfb3fa4bda497aa2c8ab1b756c55b027",
+              "trajectory_group_id": "[\"analytic-singlet-triplet\",\"v304-soc\"]"
+            },
+            "record_fingerprint": "50d90b7487575f7a1e0ba9280bc61756230995ad170822d546b858986a4965dc",
+            "serial": 0,
+            "source_packet_id": "g000000"
+          },
+          {
+            "candidate": {
+              "chirp_matrices": [
+                [
+                  0.10697731612152644
+                ]
+              ],
+              "coordinate_axis": 0,
+              "displacement_kind": "momentum",
+              "p": [
+                1.3461552680702735
+              ],
+              "q": [
+                0.10696875822705354
+              ],
+              "sign": 1,
+              "source_packet": 0,
+              "width_matrices": [
+                [
+                  1.0952639561303021
+                ]
+              ]
+            },
+            "record": {
+              "accepted_by_residual_oracle": true,
+              "candidate_fingerprint": "5498fbbd7f0e0adb6853b01ac05495debd3b457d19033aeef23723f7b6ef6bb4",
+              "dataset_schema": "gnd-spawn-dataset-v1",
+              "exact_candidate_cost_seconds": null,
+              "features": {
+                "chirp_eigenvalues": [
+                  0.10697731612152644
+                ],
+                "chirp_frobenius_norm": 0.10697731612152644,
+                "displacement_kind": "momentum",
+                "dp_euclidean_norm": 1.046548592340701,
+                "dp_width_inverse_norm2": 1.0000000000000004,
+                "dq_euclidean_norm": 0.0,
+                "dq_width_norm2": 0.0,
+                "feature_schema": "gnd-spawn-features-invariant-v1",
+                "ndim": 1,
+                "ngaussian": 1,
+                "nstate": 4,
+                "source_population": 1.0000001008883053,
+                "tdse_residual_norm2": 0.0006089255760246815,
+                "tdvp_metric_condition": 10.742030423329211,
+                "tdvp_metric_rank": 12,
+                "width_eigenvalues": [
+                  1.0952639561303021
+                ],
+                "width_logdet": 0.09099539004593653
+              },
+              "oracle_config_fingerprint": "138069f3a19dac1fd60ec90bd600609be5569e810a556caf1d84c7b6ae9be50b",
+              "oracle_implementation": "full-complex-coefficient-tangent-v0.30.4",
+              "oracle_schema": "gnd-spawn-oracle-v2",
+              "predicted_residual_reduction": 0.0004657695695325511,
+              "rejection_reasons": [],
+              "relative_residual_reduction": 0.7649039355076657,
+              "schur_condition_number": 27.394739249853103,
+              "schur_rank": 8,
+              "schur_singular_values": [
+                0.3934657465170452,
+                0.39346574651195887,
+                0.3934657465091754,
+                0.393465746508176,
+                0.3934657465067889,
+                0.3934657465047799,
+                0.014362821382988217,
+                0.014362821377069871
+              ],
+              "split": "train",
+              "state_fingerprint": "7c437f8da2cba4833c7280e98fe6308dcfb3fa4bda497aa2c8ab1b756c55b027",
+              "trajectory_group_id": "[\"analytic-singlet-triplet\",\"v304-soc\"]"
+            },
+            "record_fingerprint": "6c86bdd8b78a58c29a3287f109f868ffdfda32d0454dcd5f29fe5bc358180a66",
+            "serial": 1,
+            "source_packet_id": "g000000"
+          },
+          {
+            "candidate": {
+              "chirp_matrices": [
+                [
+                  0.10697731612152644
+                ]
+              ],
+              "coordinate_axis": 0,
+              "displacement_kind": "position",
+              "p": [
+                0.29960667572957267
+              ],
+              "q": [
+                -0.8485530467981764
+              ],
+              "sign": -1,
+              "source_packet": 0,
+              "width_matrices": [
+                [
+                  1.0952639561303021
+                ]
+              ]
+            },
+            "record": {
+              "accepted_by_residual_oracle": true,
+              "candidate_fingerprint": "f4072f8d0a8373d5674295b3be7392ad58e36b9296ebea90df1598a173b2e786",
+              "dataset_schema": "gnd-spawn-dataset-v1",
+              "exact_candidate_cost_seconds": null,
+              "features": {
+                "chirp_eigenvalues": [
+                  0.10697731612152644
+                ],
+                "chirp_frobenius_norm": 0.10697731612152644,
+                "displacement_kind": "position",
+                "dp_euclidean_norm": 0.0,
+                "dp_width_inverse_norm2": 0.0,
+                "dq_euclidean_norm": 0.95552180502523,
+                "dq_width_norm2": 0.9999999999999998,
+                "feature_schema": "gnd-spawn-features-invariant-v1",
+                "ndim": 1,
+                "ngaussian": 1,
+                "nstate": 4,
+                "source_population": 1.0000001008883053,
+                "tdse_residual_norm2": 0.0006089255760246815,
+                "tdvp_metric_condition": 10.742030423329211,
+                "tdvp_metric_rank": 12,
+                "width_eigenvalues": [
+                  1.0952639561303021
+                ],
+                "width_logdet": 0.09099539004593653
+              },
+              "oracle_config_fingerprint": "138069f3a19dac1fd60ec90bd600609be5569e810a556caf1d84c7b6ae9be50b",
+              "oracle_implementation": "full-complex-coefficient-tangent-v0.30.4",
+              "oracle_schema": "gnd-spawn-oracle-v2",
+              "predicted_residual_reduction": 0.0004402210420380723,
+              "rejection_reasons": [],
+              "relative_residual_reduction": 0.7229472030260541,
+              "schur_condition_number": 26.986951189543895,
+              "schur_rank": 8,
+              "schur_singular_values": [
+                0.3962231200051016,
+                0.39622312000098053,
+                0.3962231199988183,
+                0.3962231199977348,
+                0.3962231199970295,
+                0.39622311999554377,
+                0.01468202603800244,
+                0.014682026036294846
+              ],
+              "split": "train",
+              "state_fingerprint": "7c437f8da2cba4833c7280e98fe6308dcfb3fa4bda497aa2c8ab1b756c55b027",
+              "trajectory_group_id": "[\"analytic-singlet-triplet\",\"v304-soc\"]"
+            },
+            "record_fingerprint": "2f8d7984c0b73f4eff35391eeda0b7c64d635f903338ee4bf056e0ddc1a5c59c",
+            "serial": 2,
+            "source_packet_id": "g000000"
+          },
+          {
+            "candidate": {
+              "chirp_matrices": [
+                [
+                  0.10697731612152644
+                ]
+              ],
+              "coordinate_axis": 0,
+              "displacement_kind": "position",
+              "p": [
+                0.29960667572957267
+              ],
+              "q": [
+                1.0624905632522834
+              ],
+              "sign": 1,
+              "source_packet": 0,
+              "width_matrices": [
+                [
+                  1.0952639561303021
+                ]
+              ]
+            },
+            "record": {
+              "accepted_by_residual_oracle": true,
+              "candidate_fingerprint": "ec9e53f24c5d528350a01a784e6a96675eed3633833448695810dbc10c15e065",
+              "dataset_schema": "gnd-spawn-dataset-v1",
+              "exact_candidate_cost_seconds": null,
+              "features": {
+                "chirp_eigenvalues": [
+                  0.10697731612152644
+                ],
+                "chirp_frobenius_norm": 0.10697731612152644,
+                "displacement_kind": "position",
+                "dp_euclidean_norm": 0.0,
+                "dp_width_inverse_norm2": 0.0,
+                "dq_euclidean_norm": 0.9555218050252299,
+                "dq_width_norm2": 0.9999999999999997,
+                "feature_schema": "gnd-spawn-features-invariant-v1",
+                "ndim": 1,
+                "ngaussian": 1,
+                "nstate": 4,
+                "source_population": 1.0000001008883053,
+                "tdse_residual_norm2": 0.0006089255760246815,
+                "tdvp_metric_condition": 10.742030423329211,
+                "tdvp_metric_rank": 12,
+                "width_eigenvalues": [
+                  1.0952639561303021
+                ],
+                "width_logdet": 0.09099539004593653
+              },
+              "oracle_config_fingerprint": "138069f3a19dac1fd60ec90bd600609be5569e810a556caf1d84c7b6ae9be50b",
+              "oracle_implementation": "full-complex-coefficient-tangent-v0.30.4",
+              "oracle_schema": "gnd-spawn-oracle-v2",
+              "predicted_residual_reduction": 0.00044113517296103796,
+              "rejection_reasons": [],
+              "relative_residual_reduction": 0.7244484224836657,
+              "schur_condition_number": 27.173320304918157,
+              "schur_rank": 8,
+              "schur_singular_values": [
+                0.39592231005205464,
+                0.39592231005017997,
+                0.39592231004858497,
+                0.39592231004789114,
+                0.3959223100459579,
+                0.39592231004310097,
+                0.014570258832449286,
+                0.014570258827751566
+              ],
+              "split": "train",
+              "state_fingerprint": "7c437f8da2cba4833c7280e98fe6308dcfb3fa4bda497aa2c8ab1b756c55b027",
+              "trajectory_group_id": "[\"analytic-singlet-triplet\",\"v304-soc\"]"
+            },
+            "record_fingerprint": "1a932afd6854aa488d3316d5135d081698c85975fef0b8a7e79071d1260ed35f",
+            "serial": 3,
+            "source_packet_id": "g000000"
+          }
+        ],
+        "dataset_certified": false,
+        "decision_stage": "residual_screening",
+        "empty_candidate_reason": null,
+        "final_admission": null,
+        "fingerprint": "9418a9216356b02ba1bd94212bdcdc75a3d8513b08f813455a39ae4a50346858",
+        "hamiltonian_fingerprint": "8e4d2ce9754066dace63169fc4ae4f863897d1e51766e2634de05314c0e65bbf",
+        "identity": {
+          "family_id": "analytic-singlet-triplet",
+          "step": 1,
+          "trajectory_id": "v304-soc"
+        },
+        "oracle_implementation": "full-complex-coefficient-tangent-v0.30.4",
+        "packet_ids": [
+          "g000000"
+        ],
+        "schema": "gnd-molecular-spawn-checkpoint-v0.30.4-dev",
+        "settings": {
+          "event_order": "merge -> prune -> spawn -> no-op; at most one topology event",
+          "inherited": {
+            "adapt_every_steps": 2,
+            "basis_absolute_cutoff": 1e-12,
+            "basis_relative_cutoff": 1e-10,
+            "event_order": "merge then prune then spawn, with at most one event per checkpoint",
+            "maximum_activation_condition_number": 100000000.0,
+            "maximum_activation_velocity_amplification": 100.0,
+            "maximum_basis_condition_number": 10000000000.0,
+            "maximum_event_energy_jump_hartree": 2e-06,
+            "maximum_events_per_checkpoint": 1,
+            "maximum_packet_count": 12,
+            "maximum_projection_loss": 2e-07,
+            "merge_enabled": true,
+            "minimum_candidate_novelty": 1e-06,
+            "minimum_merge_overlap": 0.997,
+            "minimum_principal_axis_relative_gap": 1e-08,
+            "minimum_prune_age": 64,
+            "momentum_displacement_in_width_units": 1.0,
+            "newborn_activation": "coefficients active immediately; all shape coordinates dormant until both population and compatible-metric gates pass",
+            "newborn_activation_population": 1e-06,
+            "position_displacement_in_width_units": 1.0,
+            "projection_policy": "fixed-time full-SVD least-squares projection with fidelity, norm, loss, and energy receipts",
+            "prune_enabled": true,
+            "prune_population_threshold": 1e-10,
+            "spawn_directions": "signed intrinsic principal axes of each nondegenerate SPD width matrix",
+            "spawn_enabled": true,
+            "spawn_residual_capture_threshold": 2e-05,
+            "spawn_score": "norm of orthogonalized <g_candidate|dPsi/dt+iHPsi> divided by sqrt(novelty)",
+            "tdvp_settings": {
+              "adaptive_full_widths": true,
+              "allow_compatible_rank_deficiency": true,
+              "arbitrary_orthogonal_coordinate_covariance": true,
+              "fixed_electronic_frame": true,
+              "full_correlated_width_matrices": true,
+              "integrator": "fully implicit midpoint on the full-SVD TDVP vector field",
+              "linear_residual_relative_tolerance": 3e-09,
+              "maximum_chirp_spectral_radius": 100000000.0,
+              "maximum_retained_condition_number": 10000000000.0,
+              "maximum_step_log_width_frobenius_change": 0.75,
+              "maximum_step_norm_drift": 1e-07,
+              "maximum_width_eigenvalue": 100000000.0,
+              "metric_absolute_cutoff": 1e-12,
+              "metric_relative_cutoff": 1e-10,
+              "metric_solver": "full SVD with compatible-null-space audit",
+              "minimum_width_eigenvalue": 1e-08,
+              "multidimensional_nuclear_motion": true,
+              "nonlinear_max_function_evaluations": 1600,
+              "nonlinear_residual_tolerance": 8e-10,
+              "nonlinear_solver": "scipy.optimize.root-hybr",
+              "nonlinear_xtol": 1e-10,
+              "null_rhs_relative_tolerance": 3e-09,
+              "real_molecular_soc_provider": false,
+              "structural_tolerance": 5e-10,
+              "variational_principle": "real-parameter McLachlan time-dependent variation",
+              "width_coordinates": "Gamma=exp(E) with real symmetric E; real symmetric B; orthonormal svec coordinates"
+            }
+          },
+          "maximum_schur_condition_number": 10000000000.0,
+          "minimum_predicted_residual_reduction": 1e-10,
+          "minimum_relative_residual_reduction": 1e-08,
+          "one_event_per_checkpoint": true,
+          "score": "full-curved-tangent Schur-complement predicted TDSE-defect reduction",
+          "tangent_absolute_cutoff": 1e-12,
+          "tangent_relative_cutoff": 1e-10
+        },
+        "state": {
+          "chirp_matrices": [
+            [
+              [
+                0.10697731612152644
+              ]
+            ]
+          ],
+          "coefficients_imag": [
+            [
+              0.7547980002740023,
+              0.2641070674326797,
+              -0.053350741849800334,
+              0.44901663325868135
+            ]
+          ],
+          "coefficients_real": [
+            [
+              -0.15088306906536425,
+              -0.13294178846265717,
+              -0.26341952606046515,
+              -0.21502611851527206
+            ]
+          ],
+          "p": [
+            [
+              0.29960667572957267
+            ]
+          ],
+          "q": [
+            [
+              0.10696875822705354
+            ]
+          ],
+          "time_au": 0.05,
+          "width_matrices": [
+            [
+              [
+                1.0952639561303021
+              ]
+            ]
+          ]
+        },
+        "tangent_step": 2e-06
+      },
+      "time_au": 0.05
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "baseline": {
+    "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 python -m pytest -q tests test_v294_preml_contract.py test_v295_oracle_dataset.py",
+    "failed": 20,
+    "failures": [
+      "tests/test_v0232_release.py::test_v0232_release_campaign_passes_168_native_boolean_gates",
+      "tests/test_v0233_manifold_and_runtime_profiles.py::test_release_lock_and_scientific_compatibility_are_independent",
+      "tests/test_v0233_packaging.py::test_inherited_v0240_records_and_current_release_metadata_are_consistent",
+      "tests/test_v0233_release.py::test_v0233_release_campaign_passes_208_native_boolean_gates",
+      "tests/test_v0240_release.py::test_v0240_release_campaign_passes_256_native_boolean_gates",
+      "tests/test_v0241_packaging.py::test_v0241_release_metadata_evidence_and_claim_boundary_are_consistent",
+      "tests/test_v0241_release.py::test_v0241_release_campaign_passes_315_native_boolean_gates",
+      "tests/test_v0242_packaging.py::test_v0242_release_metadata_evidence_and_claim_boundary_are_consistent",
+      "tests/test_v0242_release.py::test_v0242_release_campaign_passes_400_native_boolean_gates",
+      "tests/test_v0250_packaging.py::test_v0250_metadata_evidence_and_claim_boundary_are_consistent",
+      "tests/test_v0250_release.py::test_v0250_release_campaign_passes_460_native_boolean_gates",
+      "tests/test_v0251_packaging.py::test_v0251_metadata_evidence_and_claim_boundary_are_consistent",
+      "tests/test_v0251_release.py::test_v0251_release_campaign_passes_535_native_boolean_gates",
+      "tests/test_v0252_packaging.py::test_v0252_metadata_evidence_and_claim_boundary_are_consistent",
+      "tests/test_v0252_release.py::test_v0252_release_campaign_passes_630_native_boolean_gates",
+      "tests/test_v0253_packaging.py::test_v0253_metadata_evidence_and_claim_boundary_are_consistent",
+      "tests/test_v0253_release.py::test_v0253_cumulative_release_campaign_passes_all_gates",
+      "tests/test_v0260_packaging.py::test_v0260_metadata_artifacts_and_claim_boundaries_are_consistent",
+      "tests/test_v0260_release.py::test_v0260_cumulative_release_campaign_passes_all_gates",
+      "tests/test_v0270_release.py::test_v0270_cumulative_release_campaign_passes_all_gates"
+    ],
+    "log_sha256": "a6db8bf0fa77158448cb26fc091fd36b9ca6f8e7fd7d96354e53d3a48d8097bb",
+    "missing_historical_evidence_files": [
+      "v0232_pyscf_runtime_evidence.json",
+      "v0240_external_soc_intake_campaign.json",
+      "v0241_pyscf_static_soc_campaign.json",
+      "v0242_pyscf_differential_soc_campaign.json",
+      "v0250_variational_soc_campaign.json",
+      "v0251_multigaussian_tdvp_campaign.json",
+      "v0252_adaptive_multigaussian_tdvp_campaign.json",
+      "v0253_controlled_basis_campaign.json",
+      "v0260_multidimensional_campaign.json"
+    ],
+    "missing_pyscf_release_tests": 11,
+    "passed": 619,
+    "seconds": 1225.64,
+    "skipped": 16
+  },
+  "baseline_commit": "7e7f53f0ec63d496e1e7ec6bf605e557b22b1997",
+  "focused_local": {
+    "passed": 131,
+    "seconds": 190.82
+  },
+  "github_integration": {
+    "commit": "6e4e82054baaf4f875805adc6c726c6e92376f3c",
+    "passed": 133,
+    "run_id": 43053744252,
+    "seconds": 144.79
+  },
+  "grid_validation_followup": {
+    "deselected": 14,
+    "passed": 13
+  },
+  "release_certified": false,
+  "schema": "gnd-v0301-validation-summary-v1",
+  "scientific_evidence": {
+    "gates_passed": 8,
+    "gates_total": 8,
+    "path": "results/v0301_molecular_hamiltonian_evidence.json"
+  },
+  "sparse_matrix_compatibility_followup": {
+    "deselected": 23,
+    "passed": 4
+  }
+}
