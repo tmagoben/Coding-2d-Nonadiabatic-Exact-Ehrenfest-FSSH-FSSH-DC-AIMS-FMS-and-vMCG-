@@ -39,6 +39,8 @@ IDs, ages, schedule, settings, provider identity, midpoint and metric residuals,
 activation spectra and shape speeds, and topology decisions. Replay recomputes
 all physical stages and compares exact receipts in the same numerical runtime;
 fingerprints alone are not proof of correctness.
+Only identified TDVP metric failures defer a proposed activation. Provider,
+transport and input-validation failures propagate to the caller.
 
 ## Evidence and controls
 

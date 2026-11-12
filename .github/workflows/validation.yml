@@ -58,6 +58,7 @@ jobs:
             tests/test_v0306_active_propagation.py \
             tests/test_v0306_active_invariance.py \
             tests/test_v0306_adaptive_trajectory.py \
+            tests/test_v0306_adaptive_evidence.py \
             test_v294_preml_contract.py \
             test_v295_oracle_dataset.py
       - name: Recompute midpoint convergence and replay evidence

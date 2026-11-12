@@ -165,3 +165,15 @@ def test_activation_gates_each_remain_authoritative(model, overrides, reason):
     mask, receipt = activate_molecular_shapes_v306(populated_pair(), *model[1:], [True, False], settings=settings)
     assert mask.tolist() == [True, False]
     assert receipt["trials"][0]["reason"] == reason
+
+
+def test_provider_failure_during_activation_is_not_a_metric_rejection(model, monkeypatch):
+    from gaussian_dynamics import molecular_active_v306 as active
+    original = active.build_molecular_tdvp_snapshot_v301
+    def fail_trial(*args, **kwargs):
+        if all(kwargs["active_shape_mask"]):
+            raise ValueError("molecular provider changed after Hamiltonian assembly")
+        return original(*args, **kwargs)
+    monkeypatch.setattr(active, "build_molecular_tdvp_snapshot_v301", fail_trial)
+    with pytest.raises(ValueError, match="provider changed"):
+        activate_molecular_shapes_v306(populated_pair(), *model[1:], [True, False])

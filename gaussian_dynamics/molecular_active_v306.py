@@ -10,7 +10,7 @@ import numpy as np
 
 from .correlated_gaussian_tdvp_v270 import pack_correlated_parameters_v270
 from .curved_basis_adaptation_v292 import CurvedBasisSettingsV292
-from .curved_basis_adaptation_v293 import active_parameter_indices_v293
+from .curved_basis_adaptation_v293 import active_parameter_indices_v293, TDVPMetricErrorV293
 from .molecular_hamiltonian_v301 import build_molecular_tdvp_snapshot_v301
 from .molecular_midpoint_v302 import (
     MolecularMidpointSettingsV302, _restore, _state_payload, _state_from_payload, _observables,
@@ -167,7 +167,7 @@ def activate_molecular_shapes_v306(state, bridge, hamiltonian, active_shape_mask
         trial_mask[i] = True
         try:
             trial = evaluate(trial_mask)
-        except ValueError as error:
+        except TDVPMetricErrorV293 as error:
             row.update(reason="incompatible_trial_metric", detail=str(error))
             trials.append(row)
             continue

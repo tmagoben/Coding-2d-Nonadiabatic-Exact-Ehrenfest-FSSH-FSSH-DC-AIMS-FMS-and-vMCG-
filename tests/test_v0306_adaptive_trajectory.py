@@ -1,4 +1,4 @@
-"""Ordered lifecycle steps, exact replay, and non-forgeable trajectory evidence."""
+"""Ordered lifecycle steps, exact replay, and recomputed trajectory evidence."""
 from copy import deepcopy
 from dataclasses import replace
 import json
