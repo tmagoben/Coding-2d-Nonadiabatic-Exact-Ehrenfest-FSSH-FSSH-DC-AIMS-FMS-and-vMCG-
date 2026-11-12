@@ -17,7 +17,8 @@ from .curved_basis_adaptation_v292 import CurvedBasisSettingsV292
 from .curved_basis_adaptation_v293 import evaluate_curved_spawn_candidate_v293, candidate_coefficient_block_v293
 from .curved_geometry_v293 import straight_path_v293
 
-V294_ORACLE_SCHEMA = "gnd-spawn-oracle-v1"
+V294_ORACLE_SCHEMA = "gnd-spawn-oracle-v2"
+V294_ORACLE_IMPLEMENTATION = "full-complex-coefficient-tangent-v0.30.4"
 V294_DATASET_SCHEMA = "gnd-spawn-dataset-v1"
 V294_FEATURE_SCHEMA = "gnd-spawn-features-invariant-v1"
 V294_SPLIT_SCHEMA = "trajectory-group-hash-v1"
@@ -127,9 +128,11 @@ class SpawnOracleRecordV294:
     accepted_by_residual_oracle: bool
     rejection_reasons: tuple
     exact_candidate_cost_seconds: float | None = None
+    oracle_implementation: str = V294_ORACLE_IMPLEMENTATION
 
     def validate(self):
         if self.oracle_schema!=V294_ORACLE_SCHEMA or self.dataset_schema!=V294_DATASET_SCHEMA: raise ValueError("schema mismatch")
+        if self.oracle_implementation != V294_ORACLE_IMPLEMENTATION: raise ValueError("oracle implementation mismatch; recompute legacy labels")
         if self.split not in ("train","validation","test"): raise ValueError("invalid split")
         if self.accepted_by_residual_oracle != (len(self.rejection_reasons)==0): raise ValueError("decision/reasons mismatch")
         for x in (self.predicted_residual_reduction,self.relative_residual_reduction,self.schur_condition_number):
@@ -151,7 +154,8 @@ def evaluate_candidate_oracle_v294(state,connection,quadrature,snapshot,candidat
     if not np.isfinite(cond): cond=1e300
     return SpawnOracleRecordV294(
         V294_ORACLE_SCHEMA,V294_DATASET_SCHEMA,str(trajectory_group_id),trajectory_split_v294(trajectory_group_id),
-        stable_hash_v294(state_payload),stable_hash_v294(candidate.as_dict()),stable_hash_v294(asdict(settings)),_canon(features),
+        stable_hash_v294(state_payload),stable_hash_v294(candidate.as_dict()),
+        stable_hash_v294({"implementation":V294_ORACLE_IMPLEMENTATION,"settings":asdict(settings)}),_canon(features),
         float(ev.predicted_residual_reduction),float(ev.relative_residual_reduction),int(ev.schur_rank),cond,
         tuple(float(x) for x in ev.schur_singular_values),bool(ev.admitted),reasons,
         None if exact_candidate_cost_seconds is None else float(exact_candidate_cost_seconds),

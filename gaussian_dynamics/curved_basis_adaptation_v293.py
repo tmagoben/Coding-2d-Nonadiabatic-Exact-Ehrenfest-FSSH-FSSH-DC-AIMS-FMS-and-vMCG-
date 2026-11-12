@@ -30,6 +30,7 @@ from .curved_basis_adaptation_v292 import (
     _weighted_flat,
     _svd_real_solve,
     _parameter_active_indices_v292,
+    _evaluate_complete_coefficient_tangent_v292,
 )
 from .curved_geometry_v293 import ConnectionFieldV293, straight_path_v293, wilson_path_v293
 
@@ -91,23 +92,15 @@ def candidate_coefficient_block_v293(candidate,nstate,connection,quadrature,*,pa
 
 
 def evaluate_curved_spawn_candidate_v293(state,connection,quadrature,snapshot,candidate,*,path_factory=straight_path_v293,settings=CurvedBasisSettingsV292()):
-    state=state.validate(require_normalized=False); snapshot=snapshot.validate(); settings=settings.validate()
-    k=candidate_coefficient_block_v293(candidate,state.nstate,connection,quadrature,path_factory=path_factory)
-    j=snapshot.jacobian; m=snapshot.metric
-    u,s,vh=np.linalg.svd(0.5*(m+m.T)); cut=max(settings.tangent_absolute_cutoff,settings.tangent_relative_cutoff*float(s[0])); keep=s>cut
-    mp=(vh[keep].T/s[keep])@u[:,keep].T if np.any(keep) else np.zeros_like(m)
-    x=np.real(j.conj().T@k); c=np.real(k.conj().T@k); schur=0.5*((c-x.T@mp@x)+(c-x.T@mp@x).T)
-    q=np.real(k.conj().T@snapshot.residual_weighted); g=np.real(j.conj().T@snapshot.residual_weighted); y=q-x.T@mp@g
-    su,ss,svh=np.linalg.svd(schur); scut=max(settings.tangent_absolute_cutoff,settings.tangent_relative_cutoff*(float(ss[0]) if len(ss) else 0.0)); sk=ss>scut
-    rank=int(np.count_nonzero(sk)); cond=float(ss[0]/ss[rank-1]) if rank else float('inf')
-    alpha=svh[sk].T@((su[:,sk].T@y)/ss[sk]) if rank else np.zeros(state.nstate)
-    delta=float(max(y@alpha,0.0)); r2=float(np.vdot(snapshot.residual_weighted,snapshot.residual_weighted).real); relative=delta/max(r2,1e-30)
-    reasons=[]
-    if rank==0: reasons.append("no-new-curved-tangent-direction")
-    if cond>settings.maximum_schur_condition_number: reasons.append("ill-conditioned-curved-candidate-space")
-    if delta<settings.minimum_predicted_residual_reduction: reasons.append("insufficient-predicted-residual-reduction")
-    if relative<settings.minimum_relative_residual_reduction: reasons.append("insufficient-relative-residual-reduction")
-    return CurvedCandidateEvaluationV292(candidate,ss,rank,cond,y,delta,relative,tuple(reasons),not reasons).validate()
+    state = state.validate(require_normalized=False)
+    connection = connection.validate()
+    quadrature = quadrature.validate()
+    k = candidate_coefficient_block_v293(
+        candidate, state.nstate, connection, quadrature, path_factory=path_factory,
+    )
+    return _evaluate_complete_coefficient_tangent_v292(
+        snapshot, candidate, k, settings=settings,
+    )
 
 
 def select_curved_spawn_candidate_v293(state,connection,quadrature,snapshot,*,path_factory=straight_path_v293,settings=CurvedBasisSettingsV292()):

@@ -144,13 +144,13 @@ class CoordinateGaugeV293:
     name: str = "gauge"
     def at(self,r):
         u=np.asarray(self.matrix(np.asarray(r,float)),complex)
-        if u.shape!=(self.nstate,self.nstate) or _unitary_error(u)>5e-9: raise ValueError("gauge must be unitary")
+        if u.shape!=(self.nstate,self.nstate) or not np.all(np.isfinite(u)) or _unitary_error(u)>5e-9: raise ValueError("gauge must be finite and unitary")
         return u
     def deriv(self,r,*,step=2e-6):
         r=np.asarray(r,float)
         if self.derivative is not None:
             d=np.asarray(self.derivative(r),complex)
-            if d.shape!=(self.ndim,self.nstate,self.nstate): raise ValueError("gauge derivative has wrong shape")
+            if d.shape!=(self.ndim,self.nstate,self.nstate) or not np.all(np.isfinite(d)): raise ValueError("gauge derivative has wrong shape or non-finite values")
             return d
         out=[]
         for mu in range(self.ndim):
@@ -182,7 +182,12 @@ def wilson_path_v293(connection: ConnectionFieldV293, path: PolylinePathV293, *,
         if np.array_equal(a, b):
             continue
         if connection.segment_transport is not None:
-            w=connection.segment_transport(a,b) @ w
+            segment=np.asarray(connection.segment_transport(a,b),complex)
+            if segment.shape!=(connection.nstate,connection.nstate) or not np.all(np.isfinite(segment)):
+                raise ValueError("segment transport has wrong shape or non-finite values")
+            if _unitary_error(segment)>5e-9:
+                raise ValueError("segment transport must be unitary")
+            w=segment @ w
             continue
         dr=b-a
         def rhs(s,y):

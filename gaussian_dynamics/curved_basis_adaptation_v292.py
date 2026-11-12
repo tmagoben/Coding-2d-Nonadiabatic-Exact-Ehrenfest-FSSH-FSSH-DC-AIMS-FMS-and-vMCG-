@@ -12,7 +12,7 @@ The key quantity is the Schur complement
     S_c = Re(K^† W K) - Re(J^† W K)^T M^+ Re(J^† W K),
 
 where J is the complete current real-parameter tangent Jacobian, M=Re(J^†WJ), and K
-contains the candidate coefficient tangents g_c L_c e_a.  If r is the current TDSE
+contains both coefficient tangents [g_c L_c e_a, i g_c L_c e_a]. If r is the current TDSE
 defect, the candidate's predicted instantaneous squared-defect reduction is
 
     Delta_c = y^T S_c^+ y,
@@ -300,6 +300,9 @@ class CurvedTDVPSnapshotV292:
             raise ValueError("TDVP snapshot dimensions disagree")
         if self.residual_weighted.shape != (j.shape[0],):
             raise ValueError("TDVP residual dimension disagrees")
+        if any(not np.all(np.isfinite(getattr(self, name))) for name in
+               ("jacobian", "metric", "rhs", "velocity", "residual_weighted")):
+            raise ValueError("TDVP snapshot contains non-finite values")
         return self
 
 
@@ -371,42 +374,65 @@ def candidate_coefficient_block_v292(candidate, nstate, connection, quadrature):
     return np.stack(cols, axis=1)
 
 
-def evaluate_curved_spawn_candidate_v292(state, connection, quadrature, snapshot, candidate, *, settings=CurvedBasisSettingsV292()):
-    state = state.validate(require_normalized=False)
-    connection = connection.validate(); quadrature = quadrature.validate(); snapshot = snapshot.validate(); settings = settings.validate()
-    k = candidate_coefficient_block_v292(candidate, state.nstate, connection, quadrature)
+def _evaluate_complete_coefficient_tangent_v292(snapshot, candidate, coefficient_block, *, settings):
+    """Score all real and imaginary newborn coefficients after removing old tangents.
+
+    If K contains the complex coefficient basis, the real-parameter tangent is
+    [K, iK]. Project its realification against the retained realified J subspace.
+    An SVD of that projected block computes the Schur spectrum without subtracting
+    nearly equal Gram matrices. Cutoffs retain their original *metric* units.
+    """
+    snapshot = snapshot.validate()
+    settings = settings.validate()
+    k = np.asarray(coefficient_block, dtype=complex)
     j = snapshot.jacobian
-    m = snapshot.metric
-    # M^+ actions are obtained from explicit SVD for deterministic diagnostics.
-    u, s, vh = np.linalg.svd(0.5*(m+m.T))
-    cut = max(settings.tangent_absolute_cutoff, settings.tangent_relative_cutoff*float(s[0]))
-    keep = s > cut
-    mp = (vh[keep].T / s[keep]) @ u[:, keep].T if np.any(keep) else np.zeros_like(m)
-    x = np.real(j.conj().T @ k)
-    c = np.real(k.conj().T @ k)
-    schur = 0.5*((c - x.T@mp@x) + (c - x.T@mp@x).T)
-    q = np.real(k.conj().T @ snapshot.residual_weighted)
-    g = np.real(j.conj().T @ snapshot.residual_weighted)
-    y = q - x.T@mp@g
-    su, ss, svh = np.linalg.svd(schur)
-    scut = max(settings.tangent_absolute_cutoff, settings.tangent_relative_cutoff*(float(ss[0]) if len(ss) else 0.0))
-    sk = ss > scut
-    rank = int(np.count_nonzero(sk))
-    cond = float(ss[0]/ss[rank-1]) if rank else float("inf")
-    alpha = svh[sk].T @ ((su[:, sk].T@y)/ss[sk]) if rank else np.zeros(state.nstate)
-    delta = float(max(y@alpha, 0.0))
-    residual_norm2 = float(np.vdot(snapshot.residual_weighted, snapshot.residual_weighted).real)
-    relative = delta/max(residual_norm2, 1e-30)
+    if k.ndim != 2 or k.shape[0] != j.shape[0] or not np.all(np.isfinite(k)):
+        raise ValueError("candidate block has wrong shape or non-finite values")
+    if j.shape[1] == 0 or k.shape[1] == 0:
+        raise ValueError("tangent blocks must have at least one column")
+    jr = np.vstack([j.real, j.imag])
+    # dPsi/dRe(c) = K; dPsi/dIm(c) = iK.
+    kr = np.block([[k.real, -k.imag], [k.imag, k.real]])
+    rr = np.concatenate([snapshot.residual_weighted.real, snapshot.residual_weighted.imag])
+    u, s, _ = np.linalg.svd(jr, full_matrices=False)
+    metric_cut = max(settings.tangent_absolute_cutoff,
+                     settings.tangent_relative_cutoff * float(s[0] ** 2))
+    old_basis = u[:, s ** 2 > metric_cut]
+    novel = kr - old_basis @ (old_basis.T @ kr)
+    residual = rr - old_basis @ (old_basis.T @ rr)
+    su, singular, _ = np.linalg.svd(novel, full_matrices=False)
+    spectrum = singular ** 2
+    cutoff = max(settings.tangent_absolute_cutoff,
+                 settings.tangent_relative_cutoff * float(spectrum[0]))
+    keep = spectrum > cutoff
+    rank = int(np.count_nonzero(keep))
+    condition = float(spectrum[0] / spectrum[rank - 1]) if rank else float("inf")
+    components = su[:, keep].T @ residual
+    delta = float(components @ components)
+    relative = delta / max(float(rr @ rr), 1e-30)
     reasons = []
     if rank == 0:
         reasons.append("no-new-curved-tangent-direction")
-    if cond > settings.maximum_schur_condition_number:
+    if condition > settings.maximum_schur_condition_number:
         reasons.append("ill-conditioned-curved-candidate-space")
     if delta < settings.minimum_predicted_residual_reduction:
         reasons.append("insufficient-predicted-residual-reduction")
     if relative < settings.minimum_relative_residual_reduction:
         reasons.append("insufficient-relative-residual-reduction")
-    return CurvedCandidateEvaluationV292(candidate, ss, rank, cond, y, delta, relative, tuple(reasons), not reasons).validate()
+    return CurvedCandidateEvaluationV292(
+        candidate, spectrum, rank, condition, novel.T @ residual, delta,
+        relative, tuple(reasons), not reasons,
+    ).validate()
+
+
+def evaluate_curved_spawn_candidate_v292(state, connection, quadrature, snapshot, candidate, *, settings=CurvedBasisSettingsV292()):
+    state = state.validate(require_normalized=False)
+    connection = connection.validate()
+    quadrature = quadrature.validate()
+    k = candidate_coefficient_block_v292(candidate, state.nstate, connection, quadrature)
+    return _evaluate_complete_coefficient_tangent_v292(
+        snapshot, candidate, k, settings=settings,
+    )
 
 
 def select_curved_spawn_candidate_v292(state, connection, quadrature, snapshot, *, settings=CurvedBasisSettingsV292()):
@@ -485,16 +511,22 @@ def no_event_reduction_v292(state):
 
 
 def actual_linear_residual_reduction_v292(snapshot, candidate_block):
-    """Independent least-squares check of residual reduction after adding K to J."""
-    snapshot = snapshot.validate(); k = np.asarray(candidate_block, dtype=complex)
-    # Real parameters: stack real/imaginary parts of complex residual equation.
-    a = np.concatenate([snapshot.jacobian, k], axis=1)
+    """Independent augmented real least-squares check, including imaginary coefficients.
+
+    Compare the best residual in the old and augmented spaces. This also works
+    when a supplied residual is not exactly orthogonal to the existing tangent.
+    The reference uses lstsq directly, independently of the production projection.
+    """
+    snapshot = snapshot.validate()
+    k = np.asarray(candidate_block, dtype=complex)
+    j = snapshot.jacobian
+    a = np.concatenate([j, k, 1j * k], axis=1)
     ar = np.vstack([a.real, a.imag])
+    jr = np.vstack([j.real, j.imag])
     rr = np.concatenate([snapshot.residual_weighted.real, snapshot.residual_weighted.imag])
-    # Existing residual is already orthogonal to current J up to numerical solve error.
-    delta = np.linalg.lstsq(ar, -rr, rcond=1e-10)[0]
-    after = rr + ar@delta
-    return float(rr@rr - after@after)
+    before = rr + jr @ np.linalg.lstsq(jr, -rr, rcond=1e-10)[0]
+    after = rr + ar @ np.linalg.lstsq(ar, -rr, rcond=1e-10)[0]
+    return float(before @ before - after @ after)
 
 
 def checkpoint_fingerprint_v292(payload):

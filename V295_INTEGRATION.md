@@ -49,6 +49,16 @@ be frozen for future surrogate training.
 
 ## Next acceptance step
 
+The v0.30.4 development increment now emits every package-level residual-oracle
+record from a complete molecular Hamiltonian snapshot and exactly replays it.
+It also repairs the missing imaginary coefficient directions and versions those
+corrected labels separately. See [the implementation and audit](V304_MOLECULAR_SPAWNING.md).
+
+The schema adapter must still distinguish a full-spinor residual-screening result
+from a final, state-targeted spawn. The existing top-level `OracleDecision` cannot
+express that distinction without an explicit contract extension. No target-state
+label or final admission outcome is inferred from residual acceptance.
+
 Connect the recovered curved spawning oracle through an explicit schema adapter
 and require physical invariance transforms before calling v0.29.5 scientifically
 integrated. Passing the focused test suites verifies their separate interfaces;
