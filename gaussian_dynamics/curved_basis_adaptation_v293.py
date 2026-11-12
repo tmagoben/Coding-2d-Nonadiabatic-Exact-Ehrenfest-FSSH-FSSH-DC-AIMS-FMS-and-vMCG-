@@ -90,6 +90,9 @@ def build_tdvp_snapshot_v293(state,connection,quadrature,hpsi,*,path_factory=str
     if jacobian is None:
         j=finite_difference_full_jacobian_v293(state,connection,quadrature,path_factory=path_factory,relative_step=relative_step,active_shape_mask=active_shape_mask)
     else:
+        state.validate(require_normalized=False); connection.validate()
+        if (state.ndim,state.nstate)!=(connection.ndim,connection.nstate) or quadrature.ndim!=state.ndim:
+            raise ValueError("state/connection/quadrature dimensions disagree")
         j=np.asarray(jacobian,dtype=complex)
         expected=(quadrature.npoint*state.nstate,len(active_parameter_indices_v293(state,active_shape_mask)))
         if j.shape!=expected or not np.all(np.isfinite(j)):

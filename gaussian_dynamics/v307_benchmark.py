@@ -5,6 +5,9 @@ physical fields and full-trace digests. Selected complete traces are physically
 replayed during generation; offline gates do not pretend to rerun that replay.
 """
 from dataclasses import replace
+from concurrent.futures import ProcessPoolExecutor
+import multiprocessing
+from pathlib import Path
 import json
 import platform
 import re
@@ -204,66 +207,113 @@ def evaluate_convergence_gates_v307(evidence):
     return {key: bool(value) for key,value in gates.items()}
 
 
-def run_v307_convergence_campaign(*, generation_commit, verbose=False):
+def _settings_v307():
+    default = CurvedBasisSettingsV292()
+    return replace(default,inherited=replace(default.inherited,maximum_packet_count=2,adapt_every_steps=1))
+
+
+def _setup_v307(q,p,moving=False,soc=True):
+    state,bridge,grid,gauge,_ = analytic_soc_fixture_v307(moving=moving,soc_enabled=soc,q0=q,p0=p)
+    identity = dict(family_id="analytic-singlet-triplet",trajectory_id=f"v307-{q}-{p}-{'moving' if moving else 'fixed'}-soc{soc}")
+    initial = evaluate_molecular_admission_v305(state,bridge,grid,**identity,step=0,settings=_settings_v307())
+    replay = replay_molecular_admission_v305(serialize_molecular_admission_v305(initial.receipt),bridge,grid)
+    return state,bridge,grid,gauge,identity,initial,replay.receipt == initial.receipt
+
+def _evolve_v307(model,times,n,*,replay=False,verbose=False):
+    state,bridge,grid,gauge,identity,initial,_ = model
+    trace = run_molecular_checkpoints_v307(initial.after,bridge,grid,checkpoint_times=times,substeps=n,**identity,
+                                          **initial.receipt["after_metadata"],basis_settings=_settings_v307())
+    serialized = serialize_checkpoint_trajectory_v307(trace)
+    replay_match = None
+    if replay:
+        replay_match = serialize_checkpoint_trajectory_v307(replay_checkpoint_trajectory_v307(serialized,bridge,grid)) == serialized
+    connection = bridge.connection_field()
+    def physical(values):
+        return np.array([gauge.matrix(q)@v for q,v in zip(grid.quadrature.points,values)]) if bridge.gauge is not None else values
+    psi = evaluate_curved_state_v293(state,connection,grid.quadrature)
+    exact = expm_multiply(-1j*times[-1]*grid.matrix,psi.ravel()).reshape(-1,4)
+    rows = []
+    for result in trace:
+        r = result.receipt
+        row = {k:r[k] for k in ("identity","checkpoint_time","substeps","before","after","before_metadata","after_metadata","activation","topology_status","dataset_certified","training_eligible")}
+        row.update(topology_event=r["topology"]["event_kind"] if r["topology"] else None,
+                   topology_reason=r["topology"]["event_reason"] if r["topology"] else None)
+        row["propagations"] = [{**{k:p[k] for k in ("dt","iterations","active_shape_mask","scaled_midpoint_residual","midpoint_metric_condition","midpoint_metric_rank","midpoint_svd_residual","midpoint_null_rhs_relative","before_observables","after_observables")},
+                                "before_time":p["before"]["time_au"],"after_time":p["after"]["time_au"]} for p in r["propagations"]]
+        rows.append(row)
+    run = {"checkpoint_times":list(times),"substeps":n,"checkpoints":rows,"full_trace_fingerprint":json.loads(serialized)["fingerprint"],"full_replay_matches":replay_match,
+           "weights":grid.quadrature.weights.tolist(),"initial_field":_field_payload(physical(psi)),
+           "final_field":_field_payload(physical(evaluate_curved_state_v293(trace[-1].after,connection,grid.quadrature))),"exact_field":_field_payload(physical(exact))}
+    if verbose:
+        print(json.dumps({"trajectory":identity["trajectory_id"],"substeps":n,"checkpoints":len(times),**_run_metrics(run)},sort_keys=True),flush=True)
+    return run
+
+def _frame_v307(arguments):
+    name,q,p,moving,verbose = arguments
+    model = _setup_v307(q,p,moving)
+    return {"operator":model[2].evidence(),"initial_admission":model[5].receipt,"initial_admission_replayed":model[6],
+            "levels":[_evolve_v307(model,CHECKPOINTS_V307,n,replay=n==SUBSTEPS_V307[0],verbose=verbose) for n in SUBSTEPS_V307]}
+
+
+def _control_v307(arguments):
+    spacing,verbose = arguments
+    if spacing is None:
+        model = _setup_v307(.1,.3,soc=False)
+        return {"run":_evolve_v307(model,CHECKPOINTS_V307,20,replay=True,verbose=verbose),
+                "initial_admission":model[5].receipt,"initial_replayed":model[6]}
+    model = _setup_v307(.1,.3)
+    return _evolve_v307(model,np.linspace(spacing,.08,round(.08/spacing)).tolist(),round(spacing/.0005),verbose=verbose)
+
+
+def _campaign_part_v307(task):
+    kind, arguments, revision, directory = task
+    key = {"schema":SCHEMA_V307_EVIDENCE,"kind":kind,"arguments":arguments,"generation_commit":revision,
+           "runtime":{"python":platform.python_version(),"numpy":np.__version__,"scipy":scipy.__version__}}
+    key = json.loads(json.dumps(key))
+    path = Path(directory)/(stable_hash_v294(key)+".json") if directory is not None else None
+    if path is not None and path.exists():
+        payload = json.loads(path.read_text())
+        if not _sealed(payload) or payload.get("key") != key:
+            raise ValueError("campaign checkpoint integrity or provenance mismatch")
+        return payload["result"]
+    result = (_frame_v307 if kind == "frame" else _control_v307)(arguments)
+    if path is not None:
+        payload = {"key":key,"result":result}
+        payload["fingerprint"] = stable_hash_v294(payload)
+        temporary = path.with_suffix(".tmp")
+        temporary.write_text(json.dumps(payload,sort_keys=True,separators=(",",":"),allow_nan=False)+"\n")
+        temporary.replace(path)
+    return result
+
+
+def run_v307_convergence_campaign(*, generation_commit, verbose=False, workers=2, checkpoint_directory=None):
     if not isinstance(generation_commit,str) or re.fullmatch(r"[0-9a-f]{40}",generation_commit) is None:
         raise ValueError("generation_commit must be a full source commit SHA")
-    default = CurvedBasisSettingsV292()
-    settings = replace(default,inherited=replace(default.inherited,maximum_packet_count=2,adapt_every_steps=1))
-    def emit(message):
-        if verbose:
-            print(message,flush=True)
-    def setup(q,p,moving=False,soc=True):
-        state,bridge,grid,gauge,_ = analytic_soc_fixture_v307(moving=moving,soc_enabled=soc,q0=q,p0=p)
-        identity = dict(family_id="analytic-singlet-triplet",trajectory_id=f"v307-{q}-{p}-{'moving' if moving else 'fixed'}-soc{soc}")
-        initial = evaluate_molecular_admission_v305(state,bridge,grid,**identity,step=0,settings=settings)
-        replay = replay_molecular_admission_v305(serialize_molecular_admission_v305(initial.receipt),bridge,grid)
-        return state,bridge,grid,gauge,identity,initial,replay.receipt == initial.receipt
-    def evolve(model,times,n,*,replay=False):
-        state,bridge,grid,gauge,identity,initial,_ = model
-        trace = run_molecular_checkpoints_v307(initial.after,bridge,grid,checkpoint_times=times,substeps=n,**identity,
-                                              **initial.receipt["after_metadata"],basis_settings=settings)
-        serialized = serialize_checkpoint_trajectory_v307(trace)
-        replay_match = None
-        if replay:
-            replay_match = serialize_checkpoint_trajectory_v307(replay_checkpoint_trajectory_v307(serialized,bridge,grid)) == serialized
-        connection = bridge.connection_field()
-        def physical(values):
-            return np.array([gauge.matrix(q)@v for q,v in zip(grid.quadrature.points,values)]) if bridge.gauge is not None else values
-        psi = evaluate_curved_state_v293(state,connection,grid.quadrature)
-        exact = expm_multiply(-1j*times[-1]*grid.matrix,psi.ravel()).reshape(-1,4)
-        rows = []
-        for result in trace:
-            r = result.receipt
-            row = {k:r[k] for k in ("identity","checkpoint_time","substeps","before","after","before_metadata","after_metadata","activation","topology_status","dataset_certified","training_eligible")}
-            row.update(topology_event=r["topology"]["event_kind"] if r["topology"] else None,
-                       topology_reason=r["topology"]["event_reason"] if r["topology"] else None)
-            row["propagations"] = [{**{k:p[k] for k in ("dt","iterations","active_shape_mask","scaled_midpoint_residual","midpoint_metric_condition","midpoint_metric_rank","midpoint_svd_residual","midpoint_null_rhs_relative","before_observables","after_observables")},
-                                    "before_time":p["before"]["time_au"],"after_time":p["after"]["time_au"]} for p in r["propagations"]]
-            rows.append(row)
-        run = {"checkpoint_times":list(times),"substeps":n,"checkpoints":rows,"full_trace_fingerprint":json.loads(serialized)["fingerprint"],"full_replay_matches":replay_match,
-               "weights":grid.quadrature.weights.tolist(),"initial_field":_field_payload(physical(psi)),
-               "final_field":_field_payload(physical(evaluate_curved_state_v293(trace[-1].after,connection,grid.quadrature))),"exact_field":_field_payload(physical(exact))}
-        emit(json.dumps({"trajectory":identity["trajectory_id"],"substeps":n,"checkpoints":len(times),**_run_metrics(run)},sort_keys=True))
-        return run
-    cases = []
-    central = None
-    for name,q,p in CASES_V307:
-        frames = {}
-        for moving in (False,True):
-            model = setup(q,p,moving)
-            if name == "central" and not moving:
-                central = model
-            frames["moving" if moving else "fixed"] = {"operator":model[2].evidence(),"initial_admission":model[5].receipt,"initial_admission_replayed":model[6],
-                                                       "levels":[evolve(model,CHECKPOINTS_V307,n,replay=n==SUBSTEPS_V307[0]) for n in SUBSTEPS_V307]}
-        cases.append({"name":name,"q0":q,"p0":p,"frames":frames})
-    cadence = [cases[0]["frames"]["fixed"]["levels"][1]]
-    for spacing in CADENCES_V307[1:]:
-        cadence.append(evolve(central,np.linspace(spacing,.08,round(.08/spacing)).tolist(),round(spacing/.0005)))
-    off = setup(.1,.3,soc=False)
+    if type(workers) is not int or workers < 1:
+        raise ValueError("workers must be a positive integer")
+    if checkpoint_directory is not None:
+        checkpoint_directory = str(Path(checkpoint_directory).resolve())
+        Path(checkpoint_directory).mkdir(parents=True,exist_ok=True)
+    frame_args = [(name,q,p,moving,verbose) for name,q,p in CASES_V307 for moving in (False,True)]
+    control_args = [(spacing,verbose) for spacing in CADENCES_V307[1:]] + [(None,verbose)]
+    frame_tasks = [("frame",args,generation_commit,checkpoint_directory) for args in frame_args]
+    control_tasks = [("control",args,generation_commit,checkpoint_directory) for args in control_args]
+    if workers == 1:
+        frames = list(map(_campaign_part_v307,frame_tasks))
+        controls = list(map(_campaign_part_v307,control_tasks))
+    else:
+        # Independent complete trajectories only; no parallel reductions inside a solve.
+        with ProcessPoolExecutor(max_workers=workers,mp_context=multiprocessing.get_context("spawn")) as pool:
+            frames = list(pool.map(_campaign_part_v307,frame_tasks))
+            controls = list(pool.map(_campaign_part_v307,control_tasks))
+    cases = [{"name":name,"q0":q,"p0":p,"frames":{"fixed":frames[2*i],"moving":frames[2*i+1]}}
+             for i,(name,q,p) in enumerate(CASES_V307)]
+    cadence = [cases[0]["frames"]["fixed"]["levels"][1],*controls[:-1]]
+    off = controls[-1]
     evidence = {"schema":SCHEMA_V307_EVIDENCE,"generation_commit":generation_commit,
                 "runtime":{"python":platform.python_version(),"numpy":np.__version__,"scipy":scipy.__version__},
-                "cases":cases,"cadence":cadence,"soc_off":evolve(off,CHECKPOINTS_V307,20,replay=True),
-                "soc_off_initial_admission":off[5].receipt,"soc_off_initial_replayed":off[6],
+                "cases":cases,"cadence":cadence,"soc_off":off["run"],
+                "soc_off_initial_admission":off["initial_admission"],"soc_off_initial_replayed":off["initial_replayed"],
                 "dataset_certified":False,"training_eligible":False,"continuum_certified":False,
                 "scope":"Two initial conditions, four-state 1D analytic SOC, two-packet budget, 13-point finite grid, t=0.08. Fixed-checkpoint time refinement is separate from sampled activation-time sensitivity. No live molecular provider, continuum convergence, general nonlinear solver, or training certification."}
     evidence["measurements"] = convergence_measurements_v307(evidence)

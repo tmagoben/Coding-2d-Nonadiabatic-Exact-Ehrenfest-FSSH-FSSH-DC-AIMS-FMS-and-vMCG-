@@ -108,3 +108,18 @@ def test_supplied_tangent_must_be_complete_finite_and_weighted_shape(bad):
 def test_fast_bridge_cannot_claim_an_arbitrary_provider(config,gauge):
     with pytest.raises(TypeError):
         AnalyticSOCFrameBridgeV307(config,gauge)
+
+
+def test_supplied_tangent_cannot_bypass_state_validation():
+    state,bridge,grid,_,_=analytic_soc_fixture_v307()
+    invalid=replace(state,width_matrices=-state.width_matrices)
+    with pytest.raises(ValueError,match='positive definite'):
+        build_tdvp_snapshot_v293(invalid,bridge.connection_field(),grid.quadrature,np.zeros((13,4)),jacobian=np.eye(52,12))
+
+
+def test_supplied_tangent_cannot_bypass_connection_dimensions():
+    from gaussian_dynamics.curved_geometry_v293 import ConnectionFieldV293
+    state,_,grid,_,_=analytic_soc_fixture_v307()
+    connection=ConnectionFieldV293(1,3,lambda q:np.zeros((1,3,3)))
+    with pytest.raises(ValueError,match='dimensions disagree'):
+        build_tdvp_snapshot_v293(state,connection,grid.quadrature,np.zeros((13,4)),jacobian=np.eye(52,12))
