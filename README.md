@@ -2,12 +2,14 @@
 
 **Current release: v0.27.0 — rotation-covariant full-correlated-width Gaussian TDVP.**
 
-**Current development: v0.30.5 — final molecular spawn admission and replay-verified
-dataset export.** Each checkpoint records residual screening, ordered topology
-decisions, projection and full-Hamiltonian energy checks, and the resulting state.
-The versioned adapter preserves rejected and unattempted candidates without assigning
-a fictitious target electronic state. Dataset certification remains pending.
-See [the v0.30.5 admission contract and limits](V305_MOLECULAR_ADMISSION.md),
+**Current development: v0.30.6 — dormant-shape propagation and audited newborn
+activation.** All electronic coefficients evolve while dormant packet geometry
+stays exactly fixed. The lifecycle driver ages packets, audits activation, and
+resumes scheduled topology when every shape is active. A bounded scalar campaign
+checks unseeded growth, activation, subsequent motion, repeated admission and full
+physical replay. Adaptive SOC convergence and dataset certification remain pending.
+See [the v0.30.6 lifecycle contract and limits](V306_ADAPTIVE_PROPAGATION.md),
+[the v0.30.5 admission and export contract](V305_MOLECULAR_ADMISSION.md),
 [the v0.30.4 complex-tangent correction](V304_MOLECULAR_SPAWNING.md),
 [the v0.30.3 SOC trajectory campaign](V303_SOC_TRAJECTORIES.md),
 [the v0.30.2 integrator](V302_MOLECULAR_MIDPOINT.md), and

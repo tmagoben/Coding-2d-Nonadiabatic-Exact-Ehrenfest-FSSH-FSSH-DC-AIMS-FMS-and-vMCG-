@@ -55,10 +55,21 @@ def evaluate_curved_state_v293(state,connection,quadrature,*,path_factory=straig
     return np.einsum('nsia,ia->ns',phi,state.coefficients,optimize=True)
 
 
-def finite_difference_full_jacobian_v293(state,connection,quadrature,*,path_factory=straight_path_v293,relative_step=2e-6):
+def active_parameter_indices_v293(state, active_shape_mask=None):
+    """Keep every coefficient and only enabled shape blocks, in packing order."""
+    if active_shape_mask is None:
+        return np.arange(state.parameter_count, dtype=int)
+    mask = np.asarray(active_shape_mask)
+    if mask.shape != (state.ngaussian,) or mask.dtype.kind != "b":
+        raise ValueError("active shape mask must contain one Boolean per packet")
+    return np.sort(_parameter_active_indices_v292(state, mask))
+
+
+def finite_difference_full_jacobian_v293(state,connection,quadrature,*,path_factory=straight_path_v293,relative_step=2e-6,active_shape_mask=None):
     state=state.validate(require_normalized=False)
     theta=pack_correlated_parameters_v270(state); cols=[]
-    for k,value in enumerate(theta):
+    for k in active_parameter_indices_v293(state, active_shape_mask):
+        value = theta[k]
         h=relative_step*max(1.0,abs(float(value)))
         plus=theta.copy(); minus=theta.copy(); plus[k]+=h; minus[k]-=h
         sp=state_from_correlated_parameters_v270(plus,ngaussian=state.ngaussian,ndim=state.ndim,nstate=state.nstate,time_au=state.time_au)
@@ -69,10 +80,10 @@ def finite_difference_full_jacobian_v293(state,connection,quadrature,*,path_fact
     return np.stack(cols,axis=1)
 
 
-def build_tdvp_snapshot_v293(state,connection,quadrature,hpsi,*,path_factory=straight_path_v293,relative_step=2e-6):
+def build_tdvp_snapshot_v293(state,connection,quadrature,hpsi,*,path_factory=straight_path_v293,relative_step=2e-6,active_shape_mask=None):
     hpsi=np.asarray(hpsi,complex); quadrature=quadrature.validate()
     if hpsi.shape!=(quadrature.npoint,state.nstate): raise ValueError("hpsi has wrong shape")
-    j=finite_difference_full_jacobian_v293(state,connection,quadrature,path_factory=path_factory,relative_step=relative_step)
+    j=finite_difference_full_jacobian_v293(state,connection,quadrature,path_factory=path_factory,relative_step=relative_step,active_shape_mask=active_shape_mask)
     hw=_weighted_flat(hpsi,quadrature); m=np.real(j.conj().T@j); b=np.imag(j.conj().T@hw)
     v,receipt=_svd_real_solve(m,b); residual=j@v+1j*hw
     return CurvedTDVPSnapshotV292(j,m,b,v,residual,receipt).validate()
