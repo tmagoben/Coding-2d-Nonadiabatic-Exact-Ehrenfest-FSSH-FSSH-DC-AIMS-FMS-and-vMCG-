@@ -2,13 +2,14 @@
 
 **Current release: v0.27.0 — rotation-covariant full-correlated-width Gaussian TDVP.**
 
-**Current development: v0.30.6 — dormant-shape propagation and audited newborn
-activation.** All electronic coefficients evolve while dormant packet geometry
-stays exactly fixed. The lifecycle driver ages packets, audits activation, and
-resumes scheduled topology when every shape is active. A bounded scalar campaign
-checks unseeded growth, activation, subsequent motion, repeated admission and full
-physical replay. Adaptive SOC convergence and dataset certification remain pending.
-See [the v0.30.6 lifecycle contract and limits](V306_ADAPTIVE_PROPAGATION.md),
+**Current development: v0.30.7 — adaptive SOC convergence at fixed physical
+checkpoints.** A two-initial-condition, two-gauge campaign checks unseeded newborn
+growth, shape activation, second-order timestep refinement, physical gauge
+agreement, and separate activation-check cadence sensitivity. An independently
+validated analytic tangent supports the bounded four-state fixture. Spatial
+convergence, larger adaptive SOC bases and dataset certification remain pending.
+See [the v0.30.7 convergence contract and limits](V307_ADAPTIVE_SOC_CONVERGENCE.md),
+[the v0.30.6 lifecycle contract](V306_ADAPTIVE_PROPAGATION.md),
 [the v0.30.5 admission and export contract](V305_MOLECULAR_ADMISSION.md),
 [the v0.30.4 complex-tangent correction](V304_MOLECULAR_SPAWNING.md),
 [the v0.30.3 SOC trajectory campaign](V303_SOC_TRAJECTORIES.md),
