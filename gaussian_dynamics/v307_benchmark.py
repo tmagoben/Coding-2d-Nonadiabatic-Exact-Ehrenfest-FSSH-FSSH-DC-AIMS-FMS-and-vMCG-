@@ -184,8 +184,8 @@ def evaluate_convergence_gates_v307(evidence):
         "sealed_admissions_and_activations": all(_sealed(r) for r in initial) and all(_sealed(c["activation"]) for c in checkpoints),
         "unseeded_admitted_births": all(admission_passes(i) for i in initial),
         "dormant_shapes_exactly_frozen": all(np.array_equal(np.array(c["before"][k])[~np.array(c["before_metadata"]["active_shape_mask"])],np.array(c["after"][k])[~np.array(c["before_metadata"]["active_shape_mask"])]) for c in checkpoints for k in SHAPES),
-        "measured_activation_gates": len(activations) == len(runs) and all(_activation_valid(x,c["activation"]["settings"],c["after"]) for c,x in activations),
-        "activated_shapes_continue_to_move": all(moved(r) for r in runs),
+        "measured_activation_gates": all(len(_activation_times(r)) == 1 for r in fixed_runs+cadence) and all(_activation_valid(x,c["activation"]["settings"],c["after"]) for c,x in activations),
+        "activated_shapes_continue_to_move": all(moved(r) for r in fixed_runs+cadence),
         "accepted_midpoint_metric_and_null_residuals": all(0 <= p["scaled_midpoint_residual"] <= 1 and 0 <= p["midpoint_svd_residual"] <= 2e-8 and 0 <= p["midpoint_null_rhs_relative"] <= 2e-8 and p["midpoint_metric_condition"] <= 1e10 for p in propagations),
         "bounded_norm_and_energy_drift": all(_run_metrics(r)["maximum_norm_drift"] < 2e-6 and _run_metrics(r)["maximum_energy_drift_hartree"] < 1e-6 for r in runs),
         "second_order_fixed_checkpoint_convergence": all(f["observed_order"] is not None and 1.8 < f["observed_order"] < 2.2 and f["endpoint_differences"][-1] > 1e-9 for c in measured["cases"] for f in c["frames"].values()),
@@ -193,7 +193,8 @@ def evaluate_convergence_gates_v307(evidence):
         "physical_gauge_error_converges": all(c["gauge_errors"][0] < 2e-6 and c["gauge_errors"][-1] < 1e-7 and all(o is not None and 1.7 < o < 2.3 for o in c["gauge_orders"]) for c in measured["cases"]),
         "bounded_finite_grid_reference_error": all(_run_metrics(r)["grid_exact_error"] < .002 for r in runs),
         "physical_soc_transfer_and_disabled_control": all(1e-5 < _run_metrics(r)["triplet_population"] < .01 for r in fixed_runs)
-            and _run_metrics(off)["triplet_population"] < 1e-20 and _run_metrics(off)["exact_triplet_population"] < 1e-20,
+            and _run_metrics(off)["triplet_population"] < 1e-20 and _run_metrics(off)["exact_triplet_population"] < 1e-20
+            and not _activation_times(off) and all(c["after_metadata"]["active_shape_mask"] == [True,False] for c in off["checkpoints"]),
         "checkpoint_cadence_has_controlled_microsteps": len(cadence) == 4 and all(np.allclose(r["checkpoint_times"],np.linspace(spacing,.08,round(.08/spacing)),rtol=0,atol=1e-15) and r["substeps"] == round(spacing/.0005) and all(abs(p["dt"]-.0005) < 1e-15 for p in _props(r)) for spacing,r in zip(CADENCES_V307,cadence)),
         "activation_bracket_narrows_with_checkpoint_cadence": all(b is not None for b in brackets) and all(b[0]-1e-14 <= c[0] < c[1] <= b[1]+1e-14 for b,c in zip(brackets[:-1],brackets[1:])) and np.isclose(brackets[-1][1]-brackets[-1][0],.0025),
         "bounded_checkpoint_policy_sensitivity": max(measured["cadence"]["successive_endpoint_differences"]) < .001,
