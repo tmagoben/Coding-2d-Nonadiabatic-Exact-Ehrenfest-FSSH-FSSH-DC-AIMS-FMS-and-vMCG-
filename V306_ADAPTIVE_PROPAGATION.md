@@ -25,6 +25,19 @@ Activation processes dormant blocks in stable packet-ID order. It requires:
    units before applying the existing tangent cutoffs.
 4. An acceptable ratio of trial to base shape-coordinate velocity norms.
 
+For the weighted complex Jacobian $J_A$ of the currently active parameters, form
+$X_A=[\mathrm{Re}\,J_A;\mathrm{Im}\,J_A]$. If $U_r$ spans its retained left
+singular vectors, the proposed shape columns are tested through
+
+$$
+\widetilde X=(I-U_rU_r^T)X_{\mathrm{new}},\qquad
+\lambda_k=\sigma_k(\widetilde X)^2.
+$$
+
+The new block needs all $2d+d(d+1)$ shape directions: centers, momenta, symmetric
+log widths and symmetric chirps. This projected spectrum measures independent
+shape freedom after existing coefficient and shape directions are removed.
+
 The velocity ratio excludes electronic coefficient derivatives because those
 depend on the electronic gauge. The population is a coefficient norm diagnostic,
 not a physical population assigned to one nonorthogonal Gaussian. Activation
@@ -70,8 +83,10 @@ metadata continuity, and physical replay of the initial admission and all 22
 steps. Saved fields also compare the endpoint with direct finite-grid matrix
 exponentiation and a fixed one-packet baseline on the identical time schedule.
 
-Regression budgets are 2e-7 for maximum finite-grid norm drift, 1e-7 hartree for
-energy drift, and 0.002 for the weighted wavefunction error against the same
+Regression budgets at the propagation endpoints are 2e-7 for maximum finite-grid
+norm drift and 1e-7 hartree for energy drift; event projection and energy changes
+have their separate admission gates. The endpoint wavefunction error budget is
+0.002 against the same
 discrete Hamiltonian. These are bounded fixture checks, not time or spatial
 convergence certificates. The evidence gate evaluator derives acceptance from
 measurements, spectra and state bindings; corruption tests ensure that stored
@@ -82,6 +97,26 @@ frozen, including the complete four-component analytic SOC spinor in fixed and
 coordinate-dependent electronic gauges; masked scalar-gauge evolution;
 activation covariance; packet permutation; gate rejection; invalid inputs;
 failed-step immutability; and rehashed false replay receipts.
+
+The [committed evidence](results/v0306_adaptive_propagation_evidence.json) was
+generated from source revision `b1d48fb4fdfc071a868fe52391c92aff3dd629c2` using
+Python 3.12.14, NumPy 2.5.2 and SciPy 1.18.0. All 16 campaign gates pass. The initial
+admission and all 22 adaptive steps replay exactly in that runtime. The first child
+activates at t=0.26 with velocity amplification 99.3608; a second child is admitted
+at that checkpoint, and the trajectory continues to t=0.2602.
+
+| Measurement | Observed value |
+|---|---:|
+| Adaptive weighted wavefunction error against the finite-grid reference | 0.001221624 |
+| Fixed one-packet error on the same timestep schedule | 0.002387399 |
+| Maximum sampled norm drift | 5.99031e-8 |
+| Maximum sampled energy drift (hartree) | 2.34115e-8 |
+| Maximum scaled midpoint residual (acceptance limit 1) | 0.693201 |
+
+The adaptive endpoint error is about 49% smaller in this fixture. This comparison
+does not establish general adaptive accuracy or convergence through topology
+events. There are 69 new tests, including 22 evidence checks; CI regenerates the
+lifecycle campaign independently from its checked-out source.
 
 ## Remaining work
 
