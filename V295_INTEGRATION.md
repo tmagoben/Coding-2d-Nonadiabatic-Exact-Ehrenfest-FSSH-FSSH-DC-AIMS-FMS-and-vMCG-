@@ -47,19 +47,25 @@ Three adapters remain required. In particular, the recovered package-level
 Only a campaign for which `certify_campaign(...).passed is True` is eligible to
 be frozen for future surrogate training.
 
-## Next acceptance step
+## Progress through v0.30.5
 
 The v0.30.4 development increment now emits every package-level residual-oracle
 record from a complete molecular Hamiltonian snapshot and exactly replays it.
 It also repairs the missing imaginary coefficient directions and versions those
 corrected labels separately. See [the implementation and audit](V304_MOLECULAR_SPAWNING.md).
 
-The schema adapter must still distinguish a full-spinor residual-screening result
-from a final, state-targeted spawn. The existing top-level `OracleDecision` cannot
-express that distinction without an explicit contract extension. No target-state
-label or final admission outcome is inferred from residual acceptance.
+The v0.30.5 adapter now uses a separate, versioned full-spinor admission contract.
+It recomputes residual screening and final topology decisions before exporting
+every candidate. Projection and full-Hamiltonian energy gates, lifecycle blocks,
+unattempted candidates, and dormant newborn shapes have explicit outcomes.
+The frozen top-level `OracleDecision` and `certify_campaign` interfaces remain
+unchanged; they do not accept the new rows. See [v0.30.5](V305_MOLECULAR_ADMISSION.md).
 
-Connect the recovered curved spawning oracle through an explicit schema adapter
-and require physical invariance transforms before calling v0.29.5 scientifically
-integrated. Passing the focused test suites verifies their separate interfaces;
-it is not sufficient evidence for an end-to-end curved dataset campaign.
+This closes the capture/replay and label-semantics gap, but does not certify a
+training dataset. Electronic-gauge checks on two initial conditions are a bounded
+audit. Complete coordinate/permutation audits over the exported campaign and a
+propagated multi-trajectory campaign remain required.
+
+The next certification layer must use the new full-spinor semantics and numerical
+invariance tolerances, retaining whole family/trajectory groups across all splits.
+Passing replay alone is not sufficient evidence for a certified training campaign.

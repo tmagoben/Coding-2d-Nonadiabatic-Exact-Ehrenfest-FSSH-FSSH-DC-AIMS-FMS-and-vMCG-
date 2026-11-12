@@ -2,12 +2,13 @@
 
 **Current release: v0.27.0 — rotation-covariant full-correlated-width Gaussian TDVP.**
 
-**Current development: v0.30.4 — complete-complex spawning scores and replayable
-full-Hamiltonian candidate checkpoints.** This repairs omitted imaginary coefficient
-directions and audits residual-screening labels on analytic SOC trajectory snapshots
-in fixed and coordinate-dependent electronic frames. Every generated candidate,
-including rejections, carries replayable state and operator provenance.
-See [the v0.30.4 correction, replay and limits](V304_MOLECULAR_SPAWNING.md),
+**Current development: v0.30.5 — final molecular spawn admission and replay-verified
+dataset export.** Each checkpoint records residual screening, ordered topology
+decisions, projection and full-Hamiltonian energy checks, and the resulting state.
+The versioned adapter preserves rejected and unattempted candidates without assigning
+a fictitious target electronic state. Dataset certification remains pending.
+See [the v0.30.5 admission contract and limits](V305_MOLECULAR_ADMISSION.md),
+[the v0.30.4 complex-tangent correction](V304_MOLECULAR_SPAWNING.md),
 [the v0.30.3 SOC trajectory campaign](V303_SOC_TRAJECTORIES.md),
 [the v0.30.2 integrator](V302_MOLECULAR_MIDPOINT.md), and
 [the v0.30.1 Hamiltonian](V301_MOLECULAR_HAMILTONIAN.md).
