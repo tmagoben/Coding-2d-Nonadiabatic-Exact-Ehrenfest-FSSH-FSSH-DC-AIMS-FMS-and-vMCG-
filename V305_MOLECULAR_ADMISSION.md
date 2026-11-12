@@ -93,6 +93,14 @@ the physical wavefunction after admission. Projection-conditioning, packet-budge
 and residual-threshold controls preserve rejected candidates. All seven checkpoints
 are physically replayed before the 28 candidate rows are materialized.
 
+The committed [evidence](results/v0305_molecular_admission_evidence.json) and
+[JSONL rows](results/v0305_molecular_admission_evidence.jsonl) were generated from
+implementation commit `29852181b0016489dcd6e828fc79be0d19e53176`. All **18 gates pass**;
+the largest post-admission physical gauge difference is **2.37e-14**. The related
+local suite passes 137 tests, with the additional actual-newborn checkpoint test
+and 16 evidence-corruption controls passing separately: **154 checks in total**.
+The wheel builds and all new modules import from an isolated installation.
+
 Focused tests also cover merge/prune priority, packet-order independence of removal,
 real pruning energy rejection, an injected spawn energy jump, input validation,
 exact no-event behavior, complete-complex labels, rehashed corruption, provenance,

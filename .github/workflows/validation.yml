@@ -54,6 +54,7 @@ jobs:
             tests/test_v0304_spawn_evidence.py \
             tests/test_v0305_molecular_admission.py \
             tests/test_v0305_molecular_dataset.py \
+            tests/test_v0305_admission_evidence.py \
             test_v294_preml_contract.py \
             test_v295_oracle_dataset.py
       - name: Recompute midpoint convergence and replay evidence

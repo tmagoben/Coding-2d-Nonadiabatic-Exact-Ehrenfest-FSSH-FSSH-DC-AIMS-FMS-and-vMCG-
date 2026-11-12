@@ -72,6 +72,16 @@ def test_admission_replay_recomputes_exact_after_state(model, result):
     assert _state_payload(rebuilt.after) == _state_payload(result.after)
 
 
+def test_next_checkpoint_cannot_spawn_while_actual_newborn_is_dormant(model, result):
+    next_result = admission.evaluate_molecular_admission_v305(
+        result.after, *model[1:], **{**IDENTITY, "step": 1}, **result.receipt["after_metadata"],
+    )
+    assert next_result.after is result.after
+    assert next_result.receipt["event_kind"] == "none"
+    assert next_result.receipt["event_reason"] == "dormant_shape_pending"
+    assert next_result.receipt["before_metadata"] == next_result.receipt["after_metadata"]
+
+
 @pytest.mark.parametrize("kind", ["state", "admission", "energy", "activation", "missing_candidate"])
 def test_rehashed_forgery_fails_physical_replay(model, result, kind):
     changed = deepcopy(result.receipt)
