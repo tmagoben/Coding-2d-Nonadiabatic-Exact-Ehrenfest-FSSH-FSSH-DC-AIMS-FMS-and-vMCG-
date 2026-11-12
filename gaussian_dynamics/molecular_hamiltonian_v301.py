@@ -232,10 +232,12 @@ def build_molecular_tdvp_snapshot_v301(
 
     The stationary provider must remain unchanged after grid assembly. Stored
     point fingerprints are rechecked before evaluating the tangent basis.
-    The finite-difference tangent solve and its null-space gates are inherited
+    The tangent solve and its null-space gates are inherited
     from v0.29.3. An optional Boolean mask removes dormant shape columns while
     retaining all coefficient columns; velocity is in active-parameter order.
     The default preserves the complete tangent. This evaluates one state.
+    Bridges may supply a validated weighted Jacobian; the generic bridge retains
+    central differences. The same metric, null-space and residual gates apply.
     """
     if bridge.bridge_fingerprint != hamiltonian.bridge_fingerprint:
         raise ValueError("Hamiltonian and molecular bridge fingerprints disagree")
@@ -265,8 +267,11 @@ def build_molecular_tdvp_snapshot_v301(
         state, connection, quadrature, path_factory=path_factory,
     )
     hpsi = hamiltonian.apply(psi)
+    jacobian = bridge.parameter_jacobian(state, connection, quadrature,
+                                        path_factory=path_factory, active_shape_mask=active_shape_mask)
     snapshot = build_tdvp_snapshot_v293(
         state, connection, quadrature, hpsi,
         path_factory=path_factory, relative_step=relative_step, active_shape_mask=active_shape_mask,
+        jacobian=jacobian,
     )
     return MolecularTDVPEvaluationV301(psi, hpsi, snapshot, hamiltonian.fingerprint)

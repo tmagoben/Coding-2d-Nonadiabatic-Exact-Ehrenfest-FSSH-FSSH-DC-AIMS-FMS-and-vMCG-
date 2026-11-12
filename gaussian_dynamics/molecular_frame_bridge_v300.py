@@ -350,6 +350,15 @@ class MolecularFrameBridgeV300:
     def operator_point(self, q):
         return self.evaluate_snapshot(q).point
 
+    def parameter_jacobian(self, state, connection, quadrature, *, path_factory, active_shape_mask):
+        """Optional weighted parameter Jacobian; None uses central differences.
+
+        A specialized bridge must validate this derivative independently and bind
+        its backend convention into its bridge fingerprint. Generic molecular
+        providers retain the existing finite-difference tangent.
+        """
+        return None
+
     def point_fingerprint(self, q):
         point = self.operator_point(q)
         return _hash_v300(
