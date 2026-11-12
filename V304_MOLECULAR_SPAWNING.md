@@ -88,6 +88,14 @@ failed replay and inconsistent summary columns. The regular wheel builds and its
 new modules import outside the repository checkout. Cumulative regression and
 fresh hosted campaign results are recorded on the development pull request.
 
+The first hosted cumulative run exposed two pre-existing roundoff-sensitive
+assertions: a normalized norm of `1.0000000000000002` exceeded a `2e-16` bound,
+and an SVD equation residual of `2.46e-15` exceeded a `2e-15` bound. These tests
+now use dimension-scaled float64 roundoff budgets, check that normalization preserves
+the electronic direction, and reconstruct the metric equation residual directly. A perturbed
+velocity is required to fail the latter bound. The normalization and SVD production
+algorithms, null-space checks and scientific campaign gates are unchanged.
+
 ## Admission and dataset boundary
 
 These are **residual-screening records**, with `final_admission=null` and
