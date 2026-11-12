@@ -35,7 +35,7 @@ jobs:
       - name: Install package and test dependencies
         run: python -m pip install -e ".[dev]"
       - name: Compile development modules
-        run: python -m py_compile gaussian_dynamics/molecular_hamiltonian_v301.py gaussian_dynamics/molecular_midpoint_v302.py gaussian_dynamics/v302_benchmark.py v294_preml_contract.py test_v294_preml_contract.py v295_oracle_dataset.py test_v295_oracle_dataset.py
+        run: python -m py_compile gaussian_dynamics/molecular_hamiltonian_v301.py gaussian_dynamics/molecular_midpoint_v302.py gaussian_dynamics/v302_benchmark.py gaussian_dynamics/v303_benchmark.py v294_preml_contract.py test_v294_preml_contract.py v295_oracle_dataset.py test_v295_oracle_dataset.py
       - name: Validate moving-frame and dataset integration
         run: |
           python -m pytest -q --junitxml=results/development-junit.xml \
@@ -48,6 +48,7 @@ jobs:
             tests/test_v0300_molecular_frame_bridge.py \
             tests/test_v0301_molecular_hamiltonian.py \
             tests/test_v0302_molecular_midpoint.py \
+            tests/test_v0303_soc_trajectory.py \
             test_v294_preml_contract.py \
             test_v295_oracle_dataset.py
       - name: Recompute midpoint convergence and replay evidence
@@ -60,6 +61,28 @@ jobs:
           path: |
             results/development-junit.xml
             results/v0302_molecular_midpoint_evidence.json
+
+  molecular-soc-trajectories:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v5
+      - name: Configure Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install package and numerical dependencies
+        run: python -m pip install -e "."
+      - name: Recompute SOC trajectory refinement and disabled-SOC control
+        run: python examples/160_recompute_v0303_soc_trajectory.py --output results/ci-v0303-soc-trajectory.json
+      - name: Upload fresh SOC trajectory evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: molecular-soc-trajectory-validation
+          path: results/ci-v0303-soc-trajectory.json
 
   cumulative-regression:
     runs-on: ubuntu-latest

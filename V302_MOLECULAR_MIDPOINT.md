@@ -123,7 +123,9 @@ gate, a forged identity report, or a false claim of canonical release success.
 
 ## Remaining scientific work
 
-Longer SOC trajectory convergence, larger and multidimensional packet campaigns,
+The [v0.30.3 campaign](V303_SOC_TRAJECTORIES.md) extends SOC validation to a
+ten-times-longer analytic singlet–triplet trajectory with temporal and gauge
+refinement. Larger and multidimensional packet campaigns,
 adaptive topology, changing patches, robust stiff integration, and live molecular
 provider accuracy remain unvalidated by this slice. The next data milestone is an
 audited adapter between the package-level v0.29.4 records and the top-level

@@ -2,10 +2,12 @@
 
 **Current release: v0.27.0 — rotation-covariant full-correlated-width Gaussian TDVP.**
 
-**Current development: v0.30.2 — full-parameter implicit-midpoint Gaussian
-trajectories with convergence receipts and deterministic replay.** This builds on
-the recovered curved geometry and the audited kinetic + electronic Hamiltonian.
-See [the v0.30.2 implementation and validation](V302_MOLECULAR_MIDPOINT.md) and
+**Current development: v0.30.3 — analytic singlet–triplet SOC trajectory validation
+in fixed and coordinate-dependent electronic frames.** The campaign extends the
+full-parameter implicit-midpoint solver with temporal refinement, physical spin
+populations, an independent finite-grid reference, and an SOC-disabled control.
+See [the v0.30.3 campaign and limits](V303_SOC_TRAJECTORIES.md),
+[the v0.30.2 integrator](V302_MOLECULAR_MIDPOINT.md), and
 [the v0.30.1 Hamiltonian](V301_MOLECULAR_HAMILTONIAN.md).
 This is an analytic-model development slice, not a new validated release or a live
 ab-initio SOC trajectory.
