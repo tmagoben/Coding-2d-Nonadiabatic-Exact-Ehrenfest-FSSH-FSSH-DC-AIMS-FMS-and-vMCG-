@@ -226,14 +226,16 @@ class MolecularTDVPEvaluationV301:
 
 def build_molecular_tdvp_snapshot_v301(
     state, bridge, hamiltonian, *, path_factory=straight_path_v293,
-    relative_step=2e-6,
+    relative_step=2e-6, active_shape_mask=None,
 ):
     """Evaluate the curved Gaussian state and feed its complete H psi to TDVP.
 
     The stationary provider must remain unchanged after grid assembly. Stored
     point fingerprints are rechecked before evaluating the tangent basis.
     The finite-difference tangent solve and its null-space gates are inherited
-    from v0.29.3. This evaluates one state, not a time-propagation algorithm.
+    from v0.29.3. An optional Boolean mask removes dormant shape columns while
+    retaining all coefficient columns; velocity is in active-parameter order.
+    The default preserves the complete tangent. This evaluates one state.
     """
     if bridge.bridge_fingerprint != hamiltonian.bridge_fingerprint:
         raise ValueError("Hamiltonian and molecular bridge fingerprints disagree")
@@ -265,6 +267,6 @@ def build_molecular_tdvp_snapshot_v301(
     hpsi = hamiltonian.apply(psi)
     snapshot = build_tdvp_snapshot_v293(
         state, connection, quadrature, hpsi,
-        path_factory=path_factory, relative_step=relative_step,
+        path_factory=path_factory, relative_step=relative_step, active_shape_mask=active_shape_mask,
     )
     return MolecularTDVPEvaluationV301(psi, hpsi, snapshot, hamiltonian.fingerprint)

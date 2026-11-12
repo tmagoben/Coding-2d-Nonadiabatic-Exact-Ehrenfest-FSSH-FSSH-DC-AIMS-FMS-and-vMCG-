@@ -23,7 +23,7 @@ env:
 jobs:
   development-integration:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 45
     steps:
       - name: Check out source
         uses: actions/checkout@v5
@@ -35,7 +35,7 @@ jobs:
       - name: Install package and test dependencies
         run: python -m pip install -e ".[dev]"
       - name: Compile development modules
-        run: python -m py_compile gaussian_dynamics/molecular_hamiltonian_v301.py gaussian_dynamics/molecular_midpoint_v302.py gaussian_dynamics/molecular_spawn_v304.py gaussian_dynamics/molecular_admission_v305.py gaussian_dynamics/molecular_dataset_v305.py gaussian_dynamics/v302_benchmark.py gaussian_dynamics/v303_benchmark.py gaussian_dynamics/v304_benchmark.py gaussian_dynamics/v305_benchmark.py v294_preml_contract.py test_v294_preml_contract.py v295_oracle_dataset.py test_v295_oracle_dataset.py
+        run: python -m py_compile gaussian_dynamics/molecular_hamiltonian_v301.py gaussian_dynamics/molecular_midpoint_v302.py gaussian_dynamics/molecular_spawn_v304.py gaussian_dynamics/molecular_admission_v305.py gaussian_dynamics/molecular_dataset_v305.py gaussian_dynamics/molecular_active_v306.py gaussian_dynamics/molecular_adaptive_v306.py gaussian_dynamics/v302_benchmark.py gaussian_dynamics/v303_benchmark.py gaussian_dynamics/v304_benchmark.py gaussian_dynamics/v305_benchmark.py gaussian_dynamics/v306_benchmark.py v294_preml_contract.py test_v294_preml_contract.py v295_oracle_dataset.py test_v295_oracle_dataset.py
       - name: Validate moving-frame and dataset integration
         run: |
           python -m pytest -q --junitxml=results/development-junit.xml \
@@ -55,6 +55,10 @@ jobs:
             tests/test_v0305_molecular_admission.py \
             tests/test_v0305_molecular_dataset.py \
             tests/test_v0305_admission_evidence.py \
+            tests/test_v0306_active_propagation.py \
+            tests/test_v0306_active_invariance.py \
+            tests/test_v0306_adaptive_trajectory.py \
+            tests/test_v0306_adaptive_evidence.py \
             test_v294_preml_contract.py \
             test_v295_oracle_dataset.py
       - name: Recompute midpoint convergence and replay evidence
@@ -135,6 +139,28 @@ jobs:
           path: |
             results/ci-v0305-molecular-admission.json
             results/ci-v0305-molecular-admission.jsonl
+
+  molecular-adaptive-lifecycle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v5
+      - name: Configure Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install package and numerical dependencies
+        run: python -m pip install -e "."
+      - name: Recompute unseeded activation, repeated admission and full replay
+        run: python examples/163_recompute_v0306_adaptive_propagation.py --output results/ci-v0306-adaptive-propagation.json
+      - name: Upload fresh adaptive lifecycle evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: molecular-adaptive-lifecycle-validation
+          path: results/ci-v0306-adaptive-propagation.json
 
   cumulative-regression:
     runs-on: ubuntu-latest
