@@ -120,6 +120,9 @@ lifecycle campaign independently from its checked-out source.
 
 ## Remaining work
 
+This section records the v0.30.6 boundary. The bounded adaptive SOC timestep and
+checkpoint-cadence studies are continued in [v0.30.7](V307_ADAPTIVE_SOC_CONVERGENCE.md).
+
 The long lifecycle campaign is scalar and one-dimensional. The SOC control tests
 coefficient propagation, not a complete adaptive SOC trajectory. General
 coordinate covariance of activation, repeated merge/prune trajectories,

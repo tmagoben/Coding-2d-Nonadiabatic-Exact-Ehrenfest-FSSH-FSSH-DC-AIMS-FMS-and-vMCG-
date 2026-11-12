@@ -84,10 +84,19 @@ def finite_difference_full_jacobian_v293(state,connection,quadrature,*,path_fact
     return np.stack(cols,axis=1)
 
 
-def build_tdvp_snapshot_v293(state,connection,quadrature,hpsi,*,path_factory=straight_path_v293,relative_step=2e-6,active_shape_mask=None):
+def build_tdvp_snapshot_v293(state,connection,quadrature,hpsi,*,path_factory=straight_path_v293,relative_step=2e-6,active_shape_mask=None,jacobian=None):
     hpsi=np.asarray(hpsi,complex); quadrature=quadrature.validate()
     if hpsi.shape!=(quadrature.npoint,state.nstate): raise ValueError("hpsi has wrong shape")
-    j=finite_difference_full_jacobian_v293(state,connection,quadrature,path_factory=path_factory,relative_step=relative_step,active_shape_mask=active_shape_mask)
+    if jacobian is None:
+        j=finite_difference_full_jacobian_v293(state,connection,quadrature,path_factory=path_factory,relative_step=relative_step,active_shape_mask=active_shape_mask)
+    else:
+        state.validate(require_normalized=False); connection.validate()
+        if (state.ndim,state.nstate)!=(connection.ndim,connection.nstate) or quadrature.ndim!=state.ndim:
+            raise ValueError("state/connection/quadrature dimensions disagree")
+        j=np.asarray(jacobian,dtype=complex)
+        expected=(quadrature.npoint*state.nstate,len(active_parameter_indices_v293(state,active_shape_mask)))
+        if j.shape!=expected or not np.all(np.isfinite(j)):
+            raise ValueError("weighted parameter Jacobian has wrong shape or non-finite values")
     hw=_weighted_flat(hpsi,quadrature); m=np.real(j.conj().T@j); b=np.imag(j.conj().T@hw)
     try:
         v,receipt=_svd_real_solve(m,b)
